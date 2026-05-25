@@ -1,7 +1,6 @@
 {
   "$schema": "https://turborepo.org/schema.json",
   "version": "1",
-  "extends": ["//"],
   "globalDependencies": [".env.local", ".env"],
   "globalEnv": ["NODE_ENV"],
   "tasks": {
