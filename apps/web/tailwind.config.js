@@ -8,40 +8,38 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Sierra Blu Strict Palette — Cinematic Luxury, Institutional Precision
-        ivory: {
-          50: '#FAF9F7',
-          100: '#F4F0E8',
-          200: '#E8E1D9',
-          DEFAULT: '#F4F0E8',
+        // Sierra Blu Official Palette V2.1 — Beyond Brokerage
+        gold: {
+          50: '#FFFBF5',
+          100: '#F5E070',
+          300: '#E9C176',
+          400: '#D4AF37',
+          500: '#C8961A',
+          600: '#A07820',
+          DEFAULT: '#E9C176',
         },
         navy: {
-          50: '#1B3A52',
-          100: '#0F2847',
-          200: '#0B2341',
-          300: '#081D35',
-          DEFAULT: '#0B2341',
+          50: '#E0E8F0',
+          100: '#0D2035',
+          200: '#0A1520',
+          300: '#071422',
+          400: '#050D1E',
+          DEFAULT: '#0D2035',
         },
-        'sierra-blue': {
-          50: '#E3F2FD',
-          100: '#BBDEFB',
-          200: '#90CAF9',
-          300: '#64B5F6',
-          400: '#42A5F5',
-          500: '#1E88D9',
-          600: '#1976D2',
-          700: '#1565C0',
-          DEFAULT: '#1E88D9',
+        text: {
+          light: '#EFF8F7',
+          muted: 'rgba(239,248,247,0.78)',
+          subtle: 'rgba(239,248,247,0.50)',
         },
-        gold: {
-          50: '#FFFBF0',
-          100: '#FFE8C0',
-          200: '#FFD699',
-          300: '#F5C04A',
-          400: '#D9B04A',
-          500: '#C9A24A',
-          600: '#B8943D',
-          DEFAULT: '#C9A24A',
+        surface: {
+          default: 'rgba(255,255,255,0.055)',
+          hover: 'rgba(233,193,118,0.10)',
+        },
+        teal: {
+          400: '#4ECDC4',
+        },
+        purple: {
+          400: '#C084FC',
         },
       },
       fontFamily: {
