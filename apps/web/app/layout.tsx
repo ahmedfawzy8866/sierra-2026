@@ -1,8 +1,5 @@
 import type { Metadata } from 'next';
-import { ThemeProvider } from 'next-themes';
-import { AuthProvider } from '../lib/AuthContext';
-import { I18nProvider } from '../lib/I18nContext';
-import { Toaster } from 'react-hot-toast';
+import { Providers } from './providers';
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -19,15 +16,7 @@ export default function RootLayout({
   return (
     <html suppressHydrationWarning>
       <body>
-        <ThemeProvider attribute="data-theme" defaultTheme="dark" disableTransitionOnChange>
-          <I18nProvider>
-            <AuthProvider>
-              <div className="mouse-glow" />
-              <Toaster position="top-right" />
-              {children}
-            </AuthProvider>
-          </I18nProvider>
-        </ThemeProvider>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
