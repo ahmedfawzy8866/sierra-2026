@@ -1,4 +1,5 @@
 import 'server-only'; // gRPC dependency — server only
+import * as admin from 'firebase-admin';
 import { adminDb } from '../server/firebase-admin';
 import { COLLECTIONS } from '../models/schema';
 import { instrumentAgent } from '../arize';
@@ -6,7 +7,7 @@ import { runScribe } from '../agents/scribe';
 import { runCurator } from '../agents/curator';
 import { runMatchmaker } from '../agents/matchmaker';
 import { runCloser } from '../agents/closer';
-import { Timestamp, FieldValue } from 'firebase-admin/firestore';
+import { Timestamp } from 'firebase-admin/firestore';
 
 /** Inline Telegram alert — avoids loading the client-SDK telegram-controller in server context */
 async function notifyTelegram(text: string) {
@@ -22,8 +23,8 @@ async function notifyTelegram(text: string) {
   } catch { /* non-critical */ }
 }
 
-export type OrchestrationStage = 
-  | 'S1' | 'S2' | 'S3' | 'S4' | 'S5' 
+export type OrchestrationStage =
+  | 'S1' | 'S2' | 'S3' | 'S4' | 'S5'
   | 'S6' | 'S7' | 'S8' | 'S9' | 'S10';
 
 export class OrchestratorService {
@@ -33,12 +34,12 @@ export class OrchestratorService {
    */
   static async runPipeline(docId: string, collection: keyof typeof COLLECTIONS, forceStage?: OrchestrationStage) {
     const docRef = adminDb.collection(COLLECTIONS[collection]).doc(docId);
-    
+
     return instrumentAgent('orchestrator', 'pipeline', docId, async () => {
       // 0. Fetch initial state
       const doc = await docRef.get();
       if (!doc.exists) throw new Error(`Document ${docId} not found in ${collection}`);
-      
+
       let currentStage = forceStage || (doc.data()?.orchestrationState?.stage || 'S1') as OrchestrationStage;
       console.log(`🚀 Starting Sierra Blu Orchestration for ${docId} at stage ${currentStage}`);
 
@@ -53,16 +54,16 @@ export class OrchestratorService {
             if (currentStage === 'S1' || currentStage === 'S2') {
               await this.updateState(docId, collection, currentStage, 'processing');
               await runScribe(docId, collection, currentStage);
-              
+
               const d = await docRef.get();
-              currentStage = d.data()?.orchestrationState?.stage || 'S3'; 
+              currentStage = d.data()?.orchestrationState?.stage || 'S3';
             }
 
             // S3, S4, S5: CURATOR (The Architect of Desire)
             if (['S3', 'S4', 'S5'].includes(currentStage)) {
               await this.updateState(docId, collection, currentStage, 'processing');
               await runCurator(docId, collection, currentStage);
-              
+
               const d = await docRef.get();
               currentStage = d.data()?.orchestrationState?.stage || 'S6';
             }
@@ -78,7 +79,7 @@ export class OrchestratorService {
 
               await this.updateState(docId, collection, currentStage, 'processing');
               await runMatchmaker(docId, collection, currentStage);
-              
+
               const d2 = await docRef.get();
               currentStage = d2.data()?.orchestrationState?.stage || 'S9';
             }
@@ -87,7 +88,7 @@ export class OrchestratorService {
             if (['S9', 'S10'].includes(currentStage)) {
               await this.updateState(docId, collection, currentStage, 'processing');
               await runCloser(docId, collection, currentStage);
-              
+
               const d = await docRef.get();
               currentStage = d.data()?.orchestrationState?.stage || 'S10';
             }
@@ -157,14 +158,14 @@ export class OrchestratorService {
   }
 
   private static async updateState(
-    docId: string, 
-    collection: keyof typeof COLLECTIONS, 
-    stage: OrchestrationStage, 
+    docId: string,
+    collection: keyof typeof COLLECTIONS,
+    stage: OrchestrationStage,
     status: 'pending' | 'processing' | 'completed' | 'failed' | 'waiting_agent_review',
     errorMessage?: string
   ) {
     const docRef = adminDb.collection(COLLECTIONS[collection]).doc(docId);
-    
+
     const historyEntry = {
       stage,
       status,
@@ -183,8 +184,7 @@ export class OrchestratorService {
         engineVersion: '12.0.0-quiet-luxury',
         error: errorMessage || null
       },
-      orchestrationHistory: FieldValue.arrayUnion(historyEntry)
+      orchestrationHistory: admin.firestore.FieldValue.arrayUnion(historyEntry)
     }, { merge: true });
   }
 }
-
