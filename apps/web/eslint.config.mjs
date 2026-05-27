@@ -1,11 +1,10 @@
 import tseslint from 'typescript-eslint'
-import { defineConfig, globalIgnores } from 'eslint/config'
 
-export default defineConfig([
-  globalIgnores(['.next/**', 'out/**', 'build/**', 'coverage/**', 'next-env.d.ts']),
+export default [
+  { ignores: ['.next/**', 'out/**', 'build/**', 'coverage/**', 'next-env.d.ts'] },
+  ...tseslint.configs.recommended,
   {
     files: ['**/*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
-    extends: [tseslint.configs.recommended],
     languageOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
@@ -16,4 +15,4 @@ export default defineConfig([
       '@typescript-eslint/no-unused-vars': 'warn',
     },
   },
-])
+]
