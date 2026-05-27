@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { ReactNode } from 'react';
 import { auth, db } from '../firebase';
 import {
@@ -6,30 +6,10 @@ import {
   signOut as firebaseSignOut,
   onAuthStateChanged,
 } from 'firebase/auth';
-import type { User } from 'firebase/auth';
 import { getDoc, doc } from 'firebase/firestore';
-
-export type AdminRole = 'super_admin' | 'manager' | 'broker' | 'viewer';
-
-export interface AdminUser {
-  id: string;
-  email: string;
-  name: string;
-  role: AdminRole;
-  compound?: string;
-  createdAt: Date;
-}
-
-interface AuthContextType {
-  user: AdminUser | null;
-  firebaseUser: User | null;
-  loading: boolean;
-  login: (email: string, password: string) => Promise<void>;
-  logout: () => Promise<void>;
-  error: string | null;
-}
-
-const AuthContext = createContext<AuthContextType | undefined>(undefined);
+import type { User } from 'firebase/auth';
+import { AuthContext } from './auth-context';
+import type { AdminUser } from './auth-context';
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<AdminUser | null>(null);
@@ -110,12 +90,4 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       {children}
     </AuthContext.Provider>
   );
-}
-
-export function useAuth() {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within AuthProvider');
-  }
-  return context;
 }

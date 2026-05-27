@@ -161,7 +161,7 @@ export interface Unit extends BaseDocument {
   intelligence?: IntelligenceObject;
 }
 
-export interface PortfolioAsset extends Unit {}
+export type PortfolioAsset = Unit;
 export type Property = PortfolioAsset;
 
 // ─── Projects (Developments) ────────────────────────────────────────
@@ -391,7 +391,7 @@ export interface InvestmentStakeholder extends BaseDocument {
   };
 }
 
-export interface Lead extends InvestmentStakeholder {}
+export type Lead = InvestmentStakeholder;
 
 // ─── Sales / Transactions ───────────────────────────────────────────
 
@@ -458,7 +458,7 @@ export interface InboundAssetSignal extends BaseDocument {
   portfolioAssetId?: string; 
 }
 
-export interface BrokerListing extends InboundAssetSignal {}
+export type BrokerListing = InboundAssetSignal;
 
 // ─── Vouchers / Incentives ──────────────────────────────────────────
 

@@ -12,7 +12,8 @@ import {
   Bell,
   LogOut
 } from 'lucide-react';
-import { AuthProvider, useAuth } from './context/AuthContext';
+import { AuthProvider } from './context/AuthContext';
+import { useAuth } from './context/useAuth';
 import { LoginPage } from './pages/LoginPage';
 import { EasyListingModule } from './pages/EasyListingModule';
 import { CRMModule } from './pages/CRMModule';

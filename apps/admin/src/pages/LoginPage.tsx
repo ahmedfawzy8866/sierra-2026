@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/useAuth';
 import { LogIn, AlertCircle, Loader } from 'lucide-react';
 import '../App.css';
 
@@ -20,7 +20,7 @@ export function LoginPage() {
 
     try {
       await login(email, password);
-    } catch (err) {
+    } catch {
       setLocalError(error || 'Login failed');
     }
   };

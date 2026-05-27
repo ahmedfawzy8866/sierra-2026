@@ -29,7 +29,7 @@ export async function POST(req: Request) {
       }
     };
 
-    let isMockMode = !isAdminInitialized;
+    const isMockMode = !isAdminInitialized;
 
     if (isMockMode && text === '/diag') {
         // Allow diagnostics even in mock mode

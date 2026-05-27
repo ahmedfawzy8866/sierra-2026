@@ -34,7 +34,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
 export function createSemanticString(data: Record<string, any>): string {
   // Sierra Blu PropTech Contextualization
   return Object.entries(data)
-    .filter(([_, v]) => v !== undefined && v !== null && v !== "")
-    .map(([k, v]) => `${k}: ${v}`)
+    .filter(([, value]) => value !== undefined && value !== null && value !== "")
+    .map(([key, value]) => `${key}: ${value}`)
     .join(" | ");
 }

@@ -65,7 +65,7 @@ export async function recordSelectionFeedback(
   const updatedHistory = [...(lead.interactionHistory || []), historyItem];
 
   // 2. If 'pass', record move to objections and learn from it
-  let updateData: any = {
+  const updateData: any = {
     interactionHistory: updatedHistory,
     updatedAt: timestamp
   };

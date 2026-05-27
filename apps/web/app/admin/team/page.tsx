@@ -36,7 +36,7 @@ export default function AdminTeamPage() {
         const q = query(collection(db, 'users'), where('role', 'in', ['admin', 'agent', 'broker']));
         const snap = await getDocs(q);
 
-        let teamMembers = snap.docs.map(d => ({ id: d.id, ...d.data() } as TeamMember));
+        const teamMembers = snap.docs.map(d => ({ id: d.id, ...d.data() } as TeamMember));
 
         // Load deal counts for each agent
         for (let i = 0; i < teamMembers.length; i++) {
@@ -91,7 +91,7 @@ export default function AdminTeamPage() {
       // Reload
       const q = query(collection(db, 'users'), where('role', 'in', ['admin', 'agent', 'broker']));
       const snap = await getDocs(q);
-      let teamMembers = snap.docs.map(d => ({ id: d.id, ...d.data() } as TeamMember));
+      const teamMembers = snap.docs.map(d => ({ id: d.id, ...d.data() } as TeamMember));
 
       // Load deal counts for each agent
       for (let i = 0; i < teamMembers.length; i++) {

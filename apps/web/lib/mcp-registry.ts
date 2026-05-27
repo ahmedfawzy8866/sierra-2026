@@ -22,17 +22,19 @@ interface MCPContext {
   listTools(serverName: string): Tool[];
 }
 
+type MCPToolHandler = (input: Record<string, unknown>) => Promise<unknown> | unknown;
+
 class MCPRegistry {
   private servers: Map<string, MCPServer> = new Map();
-  private toolHandlers: Map<string, Map<string, Function>> = new Map();
+  private toolHandlers: Map<string, Map<string, MCPToolHandler>> = new Map();
 
-  register(server: MCPServer, toolHandlers: Record<string, Function>): void {
+  register(server: MCPServer, toolHandlers: Record<string, MCPToolHandler>): void {
     if (this.servers.has(server.name)) {
       throw new Error(`MCP server "${server.name}" already registered`);
     }
 
     this.servers.set(server.name, server);
-    const handlers = new Map<string, Function>();
+    const handlers = new Map<string, MCPToolHandler>();
     for (const [toolName, handler] of Object.entries(toolHandlers)) {
       handlers.set(toolName, handler);
     }
@@ -96,7 +98,7 @@ export function initializeMCPServers(): void {
     mcpServers.forEach(({ server, name }) => {
       try {
         // Extract handlers from tools array
-        const toolHandlers: Record<string, Function> = {};
+        const toolHandlers: Record<string, MCPToolHandler> = {};
         server.tools.forEach((tool: any) => {
           if (tool.handler && typeof tool.handler === 'function') {
             toolHandlers[tool.name] = tool.handler;
