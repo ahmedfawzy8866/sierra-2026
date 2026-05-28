@@ -46,14 +46,14 @@ export function map<T, U, E>(
   result: Result<T, E>,
   fn: (data: T) => U
 ): Result<U, E> {
-  return result.ok ? ok(fn(result.data)) : err(result.error);
+  return result.ok ? { ok: true, data: fn(result.data) } : { ok: false, error: result.error };
 }
 
 export function flatMap<T, U, E>(
   result: Result<T, E>,
   fn: (data: T) => Result<U, E>
 ): Result<U, E> {
-  return result.ok ? fn(result.data) : err(result.error);
+  return result.ok ? fn(result.data) : { ok: false, error: result.error };
 }
 
 // Async helpers

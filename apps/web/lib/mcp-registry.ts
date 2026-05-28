@@ -4,11 +4,16 @@
  * Enables easy mocking in tests
  */
 
-import type { Tool } from '@anthropic-ai/sdk/resources/messages';
 import { mcp_whatsapp_messaging } from '../mcp-servers/whatsapp-messaging.mcp';
 import { mcp_sierra_deals } from '../mcp-servers/sierra-deals.mcp';
 import { mcp_stripe_payments } from '../mcp-servers/stripe-payments.mcp';
 import { mcp_docusign_signing } from '../mcp-servers/docusign-signing.mcp';
+
+export interface Tool {
+  name: string;
+  description?: string;
+  input_schema?: Record<string, unknown>;
+}
 
 interface MCPServer {
   name: string;

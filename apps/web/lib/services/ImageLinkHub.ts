@@ -49,6 +49,6 @@ export class ImageLinkHub {
       .where('signalId', '==', signalId)
       .get();
       
-    return snapshot.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+    return snapshot.docs.map((doc: any) => ({ id: doc.id, ...doc.data() }));
   }
 }
