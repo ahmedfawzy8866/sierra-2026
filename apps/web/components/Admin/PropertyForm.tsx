@@ -4,14 +4,9 @@ import {
   Property, 
   generateUnitCode, 
   generateNormalizedKey, 
-  COMPOUND_CODES, 
-  FurnishingStatus, 
-  OfferType, 
-  ListingType, 
-  PropertyStatus, 
-  Currency 
+  COMPOUND_CODES 
 } from '../../lib/firebase/inventory';
-import { X, Save, Plus, Trash2, MapPin, DollarSign, Home, Layout, Ruler, Images, Flag } from 'lucide-react';
+import { X, Save, MapPin, DollarSign, Home, Ruler, Images, Flag } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface PropertyFormProps {

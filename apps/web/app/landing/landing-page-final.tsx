@@ -1,8 +1,6 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import { useAuth } from '@/lib/AuthContext';
+import React, { useState, useEffect } from 'react';
 import { useI18n } from '@/lib/I18nContext';
-import dynamic from 'next/dynamic';
 
 // Constants & Design Tokens
 const COLORS = {
@@ -169,7 +167,7 @@ export default function LandingPage() {
   const [mode, setMode] = useState<'dark' | 'light'>('dark');
   const [formData, setFormData] = useState({ name: '', phone: '' });
   const [submitted, setSubmitted] = useState(false);
-  const [listings, setListings] = useState<any[]>([]);
+  const [_listings, _setListings] = useState<any[]>([]);
   const [mounted, setMounted] = useState(false);
 
   const T = COPY[locale as keyof typeof COPY] || COPY.en;

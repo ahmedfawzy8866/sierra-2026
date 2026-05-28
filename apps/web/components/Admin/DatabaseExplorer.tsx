@@ -4,9 +4,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { 
   Database, 
   Search, 
-  Filter, 
   ChevronRight, 
-  ChevronLeft, 
   Code, 
   RefreshCw,
   X,
@@ -14,7 +12,7 @@ import {
   ArrowRight
 } from 'lucide-react';
 import { db } from '../../lib/firebase';
-import { collection, getDocs, query, limit, startAfter, DocumentSnapshot, orderBy } from 'firebase/firestore';
+import { collection, getDocs, query, limit, orderBy } from 'firebase/firestore';
 import { COLLECTIONS } from '../../lib/models/schema';
 
 export default function DatabaseExplorer() {

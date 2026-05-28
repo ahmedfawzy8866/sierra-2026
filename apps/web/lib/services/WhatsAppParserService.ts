@@ -2,7 +2,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { adminDb } from "../server/firebase-admin";
 import { Timestamp } from "firebase-admin/firestore";
 import { COLLECTIONS, type InboundAssetSignal } from "../models/schema";
-import { generateSierraCode, buildSierraCodeMetadata, type PropertyCodeInput } from "./coding-algorithm";
+import { buildSierraCodeMetadata, type PropertyCodeInput } from "./coding-algorithm";
 import { StorageService } from "./StorageService";
 
 /**

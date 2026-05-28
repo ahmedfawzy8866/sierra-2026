@@ -5,7 +5,7 @@ import { db } from '../../lib/firebase';
 import { useI18n } from '../../lib/I18nContext';
 import { formatCompactEGP, calcROI, calcGrossYield } from '../../lib/financial-engine';
 import { motion } from 'framer-motion';
-import { Home, Users, BarChart3, ShieldCheck, TrendingUp, Activity, Target } from 'lucide-react';
+import { Home, Users, BarChart3, ShieldCheck } from 'lucide-react';
 
 interface KPIStats {
   listings: number;

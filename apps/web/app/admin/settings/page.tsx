@@ -1,7 +1,7 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { Settings, Key, Shield, Bell, Mail, Globe, Save, Check } from 'lucide-react';
+import React, { useState } from 'react';
+import { Settings, Key, Shield, Bell, Globe, Save, Check } from 'lucide-react';
 
 export default function AdminSettingsPage() {
   const [settings, setSettings] = useState({

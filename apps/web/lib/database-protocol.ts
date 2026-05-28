@@ -5,7 +5,6 @@ import {
   query,
   where,
   QueryConstraint,
-  Firestore,
 } from 'firebase/firestore';
 
 /**

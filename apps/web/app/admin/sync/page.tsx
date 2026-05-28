@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { auth, db } from '@/lib/firebase';
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
-import { RefreshCw, Users, Zap, Loader2, CheckCircle2, XCircle, Upload, CreditCard, Webhook } from 'lucide-react';
+import { RefreshCw, Users, Zap, Loader2, CheckCircle2, XCircle, CreditCard, Webhook } from 'lucide-react';
 
 interface SyncResult {
   success: boolean;

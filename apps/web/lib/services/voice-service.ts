@@ -48,7 +48,7 @@ export class VoiceService {
 
       // In a real implementation, we would upload the buffer to Firebase Storage.
       // For the "Sales Machine" prototype, we log the intent and return a mock URL.
-      const audioBuffer = await response.arrayBuffer();
+      const _audioBuffer = await response.arrayBuffer();
       
       await addDoc(collection(db, 'activities'), {
         type: 'voice_note_generated',

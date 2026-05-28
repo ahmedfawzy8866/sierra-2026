@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
-import { collection, query, where, onSnapshot, doc, updateDoc, getDoc } from 'firebase/firestore';
-import { COLLECTIONS, type Sale, type Lead } from '@/lib/models/schema';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
+import { COLLECTIONS, type Sale } from '@/lib/models/schema';
 import { finalizeSale } from '@/lib/services/closing-engine';
 import { toast } from 'react-hot-toast';
 import { motion, AnimatePresence } from 'framer-motion';

@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { parseRawTextToProperty, Property } from '../../lib/firebase/inventory';
-import { motion, AnimatePresence } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { X, Sparkles, Clipboard, CheckCircle2 } from 'lucide-react';
 import PropertyForm from './PropertyForm';
 

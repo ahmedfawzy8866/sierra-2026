@@ -163,7 +163,7 @@ Output the response as a single cohesive paragraph.`;
 /**
  * Automates the creation of a 'Viewing Reward' voucher for high-match leads.
  */
-async function triggerIncentive(leadId: string, proposalId: string) {
+async function triggerIncentive(leadId: string, _proposalId: string) {
   const code = "SB-VIP-" + Math.random().toString(36).substring(2, 7).toUpperCase();
   
   const voucher: Partial<Voucher> = {

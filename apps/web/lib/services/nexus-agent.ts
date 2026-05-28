@@ -6,7 +6,7 @@
 import { GoogleAIService } from '../server/google-ai';
 import { SkillLoader } from './skill-loader';
 import { db } from '../firebase';
-import { collection, query, where, getDocs, limit, doc, updateDoc, serverTimestamp } from 'firebase/firestore';
+import { collection, query, where, getDocs, limit } from 'firebase/firestore';
 import { COLLECTIONS, type Lead } from '../models/schema';
 
 export interface NexusResponse {

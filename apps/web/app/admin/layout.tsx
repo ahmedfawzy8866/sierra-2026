@@ -3,12 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname, useRouter } from 'next/navigation';
-import { auth, db } from '@/lib/firebase';
+import { auth } from '@/lib/firebase';
 import { onAuthStateChanged, signOut } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
 import {
   LayoutDashboard, Building2, Users, RefreshCw,
-  ImageIcon, Settings, LogOut, Menu, X, Shield, AlertTriangle
+  ImageIcon, Settings, LogOut, Menu, X, Shield
 } from 'lucide-react';
 
 const NAV_ITEMS = [

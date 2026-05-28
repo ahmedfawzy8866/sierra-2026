@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '../../lib/firebase';
 import { collection, query, onSnapshot, addDoc, serverTimestamp, Timestamp } from 'firebase/firestore';
-import { Ticket, Send, CheckCircle, Clock, Gift, Crown, Info } from 'lucide-react';
+import { Ticket, Clock, Gift, Crown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 interface Voucher {
@@ -17,7 +17,7 @@ interface Voucher {
 
 export default function VoucherSystem() {
   const [vouchers, setVouchers] = useState<Voucher[]>([]);
-  const [loading, setLoading] = useState(true);
+  const [_loading, setLoading] = useState(true);
 
   useEffect(() => {
     const q = query(collection(db, 'vouchers'));

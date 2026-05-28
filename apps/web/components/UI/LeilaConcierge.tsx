@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, X, Sparkles, Send, User } from 'lucide-react';
+import { X, Sparkles, Send, User } from 'lucide-react';
 import { useSierra } from '@/lib/hooks/useSierra';
 import BrandLogo from '@/components/UI/BrandLogo';
 
@@ -13,7 +13,7 @@ import BrandLogo from '@/components/UI/BrandLogo';
 export default function SierraConcierge() {
   const [isOpen, setIsOpen] = useState(false);
   const [inputValue, setInputValue] = useState('');
-  const { messages, isTyping, handleResponse, stage } = useSierra();
+  const { messages, isTyping, handleResponse, stage: _stage } = useSierra();
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

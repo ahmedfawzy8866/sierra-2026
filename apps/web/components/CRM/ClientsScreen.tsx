@@ -5,9 +5,7 @@ import {
   collection, 
   query, 
   onSnapshot, 
-  orderBy,
-  where,
-  Timestamp 
+  orderBy 
 } from 'firebase/firestore';
 import { useI18n } from '@/lib/I18nContext';
 
@@ -25,7 +23,7 @@ interface Stakeholder {
 }
 
 export default function ClientsScreen() {
-  const { t, locale } = useI18n();
+  const { t: _t, locale } = useI18n();
   const [stakeholders, setStakeholders] = useState<Stakeholder[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState('');
@@ -111,7 +109,7 @@ export default function ClientsScreen() {
             </tr>
           </thead>
           <tbody className="text-sm">
-            {filtered.map((s, idx) => (
+            {filtered.map((s, _idx) => (
               <tr key={s.id} className="border-t border-white/5 hover:bg-white/[0.03] transition-colors group cursor-pointer">
                 <td className="px-6 py-5">
                   <div className="flex items-center gap-3">

@@ -114,7 +114,7 @@ export class CloserAgent {
   /**
    * S9.2: Initiates the E-Signature workflow (Docusign/Composio).
    */
-  async initiateSigning(dealId: string, leadEmail: string) {
+  async initiateSigning(dealId: string, _leadEmail: string) {
     try {
       console.info(`[CloserAgent] S9.2 Initiating Signing: ${dealId}`);
       

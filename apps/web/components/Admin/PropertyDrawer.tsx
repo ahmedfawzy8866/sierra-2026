@@ -1,8 +1,8 @@
 "use client";
 import React from 'react';
-import { Property, generateUnitCode } from '../../lib/firebase/inventory';
+import { Property } from '../../lib/firebase/inventory';
 import { motion, AnimatePresence } from 'framer-motion';
-import { X, MapPin, Ruler, Bed, Bath, Edit3, Globe, Star, Share2, Trash2 } from 'lucide-react';
+import { X, MapPin, Ruler, Bed, Bath, Edit3, Globe, Star, Trash2 } from 'lucide-react';
 
 interface PropertyDrawerProps {
   property: Property | null;

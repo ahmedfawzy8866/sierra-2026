@@ -155,7 +155,7 @@ export default function SierraBluUnified() {
                 <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjMwMCIgdmlld0JveD0iMCAwIDQwMCAzMDAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjRjRGMEU4Ii8+Cjwvc3ZnPg==')] bg-cover opacity-30" />
 
                 {/* Property Pins */}
-                {properties.slice(0, 8).map((prop, idx) => (
+                {properties.slice(0, 8).map((prop, _idx) => (
                   <div
                     key={prop.id}
                     className="absolute w-12 h-12 flex items-center justify-center transform -translate-x-1/2 -translate-y-1/2 cursor-pointer group"

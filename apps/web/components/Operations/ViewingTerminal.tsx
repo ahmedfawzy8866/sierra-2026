@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
-import { collection, query, where, onSnapshot, doc, updateDoc } from 'firebase/firestore';
+import { collection, query, where, onSnapshot } from 'firebase/firestore';
 import { COLLECTIONS, type Viewing } from '@/lib/models/schema';
 import { completeViewing } from '@/lib/services/viewing-engine';
 import { toast } from 'react-hot-toast';

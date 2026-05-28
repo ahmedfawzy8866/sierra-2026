@@ -4,10 +4,10 @@ import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
 import { Property } from '../../lib/models/schema';
-import { collection, query, onSnapshot, where } from 'firebase/firestore';
+import { collection, query, onSnapshot } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
-import { motion, AnimatePresence } from 'framer-motion';
-import { Home, Bath, Bed, Maximize, Map as MapIcon, Filter, Layers, Rotate3d as Rotate3D } from 'lucide-react';
+import { motion } from 'framer-motion';
+import { Home, Bed, Rotate3d as Rotate3D } from 'lucide-react';
 import { useI18n } from '../../lib/I18nContext';
 
 // Fix for default Leaflet markers in Next.js
@@ -45,8 +45,8 @@ export default function MapExplorer({ onViewTour }: { onViewTour?: (url: string)
   const { t } = useI18n();
   const [properties, setProperties] = useState<Property[]>([]);
   const [filteredType, setFilteredType] = useState<'all' | 'resale' | 'rent'>('all');
-  const [loading, setLoading] = useState(true);
-  const [center, setCenter] = useState<[number, number]>([30.0131, 31.5020]); // New Cairo Center
+  const [_loading, setLoading] = useState(true);
+  const [center, _setCenter] = useState<[number, number]>([30.0131, 31.5020]); // New Cairo Center
 
   useEffect(() => {
     const q = query(collection(db, 'properties'));

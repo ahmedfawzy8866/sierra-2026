@@ -12,7 +12,7 @@ const makeUnavailable = (name: string): any =>
     {
       get(_target, prop) {
         if (prop === 'then') return undefined;
-        return (...args: any[]) => {
+        return (..._args: any[]) => {
           console.warn(`⚠️ [firebase-admin] ${name}.${String(prop)} called but not initialized.`);
           const chainable = {
             get: () => Promise.resolve({ size: 0, empty: true, forEach: () => {}, exists: false, data: () => ({}) }),

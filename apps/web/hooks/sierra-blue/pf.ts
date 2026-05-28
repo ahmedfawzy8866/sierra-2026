@@ -206,10 +206,6 @@ import {
   where as _where,
   orderBy as _orderBy,
   onSnapshot as _onSnapshot,
-  updateDoc as _updateDoc,
-  doc as _doc,
-  serverTimestamp as _serverTimestamp,
-  DocumentData as _DocumentData,
 } from "firebase/firestore";
 import type { PFListing } from "../../lib/integrations/property-finder";
 import { PFIntegrationService } from "../../lib/integrations/property-finder";
@@ -283,7 +279,7 @@ export function usePFListings(options: {
 
   // Fetch PF analytics for a listing (TODO: integrate with pfClient when analytics API available)
   const fetchAnalytics = useCallback(
-    async (pfListingId: string) => {
+    async (_pfListingId: string) => {
       return {
         views: 0,
         leads: 0,

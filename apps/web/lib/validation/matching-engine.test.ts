@@ -7,7 +7,7 @@
 
 import { runMatchingForLead } from '@/lib/services/matching-engine';
 import { db } from '@/lib/firebase';
-import { collection, addDoc, deleteDoc, doc, getDocs, query, where } from 'firebase/firestore';
+import { collection, addDoc, deleteDoc, doc } from 'firebase/firestore';
 import type { Lead, Unit } from '@/lib/models/schema';
 
 /**

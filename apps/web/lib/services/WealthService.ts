@@ -4,7 +4,7 @@
  */
 
 import { IntelligentAsset } from '../models/intelligence';
-import { InventoryService, Property } from './InventoryService';
+import { InventoryService } from './InventoryService';
 import { analyzeAssetFinancials } from './roi-service';
 import { Unit } from '../models/schema';
 
@@ -12,7 +12,7 @@ export const WealthService = {
   /**
    * Fetches the top curated assets and runs a neural ROI analysis on each.
    */
-  async getCuratedPortfolio(count: number = 6, market?: 'egypt' | 'uae'): Promise<IntelligentAsset[]> {
+  async getCuratedPortfolio(count: number = 6, _market?: 'egypt' | 'uae'): Promise<IntelligentAsset[]> {
     const rawAssets = await InventoryService.getFeaturedListings(count);
     
     const enriched = await Promise.all(

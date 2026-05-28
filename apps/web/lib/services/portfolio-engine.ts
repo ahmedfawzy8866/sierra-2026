@@ -16,10 +16,9 @@ import {
   serverTimestamp,
   Timestamp,
 } from 'firebase/firestore';
-import { COLLECTIONS, type Lead, type Unit, type Proposal } from '../models/schema';
+import { COLLECTIONS, type Lead, type Unit } from '../models/schema';
 import { GoogleAIService } from '../server/google-ai';
 import { analyzeAssetFinancials } from './roi-service';
-import { TelegramAlertService } from './telegram-alert-service';
 
 export interface ConciergeSelection {
   id: string;

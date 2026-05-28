@@ -13,7 +13,7 @@ interface ActivityItem {
   type?: 'sale' | 'listing' | 'lead' | 'system';
 }
 
-const getActivityIcon = (text: string, color: string) => {
+const getActivityIcon = (text: string, _color: string) => {
   const lowerText = text.toLowerCase();
   if (lowerText.includes('sale') || lowerText.includes('transaction')) return <ArrowUpRight size={14} />;
   if (lowerText.includes('listing') || lowerText.includes('unit')) return <CheckCircle2 size={14} />;

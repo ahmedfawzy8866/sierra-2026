@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import { db } from '@/lib/firebase';
 import { doc, getDoc, updateDoc, serverTimestamp } from 'firebase/firestore';
-import { ArrowLeft, Mail, Phone, MapPin, Calendar, Edit2, Save, X } from 'lucide-react';
+import { ArrowLeft, Mail, Phone, Calendar, Edit2, Save, X } from 'lucide-react';
 
 interface Lead {
   id: string;

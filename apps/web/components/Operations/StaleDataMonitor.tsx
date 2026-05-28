@@ -4,7 +4,7 @@ import React, { useEffect, useState } from 'react';
 import { db } from '../../lib/firebase';
 import { collection, query, where, orderBy, onSnapshot, Timestamp, updateDoc, doc, serverTimestamp } from 'firebase/firestore';
 import { motion, AnimatePresence } from 'framer-motion';
-import { AlertTriangle, RefreshCw, CheckCircle, Clock, Search, Filter, Trash2 } from 'lucide-react';
+import { AlertTriangle, RefreshCw, CheckCircle, Clock, Filter, Trash2 } from 'lucide-react';
 import { COLLECTIONS, Unit } from '../../lib/models/schema';
 
 export default function StaleDataMonitor() {

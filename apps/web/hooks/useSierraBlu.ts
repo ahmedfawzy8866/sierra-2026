@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
-import { collection, query, where, onSnapshot, doc, getDoc } from 'firebase/firestore';
+import { collection, query, onSnapshot, doc, getDoc } from 'firebase/firestore';
 
 /**
  * useSierraBlu
