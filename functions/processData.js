@@ -1,5 +1,6 @@
 const functions = require('firebase-functions');
 const admin = require('firebase-admin');
+const { normalizeProperty } = require('./transform');
 
 if (!admin.apps.length) {
     admin.initializeApp();
@@ -22,14 +23,11 @@ exports.processDataForApp = functions.firestore
 
         try {
             // --- CLEANING & NORMALIZATION LOGIC ---
-            // Example: standardizing names, calculating values, mapping to Liela/Sierra format
+            // Standardize names, coerce values, and map to the Liela/Sierra
+            // shape. The pure rules live in ./transform so they can be tested.
             const processedData = {
-                title: rawData.title || 'Untitled Property',
-                price: parseFloat(rawData.price) || 0,
-                location: rawData.location || 'Unknown',
-                source: rawData.source || 'Scraper Bot',
+                ...normalizeProperty(rawData),
                 processedAt: admin.firestore.FieldValue.serverTimestamp(),
-                isAvailable: true,
                 // Add specific fields required by your frontend
             };
 

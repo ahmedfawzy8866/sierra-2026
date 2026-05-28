@@ -7,6 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
+    "type-check": "tsc --noEmit",
     "fix-build": "rimraf .next && npm run build",
     "check-node": "node scripts/diagnostic.mjs",
     "test": "jest --testPathPattern=__tests__",

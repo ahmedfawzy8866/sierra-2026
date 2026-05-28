@@ -36,6 +36,7 @@
     "agents/**/*",
     "apps/**/*",
     "bots/**/*",
-    "functions/**/*"
+    "functions/**/*",
+    "public/**/*"
   ]
 }
