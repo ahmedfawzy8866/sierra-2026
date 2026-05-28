@@ -5,7 +5,10 @@
  */
 
 import { adminDb, isAdminInitialized } from '@/lib/server/firebase-admin';
-import { CollectionReference, DocumentData, Query, QueryConstraint } from 'firebase-admin/firestore';
+import { CollectionReference, DocumentData, Query } from 'firebase-admin/firestore';
+
+// Type alias for Firebase Admin query constraints
+export type QueryConstraint = any;
 
 export interface Repository<T extends DocumentData> {
   findById(id: string): Promise<T | null>;
@@ -29,7 +32,7 @@ export class FirestoreRepository<T extends DocumentData> implements Repository<T
   async findById(id: string): Promise<T | null> {
     try {
       const doc = await this.getCollection().doc(id).get();
-      return doc.exists ? ({ id: doc.id, ...doc.data() } as T) : null;
+      return doc.exists ? ({ id: doc.id, ...doc.data() } as unknown as T) : null;
     } catch (error) {
       console.error(`[Repository] Error finding ${this.collectionName}/${id}:`, error);
       throw error;
@@ -71,8 +74,8 @@ export class FirestoreRepository<T extends DocumentData> implements Repository<T
         ...data,
         createdAt: new Date(),
         updatedAt: new Date(),
-      } as T);
-      return { id: docRef.id, ...data, createdAt: new Date(), updatedAt: new Date() } as T;
+      } as any);
+      return { id: docRef.id, ...data, createdAt: new Date(), updatedAt: new Date() } as unknown as T;
     } catch (error) {
       console.error(`[Repository] Error creating in ${this.collectionName}:`, error);
       throw error;

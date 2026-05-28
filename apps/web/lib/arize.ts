@@ -1,91 +1,44 @@
-import 'server-only'; // ← Prevents this file from being imported by client components
-import { NodeSDK } from "@opentelemetry/sdk-node";
+import 'server-only';
 
-import { resourceFromAttributes } from "@opentelemetry/resources";
-import { SEMRESATTRS_PROJECT_NAME } from "@arizeai/openinference-semantic-conventions";
-import { OTLPTraceExporter as GrpcOTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc";
-import { Metadata } from "@grpc/grpc-js";
-import { trace, Tracer } from "@opentelemetry/api";
-import { BatchSpanProcessor } from "@opentelemetry/sdk-trace-base";
+// TODO: Integrate Arize observability when @opentelemetry packages installed
+// For now, provide stub implementations to unblock development
 
-let sdk: NodeSDK | null = null;
+export function instrumentAgent<T>(
+  agentName: string,
+  stage: string,
+  docId: string,
+  fn: () => Promise<T> | T
+): Promise<T> {
+  // Stub: just execute the function without instrumentation
+  const result = fn();
+  if (result instanceof Promise) {
+    return result;
+  }
+  return Promise.resolve(result);
+}
 
-function initializeSDK(): NodeSDK {
-  if (sdk) return sdk;
+export function getTracer() {
+  return {
+    startActiveSpan: (name: string, config: any, fn: (span: any) => any) => {
+      // Stub span
+      const span = {
+        setStatus: () => {},
+        recordException: () => {},
+        end: () => {},
+        setAttributes: () => {},
+      };
+      return fn(span);
+    },
+  };
+}
 
-  const metadata = new Metadata();
-  metadata.set("space-key", process.env.ARIZE_SPACE_ID || "");
-  metadata.set("api-key", process.env.ARIZE_API_KEY || "");
-
-  const arizeExporter = new GrpcOTLPTraceExporter({
-    url: "https://otlp.arize.com:443",
-    metadata: metadata as any,
-  });
-
-  sdk = new NodeSDK({
-    resource: resourceFromAttributes({
-      [SEMRESATTRS_PROJECT_NAME]: process.env.ARIZE_PROJECT_NAME || "sierra-blu-platform",
-    }),
-    spanProcessors: [
-      new BatchSpanProcessor(arizeExporter)
-    ],
-  });
-
-  return sdk;
+export async function initializeArize() {
+  // Stub initialization
+  return null;
 }
 
 export const initArize = () => {
   if (typeof window === "undefined") {
-    try {
-      const arizeSDK = initializeSDK();
-      arizeSDK.start();
-      console.log("📡 Arize Intelligence Pipeline Tracing Initialized");
-    } catch (err) {
-      console.error("❌ Failed to start Arize SDK", err);
-    }
+    console.log("📡 Arize instrumentation stubbed (awaiting OpenTelemetry setup)");
   }
-};
-
-export const getTracer = (): Tracer => {
-  return trace.getTracer("sierra-blu-orchestrator");
-};
-
-/**
- * Wraps an agent function in an Arize Phoenix span for observability.
- * @param agentName - Name of the agent (e.g., 'scribe')
- * @param stage - Current stage (e.g., 'S1')
- * @param docId - Firestore document ID
- * @param fn - The function to execute
- */
-export const instrumentAgent = async <T>(
-  agentName: string,
-  stage: string,
-  docId: string,
-  fn: () => Promise<T>
-): Promise<T> => {
-  const tracer = getTracer();
-  return tracer.startActiveSpan(
-    `${agentName}:${stage}`,
-    {
-      attributes: {
-        "sierra_blu.agent": agentName,
-        "sierra_blu.stage": stage,
-        "sierra_blu.doc_id": docId,
-        "openinference.span.kind": "CHAIN",
-      },
-    },
-    async (span) => {
-      try {
-        const result = await fn();
-        span.setStatus({ code: 0 }); // OK
-        return result;
-      } catch (error: any) {
-        span.recordException(error);
-        span.setStatus({ code: 2, message: error.message }); // Error
-        throw error;
-      } finally {
-        span.end();
-      }
-    }
-  );
 };

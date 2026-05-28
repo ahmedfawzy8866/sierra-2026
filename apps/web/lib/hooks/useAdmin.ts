@@ -50,7 +50,7 @@ export function useAdmin() {
       }
 
       const snap = await getDocs(q);
-      const data = snap.docs.map(d => ({ id: d.id, ...d.data() } as T));
+      const data = snap.docs.map(d => ({ id: d.id, ...(d.data() as any) } as unknown as T));
 
       return { success: true, data };
     } catch (err) {
@@ -66,7 +66,7 @@ export function useAdmin() {
   ): Promise<AdminResult> => {
     try {
       const docRef = doc(db, collectionName, docId);
-      await setDoc(docRef, data);
+      await setDoc(docRef, data as any);
       return { success: true };
     } catch (err) {
       return { success: false, error: err instanceof Error ? err.message : 'Unknown error' };
@@ -81,7 +81,7 @@ export function useAdmin() {
   ): Promise<AdminResult> => {
     try {
       const docRef = doc(db, collectionName, docId);
-      await updateDoc(docRef, updates);
+      await updateDoc(docRef, updates as any);
       return { success: true };
     } catch (err) {
       return { success: false, error: err instanceof Error ? err.message : 'Unknown error' };

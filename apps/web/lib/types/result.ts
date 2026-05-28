@@ -46,7 +46,7 @@ export function map<T, U, E>(
   result: Result<T, E>,
   fn: (data: T) => U
 ): Result<U, E> {
-  return result.ok ? ok(fn(result.data)) : err(result.error);
+  return result.ok ? ok(fn(result.data)) : { ok: false, error: result.error };
 }
 
 export function flatMap<T, U, E>(

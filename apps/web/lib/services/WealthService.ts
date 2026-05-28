@@ -29,7 +29,6 @@ export const WealthService = {
           finishingType: (asset.finishingType as any) || "not-finished",
           category: 'residential',
           ownerType: 'broker',
-          market: 'egypt', // Default
           bedrooms: asset.bedrooms || 0,
           bathrooms: 0,
           amenities: [],

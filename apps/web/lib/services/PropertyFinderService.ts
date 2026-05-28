@@ -91,7 +91,7 @@ export class PropertyFinderService {
 
     return {
       success: true,
-      externalId: result.result?.reference_number,
+      externalId: result.result?.reference || result.result?.id,
     };
   }
 }
