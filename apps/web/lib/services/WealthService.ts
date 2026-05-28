@@ -32,8 +32,7 @@ export const WealthService = {
           bedrooms: asset.bedrooms || 0,
           bathrooms: 0,
           amenities: [],
-          images: [],
-          currency: 'EGP'
+          images: []
         };
 
         try {
