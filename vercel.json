@@ -16,11 +16,11 @@
       "schedule": "0 0 * * *"
     },
     {
-      "path": "/api/cron/sync-properties",
+      "path": "/api/cron/sync-listings",
       "schedule": "0 6 * * *"
     },
     {
-      "path": "/api/cron/analytics-export",
+      "path": "/api/cron/maintenance",
       "schedule": "0 23 * * *"
     }
   ],

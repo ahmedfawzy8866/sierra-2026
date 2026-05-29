@@ -26,7 +26,9 @@ const nextConfig: NextConfig = {
     'firebase-admin',
   ],
   typescript: {
-    ignoreBuildErrors: true,
+    // Type errors fail the build. The CI `type-check` job (tsc --noEmit) is the
+    // gate; keep this false so production builds can't ship type regressions.
+    ignoreBuildErrors: false,
   },
   images: {
     remotePatterns: [
