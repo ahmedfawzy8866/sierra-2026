@@ -31,7 +31,7 @@ import KPIProgressBar from '../UI/KPIProgressBar';
 
 export default function LeadsFlow() {
   const { user } = useAuth();
-  const { t, locale, dir } = useI18n();
+  const { t, locale: _locale, dir } = useI18n();
   const [leads, setLeads] = useState<any[]>([]);
   const [activeLead, setActiveLead] = useState<any>(null);
   const [isAddingLead, setIsAddingLead] = useState(false);

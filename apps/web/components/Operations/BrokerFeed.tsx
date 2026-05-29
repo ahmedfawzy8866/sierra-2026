@@ -1,7 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageSquare, Trash, ArrowRight, ShieldCheck, CheckCircle2, Zap, AlertTriangle, Smile, Meh, Angry, Flame } from 'lucide-react';
+import { MessageSquare, Trash, ShieldCheck, Zap, Smile, Meh, Angry, Flame } from 'lucide-react';
 import { db } from '../../lib/firebase';
 import { collection, query, orderBy, limit, onSnapshot, deleteDoc, doc, Timestamp, addDoc, serverTimestamp } from 'firebase/firestore';
 import { BrokerListing, COLLECTIONS } from '../../lib/models/schema';

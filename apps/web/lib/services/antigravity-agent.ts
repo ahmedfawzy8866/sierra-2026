@@ -10,7 +10,7 @@ import { COLLECTIONS, type Lead, type Unit } from '../models/schema';
 import { generateOptionsPackage } from './sales-engine';
 import { runMatchingForLead } from './matching-engine';
 import { assessLegalRisk, generateLegalSummary } from './legal-brain';
-import { extractProfileFromChat, getNextInterviewQuestion } from './profiling-service';
+import { extractProfileFromChat } from './profiling-service';
 import { doc, updateDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
 
 export interface AgentResponse {
@@ -281,7 +281,7 @@ async function handleStakeholderInterview(chatId: number, text: string): Promise
   await updateDoc(leadRef, updates);
 
   // 4. Get Next Question - Using Sierra's Editorial Luxury Persona
-  const welcomeSequence = `
+  const _welcomeSequence = `
     Based on the current profile summary: "${profile.summary}",
     generate a warm, professional response in refined English with quiet confidence.
     If the lead is new, follow the 3-message welcome sequence:

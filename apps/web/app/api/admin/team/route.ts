@@ -1,7 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { verifyAdminRequest } from '@/lib/server/auth-guard';
 import { adminDb } from '@/lib/server/firebase-admin';
-import { adminAuth } from '@/lib/server/firebase-admin';
 
 export async function GET(req: NextRequest) {
   // Verify admin authentication

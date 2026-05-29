@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import Link from 'next/link';
 import { useI18n } from '@/lib/I18nContext';
 import { useTheme } from 'next-themes';
 import ShieldLogo from '@/components/Landing/ShieldLogo';

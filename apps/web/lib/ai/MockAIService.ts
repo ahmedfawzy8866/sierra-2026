@@ -10,8 +10,8 @@ export class MockAIService implements AIService {
   async generateContent(
     agent: string,
     task: string,
-    prompt: AIPrompt,
-    options?: AIOptions
+    _prompt: AIPrompt,
+    _options?: AIOptions
   ): Promise<string> {
     this.callLog.push({ agent, task, timestamp: new Date() });
 
@@ -66,7 +66,7 @@ export class MockAIService implements AIService {
   async analyzeImage(
     imageUrl: string,
     prompt: string,
-    options?: AIOptions
+    _options?: AIOptions
   ): Promise<string> {
     this.callLog.push({
       agent: 'image-analyzer',

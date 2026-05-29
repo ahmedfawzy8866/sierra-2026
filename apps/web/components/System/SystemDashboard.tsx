@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Activity, ShieldCheck, Cpu, Globe, Database, ArrowRight, Settings } from 'lucide-react';
+import { Activity, ShieldCheck, Cpu, Globe, Database } from 'lucide-react';
 import MaintenanceMonitor from './MaintenanceMonitor';
 
 export default function SystemDashboard() {

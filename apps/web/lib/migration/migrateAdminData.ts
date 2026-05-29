@@ -16,7 +16,6 @@ import {
   collection,
   getDocs,
   addDoc,
-  updateDoc,
   doc,
   serverTimestamp,
   writeBatch,

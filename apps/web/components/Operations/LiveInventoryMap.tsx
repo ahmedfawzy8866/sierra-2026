@@ -1,14 +1,12 @@
 "use client";
-import React, { useState, useEffect, useCallback, useMemo } from 'react';
-import { MapContainer, TileLayer, Marker, Popup, Circle, useMap } from 'react-leaflet';
+import React, { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, useMap } from 'react-leaflet';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
-import { collection, query, onSnapshot, where, getDocs } from 'firebase/firestore';
+import { collection, onSnapshot, getDocs } from 'firebase/firestore';
 import { db } from '../../lib/firebase';
 import { motion, AnimatePresence } from 'framer-motion';
-import {
-  MapPin, Layers, RefreshCw, ExternalLink, Home, TrendingUp,
-  Wifi, WifiOff, ChevronRight, X, Building2, Search, Filter, Info
+import { ChevronRight
 } from 'lucide-react';
 
 // ─── GEOGRAPHIC ZONES (fallback — overridden by Firestore `zones` collection) ──

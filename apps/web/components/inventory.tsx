@@ -8,7 +8,7 @@ import { getProperties, Property, PropertyFilters } from '@/lib/firebase/invento
 export default function InventoryGrid() {
   const [properties, setProperties] = useState<Property[]>([]);
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState<PropertyFilters>({});
+  const [filters, _setFilters] = useState<PropertyFilters>({});
   const [searchQuery, setSearchQuery] = useState('');
 
   useEffect(() => {

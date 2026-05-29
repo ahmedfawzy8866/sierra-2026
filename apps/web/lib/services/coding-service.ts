@@ -3,7 +3,7 @@
  * Implements the Urban Hub OS Smart Coding System (V2.0).
  */
 
-import { PropertyType, FurnishingCode, SierraFeatureCode } from '../models/schema';
+import { FurnishingCode, SierraFeatureCode } from '../models/schema';
 
 export interface CodingParams {
   compound: string;
@@ -17,7 +17,7 @@ export interface CodingParams {
 }
 
 export function generateSmartCode(params: CodingParams, region: 'matareya' | 'nexus' = 'nexus'): string {
-  const { compound, building, tower, type, unitNumber, floor, rooms, price } = params;
+  const { compound, building, tower, type, unitNumber, floor: _floor, rooms, price } = params;
 
   // 1. Matareya / Cairo Plaza Specific Pattern
   // [Compound]-[Building/Tower]-[Type]-[Unit#]
@@ -33,7 +33,7 @@ export function generateSmartCode(params: CodingParams, region: 'matareya' | 'ne
   // [Compound]-[Bedrooms][Furnish]-[PriceShort]
   // Example: VS-3S-45K
   const compCode = getCompoundShortCode(compound);
-  const furnishedCode = params.type === 'commercial' ? 'OFF' : (getFurnishingCode(params.floor || '') || 'U'); 
+  const _furnishedCode = params.type === 'commercial' ? 'OFF' : (getFurnishingCode(params.floor || '') || 'U'); 
   // Wait, user example VS-3S-45K. 3S = 3 Bedrooms, Semi-furnished.
   const bedsCode = rooms ? `${rooms}` : 'X';
   const furnLetter = params.floor?.toUpperCase().includes('F') ? 'F' : (params.floor?.toUpperCase().includes('S') ? 'S' : 'U');

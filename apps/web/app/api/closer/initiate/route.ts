@@ -7,7 +7,7 @@ import { closerAgent } from '@/agents/stage-9-closer/CloserAgent';
  */
 export async function POST(request: NextRequest) {
   try {
-    const { leadId, propertyCode, visitorName, visitorEmail, visitorPhone } = await request.json();
+    const { leadId, propertyCode, visitorName, _visitorEmail, _visitorPhone } = await request.json();
 
     if (!propertyCode || !visitorName) {
       return NextResponse.json({ error: 'Missing lead or property identity.' }, { status: 400 });

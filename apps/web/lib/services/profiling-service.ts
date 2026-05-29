@@ -4,8 +4,6 @@
  */
 
 import { GoogleAIService } from '../server/google-ai';
-import { db } from '../firebase';
-import { doc, updateDoc, serverTimestamp, getDoc } from 'firebase/firestore';
 
 export interface ExtractedProfile {
   nationality?: string;

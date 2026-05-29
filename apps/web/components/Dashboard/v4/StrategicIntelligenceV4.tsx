@@ -1,6 +1,6 @@
 import React from 'react';
 import { AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
-import { Target, TrendingUp, Users, MapPin } from 'lucide-react';
+import { Target } from 'lucide-react';
 
 const data = [
   { name: 'S1', pipe: 4000, stake: 2400 },

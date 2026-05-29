@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { db } from '@/lib/firebase';
 import { collection, getDocs, limit, orderBy, query, where } from 'firebase/firestore';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sparkles, Brain, Zap, AlertCircle, TrendingUp, RefreshCw, ChevronRight, Activity } from 'lucide-react';
+import { Brain, Zap, AlertCircle, TrendingUp, RefreshCw, ChevronRight, Activity } from 'lucide-react';
 
 interface Insight {
   type: 'opportunity' | 'warning' | 'tip';

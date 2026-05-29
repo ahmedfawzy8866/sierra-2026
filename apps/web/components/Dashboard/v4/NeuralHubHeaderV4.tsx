@@ -1,5 +1,5 @@
 import React from 'react';
-import { Search, Bell, Grid, User, LayoutDashboard, Globe, Shield, Zap } from 'lucide-react';
+import { Search, Bell, Grid, User, Shield, Zap } from 'lucide-react';
 
 export const NeuralHubHeaderV4: React.FC = () => {
   return (

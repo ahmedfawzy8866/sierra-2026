@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
-import { collection, query, getDocs, where, getCountFromServer } from 'firebase/firestore';
-import { BarChart, Bar, LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
-import { TrendingUp, Users, Home, Handshake, DollarSign } from 'lucide-react';
+import { collection, query, where, getCountFromServer } from 'firebase/firestore';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
+import { Users, Home, Handshake, DollarSign } from 'lucide-react';
 
 interface ReportMetric {
   label: string;

@@ -4,7 +4,7 @@
  */
 
 import { GoogleAIService } from '../server/google-ai';
-import { Unit, PropertyType, PropertyStatus } from '../models/schema';
+import { Unit } from '../models/schema';
 
 export interface EncodedAsset extends Partial<Unit> {
   rawText: string;

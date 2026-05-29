@@ -1,6 +1,5 @@
 "use client";
 import React, { useEffect, useRef, useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
 import { useI18n } from '../../lib/I18nContext';
 import { Pause, Play, X, Move } from 'lucide-react';
 

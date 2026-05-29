@@ -1,9 +1,10 @@
 {
+  "$schema": "https://turbo.build/schema.json",
   "globalDependencies": [".env.local", ".env"],
-  "pipeline": {
+  "tasks": {
     "dev": {
       "cache": false,
-      "interactive": true
+      "persistent": true
     },
     "build": {
       "outputs": [".next/**", "dist/**", "build/**"],
@@ -11,16 +12,13 @@
       "cache": true
     },
     "lint": {
-      "outputs": [".eslintcache"],
       "cache": true
     },
     "test": {
-      "outputs": ["coverage/**"],
       "cache": true,
       "dependsOn": ["^build"]
     },
     "test:ci": {
-      "outputs": ["coverage/**"],
       "cache": true,
       "dependsOn": ["^build"]
     },

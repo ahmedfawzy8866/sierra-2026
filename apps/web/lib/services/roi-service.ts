@@ -3,7 +3,7 @@
  * Stage 7 Core: Financial ROI & Portfolio Analysis
  */
 
-import { type Unit, type IntelligenceObject } from '../models/schema';
+import { type Unit } from '../models/schema';
 import { GoogleAIService } from '../server/google-ai';
 import { FinancialService } from './financial-service';
 

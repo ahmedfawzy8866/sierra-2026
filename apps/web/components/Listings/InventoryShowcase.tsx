@@ -10,7 +10,7 @@ import React, { useMemo } from 'react';
 import { motion } from 'framer-motion';
 import { useSierraBlu } from '@/hooks/useSierraBlu';
 import { LuxuryCard, EditorialHeading, SectionBadge } from '@/components/UI/LuxurySkeleton';
-import { MapPin, TrendingUp, ArrowRight } from 'lucide-react';
+import { MapPin, ArrowRight } from 'lucide-react';
 
 export default function InventoryShowcase() {
   const { units, loading, error } = useSierraBlu();

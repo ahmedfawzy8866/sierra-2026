@@ -3,7 +3,7 @@
  * Orchestrates contract signing via Docusign API.
  */
 
-import { pfClient } from '../lib/property-finder-client'; // Placeholder for Docusign client
+// Placeholder for Docusign client
 
 export const mcp_docusign_signing = {
   name: 'docusign-signing',

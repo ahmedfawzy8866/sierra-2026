@@ -7,7 +7,6 @@ import {
   TrendingUp, 
   Activity as ActivityIcon, 
   ShieldCheck,
-  Zap,
   ArrowUpRight,
   Clock,
   Wifi,

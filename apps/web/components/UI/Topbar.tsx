@@ -6,7 +6,7 @@ import { useI18n } from '../../lib/I18nContext';
 import { useTheme } from 'next-themes';
 import BrandLogo from './BrandLogo';
 import LanguageToggle from './LanguageToggle';
-import { Search, Bell, Moon, Sun, Settings } from 'lucide-react';
+import { Search, Bell, Moon, Sun } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 interface TopbarProps {

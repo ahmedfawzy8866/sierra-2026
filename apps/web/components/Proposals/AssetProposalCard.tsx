@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MapPin, Maximize, Bed, Bath, TrendingUp, ShieldCheck, ChevronRight, Info } from 'lucide-react';
+import { MapPin, Maximize, Bed, TrendingUp, ShieldCheck, ChevronRight, Info } from 'lucide-react';
 import { Unit } from '../../lib/models/schema';
 
 interface Props {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { CheckCircle2, Clock, MapPin, DollarSign, ArrowRight } from 'lucide-react';
+import { CheckCircle2, MapPin, ArrowRight } from 'lucide-react';
 
 const assets = [
   { id: 1, name: 'The Azure Penthouse', location: 'Dubai Marina', value: '$12.4M', status: 'Finalizing', progress: 92 },

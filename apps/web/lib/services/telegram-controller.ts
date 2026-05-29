@@ -5,7 +5,7 @@
 
 import { db } from '../firebase';
 import { doc, getDoc, updateDoc, collection, query, where, getDocs } from 'firebase/firestore';
-import { COLLECTIONS, type Unit, type Lead, type Proposal } from '../models/schema';
+import { COLLECTIONS, type Unit, type Lead } from '../models/schema';
 import { generateLegalSummary, assessLegalRisk } from './legal-brain';
 import { formatPercent, formatEGP } from '../financial-engine';
 
@@ -93,7 +93,7 @@ async function cmdMatches(unitId: string, chatId: string) {
   if (!unitId) return sendTelegramMessage("Please provide a Unit ID. Usage: /matches [id]", chatId);
   
   // Logic to find leads who have this unit in their topMatches
-  const leadsQuery = query(
+  const _leadsQuery = query(
     collection(db, COLLECTIONS.stakeholders),
     where('aiProfiling.topMatches', 'array-contains-any', [{ unitId: unitId }]) 
     // Note: array-contains-any with object is tricky in Firestore, 

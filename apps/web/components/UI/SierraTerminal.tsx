@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { MessageCircle, X, Send, Sparkles, User, Brain } from 'lucide-react';
+import { X, Send, Sparkles, User, Brain } from 'lucide-react';
 
 interface ChatMessage {
   id: string;

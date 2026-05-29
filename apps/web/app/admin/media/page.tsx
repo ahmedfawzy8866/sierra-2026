@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
 import { collection, query, getDocs, deleteDoc, doc, addDoc, serverTimestamp } from 'firebase/firestore';
-import { Upload, Image as ImageIcon, Trash2, Copy, Check, Search, X } from 'lucide-react';
+import { Upload, Image as ImageIcon, Trash2, Copy, Check, Search } from 'lucide-react';
 
 interface MediaItem {
   id: string;

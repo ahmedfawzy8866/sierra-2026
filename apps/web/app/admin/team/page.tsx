@@ -2,8 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { db } from '@/lib/firebase';
-import { collection, query, where, getDocs, addDoc, updateDoc, deleteDoc, doc, serverTimestamp } from 'firebase/firestore';
-import { Plus, Search, Mail, Phone, Shield, Trash2, Edit2, Users, TrendingUp, DollarSign } from 'lucide-react';
+import { collection, query, where, getDocs, addDoc, deleteDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { Plus, Search, Mail, Phone, Trash2, Users, TrendingUp, DollarSign } from 'lucide-react';
 
 interface TeamMember {
   id: string;
@@ -25,7 +25,7 @@ export default function AdminTeamPage() {
   const [search, setSearch] = useState('');
   const [roleFilter, setRoleFilter] = useState<'all' | TeamMember['role']>('all');
   const [showAddModal, setShowAddModal] = useState(false);
-  const [editingId, setEditingId] = useState<string | null>(null);
+  const [_editingId, _setEditingId] = useState<string | null>(null);
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', role: 'agent' as TeamMember['role'], commissionRate: 5 });
   const [teamStats, setTeamStats] = useState({ totalAgents: 0, totalDeals: 0, totalCommission: 0 });
 

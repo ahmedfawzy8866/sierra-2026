@@ -6,7 +6,6 @@ import {
   AlertCircle,
   CheckCircle2,
   Clock,
-  ChevronRight,
   RefreshCw,
 } from 'lucide-react';
 
@@ -80,7 +79,7 @@ export default function AdminMigrationPage() {
       });
 
       if (res.ok) {
-        const result = await res.json();
+        const _result = await res.json();
         setShowResults(true);
         setTimeout(() => {
           fetchStatus();

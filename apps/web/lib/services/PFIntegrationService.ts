@@ -3,11 +3,11 @@
  * Syncs leads and listings between Sierra Blu CRM and PF Enterprise API (atlas.propertyfinder.com/v1)
  */
 
-import { pfClient, PFListingRequest, PFLead } from '../property-finder-client';
+import { pfClient, PFListingRequest } from '../property-finder-client';
 import { adminDb } from '../server/firebase-admin';
 import { Timestamp } from 'firebase-admin/firestore';
-import { Unit, Lead, COLLECTIONS, UserProfile } from '../models/schema';
-import { PFListing, PFPropertyType } from '../property-finder/types';
+import { Unit, Lead, COLLECTIONS } from '../models/schema';
+import { PFPropertyType } from '../property-finder/types';
 
 export interface PFLeadSyncSummary {
   created: number;
@@ -125,7 +125,7 @@ export class PFIntegrationService {
 
     const unit = { id: unitSnap.id, ...unitSnap.data() } as Unit;
     const locationId = await this.resolveLocationId(unit);
-    const publicProfileId = await this.resolvePublicProfileId();
+    const _publicProfileId = await this.resolvePublicProfileId();
 
     const isRent = unit.status === 'rented';
 

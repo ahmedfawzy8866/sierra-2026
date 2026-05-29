@@ -1,5 +1,4 @@
 import { google } from 'googleapis';
-import { adminDb } from '../server/firebase-admin';
 
 /**
  * SIERRA BLU — GOOGLE SHEETS DUAL-INGESTION PROTOCOL

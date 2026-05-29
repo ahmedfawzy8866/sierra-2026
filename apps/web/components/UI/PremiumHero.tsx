@@ -6,7 +6,7 @@
  * Design: Quiet Luxury (Navy/Gold/Ivory)
  */
 
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Play } from 'lucide-react';
 

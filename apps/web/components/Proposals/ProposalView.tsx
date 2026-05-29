@@ -2,10 +2,10 @@
 import React from 'react';
 import { motion, Variants } from 'framer-motion';
 import { Timestamp } from 'firebase/firestore';
-import { Proposal, Unit } from '@/lib/models/schema';
+import { Proposal } from '@/lib/models/schema';
 import ConciergeGallery from '@/components/Proposals/ConciergeGallery';
 import type { ConciergeSelection } from '@/lib/services/portfolio-engine';
-import { MapPin, Bed, Bath, Maximize2, ExternalLink, ShieldCheck, Zap } from 'lucide-react';
+import { ShieldCheck } from 'lucide-react';
 
 interface ProposalViewProps {
   proposal: Proposal;

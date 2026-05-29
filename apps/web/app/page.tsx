@@ -9,7 +9,7 @@ import { InventoryService, Property } from '@/lib/services/InventoryService';
 import ShieldLogo from '@/components/Landing/ShieldLogo';
 import PropCard from '@/components/Landing/PropCard';
 
-const ParticleCanvas = dynamic(() => import('@/components/Landing/ParticleCanvas'), { ssr: false });
+const _ParticleCanvas = dynamic(() => import('@/components/Landing/ParticleCanvas'), { ssr: false });
 const LiveMap = dynamic(() => import('@/components/Maps/LiveMap'), {
   ssr: false,
   loading: () => <div className="w-full h-full bg-slate-900/50 animate-pulse flex items-center justify-center text-slate-500 font-serif">Initializing Intelligence Map...</div>,
@@ -216,7 +216,7 @@ const STATIC_LISTINGS = [
   { id: 6, title: 'Sky Tower Penthouse', titleAr: 'بنتهاوس سكاي تاور', location: 'Downtown New Cairo', locationAr: 'وسط القاهرة الجديدة', price: 'EGP 11,500,000', beds: 4, baths: 4, sqft: '380 m²', badge: 'Price Reduced', badgeColor: '#D97706', furnished: 'unfurnished', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80' },
 ];
 
-const ZONE_COORDS: [number, number][] = [
+const _ZONE_COORDS: [number, number][] = [
   [30.0071, 31.4345],
   [30.0972, 31.6314],
   [30.0320, 31.4720],

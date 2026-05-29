@@ -2,9 +2,9 @@
 
 import React, { useEffect, useState } from 'react';
 import { db } from '@/lib/firebase';
-import { collection, query, orderBy, limit, getDocs, addDoc, updateDoc, doc, serverTimestamp, where } from 'firebase/firestore';
-import { Search, LayoutGrid, List, Phone, Mail, Clock, Plus, GripVertical } from 'lucide-react';
-import { DragDropContext, Droppable, Draggable, DropResult } from 'react-beautiful-dnd';
+import { collection, query, orderBy, limit, getDocs, addDoc, updateDoc, doc, serverTimestamp } from 'firebase/firestore';
+import { Search, LayoutGrid, List, Phone, Mail, Clock, Plus } from 'lucide-react';
+import { DragDropContext, Droppable, Draggable, DropResult } from '@hello-pangea/dnd';
 
 interface Lead {
   id: string;
