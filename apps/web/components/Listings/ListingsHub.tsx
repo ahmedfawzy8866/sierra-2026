@@ -207,7 +207,7 @@ export default function ListingsHub() {
       } else {
         showToast('System fallback assets cannot be modified');
       }
-    } catch (err) {
+    } catch (_err) {
       showToast('Action restricted or database error');
     }
   };

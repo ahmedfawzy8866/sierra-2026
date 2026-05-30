@@ -64,7 +64,7 @@ async function cmdMaintenance(chatId: string) {
   try {
     const count = await MaintenanceMonitor.flagStaleListings();
     await sendTelegramMessage(`✅ <b>Audit Complete.</b> ${count} stagnant units have been flagged or archived to preserve Portfolio Integrity.`, chatId);
-  } catch (err) {
+  } catch (_err) {
     await sendTelegramMessage(`❌ <b>Hygiene Failure:</b> Authentication or Pipeline disruption.`, chatId);
   }
 }

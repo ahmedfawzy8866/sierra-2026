@@ -154,7 +154,7 @@ export default function PropertyDetailPage() {
                 } else {
                   throw new Error(data.error);
                 }
-              } catch (err) {
+              } catch (_err) {
                 alert('Connection Error: Pipeline could not be established.');
               }
             }}>

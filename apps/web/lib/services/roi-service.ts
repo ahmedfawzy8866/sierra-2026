@@ -98,7 +98,7 @@ Output: 2-3 sentences explaining why this asset is a strategic acquisition for a
     );
 
     return data.choices[0].message.content || "Asset selected for high capital ceiling and robust liquidity profile.";
-  } catch (err) {
+  } catch (_err) {
     return "Asset selected for high capital ceiling and robust liquidity profile.";
   }
 }

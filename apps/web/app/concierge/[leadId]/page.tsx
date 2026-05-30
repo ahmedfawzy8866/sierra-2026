@@ -105,7 +105,7 @@ export default function ConciergePage({ params }: { params: Promise<{ leadId: st
           text: shareText,
           url: shareUrl,
         });
-      } catch (err) {
+      } catch (_err) {
         console.log('Share cancelled');
       }
     } else {

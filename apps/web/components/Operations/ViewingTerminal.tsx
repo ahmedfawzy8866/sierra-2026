@@ -26,7 +26,7 @@ export const ViewingTerminal: React.FC = () => {
     try {
       await completeViewing(id);
       toast.success('Viewing mark as complete. Moving to Closing Stage.');
-    } catch (error) {
+    } catch (_error) {
       toast.error('Failed to complete viewing.');
     }
   };

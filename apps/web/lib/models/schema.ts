@@ -578,4 +578,5 @@ export const COLLECTIONS = {
   intelligence: 'intelligence', // Global Neural Memory
   conciergeSelections: 'concierge_selections', // S8 Curated Portfolios
   strategicPipeline: 'strategic_pipeline',      // S9 Deal Pipeline
+  portfolioAssets: 'portfolio_assets',
 } as const;

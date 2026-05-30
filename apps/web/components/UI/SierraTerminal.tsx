@@ -63,7 +63,7 @@ export default function SierraTerminal() {
         text: data.response || "Error communicating with Sierra Core.",
         isVIP: data.vipAlert
       }]);
-    } catch (error) {
+    } catch (_error) {
       setMessages(prev => [...prev, {
         id: (Date.now() + 1).toString(),
         sender: 'sierra',

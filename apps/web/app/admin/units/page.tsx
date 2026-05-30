@@ -77,7 +77,7 @@ export default function AdminUnitsPage() {
     try {
       await deleteDoc(doc(db, 'listings', unitId));
       setUnits(prev => prev.filter(u => u.id !== unitId));
-    } catch (err) {
+    } catch (_err) {
       alert('Failed to delete property');
     }
   }
@@ -95,7 +95,7 @@ export default function AdminUnitsPage() {
       setShowCreateModal(false);
       setLastDoc(null);
       fetchUnits(true);
-    } catch (err) {
+    } catch (_err) {
       alert('Failed to create property');
     }
   }

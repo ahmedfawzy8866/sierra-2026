@@ -26,7 +26,7 @@ export const ClosingTerminal: React.FC = () => {
     try {
       await finalizeSale(id);
       toast.success('Sale finalized! Moving to Feedback Loop.');
-    } catch (error) {
+    } catch (_error) {
       toast.error('Failed to finalize sale.');
     }
   };
