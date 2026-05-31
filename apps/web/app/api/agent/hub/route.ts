@@ -1,12 +1,7 @@
 import { NextResponse, NextRequest } from 'next/server';
 import { verifyAdminRequest, unauthorizedResponse } from '@/lib/server/auth-guard';
-
-/**
- * Agent Hub - Agent orchestration (admin-only)
- * TODO: Complete agent orchestration implementation
-import { NextResponse } from 'next/server';
 import { GoogleAIService } from '@/lib/server/google-ai';
-import { LEILA_PROMPT } from '@/lib/prompts/leila';
+import { LEILA_PROMPT } from '@/lib/prompts';
 import { GravityRecall } from '@/lib/server/gravity';
 
 /**
