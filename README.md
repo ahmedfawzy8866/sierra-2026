@@ -7,17 +7,16 @@ A production-ready, unified monorepo combining two distinct Sierra Blu systems i
 ## 📦 Repository Structure
 
 ```
-sierra-blu-unified/
+i-sierra-2027/
 ├── apps/
 │   ├── web/                    # Main customer-facing app (Next.js 16 + Turbopack)
-│   │   ├── app/               # App Router pages & layouts
+│   │   ├── app/               # App Router pages (62 routes) & layouts
 │   │   ├── components/        # React components (13+ modules)
 │   │   ├── hooks/             # Custom React hooks
-│   │   ├── lib/               # Utilities, services, models
+│   │   ├── lib/               # Utilities, services, models, agents
 │   │   └── public/            # Static assets
-│   └── admin/                 # Admin portal (Vite SPA)
-│       ├── src/               # React source
-│       └── dist/              # Built output
+│   └── admin/                 # Admin portal (Vite + React SPA)
+│       └── src/               # React source (auth, CRM, listing modules)
 ├── packages/
 │   ├── api/                   # Shared API types & clients
 │   ├── db/                    # Firestore models & utilities
@@ -25,23 +24,18 @@ sierra-blu-unified/
 │   ├── agents/                # Multi-agent framework
 │   ├── batch/                 # Batch processing queue
 │   ├── config/                # Shared configuration
-│   └── ui/                    # Component library (shadcn/ui)
+│   └── ui/                    # Shared React component library
 ├── functions/                 # Firebase Cloud Functions (Node.js 20)
-│   ├── src/
-│   │   ├── api/              # REST endpoints
-│   │   ├── webhooks/         # External integrations
-│   │   ├── batch/            # Scheduled batch jobs
-│   │   ├── agents/           # Agent orchestration
-│   │   └── middleware/       # Auth, logging, etc.
+│   ├── src/index.ts           # Functions entry point
 │   └── package.json
-├── infra/                     # Infrastructure as Code (Terraform)
-├── scripts/                   # Build & deployment scripts
-├── docs/                      # Documentation
+├── workflows/                 # Automation scripts (WhatsApp, owner search, etc.)
 ├── .github/workflows/         # CI/CD pipelines
+├── firestore.rules            # Production Firestore security rules
+├── storage.rules              # Production Storage security rules
+├── firebase.json              # Firebase hosting & functions config
 ├── pnpm-workspace.yaml        # Monorepo workspace config
-├── turbo.json                 # Turborepo build cache config
-├── package.json               # Root workspace dependencies
-└── firebase.json              # Firebase hosting & functions config
+├── turbo.json                 # Turborepo build cache config (v2)
+└── package.json               # Root workspace dependencies
 ```
 
 ## 🚀 Quick Start
@@ -311,11 +305,10 @@ TELEGRAM_BOT_TOKEN=...
 
 ## 📚 Documentation
 
-- `docs/ARCHITECTURE.md` - System design & integration plan
-- `docs/DEPLOYMENT.md` - Deployment procedures & runbooks
-- `docs/API.md` - REST API specifications
-- `docs/AGENTS.md` - Multi-agent framework guide
-- `docs/DEVELOPMENT.md` - Developer setup & workflow
+- `ARCHITECTURE.md` - System design & data flows
+- `DEPLOYMENT_GUIDE.md` - Deployment procedures & runbooks
+- `API.md` - REST API specifications
+- `CONTRIBUTING.md` - Developer setup & workflow
 
 ## 🤝 Contributing
 
@@ -328,7 +321,7 @@ TELEGRAM_BOT_TOKEN=...
 ## 📞 Support
 
 - **Issues**: GitHub Issues (this repo)
-- **Docs**: See `/docs` directory
+- **Docs**: See `ARCHITECTURE.md`, `API.md`, `DEPLOYMENT_GUIDE.md`
 - **Team**: Slack #sierra-blu
 
 ## 📄 License
@@ -337,6 +330,6 @@ Proprietary - Sierra Blu Inc.
 
 ---
 
-**Last Updated**: May 25, 2026  
+**Last Updated**: May 31, 2026  
 **Build**: Turbopack + Turborepo  
 **Status**: Production Ready ✅
