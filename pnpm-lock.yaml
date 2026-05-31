@@ -267,9 +267,15 @@ importers:
 
   packages/agents:
     dependencies:
+      firebase:
+        specifier: ^12.11
+        version: 12.13.0
       pino:
         specifier: ^8.17
         version: 8.21.0
+      react:
+        specifier: 19.2.4
+        version: 19.2.4
       zod:
         specifier: ^3.22
         version: 3.25.76
@@ -277,6 +283,9 @@ importers:
       '@types/node':
         specifier: ^20
         version: 20.19.41
+      '@types/react':
+        specifier: ^19
+        version: 19.2.15
       typescript:
         specifier: ^5.3
         version: 5.9.3
