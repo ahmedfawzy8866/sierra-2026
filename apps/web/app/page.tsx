@@ -28,14 +28,20 @@ const THEMES = {
     border: 'rgba(233,193,118,0.18)', borderHover: 'rgba(233,193,118,0.45)',
     text: '#EFF8F7', textSub: 'rgba(239,248,247,0.78)', textMuted: 'rgba(239,248,247,0.50)',
     navBg: 'rgba(13,32,53,0.96)', footerBg: '#091828', heroBg: '#0A1520',
+    // Gold accent reads bright on the dark canvas
+    accent: '#E9C176', accentStrong: '#F2D195', accentSoft: 'rgba(233,193,118,0.12)',
   },
   light: {
-    bg: '#D5E8E6', bgAlt: '#C0D6D4', bg2: '#E2EDEC',
-    surface: 'rgba(27,108,168,0.08)', surfaceHover: 'rgba(233,193,118,0.14)',
-    card: '#E2EDEC', cardBorder: 'rgba(27,108,168,0.14)',
-    border: 'rgba(27,108,168,0.20)', borderHover: 'rgba(233,193,118,0.55)',
-    text: '#071422', textSub: 'rgba(7,20,34,0.78)', textMuted: 'rgba(7,20,34,0.56)',
-    navBg: 'rgba(213,232,230,0.97)', footerBg: '#040E1C', heroBg: '#C0D6D4',
+    // Refined warm porcelain — brighter, higher-contrast than the old washed teal
+    bg: '#EEF2F4', bgAlt: '#DCE4E8', bg2: '#F8FAFB',
+    surface: 'rgba(12,27,46,0.045)', surfaceHover: 'rgba(154,107,14,0.12)',
+    card: '#FFFFFF', cardBorder: 'rgba(12,27,46,0.10)',
+    border: 'rgba(12,27,46,0.14)', borderHover: 'rgba(154,107,14,0.5)',
+    // Deep navy ink for strong legibility on light
+    text: '#0C1B2E', textSub: 'rgba(12,27,46,0.74)', textMuted: 'rgba(12,27,46,0.52)',
+    navBg: 'rgba(238,242,244,0.94)', footerBg: '#08182B', heroBg: '#DCE4E8',
+    // Bronze-gold for accents/eyebrows so gold text stays readable on light
+    accent: '#9A6B0E', accentStrong: '#7E560A', accentSoft: 'rgba(154,107,14,0.10)',
   },
 };
 
@@ -61,7 +67,7 @@ const COPY = {
     secListings: 'Exclusive Listings',
     h2Listings: 'Properties worth your attention.',
     viewAll: 'View All →',
-    searchType: 'Property Type', searchRooms: 'Bedrooms', searchCompound: 'Compound', searchBudget: 'Budget', searchBtn: 'Search',
+    searchType: 'Property Type', searchDeal: 'Listing', searchRooms: 'Bedrooms', searchCompound: 'Compound', searchBudget: 'Budget', searchBtn: 'Search',
     smartTitle: 'Smart Filters',
     smartHint: 'Use quick intents or combine filters to surface stronger matches instantly.',
     smartPresets: ['All', 'Family Ready', 'High ROI', 'Signature Homes'],
@@ -140,7 +146,7 @@ const COPY = {
     secListings: 'قوائم حصرية',
     h2Listings: 'عقارات تستحق اهتمامك.',
     viewAll: '← عرض الكل',
-    searchType: 'نوع العقار', searchRooms: 'غرف النوم', searchCompound: 'الكمباوند', searchBudget: 'الميزانية', searchBtn: 'بحث',
+    searchType: 'نوع العقار', searchDeal: 'النوع', searchRooms: 'غرف النوم', searchCompound: 'الكمباوند', searchBudget: 'الميزانية', searchBtn: 'بحث',
     smartTitle: 'فلاتر ذكية',
     smartHint: 'استخدم نوايا البحث السريعة أو اجمع الفلاتر للوصول لأفضل المطابقات فوراً.',
     smartPresets: ['الكل', 'مناسب للعائلات', 'عائد مرتفع', 'عقارات مميزة'],
@@ -207,12 +213,12 @@ const COPY = {
 //  STATIC LISTINGS (fallback while Firebase loads)
 // ══════════════════════════════════════════════════════════
 const STATIC_LISTINGS = [
-  { id: 1, title: 'Aurora Penthouse', titleAr: 'بنتهاوس أورورا', location: 'Madinaty · New Cairo', locationAr: 'مدينتي · القاهرة الجديدة', price: 'EGP 8,500,000', beds: 4, baths: 3, sqft: '320 m²', badge: 'Hidden Gem', badgeColor: '#7C3AED', furnished: 'furnished', img: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80' },
-  { id: 2, title: 'Villa Lumière', titleAr: 'فيلا لوميير', location: 'Mountain View · 5th Settlement', locationAr: 'ماونتن فيو · التجمع الخامس', price: 'EGP 14,200,000', beds: 5, baths: 4, sqft: '480 m²', badge: 'Featured', badgeColor: '#C8961A', furnished: 'unfurnished', img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80' },
-  { id: 3, title: 'The Boulevard', titleAr: 'ذا بوليفار', location: 'Mostakbal City · Future', locationAr: 'مستقبل سيتي · المستقبل', price: 'EGP 3,800,000', beds: 3, baths: 2, sqft: '185 m²', badge: 'New', badgeColor: '#1B6CA8', furnished: 'furnished', img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80' },
-  { id: 4, title: 'Emirates Crown', titleAr: 'إيمارتس كراون', location: 'Fifth Settlement · Cairo', locationAr: 'التجمع الخامس · القاهرة', price: 'EGP 22,000,000', beds: 6, baths: 5, sqft: '650 m²', badge: 'Off Market', badgeColor: '#059669', furnished: 'unfurnished', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80' },
-  { id: 5, title: 'Palm Residences', titleAr: 'بالم ريزيدنسز', location: 'Madinaty · Block 7', locationAr: 'مدينتي · بلوك ٧', price: 'EGP 5,900,000', beds: 3, baths: 3, sqft: '240 m²', badge: 'High ROI', badgeColor: '#DC2626', furnished: 'furnished', img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80' },
-  { id: 6, title: 'Sky Tower Penthouse', titleAr: 'بنتهاوس سكاي تاور', location: 'Downtown New Cairo', locationAr: 'وسط القاهرة الجديدة', price: 'EGP 11,500,000', beds: 4, baths: 4, sqft: '380 m²', badge: 'Price Reduced', badgeColor: '#D97706', furnished: 'unfurnished', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80' },
+  { id: 1, title: 'Aurora Penthouse', titleAr: 'بنتهاوس أورورا', location: 'Madinaty · New Cairo', locationAr: 'مدينتي · القاهرة الجديدة', price: 'EGP 8,500,000', beds: 4, baths: 3, sqft: '320 m²', badge: 'Hidden Gem', badgeColor: '#7C3AED', furnished: 'furnished', dealType: 'resale', img: 'https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=700&q=80' },
+  { id: 2, title: 'Villa Lumière', titleAr: 'فيلا لوميير', location: 'Mountain View · 5th Settlement', locationAr: 'ماونتن فيو · التجمع الخامس', price: 'EGP 14,200,000', beds: 5, baths: 4, sqft: '480 m²', badge: 'Featured', badgeColor: '#C8961A', furnished: 'unfurnished', dealType: 'primary', img: 'https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=700&q=80' },
+  { id: 3, title: 'The Boulevard', titleAr: 'ذا بوليفار', location: 'Mostakbal City · Future', locationAr: 'مستقبل سيتي · المستقبل', price: 'EGP 3,800,000', beds: 3, baths: 2, sqft: '185 m²', badge: 'New', badgeColor: '#1B6CA8', furnished: 'furnished', dealType: 'rent', img: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=700&q=80' },
+  { id: 4, title: 'Emirates Crown', titleAr: 'إيمارتس كراون', location: 'Fifth Settlement · Cairo', locationAr: 'التجمع الخامس · القاهرة', price: 'EGP 22,000,000', beds: 6, baths: 5, sqft: '650 m²', badge: 'Off Market', badgeColor: '#059669', furnished: 'unfurnished', dealType: 'resale', img: 'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=700&q=80' },
+  { id: 5, title: 'Palm Residences', titleAr: 'بالم ريزيدنسز', location: 'Madinaty · Block 7', locationAr: 'مدينتي · بلوك ٧', price: 'EGP 5,900,000', beds: 3, baths: 3, sqft: '240 m²', badge: 'High ROI', badgeColor: '#DC2626', furnished: 'furnished', dealType: 'rent', img: 'https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=700&q=80' },
+  { id: 6, title: 'Sky Tower Penthouse', titleAr: 'بنتهاوس سكاي تاور', location: 'Downtown New Cairo', locationAr: 'وسط القاهرة الجديدة', price: 'EGP 11,500,000', beds: 4, baths: 4, sqft: '380 m²', badge: 'Price Reduced', badgeColor: '#D97706', furnished: 'unfurnished', dealType: 'primary', img: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=700&q=80' },
 ];
 
 const _ZONE_COORDS: [number, number][] = [
@@ -230,20 +236,30 @@ const PRICE_RANGES = {
   '20+': { min: 20, max: Infinity, inclusiveMax: false },
 } as const;
 
-type FiltersState = { rooms: string; price: string; location: string; furnished: string };
+// dealType: '' (any) | 'primary' (new / developer) | 'resale' | 'rent'
+type FiltersState = { dealType: string; rooms: string; price: string; location: string; furnished: string };
 
-const EMPTY_FILTERS: FiltersState = { rooms: '', price: '', location: '', furnished: '' };
+const EMPTY_FILTERS: FiltersState = { dealType: '', rooms: '', price: '', location: '', furnished: '' };
 const FILTER_PRESETS: FiltersState[] = [
   EMPTY_FILTERS,
-  { rooms: '4', price: '', location: 'fifth', furnished: 'furnished' },
-  { rooms: '3', price: '5-10', location: 'madinaty', furnished: '' },
-  { rooms: '4', price: '20+', location: 'mountain', furnished: 'unfurnished' },
+  { dealType: 'resale', rooms: '4', price: '', location: 'fifth', furnished: 'furnished' },
+  { dealType: 'rent', rooms: '3', price: '5-10', location: 'madinaty', furnished: '' },
+  { dealType: 'primary', rooms: '4', price: '20+', location: 'mountain', furnished: 'unfurnished' },
+];
+
+// Deal-type options shared by the hero bar and the smart-filter board (bilingual)
+const DEAL_TYPE_OPTIONS = (isAr: boolean) => [
+  { value: '', label: isAr ? 'الكل' : 'All' },
+  { value: 'primary', label: isAr ? 'مشروعات جديدة' : 'Primary' },
+  { value: 'resale', label: isAr ? 'إعادة بيع' : 'Resale' },
+  { value: 'rent', label: isAr ? 'للإيجار' : 'For Rent' },
 ];
 // Smart score starts at the minimum user-visible confidence baseline and grows with clear weights.
 const BASE_MATCH_SCORE = 62;
 const MIN_MATCH_SCORE = 62;
 const MAX_MATCH_SCORE = 98;
 const SCORE_WEIGHTS = {
+  dealType: 12,
   rooms: 12,
   priceMatch: 14,
   location: 10,
@@ -332,6 +348,7 @@ export default function LandingPage() {
         badge: p.status || 'Available',
         badgeColor: G2,
         furnished: p.finishingType?.toLowerCase().includes('furnish') ? 'furnished' : 'unfurnished',
+        dealType: p.status?.toLowerCase().includes('rent') ? 'rent' : 'resale',
         img: STATIC_LISTINGS[Math.min(STATIC_LISTINGS.length - 1, featured.indexOf(p))].img,
       }))
     : STATIC_LISTINGS;
@@ -352,6 +369,8 @@ export default function LandingPage() {
   if (!mounted) return null;
 
   const filteredListings = listings.filter((p) => {
+    const matchesDealType = !filters.dealType || p.dealType === filters.dealType;
+
     const matchesRooms = !filters.rooms || (filters.rooms === MAX_ROOMS_FILTER ? p.beds >= Number(MAX_ROOMS_FILTER) : p.beds === Number(filters.rooms));
 
     const priceMillions = parsePriceMillions(p.price);
@@ -372,7 +391,7 @@ export default function LandingPage() {
 
     const matchesFurnished = !filters.furnished || p.furnished === filters.furnished;
 
-    return matchesRooms && matchesPrice && matchesLocation && matchesFurnished;
+    return matchesDealType && matchesRooms && matchesPrice && matchesLocation && matchesFurnished;
   });
 
   const activeFiltersCount = Object.values(filters).filter(Boolean).length;
@@ -382,6 +401,7 @@ export default function LandingPage() {
       let score = BASE_MATCH_SCORE;
       // Larger homes receive a capped premium-space boost to help differentiate similarly filtered results.
       score += Math.min(SCORE_WEIGHTS.premiumSpaceBonusCap, p.beds);
+      if (filters.dealType && p.dealType === filters.dealType) score += SCORE_WEIGHTS.dealType;
       if (filters.rooms && (filters.rooms === MAX_ROOMS_FILTER ? p.beds >= Number(MAX_ROOMS_FILTER) : p.beds === Number(filters.rooms))) score += SCORE_WEIGHTS.rooms;
       if (filters.price) {
         const priceMillions = parsePriceMillions(p.price);
@@ -408,6 +428,12 @@ export default function LandingPage() {
     cursor: 'pointer',
   };
   const smartFilterSegments = [
+    {
+      label: T.searchDeal,
+      value: filters.dealType,
+      onChange: (value: string) => { setActivePreset(0); setFilters({ ...filters, dealType: value }); },
+      opts: DEAL_TYPE_OPTIONS(isAr),
+    },
     {
       label: T.searchRooms,
       value: filters.rooms,
@@ -469,7 +495,7 @@ export default function LandingPage() {
               />
             </div>
             <div>
-              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: isAr ? 14 : 16, fontWeight: 600, letterSpacing: isAr ? '.06em' : '.2em', color: G, lineHeight: 1 }}>{T.brand}</div>
+              <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: isAr ? 14 : 16, fontWeight: 600, letterSpacing: isAr ? '.06em' : '.2em', color: th.accent, lineHeight: 1 }}>{T.brand}</div>
               <div style={{ fontFamily: "'Jost', sans-serif", fontSize: 7, letterSpacing: '.38em', color: th.textSub, marginTop: 2 }}>{T.sub}</div>
             </div>
           </div>
@@ -494,7 +520,7 @@ export default function LandingPage() {
             >
               ◎
             </button>
-            <button onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')} style={{ background: th.surface, border: `1px solid ${th.border}`, color: G, padding: '6px 12px', borderRadius: 4, fontSize: 10, fontWeight: 600, letterSpacing: '.1em', cursor: 'pointer', fontFamily: "'Jost', sans-serif" }}>
+            <button onClick={() => setLocale(locale === 'ar' ? 'en' : 'ar')} style={{ background: th.surface, border: `1px solid ${th.border}`, color: th.accent, padding: '6px 12px', borderRadius: 4, fontSize: 10, fontWeight: 600, letterSpacing: '.1em', cursor: 'pointer', fontFamily: "'Jost', sans-serif" }}>
               {lang === 'en' ? 'AR' : 'EN'}
             </button>
             <button onClick={() => setTheme(mode === 'dark' ? 'light' : 'dark')} style={{ background: th.surface, border: `1px solid ${th.border}`, color: th.textSub, width: 34, height: 34, borderRadius: '50%', cursor: 'pointer', fontSize: 13, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
@@ -505,7 +531,21 @@ export default function LandingPage() {
         </div>
 
         {/* Smart Filter Bar - Mobile-first responsive */}
-        <div style={{ borderTop: `1px solid ${th.border}`, background: mode === 'dark' ? 'rgba(10,21,32,0.8)' : 'rgba(213,232,230,0.8)', backdropFilter: 'blur(12px)', padding: '12px 16px', display: scrolled ? 'grid' : 'none' }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 px-4 md:px-12">
+        <div style={{ borderTop: `1px solid ${th.border}`, background: mode === 'dark' ? 'rgba(10,21,32,0.8)' : 'rgba(238,242,244,0.85)', backdropFilter: 'blur(12px)', padding: '12px 16px', display: scrolled ? 'grid' : 'none' }} className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-2 px-4 md:px-12">
+          {/* Deal Type Filter (rent / resale / primary) */}
+          <div>
+            <label style={{ fontSize: 8, fontWeight: 500, letterSpacing: '.1em', textTransform: 'uppercase', color: th.textMuted, display: 'block', marginBottom: 2, fontFamily: "'Jost', sans-serif" }}>{T.searchDeal}</label>
+            <select
+              value={filters.dealType}
+              onChange={(e) => { setActivePreset(0); setFilters({ ...filters, dealType: e.target.value }); }}
+              style={{ background: 'transparent', border: `1px solid ${th.border}`, outline: 'none', color: th.text, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif", fontSize: 12, fontWeight: 300, width: '100%', cursor: 'pointer', padding: '6px 8px', borderRadius: 4 }}
+            >
+              {DEAL_TYPE_OPTIONS(isAr).map((o) => (
+                <option key={o.value} value={o.value} style={{ background: th.bg, color: th.text }}>{o.label}</option>
+              ))}
+            </select>
+          </div>
+
           {/* Rooms Filter */}
           <div>
             <label style={{ fontSize: 8, fontWeight: 500, letterSpacing: '.1em', textTransform: 'uppercase', color: th.textMuted, display: 'block', marginBottom: 2, fontFamily: "'Jost', sans-serif" }}>Rooms</label>
@@ -612,7 +652,7 @@ export default function LandingPage() {
 
             {/* Emaar Badge */}
             <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, border: `1px solid ${th.border}`, borderRadius: 999, padding: '8px 14px', background: mode === 'dark' ? 'rgba(255,255,255,0.06)' : 'rgba(255,255,255,0.35)', marginBottom: 24, backdropFilter: 'blur(8px)' }}>
-              <span style={{ fontSize: 9, color: G, letterSpacing: '.12em', textTransform: 'uppercase', fontFamily: "'Jost', sans-serif", fontWeight: 600 }}>Emaar</span>
+              <span style={{ fontSize: 9, color: th.accent, letterSpacing: '.12em', textTransform: 'uppercase', fontFamily: "'Jost', sans-serif", fontWeight: 600 }}>Emaar</span>
               <div style={{ width: 1, height: 14, background: th.border }} />
               <span style={{ fontSize: 9, color: th.textSub, letterSpacing: '.08em', fontFamily: "'Jost', sans-serif" }}>Uptown Cairo</span>
             </div>
@@ -689,7 +729,7 @@ export default function LandingPage() {
         <div style={sec}>
           <div className="reveal flex justify-between items-end mb-10 flex-wrap gap-4" style={{ flexDirection: isAr ? 'row-reverse' : 'row' }}>
             <div style={{ textAlign: isAr ? 'right' : 'left' }}>
-              <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: G, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secListings}</div>
+              <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: th.accent, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secListings}</div>
               <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 300, lineHeight: 1.1, letterSpacing: '-0.02em', color: th.text }}>{T.h2Listings}</h2>
             </div>
             <Link href="/listings" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, background: 'transparent', color: th.text, border: `1px solid ${th.border}`, cursor: 'pointer', fontFamily: "'Jost', sans-serif", fontSize: 10, fontWeight: 500, letterSpacing: '.14em', textTransform: 'uppercase', padding: '9px 20px', borderRadius: 4, textDecoration: 'none' }}>{T.viewAll}</Link>
@@ -699,7 +739,7 @@ export default function LandingPage() {
           <div className="reveal mb-10 rounded-xl p-5" style={{ background: mode === 'dark' ? 'rgba(18,42,71,0.72)' : 'rgba(255,255,255,0.55)', border: `1px solid ${th.border}`, backdropFilter: 'blur(10px)' }}>
             <div className="flex items-start justify-between gap-4 flex-wrap mb-4" style={{ flexDirection: isAr ? 'row-reverse' : 'row' }}>
               <div style={{ textAlign: isAr ? 'right' : 'left' }}>
-                <div style={{ fontSize: 10, letterSpacing: '.16em', textTransform: 'uppercase', color: G, fontFamily: "'Jost', sans-serif", marginBottom: 6 }}>{T.smartTitle}</div>
+                <div style={{ fontSize: 10, letterSpacing: '.16em', textTransform: 'uppercase', color: th.accent, fontFamily: "'Jost', sans-serif", marginBottom: 6 }}>{T.smartTitle}</div>
                 <div style={{ fontSize: 12, color: th.textSub, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>{T.smartHint}</div>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 10, flexDirection: isAr ? 'row-reverse' : 'row' }}>
@@ -731,7 +771,7 @@ export default function LandingPage() {
               ))}
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_1fr_auto] gap-2 md:gap-0 rounded-lg overflow-hidden md:overflow-visible" style={{ background: 'transparent', borderRadius: 8 }}>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-[1fr_1fr_1fr_1fr_auto] gap-2 md:gap-0 rounded-lg overflow-hidden md:overflow-visible" style={{ background: 'transparent', borderRadius: 8 }}>
               {smartFilterSegments.map((seg, i) => (
                 <div
                   key={i}
@@ -745,7 +785,7 @@ export default function LandingPage() {
                 >
                   <div style={{ fontSize: 8, fontWeight: 500, letterSpacing: '.16em', textTransform: 'uppercase', color: th.textMuted, marginBottom: 3, fontFamily: "'Jost', sans-serif" }}>{seg.label}</div>
                   <select value={seg.value} onChange={(e) => seg.onChange(e.target.value)} style={smartFilterSelectStyle}>
-                    {seg.opts.map((o) => <option value={o.value} key={o.value}>{o.label}</option>)}
+                    {seg.opts.map((o) => <option value={o.value} key={o.value} style={{ background: th.bg, color: th.text }}>{o.label}</option>)}
                   </select>
                 </div>
               ))}
@@ -757,14 +797,14 @@ export default function LandingPage() {
             <div className="reveal mb-6 rounded-xl p-5" style={{ background: mode === 'dark' ? 'rgba(9,24,40,0.75)' : 'rgba(255,255,255,0.65)', border: `1px solid ${th.border}` }}>
               <div className="flex items-center justify-between gap-4 flex-wrap" style={{ flexDirection: isAr ? 'row-reverse' : 'row' }}>
                 <div style={{ textAlign: isAr ? 'right' : 'left' }}>
-                  <div style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: '.16em', color: G, marginBottom: 4, fontFamily: "'Jost', sans-serif" }}>{T.smartSpotlight}</div>
+                  <div style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: '.16em', color: th.accent, marginBottom: 4, fontFamily: "'Jost', sans-serif" }}>{T.smartSpotlight}</div>
                   <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 28, color: th.text }}>{isAr ? spotlightListing.titleAr : spotlightListing.title}</div>
                   <div style={{ fontSize: 12, color: th.textSub, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>{isAr ? spotlightListing.locationAr : spotlightListing.location}</div>
                 </div>
                 <div style={{ minWidth: 220 }}>
                   <div className="flex items-center justify-between mb-2" style={{ flexDirection: isAr ? 'row-reverse' : 'row' }}>
                     <span style={{ fontSize: 10, letterSpacing: '.12em', textTransform: 'uppercase', color: th.textMuted, fontFamily: "'Jost', sans-serif" }}>{T.smartScore}</span>
-                    <span style={{ fontSize: 22, color: G, fontFamily: "'DM Mono', monospace" }}>{spotlightListing.smartScore}%</span>
+                    <span style={{ fontSize: 22, color: th.accent, fontFamily: "'DM Mono', monospace" }}>{spotlightListing.smartScore}%</span>
                   </div>
                   <div style={{ height: 8, borderRadius: 999, background: mode === 'dark' ? 'rgba(255,255,255,0.08)' : 'rgba(7,20,34,0.12)', overflow: 'hidden' }}>
                     <div style={{ width: `${spotlightListing.smartScore}%`, height: '100%', background: `linear-gradient(90deg,${G2},${G})` }} />
@@ -811,13 +851,13 @@ export default function LandingPage() {
         </div>
         <div style={{ ...sec, position: 'relative', zIndex: 2 }}>
           <div className="reveal text-center mb-14">
-            <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: G, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secWhy}</div>
+            <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: th.accent, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secWhy}</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 52px)', fontWeight: 300, lineHeight: 1.1, letterSpacing: '-0.02em', color: th.text }}>{T.h2Why}</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {T.why.map((w, i) => (
               <div key={i} className={`reveal rounded-[14px] p-8 transition-all hover:-translate-y-1`} style={{ background: th.surface, border: `1px solid ${th.border}`, textAlign: isAr ? 'right' : 'left' }}>
-                <div style={{ fontSize: 28, color: G, marginBottom: 16, fontFamily: "'Cormorant Garamond', serif" }}>{w.icon}</div>
+                <div style={{ fontSize: 28, color: th.accent, marginBottom: 16, fontFamily: "'Cormorant Garamond', serif" }}>{w.icon}</div>
                 <h3 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 24, fontWeight: 500, color: th.text, marginBottom: 10 }}>{w.title}</h3>
                 <div style={{ width: 36, height: 2, background: `linear-gradient(90deg,${G2},${G})`, borderRadius: 1, marginBottom: 14, marginLeft: isAr ? 'auto' : 0 }} />
                 <p style={{ fontSize: 13, fontWeight: 300, lineHeight: 1.85, color: th.textSub, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>{w.desc}</p>
@@ -842,7 +882,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div style={{ order: isAr ? 2 : 1 }}>
               <div className="reveal" style={{ textAlign: isAr ? 'right' : 'left' }}>
-                <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: G, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secMap}</div>
+                <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: th.accent, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secMap}</div>
                 <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 3.5vw, 48px)', fontWeight: 300, lineHeight: 1.15, letterSpacing: '-0.02em', color: th.text, marginBottom: 10 }}>
                   {T.mapH1}<br /><em className="gold-text" style={{ fontStyle: 'italic' }}>{T.mapH2}</em>
                 </h2>
@@ -889,7 +929,7 @@ export default function LandingPage() {
         <div style={sec}>
           <div className="grid md:grid-cols-2 gap-20 items-center">
             <div className="reveal" style={{ textAlign: isAr ? 'right' : 'left', order: isAr ? 2 : 1 }}>
-              <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: G, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secAI}</div>
+              <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: th.accent, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secAI}</div>
               <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 300, lineHeight: 1.1, letterSpacing: '-0.02em', color: th.text, marginBottom: 10 }}>{T.aiH}</h2>
               <div style={{ fontSize: 11, fontWeight: 500, letterSpacing: '.1em', color: '#1B6CA8', textTransform: 'uppercase', marginBottom: 16, fontFamily: "'Jost', sans-serif" }}>{T.aiSub}</div>
               <div style={{ width: 40, height: 2, background: `linear-gradient(90deg,${G2},${G})`, borderRadius: 1, margin: '14px 0' }} />
@@ -936,13 +976,13 @@ export default function LandingPage() {
       <section style={{ background: th.bg, padding: '96px 0' }}>
         <div style={sec}>
           <div className="reveal text-center mb-12">
-            <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: G, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secTesti}</div>
+            <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: th.accent, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.secTesti}</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 300, lineHeight: 1.1, letterSpacing: '-0.02em', color: th.text }}>{T.h2Testi}</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-5">
             {T.testimonials.map((t, i) => (
               <div key={i} className="reveal rounded-[14px]" style={{ padding: 28, background: th.card, border: `1px solid ${th.cardBorder}`, boxShadow: '0 4px 24px rgba(0,0,0,0.1)' }}>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 48, color: G, lineHeight: 0.7, marginBottom: 16 }}>&ldquo;</div>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 48, color: th.accent, lineHeight: 0.7, marginBottom: 16 }}>&ldquo;</div>
                 <p style={{ fontSize: 14, fontWeight: 300, lineHeight: 1.85, color: th.textSub, marginBottom: 20, fontStyle: 'italic', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>{t.q}</p>
                 <div className="flex items-center gap-3" style={{ flexDirection: isAr ? 'row-reverse' : 'row' }}>
                   <div style={{ width: 40, height: 40, borderRadius: '50%', background: `linear-gradient(135deg,${G2},${G})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: 12, fontWeight: 700, color: '#071422', flexShrink: 0, fontFamily: "'DM Mono', monospace" }}>{t.i}</div>
@@ -961,7 +1001,7 @@ export default function LandingPage() {
       <section style={{ padding: '96px 0', background: mode === 'dark' ? 'linear-gradient(135deg, #0A1520, #0D2035)' : `linear-gradient(135deg, ${th.bg}, ${th.bgAlt})`, borderTop: `1px solid ${th.border}` }}>
         <div style={{ ...sec, maxWidth: 600 }}>
           <div className="reveal text-center mb-10">
-            <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: G, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.ctaTag}</div>
+            <div style={{ fontSize: 10, fontWeight: 500, letterSpacing: '.24em', textTransform: 'uppercase', color: th.accent, marginBottom: 10, fontFamily: "'Jost', sans-serif" }}>{T.ctaTag}</div>
             <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 'clamp(28px, 4vw, 48px)', fontWeight: 300, lineHeight: 1.15, letterSpacing: '-0.02em', color: th.text, marginBottom: 12 }}>{T.ctaH}</h2>
             <p style={{ fontSize: 14, fontWeight: 300, color: th.textSub, lineHeight: 1.8, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>{T.ctaSub}</p>
           </div>
@@ -969,7 +1009,7 @@ export default function LandingPage() {
             {submitted ? (
               <div className="text-center p-10 rounded-xl" style={{ background: mode === 'dark' ? 'rgba(233,193,118,0.08)' : 'rgba(233,193,118,0.14)', border: '1px solid rgba(233,193,118,0.3)' }}>
                 <div style={{ fontSize: 40, marginBottom: 12 }}>✓</div>
-                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, color: G, marginBottom: 8 }}>{lang === 'en' ? 'Thank you.' : 'شكراً.'}</div>
+                <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 26, color: th.accent, marginBottom: 8 }}>{lang === 'en' ? 'Thank you.' : 'شكراً.'}</div>
                 <p style={{ fontSize: 14, color: th.textSub, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>{T.formSuccess}</p>
               </div>
             ) : (
@@ -1015,7 +1055,7 @@ export default function LandingPage() {
               { title: T.footMarkets, links: T.footMarketLinks },
             ].map((col) => (
               <div key={col.title} style={{ textAlign: isAr ? 'right' : 'left' }}>
-                <div style={{ fontSize: 9, fontWeight: 500, letterSpacing: '.22em', color: G, marginBottom: 16, fontFamily: "'Jost', sans-serif" }}>{col.title}</div>
+                <div style={{ fontSize: 9, fontWeight: 500, letterSpacing: '.22em', color: th.accent, marginBottom: 16, fontFamily: "'Jost', sans-serif" }}>{col.title}</div>
                 {col.links.map((l) => (
                   <div key={l} className="hover:text-secondary transition-colors cursor-pointer" style={{ fontSize: 12, fontWeight: 300, color: 'rgba(239,248,247,0.45)', marginBottom: 10, fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>{l}</div>
                 ))}
