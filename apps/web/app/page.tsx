@@ -348,7 +348,7 @@ export default function LandingPage() {
         badge: p.status || 'Available',
         badgeColor: G2,
         furnished: p.finishingType?.toLowerCase().includes('furnish') ? 'furnished' : 'unfurnished',
-        dealType: p.offerType === 'rent' ? 'rent' : (p.listingType === 'primary' ? 'primary' : 'resale'),
+        dealType: p.offerType === 'rent' || p.status?.toLowerCase().includes('rent') ? 'rent' : (p.listingType === 'primary' ? 'primary' : 'resale'),
         img: STATIC_LISTINGS[Math.min(STATIC_LISTINGS.length - 1, featured.indexOf(p))].img,
       }))
     : STATIC_LISTINGS;
