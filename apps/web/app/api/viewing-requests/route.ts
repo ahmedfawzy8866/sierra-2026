@@ -1,8 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { adminDb } from '@/lib/server/firebase-admin';
 import { Timestamp, Query } from 'firebase-admin/firestore';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/server/auth-guard';
 
 export async function POST(request: NextRequest) {
+  const auth = await verifyAdminRequest(request);
+  if (!auth.authenticated) return unauthorizedResponse();
   try {
     const body = await request.json();
     const {
@@ -78,6 +81,9 @@ export async function POST(request: NextRequest) {
 }
 
 export async function GET(request: NextRequest) {
+  const auth = await verifyAdminRequest(request);
+  if (!auth.authenticated) return unauthorizedResponse();
+
   try {
     const { searchParams } = new URL(request.url);
     const propertyCode = searchParams.get('propertyCode');

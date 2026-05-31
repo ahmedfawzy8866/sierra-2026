@@ -10,6 +10,15 @@ import { WhatsAppParserService } from '@/lib/services/WhatsAppParserService';
  */
 
 export async function POST(req: NextRequest) {
+  // Optional secret verification for WhatsApp webhook
+  const SECRET_KEY = process.env.SBR_SECRET_KEY || '';
+  if (SECRET_KEY) {
+    const secretHeader = req.headers.get('x-sbr-secret-key');
+    if (!secretHeader || secretHeader !== SECRET_KEY) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+    }
+  }
+
   try {
     const body = await req.json();
     

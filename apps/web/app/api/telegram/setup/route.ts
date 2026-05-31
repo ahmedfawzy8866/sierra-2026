@@ -1,6 +1,9 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/server/auth-guard';
 
-export async function GET(req: Request) {
+export async function GET(req: NextRequest) {
+  const auth = await verifyAdminRequest(req);
+  if (!auth.authenticated) return unauthorizedResponse();
   const token = process.env.TELEGRAM_BOT_TOKEN;
   const { searchParams } = new URL(req.url);
   const url = searchParams.get('url');

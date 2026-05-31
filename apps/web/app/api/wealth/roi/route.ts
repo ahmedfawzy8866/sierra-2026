@@ -3,12 +3,15 @@
  * Triggers re-analysis of financial metrics for a specific proposal.
  */
 
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
 import { adminDb } from '@/lib/server/firebase-admin';
 import { COLLECTIONS, Proposal, Unit } from '@/lib/models/schema';
 import { analyzeAssetFinancials } from '@/lib/services/roi-service';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/server/auth-guard';
 
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  const auth = await verifyAdminRequest(req);
+  if (!auth.authenticated) return unauthorizedResponse();
   try {
     const { proposalId } = await req.json();
 

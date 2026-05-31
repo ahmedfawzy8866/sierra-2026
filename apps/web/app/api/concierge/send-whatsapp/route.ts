@@ -3,6 +3,7 @@ import { adminDb } from '@/lib/server/firebase-admin';
 import { Timestamp } from 'firebase-admin/firestore';
 import { COLLECTIONS } from '@/lib/models/schema';
 import { NextRequest, NextResponse } from 'next/server';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/server/auth-guard';
 
 interface SendPortfolioRequest {
   leadId: string;
@@ -10,6 +11,9 @@ interface SendPortfolioRequest {
 }
 
 export const POST = async (req: NextRequest) => {
+  const auth = await verifyAdminRequest(req);
+  if (!auth.authenticated) return unauthorizedResponse();
+
   try {
     const body: SendPortfolioRequest = await req.json();
     const { leadId, phoneNumber } = body;

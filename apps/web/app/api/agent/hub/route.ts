@@ -1,10 +1,13 @@
-import { NextResponse } from 'next/server';
+import { NextResponse, NextRequest } from 'next/server';
+import { verifyAdminRequest, unauthorizedResponse } from '@/lib/server/auth-guard';
 
 /**
- * Agent Hub - Placeholder Route
+ * Agent Hub - Agent orchestration (admin-only)
  * TODO: Complete agent orchestration implementation
  */
-export async function POST(req: Request) {
+export async function POST(req: NextRequest) {
+  const auth = await verifyAdminRequest(req);
+  if (!auth.authenticated) return unauthorizedResponse();
   try {
     const { agentId, message } = await req.json();
 

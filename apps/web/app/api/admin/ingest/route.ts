@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { db } from '@/lib/firebase';
 import { collection, getDocs, query, where, writeBatch, doc } from 'firebase/firestore';
+import { verifyRequest, unauthorizedResponse } from '@/lib/server/auth-guard';
 
 interface IngestProperty {
   compound: string;
@@ -36,10 +37,13 @@ function generateSBRCode(property: IngestProperty): string {
 /**
  * POST /api/admin/ingest
  * Ingest landlord Google Sheet, deduplicate, and stamp SBR codes
+ * Requires Firebase Auth token or SBR_SECRET_KEY header
  */
 export async function POST(request: NextRequest) {
+  const auth = await verifyRequest(request);
+  if (!auth.authenticated) return unauthorizedResponse();
+
   try {
-    // Validate secret key via middleware (handled by middleware.ts)
     const body = await request.json();
     const { properties } = body;
 
