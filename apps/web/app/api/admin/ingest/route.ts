@@ -38,6 +38,7 @@ function generateSBRCode(property: IngestProperty): string {
  * POST /api/admin/ingest
  * Ingest landlord Google Sheet, deduplicate, and stamp SBR codes
  * Requires Firebase Auth token or SBR_SECRET_KEY header
+ * Accepts: Firebase ID token OR X-SBR-SECRET-KEY header
  */
 export async function POST(request: NextRequest) {
   const auth = await verifyRequest(request);

@@ -6,6 +6,7 @@ import { verifyAdminRequest, unauthorizedResponse } from '@/lib/server/auth-guar
 export async function POST(request: NextRequest) {
   const auth = await verifyAdminRequest(request);
   if (!auth.authenticated) return unauthorizedResponse();
+
   try {
     const body = await request.json();
     const {

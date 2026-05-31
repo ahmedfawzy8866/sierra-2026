@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import { auth, db } from '@/lib/firebase';
 import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
-import { RefreshCw, Users, Zap, Loader2, CheckCircle2, XCircle, CreditCard, Webhook } from 'lucide-react';
+import { RefreshCw, Users, Zap, Loader2, CheckCircle2, XCircle, CreditCard, Webhook, Database } from 'lucide-react';
 
 interface SyncResult {
   success: boolean;
@@ -23,9 +23,11 @@ export default function AdminSyncPage() {
   const [syncingListings, setSyncingListings] = useState(false);
   const [syncingLeads, setSyncingLeads] = useState(false);
   const [syncingFull, setSyncingFull] = useState(false);
+  const [syncingAirtable, setSyncingAirtable] = useState(false);
   const [listingsResult, setListingsResult] = useState<SyncResult | null>(null);
   const [leadsResult, setLeadsResult] = useState<SyncResult | null>(null);
   const [fullResult, setFullResult] = useState<SyncResult | null>(null);
+  const [airtableResult, setAirtableResult] = useState<SyncResult | null>(null);
   const [activities, setActivities] = useState<ActivityLog[]>([]);
   const [credits, setCredits] = useState<any>(null);
   const [loadingCredits, setLoadingCredits] = useState(false);
@@ -56,12 +58,12 @@ export default function AdminSyncPage() {
     };
   }
 
-  async function runSync(action: string, setLoading: (v: boolean) => void, setResult: (v: SyncResult) => void) {
+  async function postSync(url: string, setLoading: (v: boolean) => void, setResult: (v: SyncResult) => void) {
     setLoading(true);
     setResult({ success: false });
     try {
       const headers = await getAuthHeaders();
-      const res = await fetch(`/api/sync?action=${action}`, {
+      const res = await fetch(url, {
         method: 'POST',
         headers,
         body: JSON.stringify({}),
@@ -74,6 +76,10 @@ export default function AdminSyncPage() {
     } finally {
       setLoading(false);
     }
+  }
+
+  function runSync(action: string, setLoading: (v: boolean) => void, setResult: (v: SyncResult) => void) {
+    return postSync(`/api/sync?action=${action}`, setLoading, setResult);
   }
 
   async function checkCredits() {
@@ -117,6 +123,15 @@ export default function AdminSyncPage() {
       action: () => runSync('run-sync', setSyncingFull, setFullResult),
       color: '#C9A84C',
     },
+    {
+      title: 'Sync Airtable',
+      desc: 'Import owner/broker listings from the Airtable base into inventory',
+      icon: Database,
+      loading: syncingAirtable,
+      result: airtableResult,
+      action: () => postSync('/api/sync/airtable', setSyncingAirtable, setAirtableResult),
+      color: '#8B5CF6',
+    },
   ];
 
   return (
@@ -126,11 +141,11 @@ export default function AdminSyncPage() {
         <h1 className="text-2xl font-bold text-[#071422] tracking-tight" style={{ fontFamily: 'var(--font-display)' }}>
           Sync Center
         </h1>
-        <p className="text-[#3a5570] text-sm mt-0.5">Property Finder integration management</p>
+        <p className="text-[#3a5570] text-sm mt-0.5">Property Finder &amp; Airtable integration management</p>
       </div>
 
       {/* ══ Quick Actions ══ */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
         {actions.map(({ title, desc, icon: Icon, loading, result, action, color }) => (
           <div key={title}
             className="bg-white rounded-2xl p-6 shadow-[0_2px_16px_-4px_rgba(3,22,50,0.06)] hover:shadow-[0_8px_32px_-4px_rgba(3,22,50,0.1)] transition-shadow">

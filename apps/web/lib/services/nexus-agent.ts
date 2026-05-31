@@ -5,8 +5,7 @@
 
 import { GoogleAIService } from '../server/google-ai';
 import { SkillLoader } from './skill-loader';
-import { db } from '../firebase';
-import { collection, query, where, getDocs, limit } from 'firebase/firestore';
+import { adminDb } from '../server/firebase-admin';
 import { COLLECTIONS, type Lead } from '../models/schema';
 
 export interface NexusResponse {
@@ -33,17 +32,17 @@ export class NexusAgent {
       const response = await GoogleAIService.chatCompletions(
         'nexus', 'agentic-order',
         [
-          { 
-            role: 'system', 
+          {
+            role: 'system',
             content: `You are the NEXUS CORE of Sierra Blu Realty.
             CONTEXT: ${context}
-            GOAL: Execute operational orders using the available tools. 
+            GOAL: Execute operational orders using the available tools.
             TONE: Institutional, precise, editorial luxury.
             When you see an order that requires a tool, call it. If you have enough info, answer directly.`
           },
           { role: 'user', content: order }
         ],
-        { 
+        {
           model: 'gemini-1.5-pro',
           tools: tools,
           temperature: 0.2
@@ -55,7 +54,7 @@ export class NexusAgent {
       // 3. Handle Tool Calls
       if (message.tool_calls && message.tool_calls.length > 0) {
         let conversationLog = ``;
-        
+
         for (const tool of message.tool_calls) {
           const fnName = tool.function.name ?? 'unknown';
           const fnArgs = tool.function.arguments ?? '{}';
@@ -97,8 +96,10 @@ export class NexusAgent {
    * Memory Link: Resolves the Telegram Chat ID to a Firestore Lead.
    */
   private static async getLeadByChatId(chatId: number): Promise<Lead | null> {
-    const q = query(collection(db, COLLECTIONS.stakeholders), where('automation.telegramId', '==', chatId), limit(1));
-    const snap = await getDocs(q);
+    const snap = await adminDb.collection(COLLECTIONS.stakeholders)
+      .where('automation.telegramId', '==', chatId)
+      .limit(1)
+      .get();
     if (snap.empty) return null;
     return { id: snap.docs[0].id, ...snap.docs[0].data() } as Lead;
   }

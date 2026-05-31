@@ -14,7 +14,7 @@
     "build:web": "cd apps/web && npm run build",
     "build:admin": "cd apps/admin && npm run build",
     "build:functions": "cd functions && npm run build",
-    "start": "NODE_OPTIONS=--max-old-space-size=8192 cd apps/web && npm start",
+    "start": "cd apps/web && npm start",
     "lint": "turbo run lint",
     "test": "turbo run test",
     "test:ci": "turbo run test:ci",

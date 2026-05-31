@@ -35,7 +35,7 @@ export default function AdminDatabasePage() {
               docCount: snap.size,
               sample: snap.docs[0]?.data(),
             });
-          } catch (err) {
+          } catch (_err) {
             // Collection might not exist
             data.push({
               name: collName,

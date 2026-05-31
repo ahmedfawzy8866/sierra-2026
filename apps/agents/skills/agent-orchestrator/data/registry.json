@@ -1,0 +1,438 @@
+{
+  "generated_at": "2026-05-12T13:28:51.629564",
+  "skills_root": "F:\\project 555\\skills",
+  "skills": [
+    {
+      "name": "agent-memory-systems",
+      "description": "Memory is the cornerstone of intelligent agents. Without it, every",
+      "version": "",
+      "location": "F:\\project 555\\skills\\agent-memory-systems",
+      "skill_md": "F:\\project 555\\skills\\agent-memory-systems\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "context-management"
+      ],
+      "triggers": [
+        "memory"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:02.778524"
+    },
+    {
+      "name": "api-design-principles",
+      "description": "Master REST and GraphQL API design principles to build intuitive, scalable, and maintainable APIs that delight developers and stand the test of time.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\backend\\api-design-principles",
+      "skill_md": "F:\\project 555\\skills\\backend\\api-design-principles\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": true,
+      "has_data": false,
+      "capabilities": [
+        "api-integration",
+        "image-generation"
+      ],
+      "triggers": [
+        "api",
+        "design",
+        "rest"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:02.926255"
+    },
+    {
+      "name": "backend-architect",
+      "description": "Expert backend architect specializing in scalable API design, microservices architecture, and distributed systems.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\backend\\backend-architect",
+      "skill_md": "F:\\project 555\\skills\\backend\\backend-architect\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "api-integration",
+        "image-generation"
+      ],
+      "triggers": [
+        "api",
+        "design"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:03.506073"
+    },
+    {
+      "name": "backend-dev-guidelines",
+      "description": "You are a senior backend engineer operating production-grade services under strict architectural and reliability constraints. Use when routes, controllers, services, repositories, express middleware, or prisma database access.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\backend\\backend-dev-guidelines",
+      "skill_md": "F:\\project 555\\skills\\backend\\backend-dev-guidelines\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:03.507607"
+    },
+    {
+      "name": "backend-development-feature-development",
+      "description": "Orchestrate end-to-end backend feature development from requirements to deployment. Use when coordinating multi-phase feature delivery across teams and services.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\backend\\backend-development-feature-development",
+      "skill_md": "F:\\project 555\\skills\\backend\\backend-development-feature-development\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:03.547387"
+    },
+    {
+      "name": "backend-security-coder",
+      "description": "Expert in secure backend coding practices specializing in input validation, authentication, and API security. Use PROACTIVELY for backend security implementations or security code reviews.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\backend\\backend-security-coder",
+      "skill_md": "F:\\project 555\\skills\\backend\\backend-security-coder\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "api-integration",
+        "security"
+      ],
+      "triggers": [
+        "api",
+        "security"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:03.549126"
+    },
+    {
+      "name": "docusign-automation",
+      "description": "Automate DocuSign tasks via Rube MCP (Composio): templates, envelopes, signatures, document management. Always search tools first for current schemas.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\docusign",
+      "skill_md": "F:\\project 555\\skills\\docusign\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "web-automation"
+      ],
+      "triggers": [
+        "automate"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:04.745185"
+    },
+    {
+      "name": "docx-official",
+      "description": "A user may ask you to create, edit, or analyze the contents of a .docx file. A .docx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\docx",
+      "skill_md": "F:\\project 555\\skills\\docx\\SKILL.md",
+      "registered": false,
+      "has_scripts": true,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "python",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:04.750842"
+    },
+    {
+      "name": "file-organizer",
+      "description": "6. Reduces Clutter: Identifies old files you probably don't need anymore",
+      "version": "",
+      "location": "F:\\project 555\\skills\\file-organizer",
+      "skill_md": "F:\\project 555\\skills\\file-organizer\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:05.418397"
+    },
+    {
+      "name": "firebase",
+      "description": "Firebase gives you a complete backend in minutes - auth, database,",
+      "version": "",
+      "location": "F:\\project 555\\skills\\backend\\firebase",
+      "skill_md": "F:\\project 555\\skills\\backend\\firebase\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:05.431351"
+    },
+    {
+      "name": "internal-comms",
+      "description": "Write internal communications such as status reports, leadership updates, 3P updates, newsletters, FAQs, incident reports, and project updates using repeatable internal formats.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\internal-comms",
+      "skill_md": "F:\\project 555\\skills\\internal-comms\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "monitoring",
+        "security"
+      ],
+      "triggers": [
+        "incident",
+        "status"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:06.721399"
+    },
+    {
+      "name": "mcp-builder",
+      "description": "Create MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. The quality of an MCP server is measured by how well it enables LLMs to accomplish real-world tasks.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\mcp-builder",
+      "skill_md": "F:\\project 555\\skills\\mcp-builder\\SKILL.md",
+      "registered": false,
+      "has_scripts": true,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "context-management"
+      ],
+      "triggers": [
+        "context"
+      ],
+      "language": "python",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:10.535074"
+    },
+    {
+      "name": "nextjs-best-practices",
+      "description": "Next.js App Router principles. Server Components, data fetching, routing patterns.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\nextjs",
+      "skill_md": "F:\\project 555\\skills\\nextjs\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:10.891732"
+    },
+    {
+      "name": "pdf-official",
+      "description": "This guide covers essential PDF processing operations using Python libraries and command-line tools. For advanced features, JavaScript libraries, and detailed examples, see reference.md. If you need to fill out a PDF form, read forms.md and follow its instructions.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\pdf",
+      "skill_md": "F:\\project 555\\skills\\pdf\\SKILL.md",
+      "registered": false,
+      "has_scripts": true,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "python",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:11.146448"
+    },
+    {
+      "name": "pptx-official",
+      "description": "A user may ask you to create, edit, or analyze the contents of a .pptx file. A .pptx file is essentially a ZIP archive containing XML files and other resources that you can read or edit. You have different tools and workflows available for different tasks.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\pptx",
+      "skill_md": "F:\\project 555\\skills\\pptx\\SKILL.md",
+      "registered": false,
+      "has_scripts": true,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "python",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:11.323416"
+    },
+    {
+      "name": "stripe-automation",
+      "description": "Automate Stripe tasks via Rube MCP (Composio): customers, charges, subscriptions, invoices, products, refunds. Always search tools first for current schemas.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\stripe",
+      "skill_md": "F:\\project 555\\skills\\stripe\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "web-automation"
+      ],
+      "triggers": [
+        "automate"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:12.623428"
+    },
+    {
+      "name": "stripe-integration",
+      "description": "Master Stripe payment processing integration for robust, PCI-compliant payment flows including checkout, subscriptions, webhooks, and refunds.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\stripe-integration",
+      "skill_md": "F:\\project 555\\skills\\stripe-integration\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:12.625056"
+    },
+    {
+      "name": "theme-factory",
+      "description": "This skill provides a curated collection of professional font and color themes themes, each with carefully selected color palettes and font pairings. Once a theme is chosen, it can be applied to any artifact.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\theme-factory",
+      "skill_md": "F:\\project 555\\skills\\theme-factory\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:12.899111"
+    },
+    {
+      "name": "vercel-deployment",
+      "description": "Expert knowledge for deploying to Vercel with Next.js",
+      "version": "",
+      "location": "F:\\project 555\\skills\\vercel-deployment",
+      "skill_md": "F:\\project 555\\skills\\vercel-deployment\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:13.168686"
+    },
+    {
+      "name": "web-artifacts-builder",
+      "description": "To build powerful frontend claude.ai artifacts, follow these steps:",
+      "version": "",
+      "location": "F:\\project 555\\skills\\artifacts-builder",
+      "skill_md": "F:\\project 555\\skills\\artifacts-builder\\SKILL.md",
+      "registered": false,
+      "has_scripts": true,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [],
+      "triggers": [],
+      "language": "bash",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:13.255243"
+    },
+    {
+      "name": "whatsapp-automation",
+      "description": "Automate WhatsApp Business tasks via Rube MCP (Composio): send messages, manage templates, upload media, and handle contacts. Always search tools first for current schemas.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\whatsapp-automation",
+      "skill_md": "F:\\project 555\\skills\\whatsapp-automation\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "content-management",
+        "messaging",
+        "web-automation"
+      ],
+      "triggers": [
+        "automate",
+        "media",
+        "send",
+        "whatsapp"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:13.286872"
+    },
+    {
+      "name": "whatsapp-cloud-api",
+      "description": "Integracao com WhatsApp Business Cloud API (Meta). Mensagens, templates, webhooks HMAC-SHA256, automacao de atendimento. Boilerplates Node.js e Python.",
+      "version": "",
+      "location": "F:\\project 555\\skills\\whatsapp-cloud-api",
+      "skill_md": "F:\\project 555\\skills\\whatsapp-cloud-api\\SKILL.md",
+      "registered": false,
+      "has_scripts": true,
+      "has_references": true,
+      "has_data": false,
+      "capabilities": [
+        "api-integration",
+        "messaging",
+        "web-automation"
+      ],
+      "triggers": [
+        "api",
+        "atendimento",
+        "automacao",
+        "integracao",
+        "whatsapp"
+      ],
+      "language": "python",
+      "status": "active",
+      "last_modified": "2026-04-05T03:48:30.329701"
+    },
+    {
+      "name": "xlsx-official",
+      "description": "Unless otherwise stated by the user or existing template",
+      "version": "",
+      "location": "F:\\project 555\\skills\\xlsx",
+      "skill_md": "F:\\project 555\\skills\\xlsx\\SKILL.md",
+      "registered": false,
+      "has_scripts": false,
+      "has_references": false,
+      "has_data": false,
+      "capabilities": [
+        "content-management"
+      ],
+      "triggers": [
+        "template"
+      ],
+      "language": "none",
+      "status": "active",
+      "last_modified": "2026-05-12T05:28:13.587995"
+    }
+  ]
+}

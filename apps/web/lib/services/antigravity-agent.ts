@@ -4,14 +4,13 @@
  */
 
 import { GoogleAIService } from '../server/google-ai';
-import { db } from '../firebase';
-import { collection, query, where, getDocs, limit } from 'firebase/firestore';
+import { adminDb } from '../server/firebase-admin';
+import { Timestamp, FieldValue } from 'firebase-admin/firestore';
 import { COLLECTIONS, type Lead, type Unit } from '../models/schema';
 import { generateOptionsPackage } from './sales-engine';
 import { runMatchingForLead } from './matching-engine';
 import { assessLegalRisk, generateLegalSummary } from './legal-brain';
 import { extractProfileFromChat } from './profiling-service';
-import { doc, updateDoc, arrayUnion, serverTimestamp } from 'firebase/firestore';
 
 export interface AgentResponse {
   message: string;
@@ -89,17 +88,21 @@ Format: JSON only: {"type": "intent_name", "params": {}}`;
 }
 
 async function handleAnalyzeLead(name: string): Promise<AgentResponse> {
-  const q = query(collection(db, COLLECTIONS.stakeholders), where('name', '>=', name), limit(1));
-  const snap = await getDocs(q);
+  const snap = await adminDb.collection(COLLECTIONS.stakeholders)
+    .where('name', '>=', name)
+    .limit(1)
+    .get();
   if (snap.empty) return { message: `Stakeholder "${name}" not found.`, success: false };
 
   const lead = { id: snap.docs[0].id, ...snap.docs[0].data() } as Lead;
-  
+
   // Trigger matching just in case
   await runMatchingForLead(lead.id!);
-  
+
   // Re-fetch with matches
-  const updatedSnap = await getDocs(query(collection(db, COLLECTIONS.stakeholders), where('name', '==', lead.name)));
+  const updatedSnap = await adminDb.collection(COLLECTIONS.stakeholders)
+    .where('name', '==', lead.name)
+    .get();
   const updatedLead = updatedSnap.docs[0].data() as Lead;
 
   const summary = `
@@ -115,15 +118,17 @@ async function handleAnalyzeLead(name: string): Promise<AgentResponse> {
 }
 
 async function handleGenerateProposal(name: string, text: string): Promise<AgentResponse> {
-  const q = query(collection(db, COLLECTIONS.stakeholders), where('name', '>=', name), limit(1));
-  const snap = await getDocs(q);
+  const snap = await adminDb.collection(COLLECTIONS.stakeholders)
+    .where('name', '>=', name)
+    .limit(1)
+    .get();
   if (snap.empty) return { message: `Stakeholder "${name}" not found.`, success: false };
 
   // Command: Analyze Lead [leadId]
   if (text.includes('analyze')) {
     const leadId = text.match(/[a-zA-Z0-9]{20,}/)?.[0];
     if (leadId) {
-      return { 
+      return {
         message: `<b>✦ ANALYZING STAKEHOLDER: ${leadId} ✦</b>\n\nIntelligence status: <b>Qualified</b>.\nNeural Matching: <b>Synchronized</b>.\nSelection Gallery: <b>Deployed</b>.\n\nRecommended Action: 📱 <i>Call stakeholder to finalize portfolio preference.</i>`,
         success: true
       };
@@ -160,8 +165,7 @@ Strategic portfolio for <b>${name}</b> has been generated.
 
 async function handleCheckListing(id: string): Promise<AgentResponse> {
   // Search by code or title
-  const q = query(collection(db, COLLECTIONS.units), limit(1)); // Simple search for demo
-  const snap = await getDocs(q);
+  const snap = await adminDb.collection(COLLECTIONS.units).limit(1).get();
   if (snap.empty) return { message: `Listing "${id}" not found.`, success: false };
 
   const unit = snap.docs[0].data() as Unit;
@@ -186,8 +190,8 @@ async function handleGeneralQuery(text: string): Promise<AgentResponse> {
     const data = await GoogleAIService.chatCompletions(
       'antigravity', 'general-query',
       [
-        { 
-          role: 'system', 
+        {
+          role: 'system',
           content: `ROLE: You are "Sierra," the Lead Concierge for Sierra Blu Realty.
 CORE COMPETENCIES:
 1. The Subtle Interviewer: You extract key data points (Nationality, Family Size, Budget, Move-in Date) with professional warmth.
@@ -213,15 +217,17 @@ Answer every query with authority, blending professional warmth with the precisi
  */
 async function handleStakeholderInterview(chatId: number, text: string): Promise<AgentResponse> {
   // 1. Find or Create Lead based on chatId
-  const q = query(collection(db, COLLECTIONS.stakeholders), where('automation.telegramId', '==', chatId), limit(1));
-  const snap = await getDocs(q);
-  
+  const snap = await adminDb.collection(COLLECTIONS.stakeholders)
+    .where('automation.telegramId', '==', chatId)
+    .limit(1)
+    .get();
+
   let lead: Lead;
   let leadId = '';
-  
+
   if (snap.empty) {
     // Create new lead in S2 (extracted)
-    const newLeadRef = doc(collection(db, COLLECTIONS.stakeholders));
+    const newLeadRef = adminDb.collection(COLLECTIONS.stakeholders).doc();
     leadId = newLeadRef.id;
     lead = {
       name: `Stakeholder-${chatId}`,
@@ -239,13 +245,13 @@ async function handleStakeholderInterview(chatId: number, text: string): Promise
 
   // 2. Profile & Feedback Extraction (Stage 6-10)
   const profile = await extractProfileFromChat(text);
-  
+
   // V9.0 Intelligence Upgrade: Detect Rejections/Feedback
   const { extractFeedbackAndSentiment } = await import('./profiling-service');
   const feedback = await extractFeedbackAndSentiment(text);
-  
+
   // 3. Update Lead Intelligence Profile & Neural Memory
-  const leadRef = doc(db, COLLECTIONS.stakeholders, leadId);
+  const leadRef = adminDb.collection(COLLECTIONS.stakeholders).doc(leadId);
   const updates: any = {
     'intelligence.profile': {
       ...(lead.intelligence?.profile || {}),
@@ -256,16 +262,16 @@ async function handleStakeholderInterview(chatId: number, text: string): Promise
       moveInDate: profile.moveInDate || lead.intelligence?.profile?.moveInDate
     },
     'orchestrationState.stage': profile.isQualified ? 'S7' : 'S6',
-    updatedAt: serverTimestamp()
+    updatedAt: Timestamp.now()
   };
 
   // Inject Neural Memory (Negative Signals & Objections)
   if (feedback && (feedback.signals?.length > 0 || feedback.objections?.length > 0)) {
     if (feedback.signals?.length > 0) {
-      updates['intelligence.memory.negativeSignals'] = arrayUnion(...feedback.signals);
+      updates['intelligence.memory.negativeSignals'] = FieldValue.arrayUnion(...feedback.signals);
     }
     if (feedback.objections?.length > 0) {
-      updates['intelligence.objections'] = arrayUnion(...feedback.objections.map((obj: any) => ({
+      updates['intelligence.objections'] = FieldValue.arrayUnion(...feedback.objections.map((obj: any) => ({
         ...obj,
         timestamp: new Date()
       })));
@@ -278,10 +284,10 @@ async function handleStakeholderInterview(chatId: number, text: string): Promise
     }
   }
 
-  await updateDoc(leadRef, updates);
+  await leadRef.update(updates);
 
   // 4. Get Next Question - Using Sierra's Editorial Luxury Persona
-  const _welcomeSequence = `
+  const welcomeSequence = `
     Based on the current profile summary: "${profile.summary}",
     generate a warm, professional response in refined English with quiet confidence.
     If the lead is new, follow the 3-message welcome sequence:
@@ -300,8 +306,8 @@ async function handleStakeholderInterview(chatId: number, text: string): Promise
   const sierraResponse = await GoogleAIService.chatCompletions(
     'sierra', 'concierge-interview',
     [
-      { 
-        role: 'system', 
+      {
+        role: 'system',
         content: `You are Sierra from Sierra Blu — Lead Concierge for an elite Cairo property platform.
         Focus on qualifying the lead: Nationality, Family Size, Budget, Move-in Date.
         Be warm, professional, and precise. Speak exclusively in refined English with quiet confidence.`
@@ -313,9 +319,9 @@ async function handleStakeholderInterview(chatId: number, text: string): Promise
 
   const finalMessage = sierraResponse.choices[0].message.content;
 
-  return { 
-    message: finalMessage, 
-    success: true, 
+  return {
+    message: finalMessage,
+    success: true,
     actionTaken: 'stakeholder_profiling'
   };
 }

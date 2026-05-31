@@ -3,10 +3,11 @@
 ## 📋 Table of Contents
 1. [Environment Setup](#environment-setup)
 2. [Firebase Configuration](#firebase-configuration)
-3. [Data Seeding](#data-seeding)
-4. [Local Development](#local-development)
-5. [Production Deployment](#production-deployment)
-6. [Verification & Testing](#verification--testing)
+3. [Python API (apps/api)](#python-api)
+4. [Data Seeding](#data-seeding)
+5. [Local Development](#local-development)
+6. [Production Deployment](#production-deployment)
+7. [Verification & Testing](#verification--testing)
 
 ---
 
@@ -14,25 +15,24 @@
 
 ### Step 1: Install Dependencies
 ```bash
-cd /home/user/i-sierra-2027
+cd /path/to/i-sierra-2027
 pnpm install
 ```
 
 ### Step 2: Create `.env.local`
 ```bash
 # Copy the example env file
-cp apps/web/.env.local.example apps/web/.env.local
+cp .env.example .env.local
 
 # Edit with your Firebase credentials
-nano apps/web/.env.local
+nano .env.local
 ```
 
 ### Step 3: Verify Setup
 ```bash
-cd apps/web
 pnpm run type-check  # Should pass with 0 errors
 pnpm run lint        # Should run with strict rules
-pnpm run test        # Should pass all 40 tests
+pnpm run test:ci     # Should pass all tests
 ```
 
 ---
@@ -49,22 +49,51 @@ pnpm run test        # Should pass all 40 tests
 2. Copy configuration and add to `.env.local`
 
 ### 3. Set Firestore Security Rules
-```javascript
-rules_version = '2';
-service cloud.firestore {
-  match /databases/{database}/documents {
-    match /properties/{document=**} {
-      allow read: if true;
-      allow write: if request.auth.uid != null;
-    }
-    match /leads/{document=**} {
-      allow read, write: if request.auth.uid != null;
-    }
-    match /users/{document=**} {
-      allow read, write: if request.auth.uid != null;
-    }
-  }
-}
+```bash
+firebase deploy --only firestore:rules
+```
+
+Or apply the rules in `firestore.rules` directly from the Firebase Console.
+
+---
+
+## Python API
+
+The `apps/api/` directory contains a FastAPI backend for property search, WhatsApp webhooks, and AI integrations.
+
+### Local Development
+```bash
+cd apps/api
+python -m venv .venv
+source .venv/bin/activate    # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+
+# Set environment variables
+cp ../../.env.example .env
+nano .env  # Fill in real values
+
+# Start the API server
+uvicorn main:app --reload --port 8000
+# Visit http://localhost:8000/health
+```
+
+### Docker
+```bash
+cd apps/api
+docker build -t sierra-api .
+docker run -p 8000:8000 --env-file .env sierra-api
+```
+
+### Production (Railway / Fly.io / Cloud Run)
+```bash
+# Deploy to Railway
+railway up
+
+# Or Google Cloud Run
+gcloud run deploy sierra-blu-api \
+  --source apps/api \
+  --region us-central1 \
+  --allow-unauthenticated
 ```
 
 ---
@@ -80,49 +109,62 @@ cd apps/web
 node scripts/seed-firestore.mjs
 ```
 
-### Manual Seeding (Firebase Console)
-1. Firestore → Create Collection "properties"
-2. Add sample documents with structure from seed script
-3. Repeat for "leads" and "users" collections
-
 ---
 
 ## Local Development
 
-### Start Server
+### Start all apps
 ```bash
-cd apps/web
-pnpm run dev
-# Visit http://localhost:3000
+# From repo root (Turborepo)
+pnpm dev
+```
+
+### Start individual apps
+```bash
+# Web frontend (Next.js)
+cd apps/web && pnpm dev    # http://localhost:3000
+
+# Admin portal (Vite)
+cd apps/admin && pnpm dev  # http://localhost:5173
+
+# Python API (FastAPI)
+cd apps/api && uvicorn main:app --reload --port 8000
 ```
 
 ### Verify Features
-- [ ] Landing page loads
+- [ ] Landing page loads at http://localhost:3000
 - [ ] Theme switcher works
 - [ ] Language switcher works (EN/AR)
-- [ ] Admin dashboard loads
+- [ ] Admin dashboard at http://localhost:5173
+- [ ] Python API health check at http://localhost:8000/health
 - [ ] No console errors
 
 ---
 
 ## Production Deployment
 
-### Option 1: Vercel (Recommended)
+### Web App: Vercel (Recommended)
 ```bash
 vercel deploy
-# Add environment variables during setup
+# Set environment variables via Vercel dashboard or vercel env add
 ```
 
-### Option 2: Firebase Hosting
+### Firebase Functions
 ```bash
-firebase init hosting
-firebase deploy
+firebase deploy --only functions
 ```
 
-### Option 3: Self-Hosted
+### Python API: Docker / Cloud Run
 ```bash
-pnpm run build
-pnpm run start
+cd apps/api
+docker build -t sierra-api .
+# Push to your container registry and deploy
+```
+
+### Firebase Hosting (Admin Portal)
+```bash
+cd apps/admin && pnpm build
+firebase deploy --only hosting
 ```
 
 ---
@@ -132,22 +174,24 @@ pnpm run start
 - [ ] Firebase project created and Firestore enabled
 - [ ] Firestore rules deployed
 - [ ] Sample data seeded (if needed)
-- [ ] Tests pass: `pnpm run test`
+- [ ] Tests pass: `pnpm run test:ci`
 - [ ] Build succeeds: `pnpm run build`
-- [ ] Local verification: `pnpm run start`
+- [ ] Local verification complete
 - [ ] No TypeScript errors
 - [ ] No ESLint errors
+- [ ] Python API starts without errors
 
 ---
 
 ## Quick Commands
 ```bash
-pnpm install          # Install deps
-pnpm run dev         # Dev server
-pnpm run build       # Production build
-pnpm run test        # Run tests
-pnpm run type-check  # TypeScript check
-pnpm run lint        # ESLint check
+pnpm install          # Install all workspace deps
+pnpm dev              # Start all apps in parallel
+pnpm build            # Production build all apps
+pnpm test:ci          # Run all tests
+pnpm type-check       # TypeScript check all apps
+pnpm lint             # ESLint all apps
 ```
 
-**Status:** Repository is code-complete and ready for deployment with Firebase configuration.
+**See [MIGRATION.md](./MIGRATION.md) for details on the repository consolidation.**
+

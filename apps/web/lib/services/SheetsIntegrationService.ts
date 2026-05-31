@@ -1,6 +1,7 @@
 import Papa from 'papaparse';
 import { adminDb } from '../server/firebase-admin';
-import { COLLECTIONS, Unit, PropertyType, PropertyStatus } from '../models/schema';
+import { COLLECTIONS, Unit } from '../models/schema';
+import { normalizePropertyType, normalizeStatus } from './listing-normalize';
 
 export class SheetsIntegrationService {
   /**
@@ -96,15 +97,19 @@ export class SheetsIntegrationService {
       return null; // Skip if missing crucial data
     }
 
-    const typeStr = (row['Type'] || row['Property Type'] || 'apartment').toString().toLowerCase();
-    const statusStr = (row['Status'] || row['status'] || 'available').toString().toLowerCase();
+    const typeStr = row['Type'] || row['Property Type'] || 'apartment';
+    const statusStr = row['Status'] || row['status'] || 'available';
+
+    // Shared normalizer keeps commercial / co-working / office types from being
+    // mislabelled as apartments and is consistent with the Airtable path.
+    const { propertyType, category } = normalizePropertyType(typeStr);
 
     const unit: Partial<Unit> = {
       title: String(title),
       referenceNumber: row['Reference Number'] || row['reference'] || `SBR-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
-      propertyType: this.normalizePropertyType(typeStr),
-      category: 'residential', // default
-      status: this.normalizeStatus(statusStr),
+      propertyType,
+      category,
+      status: normalizeStatus(statusStr),
       price: Number(price) || 0,
       area: Number(row['Area'] || row['area'] || row['Size'] || 0),
       bedrooms: Number(row['Bedrooms'] || row['beds']) || undefined,
@@ -113,26 +118,10 @@ export class SheetsIntegrationService {
       location: row['Location'] || row['Area'] || undefined, // fallback mapping
       description: row['Description'] || row['description'] || '',
       featuredImage: row['Featured Image'] || row['Image URL'] || undefined,
-      syncSource: 'manual',
+      syncSource: 'sheets',
       lastSyncAt: new Date().toISOString(),
     };
 
     return unit;
-  }
-
-  private static normalizePropertyType(type: string): PropertyType {
-    const validTypes: PropertyType[] = ['apartment', 'villa', 'townhouse', 'duplex', 'penthouse', 'studio', 'chalet', 'commercial', 'land'];
-    if (validTypes.includes(type as PropertyType)) {
-      return type as PropertyType;
-    }
-    return 'apartment'; // Default fallback
-  }
-
-  private static normalizeStatus(status: string): PropertyStatus {
-    const validStatuses: PropertyStatus[] = ['available', 'reserved', 'sold', 'rented', 'off-market'];
-    if (validStatuses.includes(status as PropertyStatus)) {
-      return status as PropertyStatus;
-    }
-    return 'available'; // Default fallback
   }
 }

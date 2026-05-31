@@ -238,7 +238,7 @@ export default function EasyListing() {
       // Update Canvas
       setTimeout(() => generateBrandedImage(), 100);
 
-    } catch (err) {
+    } catch (_err) {
       setErrorMessage("Failed to analyze text logic.");
     } finally {
       setIsProcessing(false);
@@ -336,7 +336,7 @@ export default function EasyListing() {
         URL.revokeObjectURL(previewUrl);
       }
       setPreviewUrl(null);
-    } catch (err) {
+    } catch (_err) {
       setErrorMessage("Firebase save error.");
     } finally {
       setIsSaving(false);

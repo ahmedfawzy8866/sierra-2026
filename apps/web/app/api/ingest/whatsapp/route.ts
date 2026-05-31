@@ -1,4 +1,5 @@
 import { NextResponse, NextRequest } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import { adminDb } from '@/lib/server/firebase-admin';
 import { Timestamp } from 'firebase-admin/firestore';
 import type { BrokerListing } from '@/lib/models/schema';
@@ -9,6 +10,14 @@ import { OrchestratorService } from '@/lib/services/orchestrator';
 import { GoogleSheetsSync } from '@/lib/services/sheets-sync';
 import { GoogleAIService } from '@/lib/server/google-ai';
 import { LEILA_PROMPT } from '@/lib/prompts';
+
+const SECRET_KEY = process.env.SBR_SECRET_KEY || '';
+
+async function verifyWebhookSecret(req: NextRequest): Promise<boolean> {
+  if (!SECRET_KEY) return true;
+  const secretHeader = req.headers.get('x-sbr-secret-key');
+  return secretHeader === SECRET_KEY;
+}
 
 const extractRawMessage = (body: Record<string, any>) =>
   body.message ||
@@ -112,6 +121,8 @@ export async function POST(req: NextRequest) {
     if (!secretHeader || secretHeader !== SECRET_KEY) {
       return NextResponse.json({ success: false, error: 'Unauthorized' }, { status: 401 });
     }
+  if (!await verifyWebhookSecret(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
   }
 
   try {

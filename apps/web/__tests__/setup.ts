@@ -1,5 +1,9 @@
 // Jest setup — global mocks for Firebase and external services
 
+// Neutralize Next.js `server-only` guard so server modules can be unit-tested
+// under the jest node environment (outside the Next server runtime).
+jest.mock('server-only', () => ({}));
+
 // Mock firebase-admin
 jest.mock('firebase-admin/app', () => ({
   initializeApp: jest.fn(),

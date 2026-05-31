@@ -65,7 +65,7 @@ export default function PortfolioAssets() {
       setIsFormOpen(false);
       setIsPasteOpen(false);
       refetch();
-    } catch (err) {
+    } catch (_err) {
       toast.error("Failed to synchronize asset data.");
     }
   };
@@ -78,7 +78,7 @@ export default function PortfolioAssets() {
       setIsFormOpen(false);
       setEditingProperty(undefined);
       refetch();
-    } catch (err) {
+    } catch (_err) {
       toast.error("Update synchronization failed.");
     }
   };
@@ -90,7 +90,7 @@ export default function PortfolioAssets() {
       toast.success("Asset removed from portfolio.");
       setSelectedProperty(null);
       refetch();
-    } catch (err) {
+    } catch (_err) {
       toast.error("Asset termination failed.");
     }
   };

@@ -24,6 +24,10 @@
     },
     "type-check": {
       "cache": true
+    },
+    "deploy": {
+      "dependsOn": ["build"],
+      "cache": false
     }
   }
 }

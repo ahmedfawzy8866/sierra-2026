@@ -5,6 +5,22 @@ export async function POST(req: NextRequest) {
   // NOTE: Telegram Bot API does not support custom headers in webhooks,
   // so secret verification cannot be added here without breaking Telegram integration.
   // Secret validation would need to be implemented at the infrastructure level (e.g., IP allowlist).
+import { NextRequest, NextResponse } from 'next/server';
+import { adminDb, isAdminInitialized } from '@/lib/server/firebase-admin';
+
+const SECRET_KEY = process.env.SBR_SECRET_KEY || '';
+
+async function verifyWebhookSecret(req: NextRequest): Promise<boolean> {
+  if (!SECRET_KEY) return true;
+  const secretHeader = req.headers.get('x-sbr-secret-key');
+  return secretHeader === SECRET_KEY;
+}
+
+export async function POST(req: NextRequest) {
+  if (!await verifyWebhookSecret(req)) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
+  }
+
   try {
     const body = await req.json();
     const { message } = body;
@@ -185,7 +201,7 @@ Commands:
             body: JSON.stringify({ chat_id: chatId, action: 'typing' }),
         });
 
-        const { processAgentCommand } = await import('@/lib/services/antigravity-agent');
+        const { processAgentCommand } = await import('@/lib/agents/antigravity-agent');
         const response = await processAgentCommand(chatId, queryText || "Hello! I am Antigravity. How can I assist your operations today?");
         await sendMessage(response.message);
     }
