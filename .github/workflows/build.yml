@@ -32,7 +32,6 @@ jobs:
           cd apps/web
           pnpm run build
         env:
-          NODE_OPTIONS: --max-old-space-size=4096
           # Use staging Firebase for build
           NEXT_PUBLIC_FIREBASE_PROJECT_ID: sierra-blu-staging
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY_STAGING }}

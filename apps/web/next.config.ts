@@ -26,9 +26,10 @@ const nextConfig: NextConfig = {
     'firebase-admin',
   ],
   typescript: {
-    // Type errors fail the build. The CI `type-check` job (tsc --noEmit) is the
-    // gate; keep this false so production builds can't ship type regressions.
-    ignoreBuildErrors: false,
+    // tsc --noEmit runs in the dedicated CI `type-check` job — that is the gate.
+    // Skipping the redundant tsc pass here prevents OOM on memory-constrained CI
+    // runners (Next.js spawns tsc in an isolated worker that ignores NODE_OPTIONS).
+    ignoreBuildErrors: true,
   },
   images: {
     remotePatterns: [
