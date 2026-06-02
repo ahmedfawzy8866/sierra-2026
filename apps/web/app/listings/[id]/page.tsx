@@ -97,7 +97,7 @@ export default function PropertyDetailPage() {
         </div>
 
         {/* Sidebar */}
-        <aside className="space-y-8">
+        <aside className="space-y-8 print:hidden">
           <div className="bg-surface-container-low p-10 rounded-xl shadow-ambient border border-outline-variant text-center">
             <span className="label-sm text-secondary mb-6 block">Ready to proceed?</span>
             <div className="font-display text-2xl font-bold text-primary mb-10">Acquisition Protocol</div>
@@ -107,8 +107,11 @@ export default function PropertyDetailPage() {
             >
               Schedule Inspection
             </button>
-            <button className="w-full py-4 border border-outline-variant text-on-surface-variant rounded font-display font-bold text-[10px] tracking-widest uppercase hover:border-secondary transition-all">
-              Request Brochure
+            <button 
+              onClick={() => window.print()}
+              className="w-full py-4 border border-outline-variant text-on-surface-variant rounded font-display font-bold text-[10px] tracking-widest uppercase hover:border-secondary transition-all flex items-center justify-center gap-2"
+            >
+              📥 Download PDF Brochure
             </button>
           </div>
 
@@ -120,6 +123,53 @@ export default function PropertyDetailPage() {
             </div>
           </div>
         </aside>
+
+        {/* CSS Print Styles Sheet */}
+        <style jsx global>{`
+          @media print {
+            body {
+              background: #fff !important;
+              color: #000 !important;
+              font-size: 12pt !important;
+            }
+            nav, aside, footer, .print\\:hidden, button {
+              display: none !important;
+            }
+            .fixed {
+              position: relative !important;
+              top: auto !important;
+            }
+            section {
+              padding: 0 !important;
+              margin: 0 !important;
+              height: auto !important;
+              page-break-inside: avoid;
+            }
+            img {
+              max-height: 45vh !important;
+              width: 100% !important;
+              object-cover: cover !important;
+              border-radius: 12px !important;
+            }
+            h1 {
+              font-size: 28pt !important;
+              color: #1a1a1a !important;
+              margin-top: 20px !important;
+            }
+            .text-secondary {
+              color: #cca44c !important;
+            }
+            .grid {
+              display: block !important;
+            }
+            .border-y {
+              border-top: 2px solid #eaeaea !important;
+              border-bottom: 2px solid #eaeaea !important;
+              padding: 20px 0 !important;
+              margin: 20px 0 !important;
+            }
+          }
+        `}</style>
       </section>
 
       {/* ══ MODAL ══ */}

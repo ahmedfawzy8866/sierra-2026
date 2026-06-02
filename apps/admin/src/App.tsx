@@ -10,7 +10,8 @@ import {
   Lock,
   UserCircle,
   Bell,
-  LogOut
+  LogOut,
+  Sparkles
 } from 'lucide-react';
 import { AuthProvider } from './context/AuthContext';
 import { useAuth } from './context/useAuth';
@@ -20,6 +21,7 @@ import { CRMModule } from './pages/CRMModule';
 import { TheCuratorModule } from './pages/TheCuratorModule';
 import { TheScribeModule } from './pages/TheScribeModule';
 import { CloserModule } from './pages/CloserModule';
+import { LolaAssistantModule } from './pages/LolaAssistantModule';
 import './index.css';
 
 function AppContent() {
@@ -84,6 +86,9 @@ function AppContent() {
           </div>
           <div className={`nav-item ${activeTab === 'crm' ? 'active' : ''}`} onClick={() => setActiveTab('crm')}>
             <Users size={18} /> Matchmaker (S6–8)
+          </div>
+          <div className={`nav-item ${activeTab === 'lola' ? 'active' : ''}`} onClick={() => setActiveTab('lola')}>
+            <Sparkles size={18} color="var(--gold)" /> Lola Hub
           </div>
           {userRole === 'super_admin' && (
             <div className={`nav-item ${activeTab === 'closer' ? 'active' : ''}`} onClick={() => setActiveTab('closer')}>
@@ -156,6 +161,7 @@ function AppContent() {
           {activeTab === 'easylisting' && <EasyListingModule currentUserRole={userRole} currentUserId={user.id} />}
           {activeTab === 'crm'        && <CRMModule currentUserRole={userRole} currentUserId={user.id} />}
           {activeTab === 'closer'     && <CloserModule />}
+          {activeTab === 'lola'       && <LolaAssistantModule />}
           {activeTab === 'settings'   && (
             <div className="settings-placeholder animate-fade-in">
               <Settings size={48} style={{ opacity: 0.1, marginBottom: '1rem' }} />

@@ -18,9 +18,9 @@
                 ┌─────────────┼─────────────┐
                 │             │             │
          ┌──────▼──┐  ┌──────▼──┐  ┌──────▼──┐
-         │   Web   │  │  Admin  │  │   API   │
-         │  App    │  │ Portal  │  │ Routes  │
-         │Next.js  │  │ (Vite)  │  │(Express)│
+         │   Web   │  │  Admin  │  │Workflow │
+         │  App    │  │ Portal  │  │ Engine  │
+         │Next.js  │  │ (Vite)  │  │(n8n/Dkr)│
          └────┬────┘  └────┬────┘  └────┬────┘
               │             │             │
               └─────────────┼─────────────┘
@@ -51,6 +51,8 @@
 
 ```
 Sierra-2027/
+├── docker-compose.n8n.yml      # Self-hosted n8n workflow engine
+├── workflows/                  # Workflow automation package (scripts 1-5)
 ├── apps/
 │   ├── web/                    # Next.js 16 main app
 │   │   ├── app/                # App Router (pages + API routes)
@@ -168,6 +170,11 @@ Sierra-2027/
 - **TypeScript Strict Mode** — Maximum type safety
 - **Jest 29** — Unit testing framework
 - **ESLint 9** — Code quality
+
+### Workflow & Container Automation
+- **Docker Desktop** — Container orchestration backend on Windows (WSL 2)
+- **n8n Workflow Engine** — Visual backend workflow automator on port `5678`
+- **Google Sheets API & WhatsApp Web API** — Ingestion and communication integrations
 
 ---
 
@@ -323,6 +330,34 @@ User.customClaims = {
 
 ---
 
+## n8n Workflow Automation (Docker-Hosted)
+
+Sierra Blu uses a self-hosted **n8n Workflow Automation Engine** running locally inside Docker containers. This engine automates property listings synchronization, owner scraping, automated WhatsApp messaging, and stakeholder follow-ups.
+
+### Docker Configuration (`docker-compose.n8n.yml`)
+The engine is spun up using a WSL 2 backend running the official `n8nio/n8n:latest` image:
+*   **Port Mapping:** `5678:5678` (Dashboard available at `http://localhost:5678`)
+*   **Timezone:** `Africa/Cairo` (for localized scheduling and appointment syncing)
+*   **Volume Mount:** `sierra_blu_n8n_data` mapped to `/home/node/.n8n` for workflow state persistence
+
+### Orchestrated Workflows
+The platform houses 5 production scripts under the `workflows/` package, which are triggered via cron patterns or HTTP webhooks:
+
+1.  **01. WhatsApp Scraper (`workflows/01-whatsapp-scraper`)**
+    *   Monitors designated Egyptian broker WhatsApp groups (e.g. `مجموعة وسطاء التجمع`, `عقارات القاهرة الجديدة`).
+    *   Writes raw message flows into the `raw_messages` Google Sheets tab for parsing.
+2.  **02. Owner Search (`workflows/02-owner-search`)**
+    *   Queries Property Finder & OLX API for Tagamoa/New Cairo direct-owner listings.
+    *   Appends candidates into the `owner_leads` Sheets tab.
+3.  **03. Owner Contact (`workflows/03-owner-contact`)**
+    *   Sends automated bilingual WhatsApp scripts to direct owners to confirm availability.
+4.  **04. Email Sender (`workflows/04-email-sender`)**
+    *   Sends investor briefings, matches, and closing document summaries via SendGrid.
+5.  **05. Unit Adder (`workflows/05-unit-adder`)**
+    *   Ingests reviewed entries from Sheets, runs fuzzy spelling correction on compounds, deduplicates them, and writes them to the Firestore `listings` collection.
+
+---
+
 ## Deployment Pipeline
 
 ### Development
@@ -433,6 +468,6 @@ Error Rate: <0.1%
 
 ---
 
-**Last Updated:** 2026-05-26  
-**Status:** Foundation Complete ✓  
-**Next Phase:** Intelligence Engine (Phase 2)
+**Last Updated:** 2026-06-02  
+**Status:** Foundation Complete ✓ & n8n Workflow Engine Online ✓  
+**Next Phase:** Intelligence Engine & WebUI Integrations (Phase 2)

@@ -79,3 +79,11 @@ Thumbs.db
 # Archives
 *.zip
 *.tar.gz
+
+# Third-party agent skills (available from global config, not project code)
+apps/agents/skills/
+
+# Temp files from previous consolidation attempts
+*_temp
+*_temp.*
+
