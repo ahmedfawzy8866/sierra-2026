@@ -6,7 +6,7 @@ Context for Claude Code / AI sessions. Keep this updated as the project evolves.
 Sierra Blu / Sierra Estates — a luxury real-estate (PropTech) platform for the New Cairo market. pnpm + Turborepo monorepo.
 
 ## Stack
-Next.js 16 (App Router, Turbopack) · React 19 · TypeScript 5 (strict) · Tailwind 4 · Firebase (client SDK 12 + Admin SDK 13: Firestore, Storage, Auth) · Leaflet maps · next-intl (en/ar). Deploy: Vercel (web) + Firebase (Firestore/Storage/Auth + Cloud Functions). Observability: OpenTelemetry + Arize.
+Next.js 16 (App Router, Turbopack) · React 19 · TypeScript 5 (strict) · Tailwind 4 · Firebase (client SDK 12 + Admin SDK 13) · Leaflet maps · next-intl (en/ar) · **Docker n8n Workflow Engine** (`localhost:5678`). Deploy: Vercel (web) + Firebase (Hosting + Cloud Functions).
 
 ## Layout
 - `apps/web` — main Next.js app and the real codebase (~26 pages, 38 API routes, ~78 components, ~39 services).
@@ -33,7 +33,12 @@ Next.js 16 (App Router, Turbopack) · React 19 · TypeScript 5 (strict) · Tailw
 ## Reality check
 Pre-production. Some services are mock/scaffolded (`MockAIService`, unwired i18n). Test coverage is thin. Older `STATUS.md`/`TODO.md` are aspirational/stale.
 
-## Constraints for AI sessions
-- GitHub access is scoped to `ahmedfawzy8866/i-sierra-2027` only — do not touch other repos.
-- Develop on branch `claude/vigilant-carson-AjxRQ`. Never force-push or delete `main`.
-- Do not deploy without explicit approval. Never put secrets in chat.
+## Obsidian Memory Engine & AI Sourcing
+- **Vault Location:** `docs/obsidian-vault/` contains the core cognitive and database architecture notes.
+- **Rules of Engagement:** For every new task, feature, or bugfix, the AI agent MUST search and read the relevant node in the Obsidian vault (e.g. `Sourcing Pipeline & Lead Aggregator.md`, `WhatsApp CRM & Hand-off Pipeline.md`).
+- **Graph Alignment:** Maintain double-bracket `[[Links]]` when editing vault files to preserve the Obsidian graph view.
+
+## Constraints & Pull Request Policy
+- **Branch Protection Active:** The `main` branch is protected on GitHub. Direct commits are blocked.
+- **Workflow:** For all changes, checkout a new branch (e.g. `feature/name`), push it to remote, and open a Pull Request using `gh pr create`.
+- **Do Not Deploy** without explicit approval. Never place API keys or credentials in raw code.
