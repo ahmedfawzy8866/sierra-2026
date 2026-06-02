@@ -153,50 +153,6 @@ export default function LandingPage() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  // Keyboard Shortcut & Secret Command Hook ("sierra")
-  useEffect(() => {
-    let typedSequence = '';
-    const secretWord = 'sierra';
-    
-    const handleKeyDown = (e: KeyboardEvent) => {
-      // Guard: don't intercept shortcuts or secret word when typing inside text boxes
-      const activeEl = document.activeElement;
-      const isInputFocused = activeEl && (
-        activeEl.tagName === 'INPUT' ||
-        activeEl.tagName === 'TEXTAREA' ||
-        activeEl.getAttribute('contenteditable') === 'true'
-      );
-
-      // 1. Shortcut: Ctrl/Cmd + I or Ctrl/Cmd + Shift + S (skip when focus is in an input field)
-      const mod = e.ctrlKey || e.metaKey;
-      if (!isInputFocused && ((mod && e.key.toLowerCase() === 'i') || (mod && e.shiftKey && e.key.toLowerCase() === 's'))) {
-        e.preventDefault();
-        setShowAiSupport(prev => !prev);
-        setAiSupportTab('menu');
-        return;
-      }
-      
-      // 2. Secret Word: typing 'sierra' on the body/window
-      const key = e.key.toLowerCase();
-      
-      if (!isInputFocused && key.length === 1) {
-        typedSequence += key;
-        if (typedSequence.length > secretWord.length) {
-          typedSequence = typedSequence.slice(-secretWord.length);
-        }
-        if (typedSequence === secretWord) {
-          setShowAiSupport(true);
-          setAiSupportTab('menu');
-          typedSequence = ''; // Reset
-          console.log("🌌 Sierra Blu AI Engine Secret Activated. Welcome!");
-        }
-      }
-    };
-    
-    window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
-
   if (!mounted) return null;
 
   // Typo Auto-Correct Handler
