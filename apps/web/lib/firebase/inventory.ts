@@ -13,7 +13,7 @@ import {
   Timestamp,
   serverTimestamp 
 } from 'firebase/firestore';
-import { db } from './index';
+import { db } from '@/lib/firebase';
 
 // --- Types ---
 
