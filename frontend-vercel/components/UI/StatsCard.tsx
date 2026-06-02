@@ -20,6 +20,8 @@ type AnimatedValueMeta = {
   useGrouping: boolean;
 };
 
+const ANIMATION_DURATION_MS = 900;
+
 export function extractAnimatedValue(value: string | number): AnimatedValueMeta {
   if (typeof value === 'number') {
     return {
@@ -96,13 +98,13 @@ export default function StatsCard({ label, value, delta, icon, trend = 'neutral'
       return;
     }
 
-    const duration = 900;
+    const targetValue = meta.numericValue ?? 0;
     const start = performance.now();
     let frameId = 0;
 
     const tick = (now: number) => {
-      const progress = Math.min(1, (now - start) / duration);
-      const current = meta.numericValue * progress;
+      const progress = Math.min(1, (now - start) / ANIMATION_DURATION_MS);
+      const current = targetValue * progress;
       setDisplayValue(formatAnimatedValue(meta, current));
       if (progress < 1) {
         frameId = window.requestAnimationFrame(tick);

@@ -29,6 +29,24 @@ except ImportError:  # pragma: no cover - optional dependency
 
 load_dotenv()
 
+KNOWN_PREMIUM_COMPOUNDS = {
+    'mivida',
+    'eastown',
+    'villette',
+    'hyde park',
+    'taj city',
+    'mountain view',
+    'sodic east',
+    'palm hills',
+    'katameya dunes',
+    'fifth square',
+    'lake view',
+    'sarai',
+    'madinaty',
+    'waterway',
+    'stone residence',
+}
+
 
 class LeadScorer:
     """Lead scoring engine that returns a score from 1 to 10."""
@@ -92,13 +110,8 @@ class LeadScorer:
         ).strip()
         if not compound_value:
             return 0
-        known_compounds = {
-            'mivida', 'eastown', 'villette', 'hyde park', 'taj city', 'mountain view',
-            'sodic east', 'palm hills', 'katameya dunes', 'fifth square', 'lake view',
-            'sarai', 'madinaty', 'waterway', 'stone residence',
-        }
         normalized = compound_value.lower()
-        return 2 if any(name in normalized for name in known_compounds) else 1
+        return 2 if any(name in normalized for name in KNOWN_PREMIUM_COMPOUNDS) else 1
 
 
 def _parse_amount(value: Any) -> float | None:

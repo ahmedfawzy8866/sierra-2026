@@ -2,7 +2,7 @@
 
 ## Overview
 
-Sierra Blu ships with eight Python utilities in `scripts/python/`:
+Sierra Blu currently documents eight Python script entries in `scripts/python/`: five automation utilities and three implementation/reference scripts:
 
 | Script | Purpose |
 | --- | --- |

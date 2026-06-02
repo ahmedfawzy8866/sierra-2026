@@ -86,13 +86,18 @@ def _extract_owner(listing: dict[str, Any]) -> str:
 
 
 def compute_sync_hash(listing: dict[str, Any]) -> str:
-    """Mirror the CRM route hash logic: SHA256(Location-RentPeriodType-Code-Owner)."""
+    """Mirror the CRM route hash logic with sensible source-field fallbacks."""
     location = _extract_location(listing)
     rent_period_type = str(listing.get('RentPeriodType') or listing.get('bua_m2') or listing.get('area') or '150').strip()
     code = str(listing.get('Code') or listing.get('code') or listing.get('id') or '0').strip()
     owner = _extract_owner(listing)
     raw_signature = f'{location}-{rent_period_type}-{code}-{owner}'.lower().strip()
     return hashlib.sha256(raw_signature.encode('utf-8')).hexdigest()
+
+
+def _default_arabic_title(property_type: str) -> str:
+    """Return the default Arabic title fallback for a property type."""
+    return 'فيلا مستقلة فاخرة' if property_type.lower() == 'villa' else 'شقة سكنية موثقة العرض'
 
 
 def normalize_property(listing: dict[str, Any]) -> dict[str, Any]:
@@ -121,7 +126,7 @@ def normalize_property(listing: dict[str, Any]) -> dict[str, Any]:
         'beds': beds,
         'type': property_type,
         'title_en': str(listing.get('Name') or listing.get('title') or f'{property_type} in {location}').strip(),
-        'title_ar': str(listing.get('title_ar') or ('فيلا مستقلة فاخرة' if property_type.lower() == 'villa' else 'شقة سكنية موثقة العرض')).strip(),
+        'title_ar': str(listing.get('title_ar') or _default_arabic_title(property_type)).strip(),
         'purpose': str(listing.get('Availability') or listing.get('purpose') or 'RENT').upper(),
         'currency': str(listing.get('currency') or 'EGP').upper(),
         'owner_name': owner,
