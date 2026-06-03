@@ -346,4 +346,65 @@ Before shipping a component:
 
 ---
 
-**Last Updated**: April 28, 2026 | **Version**: 12.0 | **Status**: 🟢 Production
+## 🆕 New Components
+
+### `LeadScoreBadge`
+
+Displays a bilingual lead score badge with Sierra priority color coding.
+
+```tsx
+import LeadScoreBadge from '@/components/UI/LeadScoreBadge';
+
+<LeadScoreBadge score={9} showLabel size="md" />
+```
+
+### `StatsCard`
+
+Reusable KPI card for analytics views with count-up animation and directional delta state.
+
+```tsx
+import { TrendingUp } from 'lucide-react';
+import StatsCard from '@/components/UI/StatsCard';
+
+<StatsCard
+  label="Qualified Leads"
+  value={128}
+  delta="+12%"
+  trend="up"
+  icon={<TrendingUp size={20} />}
+/>
+```
+
+### `JobCard`
+
+Use for bilingual hiring cards on the careers experience.
+
+```tsx
+<JobCard
+  title="Senior Property Advisor"
+  location="New Cairo"
+  type="Full-time"
+  desc="Handle qualified Sierra Blu investor leads."
+  isAr={false}
+  applyText="Apply now"
+/>
+```
+
+### `PremiumHero`
+
+Hero section for the public landing experience with bilingual filters and animated viewport features.
+
+```tsx
+<PremiumHero
+  isArabic={false}
+  onSearch={(filters) => console.log(filters)}
+/>
+```
+
+## 🎛️ Design System
+
+Reference the shared tokens in `frontend-vercel/app/styles/design.css` for all new UI work. The current Sierra Blu palette includes the primary navy, ivory, and gold tokens used by `LeadScoreBadge`, `StatsCard`, `JobCard`, and `PremiumHero`.
+
+---
+
+**Last Updated**: June 2, 2026 | **Version**: 12.1 | **Status**: 🟢 Production

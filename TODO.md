@@ -36,3 +36,14 @@ Aligned with STATUS.md. Sorted by deployment-readiness (pre-deploy → post-depl
 - [ ] Update CLAUDE.md if stack/conventions change
 - [ ] Keep STATUS.md + TODO.md in sync with actual state
 - [ ] Archive closed issues/PRs if their TODO/STATUS refs become confusing
+
+## 🐍 Python
+- [ ] Schedule analytics-report.py via GitHub Actions cron
+- [ ] Add unit tests for LeadScorer class
+- [ ] Connect lead-scorer.py to live Firestore in production
+- [ ] WhatsApp template message approval workflow
+
+## 🎨 Frontend
+- [ ] Wire LeadScoreBadge into CRM dashboard
+- [ ] Add StatsCard to admin analytics page
+- [ ] Mobile responsive pass for PremiumHero

@@ -103,6 +103,18 @@ pnpm build
 pnpm validate-build
 ```
 
+## 🐍 Python Scripts
+
+| Script | Purpose |
+|---|---|
+| `lead-scorer.py` | Score leads 1–10 using Sierra AI logic |
+| `firestore-exporter.py` | Export Firestore collections to JSON/CSV |
+| `property-sync.py` | Sync Property Finder listings → Firestore |
+| `whatsapp-broadcast.py` | Send templated WhatsApp broadcasts |
+| `analytics-report.py` | Generate business KPI Markdown reports |
+
+See [docs/PYTHON_SCRIPTS.md](docs/PYTHON_SCRIPTS.md) for full usage.
+
 ## 🔧 Key Technologies
 
 | Layer | Technology | Version |
