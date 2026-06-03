@@ -7,6 +7,7 @@ import argparse
 import csv
 import json
 import os
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -114,6 +115,10 @@ class LeadScorer:
         return 2 if any(name in normalized for name in KNOWN_PREMIUM_COMPOUNDS) else 1
 
 
+_AMOUNT_SUFFIX_RE = re.compile(r'([\d,]+(?:\.\d+)?)\s*([km])(?![a-z\d])')
+_FIRST_AMOUNT_RE = re.compile(r'[\d,]+(?:\.\d+)?')
+
+
 def _parse_amount(value: Any) -> float | None:
     """Return a numeric amount parsed from a free-form price value."""
     if value is None:
@@ -123,18 +128,21 @@ def _parse_amount(value: Any) -> float | None:
     text = str(value).strip().lower()
     if not text:
         return None
-    multiplier = 1.0
-    if 'm' in text:
-        multiplier = 1_000_000.0
-    elif 'k' in text:
-        multiplier = 1_000.0
-    cleaned = ''.join(char for char in text if char.isdigit() or char == '.')
-    if not cleaned:
-        return None
-    try:
-        return float(cleaned) * multiplier
-    except ValueError:
-        return None
+    match = _AMOUNT_SUFFIX_RE.search(text)
+    if match:
+        try:
+            digits = float(match.group(1).replace(',', ''))
+            multiplier = 1_000_000.0 if match.group(2) == 'm' else 1_000.0
+            return digits * multiplier
+        except ValueError:
+            return None
+    first = _FIRST_AMOUNT_RE.search(text)
+    if first:
+        try:
+            return float(first.group().replace(',', ''))
+        except ValueError:
+            return None
+    return None
 
 
 def _load_firestore_client(project_id: str | None):
@@ -194,7 +202,7 @@ def _render_summary(total: int, kept: int, score_distribution: Counter[int]) -> 
     rows = [
         ('Total leads scanned', total),
         ('Leads in report', kept),
-        ('Average score bucket', ', '.join(f'{score}:{count}' for score, count in sorted(score_distribution.items())) or 'n/a'),
+        ('Score distribution', ', '.join(f'{score}:{count}' for score, count in sorted(score_distribution.items())) or 'n/a'),
     ]
     if tabulate is not None:
         return tabulate(rows, headers=('Metric', 'Value'), tablefmt='github')

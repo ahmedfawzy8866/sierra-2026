@@ -7,6 +7,7 @@ import argparse
 import hashlib
 import json
 import os
+import re
 import sys
 from datetime import datetime, timezone
 from typing import Any
@@ -48,6 +49,10 @@ def _load_firestore_client(project_id: str | None):
     return firestore.client(app=app)
 
 
+_NUMBER_SUFFIX_RE = re.compile(r'([\d,]+(?:\.\d+)?)\s*([km])(?![a-z\d])')
+_FIRST_NUMBER_RE = re.compile(r'[\d,]+(?:\.\d+)?')
+
+
 def _parse_number(value: Any) -> float:
     """Parse a numeric value from numbers or price-like strings."""
     if isinstance(value, (int, float)):
@@ -55,18 +60,21 @@ def _parse_number(value: Any) -> float:
     text = str(value or '').strip().lower()
     if not text:
         return 0.0
-    multiplier = 1.0
-    if 'm' in text:
-        multiplier = 1_000_000.0
-    elif 'k' in text:
-        multiplier = 1_000.0
-    cleaned = ''.join(char for char in text if char.isdigit() or char == '.')
-    if not cleaned:
-        return 0.0
-    try:
-        return float(cleaned) * multiplier
-    except ValueError:
-        return 0.0
+    match = _NUMBER_SUFFIX_RE.search(text)
+    if match:
+        try:
+            digits = float(match.group(1).replace(',', ''))
+            multiplier = 1_000_000.0 if match.group(2) == 'm' else 1_000.0
+            return digits * multiplier
+        except ValueError:
+            return 0.0
+    first = _FIRST_NUMBER_RE.search(text)
+    if first:
+        try:
+            return float(first.group().replace(',', ''))
+        except ValueError:
+            return 0.0
+    return 0.0
 
 
 def _extract_location(listing: dict[str, Any]) -> str:

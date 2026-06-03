@@ -4,7 +4,6 @@
 - Added 5 new Python utility scripts (lead-scorer, firestore-exporter, property-sync, whatsapp-broadcast, analytics-report)
 - Added LeadScoreBadge and StatsCard UI components
 - Updated design system CSS with gold/navy tokens
-- CRM APIs hardened with input validation
 
 ## Part 1: Frontend Design — Final Inventory
 
