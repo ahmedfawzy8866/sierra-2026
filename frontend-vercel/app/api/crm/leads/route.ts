@@ -10,6 +10,28 @@ export async function POST(request: Request) {
   try {
     const body = await request.json();
     const { client_name, client_mobile, extracted_metrics, conversation_summary } = body;
+    const normalizedClientName = typeof client_name === 'string' ? client_name.trim() : '';
+    const normalizedClientMobile = typeof client_mobile === 'string' ? client_mobile.trim() : '';
+
+    if (!normalizedClientName || !normalizedClientMobile) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Missing required fields: client_name and client_mobile are required.',
+        },
+        { status: 400 }
+      );
+    }
+
+    if (!extracted_metrics || typeof extracted_metrics !== 'object' || Array.isArray(extracted_metrics)) {
+      return NextResponse.json(
+        {
+          success: false,
+          error: 'Invalid payload: extracted_metrics object is required.',
+        },
+        { status: 400 }
+      );
+    }
 
     // Execute internal qualitative metrics tracking analytics (Sierra AI Profile Scoring Logic)
     let leadScoreValue = 0;
@@ -31,8 +53,8 @@ export async function POST(request: Request) {
 
     const structuredLeadRecord = {
       id: leadDocumentId,
-      name: client_name,
-      mobile: client_mobile,
+      name: normalizedClientName,
+      mobile: normalizedClientMobile,
       sierra_ai_score: leadScoreValue,
       target_location: extracted_metrics.compound_target,
       budget_ceiling: extracted_metrics.capital_budget,
@@ -52,8 +74,8 @@ export async function POST(request: Request) {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           event_title: `🔥 VIP Immediate Route [Sierra AI Score: ${leadScoreValue}/10]`,
-          description: `Lead Profile: ${client_name} | Specialized rep: ${selectedSalesCloserRepId} | Budget: ${extracted_metrics.capital_budget} EGP`,
-          phone_number: client_mobile
+          description: `Lead Profile: ${normalizedClientName} | Specialized rep: ${selectedSalesCloserRepId} | Budget: ${extracted_metrics.capital_budget} EGP`,
+          phone_number: normalizedClientMobile
         })
       }).catch(() => {});
     }
@@ -64,7 +86,11 @@ export async function POST(request: Request) {
       metrics_score: `${leadScoreValue}/10`, 
       rep_owner: selectedSalesCloserRepId 
     });
-  } catch (error: any) {
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unexpected server error while processing lead.';
+    return NextResponse.json(
+      { success: false, error: `Lead processing failed: ${message}` },
+      { status: 500 }
+    );
   }
 }

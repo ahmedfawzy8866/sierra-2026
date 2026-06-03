@@ -20,7 +20,7 @@ export default function JobCard({ title, location, type, desc, isAr, applyText }
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4, borderColor: 'rgba(201, 168, 76, 0.4)' }}
+      whileHover={{ y: -6, borderColor: 'rgba(201, 168, 76, 0.4)', scale: 1.005 }}
       transition={{ duration: 0.3 }}
       className="p-6 md:p-8 rounded-xl bg-white/5 backdrop-blur-md border border-white/10 hover:border-gold-400/40 transition-all flex flex-col md:flex-row md:items-center justify-between gap-6 relative overflow-hidden group shadow-sm hover:shadow-lg"
     >
@@ -51,13 +51,14 @@ export default function JobCard({ title, location, type, desc, isAr, applyText }
       <div className={`flex shrink-0 ${isAr ? 'justify-start' : 'justify-end'}`}>
         <Link
           href={`/contact?subject=${encodeURIComponent(title)}`}
-          className="inline-flex items-center gap-2 px-6 py-3.5 bg-gold-gradient text-navy font-semibold text-xs rounded-lg uppercase tracking-widest transition-all duration-300 group-hover:shadow-glow group-hover:scale-[1.02]"
+          aria-label={isAr ? `قدّم الآن لوظيفة ${title}` : `Apply now for ${title}`}
+          className="group/cta inline-flex items-center gap-2 px-6 py-3.5 bg-gold-gradient text-navy font-semibold text-xs rounded-lg uppercase tracking-widest transition-all duration-300 group-hover:shadow-glow group-hover:scale-[1.02]"
         >
           <span>{applyText}</span>
           {isAr ? (
-            <ArrowLeft size={14} className="group-hover:-translate-x-1 transition-transform" />
+            <ArrowLeft size={14} className="transition-transform duration-300 group-hover/cta:-translate-x-1" />
           ) : (
-            <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+            <ArrowRight size={14} className="transition-transform duration-300 group-hover/cta:translate-x-1" />
           )}
         </Link>
       </div>

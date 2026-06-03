@@ -1,8 +1,7 @@
 'use client';
-import React, { useState, useEffect, useRef } from 'react';
-import { useAuth } from '@/lib/AuthContext';
+import { useState, useEffect } from 'react';
+import type { CSSProperties } from 'react';
 import { useI18n } from '@/lib/I18nContext';
-import dynamic from 'next/dynamic';
 
 // Constants & Design Tokens
 const COLORS = {
@@ -43,6 +42,24 @@ const THEMES = {
     textMuted: 'rgba(7,20,34,0.35)',
   },
 };
+
+interface ListingCard {
+  id: number;
+  title: string;
+  description: string;
+}
+
+const MOCK_LISTINGS: ListingCard[] = [
+  { id: 1, title: 'Luxury Villa #1', description: 'Exclusive property in prime location.' },
+  { id: 2, title: 'Luxury Villa #2', description: 'Exclusive property in prime location.' },
+  { id: 3, title: 'Luxury Villa #3', description: 'Exclusive property in prime location.' },
+];
+
+const LANDING_STYLE_VARS = {
+  '--lp-gap-md': '12px',
+  '--lp-card-radius': '12px',
+  '--lp-filter-padding': '16px',
+} as CSSProperties;
 
 // i18n Copy
 const COPY = {
@@ -169,7 +186,7 @@ export default function LandingPage() {
   const [mode, setMode] = useState<'dark' | 'light'>('dark');
   const [formData, setFormData] = useState({ name: '', phone: '' });
   const [submitted, setSubmitted] = useState(false);
-  const [listings, setListings] = useState<any[]>([]);
+  const listings = MOCK_LISTINGS;
   const [mounted, setMounted] = useState(false);
   const [heroView, setHeroView] = useState<'A' | 'B'>('A'); // View A: Default Backdrop, View B: Virtual Tour
 
@@ -248,6 +265,7 @@ export default function LandingPage() {
           fontFamily: '"Jost", "Inter", sans-serif',
           direction: T.dir as 'ltr' | 'rtl',
           transition: 'background 500ms ease, color 500ms ease',
+          ...LANDING_STYLE_VARS,
         }}
       >
         {/* ══ NAVIGATION ══ */}
@@ -453,9 +471,9 @@ export default function LandingPage() {
                 className="glass-card"
                 style={{
                   display: 'flex',
-                  gap: '12px',
-                  padding: '16px',
-                  borderRadius: '12px',
+                  gap: 'var(--lp-gap-md)',
+                  padding: 'var(--lp-filter-padding)',
+                  borderRadius: 'var(--lp-card-radius)',
                   background: 'rgba(10, 30, 53, 0.6)',
                   border: `1px solid ${COLORS.goldDark}`,
                   backdropFilter: 'blur(16px)',
@@ -465,7 +483,7 @@ export default function LandingPage() {
               >
                 <input
                   type="text"
-                  placeholder="AI Match Driven Search..."
+                  placeholder={isAr ? 'ابحث بالحي/الميزانية/نوع العقار…' : 'Describe your ideal property (compound, budget, type)…'}
                   style={{
                     flex: 1,
                     background: 'transparent',
@@ -531,7 +549,7 @@ export default function LandingPage() {
               {heroView === 'A' ? 'Virtual Tour' : 'Back to Home'}
             </span>
             <button
-              onClick={() => setHeroView(heroView === 'A' ? 'B' : 'A')}
+              onClick={() => setHeroView((prev) => (prev === 'A' ? 'B' : 'A'))}
               style={{
                 width: '48px',
                 height: '48px',
@@ -701,14 +719,14 @@ export default function LandingPage() {
                Curated <span className="gold-text">Collection</span>
             </h2>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
-              {[1, 2, 3].map((i) => (
-                <div key={i} style={{ background: th.card, border: `1px solid ${th.cardBorder}`, borderRadius: '12px', padding: '24px', transition: 'transform 300ms ease' }}
+              {listings.map((listing) => (
+                <div key={listing.id} style={{ background: th.card, border: `1px solid ${th.cardBorder}`, borderRadius: '12px', padding: '24px', transition: 'transform 300ms ease' }}
                      onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-5px)')}
                      onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
                 >
                   <div style={{ height: '200px', background: 'rgba(233,193,118,0.1)', borderRadius: '8px', marginBottom: '16px' }}></div>
-                  <h3 style={{ fontSize: '18px', marginBottom: '8px', color: th.text }}>Luxury Villa #{i}</h3>
-                  <p style={{ fontSize: '14px', color: th.textSub }}>Exclusive property in prime location.</p>
+                  <h3 style={{ fontSize: '18px', marginBottom: '8px', color: th.text }}>{listing.title}</h3>
+                  <p style={{ fontSize: '14px', color: th.textSub }}>{listing.description}</p>
                 </div>
               ))}
             </div>

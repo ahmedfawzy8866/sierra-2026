@@ -13,12 +13,26 @@ export async function POST(request: Request) {
     const { rows } = payload;
     const migrationSummaryLogs = [];
 
+    if (!Array.isArray(rows)) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid payload: rows must be an array.' },
+        { status: 400 }
+      );
+    }
+
+    if (rows.length === 0) {
+      return NextResponse.json(
+        { success: false, error: 'Invalid payload: rows array cannot be empty.' },
+        { status: 400 }
+      );
+    }
+
     // Safe environment lookups protect credentials from source code exposure
     const apiKey = process.env.PF_API_KEY;
     const apiSecret = process.env.PF_API_SECRET;
 
     if (!apiKey || !apiSecret) {
-      return NextResponse.json({ success: false, message: "Missing system access configuration tokens" }, { status: 500 });
+      return NextResponse.json({ success: false, error: "Missing system access configuration tokens" }, { status: 500 });
     }
 
     for (const row of rows) {
@@ -28,7 +42,7 @@ export async function POST(request: Request) {
       if (cleanMobileId.startsWith('0020')) cleanMobileId = cleanMobileId.substring(4);
       if (!cleanMobileId.startsWith('0') && cleanMobileId.length === 10) cleanMobileId = '0' + cleanMobileId;
 
-      // 2. Cryptographic signature generation: sync_hash = SHA256(Location + RentPeriodType + Code + Owner)
+      // 2. Deterministic sync key: sync_hash = SHA256(normalized Location-RentPeriodType-Code-Owner raw payload tuple)
       const location = String(row.Location || 'New Cairo').trim();
       const spaceBua = String(row.RentPeriodType || '150').trim(); 
       const codeField = String(row.Code || '0').trim(); 
@@ -104,7 +118,8 @@ export async function POST(request: Request) {
     }
 
     return NextResponse.json({ success: true, tracking_summary: migrationSummaryLogs });
-  } catch (error: any) {
-    return NextResponse.json({ success: false, error: error.message }, { status: 500 });
+  } catch (error: unknown) {
+    const message = error instanceof Error ? error.message : 'Unexpected sync failure';
+    return NextResponse.json({ success: false, error: `Property finder sync failed: ${message}` }, { status: 500 });
   }
 }

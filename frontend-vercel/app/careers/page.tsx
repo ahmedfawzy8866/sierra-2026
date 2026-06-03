@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useI18n } from '@/lib/I18nContext';
 import { motion } from 'framer-motion';
 import JobCard from '@/components/UI/JobCard';
@@ -66,10 +66,18 @@ export default function CareersPage() {
   const T = COPY[lang];
   const isAr = lang === 'ar';
 
+  useEffect(() => {
+    document.title = T.pageTitle;
+  }, [T.pageTitle]);
+
   if (!mounted) {
     return (
-      <div className="min-h-screen bg-navy text-ivory flex items-center justify-center">
-        <div className="w-8 h-8 rounded-full border-2 border-gold border-t-transparent animate-spin" />
+      <div className="min-h-screen bg-navy text-ivory flex items-center justify-center" dir={T.dir}>
+        <div className="relative flex items-center justify-center">
+          <div className="w-12 h-12 rounded-full border-2 border-gold/25" />
+          <div className="absolute w-12 h-12 rounded-full border-2 border-transparent border-t-gold animate-spin" />
+          <span className="sr-only">{isAr ? 'جارٍ التحميل' : 'Loading'}</span>
+        </div>
       </div>
     );
   }

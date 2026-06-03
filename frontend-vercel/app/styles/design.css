@@ -16,7 +16,6 @@
   --navy-light: #1A2F4D;
   --gold: #C9A84C;
   --gold-light: #E9C176;
-  --gold-soft: rgba(201, 168, 76, 0.16);
   
   /* Sky Blue (Accent) */
   --sky: #2B5A9E;
@@ -539,6 +538,22 @@ a:active {
 
 .text-gold {
   color: var(--gold);
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+.font-ui {
+  font-family: var(--font-ui);
+}
+
+.font-arabic {
+  font-family: var(--font-arabic);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
 }
 
 /* Background Color Utilities */

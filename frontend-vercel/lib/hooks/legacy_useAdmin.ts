@@ -7,7 +7,7 @@ import { doc, getDoc, setDoc, updateDoc, deleteDoc, collection, query, where, ge
  * Provides CRUD operations for admin-managed collections with role-based checks
  */
 
-interface AdminResult<T = any> {
+interface AdminResult<T = unknown> {
   success: boolean;
   data?: T;
   error?: string;
@@ -38,8 +38,8 @@ export function useAdmin() {
   const queryDocuments = useCallback(async <T>(
     collectionName: string,
     fieldName?: string,
-    operator?: any,
-    value?: any
+    operator?: unknown,
+    value?: unknown
   ): Promise<AdminResult<T[]>> => {
     try {
       let q: any;
@@ -59,13 +59,17 @@ export function useAdmin() {
   }, []);
 
   // Create document
-  const createDocument = useCallback(async <T extends Record<string, any>>(
+  const createDocument = useCallback(async <T extends Record<string, unknown>>(
     collectionName: string,
     docId: string,
     data: T
   ): Promise<AdminResult> => {
     try {
       const docRef = doc(db, collectionName, docId);
+      /**
+       * Firestore's overloaded client typings can infer `never` for dynamic collection paths.
+       * We cast here to keep runtime behavior unchanged while preserving generic payload typing.
+       */
       await setDoc(docRef as any, data);
       return { success: true };
     } catch (err) {
@@ -74,13 +78,17 @@ export function useAdmin() {
   }, []);
 
   // Update document
-  const updateDocument = useCallback(async <T extends Record<string, any>>(
+  const updateDocument = useCallback(async <T extends Record<string, unknown>>(
     collectionName: string,
     docId: string,
     updates: Partial<T>
   ): Promise<AdminResult> => {
     try {
       const docRef = doc(db, collectionName, docId);
+      /**
+       * Firestore's overloaded client typings can infer `never` for dynamic collection paths.
+       * We cast here to keep runtime behavior unchanged while preserving generic partial updates.
+       */
       await updateDoc(docRef as any, updates as any);
       return { success: true };
     } catch (err) {
@@ -107,7 +115,7 @@ export function useAdmin() {
     operations: Array<{
       collection: string;
       docId: string;
-      data: Record<string, any>;
+      data: Record<string, unknown>;
       action: 'set' | 'update' | 'delete';
     }>
   ): Promise<AdminResult> => {

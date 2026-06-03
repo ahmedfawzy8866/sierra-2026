@@ -3,9 +3,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useMotionValue, useTransform } from 'framer-motion';
 import { Compass, ShieldCheck, Languages, ArrowRight, Percent, Award, Users, TrendingUp, Phone, Calendar } from 'lucide-react';
-import InteractiveCrmMap from '@/components/ui/InteractiveCrmMap';
-import LuxuryVirtualViewport from '@/components/ui/LuxuryVirtualViewport';
-import MobileBottomNav from '@/components/ui/MobileBottomNav';
+import InteractiveCrmMap from '@/components/UI/InteractiveCrmMap';
+import LuxuryVirtualViewport from '@/components/UI/LuxuryVirtualViewport';
+import MobileBottomNav from '@/components/UI/MobileBottomNav';
 import PremiumHero from '@/components/UI/PremiumHero';
 import InventoryShowcase from '@/components/Listings/InventoryShowcase';
 import TestimonialsCarousel from '@/components/UI/TestimonialsCarousel';
@@ -84,6 +84,15 @@ export default function UnifiedHomepage() {
     setIsAr((prev) => !prev);
   };
 
+  const resetFilters = () => {
+    setFilters({
+      purpose: '',
+      type: '',
+      compound: '',
+      budget: '',
+    });
+  };
+
   return (
     <div
       dir={isAr ? 'rtl' : 'ltr'}
@@ -140,6 +149,16 @@ export default function UnifiedHomepage() {
 
             {/* Live Synchronized High-Fidelity Inventory Showcase */}
             <div id="inventory" className="relative z-10">
+              {(filters.purpose || filters.type || filters.compound || filters.budget) && (
+                <div className="max-w-6xl mx-auto px-4 md:px-12 pt-6">
+                  <button
+                    onClick={resetFilters}
+                    className="text-xs font-mono uppercase tracking-wider text-[#071422]/70 dark:text-white/70 hover:text-[#C9A84C] transition-colors"
+                  >
+                    {isAr ? 'إعادة تعيين الفلاتر' : 'Reset Filters'}
+                  </button>
+                </div>
+              )}
               <InventoryShowcase filters={filters} />
             </div>
 

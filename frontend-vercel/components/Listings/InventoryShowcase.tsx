@@ -23,6 +23,17 @@ interface InventoryShowcaseProps {
 
 export default function InventoryShowcase({ filters }: InventoryShowcaseProps) {
   const { units, loading, error } = useSierraBlu();
+  const normalizedFilters = useMemo(
+    () => ({
+      purposeFilter: filters?.purpose?.trim() ?? '',
+      typeFilter: filters?.type?.trim() ?? '',
+      compoundFilter: filters?.compound?.trim() ?? '',
+      budgetFilter: filters?.budget?.trim() ?? '',
+    }),
+    [filters?.purpose, filters?.type, filters?.compound, filters?.budget]
+  );
+  const { purposeFilter, typeFilter, compoundFilter, budgetFilter } = normalizedFilters;
+  const hasActiveFilters = Boolean(purposeFilter || typeFilter || compoundFilter || budgetFilter);
 
   // Sort and limit units for showcase (top 6 filtered)
   const featuredUnits = useMemo(() => {
@@ -32,18 +43,16 @@ export default function InventoryShowcase({ filters }: InventoryShowcaseProps) {
     result = result.filter(u => u.status === 'available');
 
     if (filters) {
-      const { purpose, type, compound, budget } = filters;
-
       // 1. Filter by Purpose (heuristic pricing threshold)
-      if (purpose === 'rent') {
+      if (purposeFilter === 'rent') {
         result = result.filter(u => u.price < 200000);
-      } else if (purpose === 'resale') {
+      } else if (purposeFilter === 'resale') {
         result = result.filter(u => u.price >= 200000);
       }
 
       // 2. Filter by Property Type (case-insensitive fuzzy/exact check)
-      if (type && type !== 'Apartment' && type !== 'شقة') {
-        const tLower = type.toLowerCase();
+      if (typeFilter && typeFilter !== 'Apartment' && typeFilter !== 'شقة') {
+        const tLower = typeFilter.toLowerCase();
         result = result.filter(u => {
           const uType = (u.propertyType || u.type || '').toLowerCase();
           
@@ -56,14 +65,14 @@ export default function InventoryShowcase({ filters }: InventoryShowcaseProps) {
             'تاون هاوس': 'townhouse',
             'شقة': 'apartment'
           };
-          const mappedType = arabicMap[type] || tLower;
+          const mappedType = arabicMap[typeFilter] || tLower;
           return uType.includes(mappedType) || mappedType.includes(uType);
         });
       }
 
       // 3. Filter by Compound (fuzzy matching)
-      if (compound && compound.trim()) {
-        const cLower = compound.toLowerCase().trim();
+      if (compoundFilter) {
+        const cLower = compoundFilter.toLowerCase();
         result = result.filter(u => {
           const uComp = (u.compound || u.location || '').toLowerCase();
           return uComp.includes(cLower) || cLower.includes(uComp);
@@ -71,11 +80,11 @@ export default function InventoryShowcase({ filters }: InventoryShowcaseProps) {
       }
 
       // 4. Filter by Budget
-      if (budget && budget.trim()) {
-        const b = budget.toLowerCase();
+      if (budgetFilter) {
+        const b = budgetFilter.toLowerCase();
         result = result.filter(u => {
           const price = u.price || 0;
-          if (purpose === 'rent') {
+          if (purposeFilter === 'rent') {
             if (b.includes('under 20k') || b.includes('أقل من ٢٠')) return price < 20000;
             if (b.includes('20k–50k') || b.includes('٢٠–٥٠')) return price >= 20000 && price <= 50000;
             if (b.includes('50k–100k') || b.includes('٥٠–١٠٠')) return price >= 50000 && price <= 100000;
@@ -94,7 +103,7 @@ export default function InventoryShowcase({ filters }: InventoryShowcaseProps) {
     return result
       .sort((a, b) => (b.intelligence?.roi || 0) - (a.intelligence?.roi || 0))
       .slice(0, 6);
-  }, [units, filters]);
+  }, [units, purposeFilter, typeFilter, compoundFilter, budgetFilter]);
 
   if (error) {
     return (
@@ -199,7 +208,11 @@ export default function InventoryShowcase({ filters }: InventoryShowcaseProps) {
           ))
         ) : (
           <div className="col-span-full text-center py-12">
-            <p className="text-[#0A1628]/60">No properties available at this time.</p>
+            <p className="text-[#0A1628]/60">
+              {hasActiveFilters
+                ? 'No results found for your current filters. Try broadening your search.'
+                : 'No properties available at this time.'}
+            </p>
           </div>
         )}
       </div>

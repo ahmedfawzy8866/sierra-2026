@@ -2,6 +2,20 @@
 
 Aligned with STATUS.md. Sorted by deployment-readiness (pre-deploy → post-deploy).
 
+## ✅ Sierra Blu 2026 Completed
+- [x] Split-Hero with Virtual Tour
+- [x] AI Smart Filter
+- [x] CRM Leads API
+- [x] Property Finder Sync API
+- [x] Careers Page (Framer Motion)
+- [x] Design System (`design.css`)
+
+## 🆕 Next Logical Steps
+- [ ] Connect AI Smart Filter to real Firestore query
+- [ ] Integrate real Virtual Tour SDK
+- [ ] Add unit tests for CRM leads API
+- [ ] Mobile responsive fixes for PremiumHero
+
 ## 🚨 Pre-Deployment (blocking)
 - [ ] **Deploy Firestore rules** to production: `firebase deploy --only firestore:rules,storage` (requires local Firebase credentials; user action)
 - [ ] **Set environment secrets** in Vercel + Google Secret Manager (never in chat/git)

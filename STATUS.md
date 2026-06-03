@@ -1,4 +1,14 @@
-# Project Status — Sierra Blu (as of 2026-06-01)
+# Project Status — Sierra Blu (as of 2026-06-02)
+
+**Last Updated:** 2026-06-02
+
+## 🚀 Shipped in `3df6c79`
+- Split-Hero with Virtual Tour
+- AI Smart Filter
+- CRM Leads API
+- Property Finder Sync API
+- Careers Page (Framer Motion)
+- Design System (`frontend-vercel/app/styles/design.css`)
 
 ## ✅ Complete
 - **Security**: Firestore/Storage rules deployed with staff-gating via `users/{uid}.role` (admin|manager|agent)
