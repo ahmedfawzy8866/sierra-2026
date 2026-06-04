@@ -51,11 +51,13 @@ export async function pushListingToPF(listing: SBRListing): Promise<PFSyncResult
 
   // Try to attach a Firebase ID token when running in the browser.
   let token: string | undefined;
-  try {
-    const { getAuth } = await import('firebase/auth');
-    token = await getAuth().currentUser?.getIdToken();
-  } catch {
-    // ignore (auth may not be initialized in this runtime)
+  if (typeof window !== 'undefined') {
+    try {
+      const { getAuth } = await import('firebase/auth');
+      token = await getAuth().currentUser?.getIdToken();
+    } catch {
+      // ignore (auth may not be initialized in this runtime)
+    }
   }
 
   try {
