@@ -47,7 +47,7 @@ export interface PFListingAnalytics {
 }
 
 export async function pushListingToPF(listing: SBRListing): Promise<PFSyncResult> {
-  if (!listing.id) return { success: false, error: 'listing.id is required' };
+  if (!listing.id) return { success: false, error: 'Cannot publish listing: listing.id is required for Property Finder sync' };
 
   // Try to attach a Firebase ID token when running in the browser.
   let token: string | undefined;
