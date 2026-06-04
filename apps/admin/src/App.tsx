@@ -1,23 +1,32 @@
 import { useState } from 'react';
-import { 
-  LayoutDashboard, 
-  Database, 
-  Users, 
-  MessageSquare, 
-  TrendingUp, 
-  Settings, 
+import {
+  LayoutDashboard,
+  Database,
+  Users,
+  MessageSquare,
+  TrendingUp,
+  Settings,
   Share2,
   Lock,
   UserCircle,
   Bell,
   LogOut,
-  Sparkles
+  Sparkles,
+  Zap,
+  Terminal,
+  BarChart2,
+  Bot,
 } from 'lucide-react';
 import { AuthProvider } from './context/AuthContext';
 import { useAuth } from './context/useAuth';
 import { LoginPage } from './pages/LoginPage';
 import { EasyListingModule } from './pages/EasyListingModule';
 import { CRMModule } from './pages/CRMModule';
+import { OverviewPage } from './pages/OverviewPage';
+import { AgentsPage } from './pages/AgentsPage';
+import { WorkflowsPage } from './pages/WorkflowsPage';
+import { OpenClawPage } from './pages/OpenClawPage';
+import { ReportsPage } from './pages/ReportsPage';
 import { TheCuratorModule } from './pages/TheCuratorModule';
 import { TheScribeModule } from './pages/TheScribeModule';
 import { CloserModule } from './pages/CloserModule';
@@ -66,9 +75,37 @@ function AppContent() {
         </div>
 
         <nav className="nav-links">
+          {/* Main */}
           {userRole === 'super_admin' && (
             <div className={`nav-item ${activeTab === 'overview' ? 'active' : ''}`} onClick={() => setActiveTab('overview')}>
-              <LayoutDashboard size={18} /> Master Overview
+              <LayoutDashboard size={18} /> Intelligence OS
+            </div>
+          )}
+          {userRole === 'super_admin' && (
+            <div className={`nav-item ${activeTab === 'agents' ? 'active' : ''}`} onClick={() => setActiveTab('agents')}>
+              <Bot size={18} /> Agents & Bots
+            </div>
+          )}
+          {userRole === 'super_admin' && (
+            <div className={`nav-item ${activeTab === 'workflows' ? 'active' : ''}`} onClick={() => setActiveTab('workflows')}>
+              <Zap size={18} /> Workflows
+            </div>
+          )}
+          {userRole === 'super_admin' && (
+            <div className={`nav-item ${activeTab === 'openclaw' ? 'active' : ''}`} onClick={() => setActiveTab('openclaw')}>
+              <Terminal size={18} /> OpenClaw Terminal
+            </div>
+          )}
+          {/* Operations */}
+          <div className={`nav-item ${activeTab === 'crm' ? 'active' : ''}`} onClick={() => setActiveTab('crm')}>
+            <Users size={18} /> CRM · Leads
+          </div>
+          <div className={`nav-item ${activeTab === 'easylisting' ? 'active' : ''}`} onClick={() => setActiveTab('easylisting')}>
+            <Share2 size={18} /> Listings Hub
+          </div>
+          {userRole === 'super_admin' && (
+            <div className={`nav-item ${activeTab === 'inventory' ? 'active' : ''}`} onClick={() => setActiveTab('inventory')}>
+              <Database size={18} /> The Curator (S3–5)
             </div>
           )}
           {userRole === 'super_admin' && (
@@ -77,22 +114,17 @@ function AppContent() {
             </div>
           )}
           {userRole === 'super_admin' && (
-            <div className={`nav-item ${activeTab === 'inventory' ? 'active' : ''}`} onClick={() => setActiveTab('inventory')}>
-              <Database size={18} /> The Curator (S3–5)
+            <div className={`nav-item ${activeTab === 'closer' ? 'active' : ''}`} onClick={() => setActiveTab('closer')}>
+              <TrendingUp size={18} /> Stage-9 Closer
             </div>
           )}
-          <div className={`nav-item ${activeTab === 'easylisting' ? 'active' : ''}`} onClick={() => setActiveTab('easylisting')}>
-            <Share2 size={18} /> EasyListing Hub
-          </div>
-          <div className={`nav-item ${activeTab === 'crm' ? 'active' : ''}`} onClick={() => setActiveTab('crm')}>
-            <Users size={18} /> Matchmaker (S6–8)
-          </div>
           <div className={`nav-item ${activeTab === 'lola' ? 'active' : ''}`} onClick={() => setActiveTab('lola')}>
             <Sparkles size={18} color="var(--gold)" /> Lola Hub
           </div>
+          {/* Analytics */}
           {userRole === 'super_admin' && (
-            <div className={`nav-item ${activeTab === 'closer' ? 'active' : ''}`} onClick={() => setActiveTab('closer')}>
-              <TrendingUp size={18} /> The Closer (S9–10)
+            <div className={`nav-item ${activeTab === 'reports' ? 'active' : ''}`} onClick={() => setActiveTab('reports')}>
+              <BarChart2 size={18} /> Reports
             </div>
           )}
           {userRole === 'super_admin' && (
@@ -131,37 +163,17 @@ function AppContent() {
         </header>
 
         <div className="content-viewport">
-          {activeTab === 'overview' && (
-            <div className="overview-page animate-fade-in">
-              <h1 className="overview-headline">
-                Intelligence <span style={{ color: 'var(--gold)' }}>Mastery</span>
-              </h1>
-              <p className="overview-sub">
-                Welcome to the Sierra Blu Strategic Dashboard. All 10 stages of the Intelligence Pipeline are operational.
-              </p>
-              <div className="overview-grid">
-                {[
-                  { stage: 'S1–2', label: 'Ingestion Active', color: '#38bdf8' },
-                  { stage: 'S3–5', label: 'Inventory Synced', color: 'var(--gold)' },
-                  { stage: 'S6–10', label: 'Matching Ready', color: '#22c55e' },
-                ].map(({ stage, label, color }) => (
-                  <div key={stage} className="overview-stat-card">
-                    <h4 style={{ color, margin: '0 0 0.5rem', fontWeight: 600 }}>{stage}</h4>
-                    <p style={{ margin: '0 0 1rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>{label}</p>
-                    <div className="stat-bar">
-                      <div className="stat-bar-fill" style={{ backgroundColor: color }} />
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
+          {activeTab === 'overview'   && <OverviewPage />}
+          {activeTab === 'agents'     && <AgentsPage />}
+          {activeTab === 'workflows'  && <WorkflowsPage />}
+          {activeTab === 'openclaw'   && <OpenClawPage />}
           {activeTab === 'intake'     && <TheScribeModule />}
           {activeTab === 'inventory'  && <TheCuratorModule />}
           {activeTab === 'easylisting' && <EasyListingModule currentUserRole={userRole} currentUserId={user.id} />}
           {activeTab === 'crm'        && <CRMModule currentUserRole={userRole} currentUserId={user.id} />}
           {activeTab === 'closer'     && <CloserModule />}
           {activeTab === 'lola'       && <LolaAssistantModule />}
+          {activeTab === 'reports'    && <ReportsPage />}
           {activeTab === 'settings'   && (
             <div className="settings-placeholder animate-fade-in">
               <Settings size={48} style={{ opacity: 0.1, marginBottom: '1rem' }} />

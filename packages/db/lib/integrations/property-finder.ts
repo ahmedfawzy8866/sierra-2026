@@ -47,10 +47,30 @@ export interface PFListingAnalytics {
 }
 
 export async function pushListingToPF(listing: SBRListing): Promise<PFSyncResult> {
+  if (!listing.id) return { success: false, error: 'Cannot publish listing: listing.id is required for Property Finder sync' };
+
+  // Try to attach a Firebase ID token when running in the browser.
+  let token: string | undefined;
+  if (typeof window !== 'undefined') {
+    try {
+      const { getAuth } = await import('firebase/auth');
+      token = await getAuth().currentUser?.getIdToken();
+    } catch {
+      // ignore (auth may not be initialized in this runtime)
+    }
+  }
+
+  if (!token) {
+    return { success: false, error: 'Authentication required to publish listings' };
+  }
+
   try {
     const res = await fetch('/api/sync/publish', {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        Authorization: 'Bearer ' + token,
+        'Content-Type': 'application/json',
+      },
       body: JSON.stringify({ unitId: listing.id }),
     });
     const data = await res.json();

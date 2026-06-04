@@ -29,7 +29,7 @@ const nextConfig: NextConfig = {
     // tsc --noEmit runs in the dedicated CI `type-check` job — that is the gate.
     // Skipping the redundant tsc pass here prevents OOM on memory-constrained CI
     // runners (Next.js spawns tsc in an isolated worker that ignores NODE_OPTIONS).
-    ignoreBuildErrors: true,
+    ignoreBuildErrors: process.env.GITHUB_ACTIONS === 'true',
   },
   images: {
     remotePatterns: [

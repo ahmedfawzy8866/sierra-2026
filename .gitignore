@@ -2,4 +2,9 @@ node_modules/
 .next/
 .env.local
 .turbo/
-apps/web/coverage/
+coverage/
+apps/*/.turbo/
+apps/*/coverage/
+functions/.turbo/
+__pycache__/
+*.pyc
