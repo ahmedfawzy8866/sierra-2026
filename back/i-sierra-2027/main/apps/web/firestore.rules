@@ -1,0 +1,63 @@
+rules_version = '2';
+
+// ============================================================================
+// Sierra Blu — Firestore Security Rules
+//
+// Model: "staff" = a signed-in user whose users/{uid} document has
+//   role ∈ {admin, manager, agent}. This mirrors how the app itself resolves
+//   roles (apps/web/lib/AuthContext.tsx reads users/{uid}.role).
+//
+// Replaces the previous blanket rule (`allow read, write: if request.auth != null`)
+// which let ANY authenticated account read/write the entire database (all leads,
+// deals, sales, PII).
+//
+// Privileged server operations use the Firebase Admin SDK, which BYPASSES these
+// rules — so locking the client down here does not affect API routes / cron.
+//
+// ⚠️ BEFORE DEPLOYING:
+//   1. Confirm every staff member has a users/{uid} doc with a valid `role`
+//      (otherwise they lose dashboard access). Quick check in the console:
+//      Firestore → users → each staff uid has role: admin|manager|agent.
+//   2. Deploy with:  firebase deploy --only firestore:rules
+//   3. Roll back by redeploying the previous file if anything is locked out.
+// ============================================================================
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isStaff() {
+      return isSignedIn()
+        && exists(/databases/$(database)/documents/users/$(request.auth.uid))
+        && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role in ['admin', 'manager', 'agent'];
+    }
+
+    // --- Public marketplace catalog: anyone may read; only staff may write ---
+    match /listings/{id}    { allow read: if true;  allow write: if isStaff(); }
+    match /units/{id}       { allow read: if true;  allow write: if isStaff(); }
+    match /properties/{id}  { allow read: if true;  allow write: if isStaff(); }
+    match /projects/{id}    { allow read: if true;  allow write: if isStaff(); }
+    match /developers/{id}  { allow read: if true;  allow write: if isStaff(); }
+    match /mediaAssets/{id} { allow read: if true;  allow write: if isStaff(); }
+    match /media/{id}       { allow read: if true;  allow write: if isStaff(); }
+    match /zones/{id}       { allow read: if true;  allow write: if isStaff(); }
+
+    // --- Users: a user may read their own profile; only staff may write ---
+    // (Write is staff-only to prevent self privilege-escalation via the `role`
+    // field. New staff docs are provisioned server-side via the Admin SDK.)
+    match /users/{uid} {
+      allow read:  if isSignedIn() && (request.auth.uid == uid || isStaff());
+      allow write: if isStaff();
+    }
+
+    // --- Everything else (leads, deals, sales, proposals, viewings, vouchers,
+    //     activities, intelligence, concierge_selections, strategic_pipeline,
+    //     partners, syncQueue, syncLog, …) — staff only ---
+    match /{document=**} {
+      allow read, write: if isStaff();
+    }
+  }
+}

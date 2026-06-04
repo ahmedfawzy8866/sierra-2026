@@ -1,0 +1,5 @@
+{
+    "total_scanned_files": 254,
+    "claude_harness_status": "Inactive",
+    "audit_output": "Claude API key is missing. Hook initialized and ready for deployment."
+}

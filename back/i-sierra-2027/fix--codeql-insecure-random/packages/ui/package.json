@@ -1,0 +1,19 @@
+{
+  "name": "@sierra-blu/ui",
+  "version": "1.0.0",
+  "description": "Shared React component library",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "private": true,
+  "dependencies": {
+    "react": "^19",
+    "react-dom": "^19",
+    "lucide-react": "^1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.3"
+  }
+}

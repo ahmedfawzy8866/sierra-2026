@@ -1,0 +1,19 @@
+{
+  "name": "@sierra-blu/agents",
+  "version": "1.0.0",
+  "description": "Multi-agent framework and orchestration",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "private": true,
+  "dependencies": {
+    "firebase": "^12.11",
+    "zod": "^3.22",
+    "pino": "^8.17",
+    "react": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "typescript": "^5.3"
+  }
+}

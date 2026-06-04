@@ -1,0 +1,17 @@
+{
+  "name": "@sierra-blu/db",
+  "version": "1.0.0",
+  "description": "Firestore models and database utilities",
+  "main": "lib/index.ts",
+  "types": "lib/index.ts",
+  "private": true,
+  "dependencies": {
+    "firebase": "^12.11",
+    "firebase-admin": "^13.0",
+    "zod": "^3.22"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "typescript": "^5.3"
+  }
+}

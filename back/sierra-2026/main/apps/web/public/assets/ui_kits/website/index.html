@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Properties — UI Kit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500;600&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../colors_and_type.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { height: 100%; }
+  body { background: #0C0C0F; color: #F2EDE4; font-family: 'Jost', sans-serif; font-weight: 300; -webkit-font-smoothing: antialiased; }
+  ::-webkit-scrollbar { width: 4px; }
+  ::-webkit-scrollbar-track { background: #0C0C0F; }
+  ::-webkit-scrollbar-thumb { background: #2E2E38; border-radius: 2px; }
+</style>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="Header.jsx"></script>
+<script type="text/babel" src="SearchBar.jsx"></script>
+<script type="text/babel" src="HeroSection.jsx"></script>
+<script type="text/babel" src="PropertyCard.jsx"></script>
+<script type="text/babel" src="ListingsGrid.jsx"></script>
+<script type="text/babel" src="PropertyDetail.jsx"></script>
+<script type="text/babel" src="Footer.jsx"></script>
+
+<script type="text/babel">
+const App = () => {
+  const [page, setPage] = React.useState('home');
+  const [selectedProperty, setSelectedProperty] = React.useState(null);
+
+  const navigate = (p) => {
+    setPage(p);
+    setSelectedProperty(null);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const selectProperty = (prop) => {
+    if (prop) {
+      setSelectedProperty(prop);
+      setPage('detail');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <div>
+      <Header currentPage={page} onNavigate={navigate} />
+
+      {page === 'detail' && selectedProperty ? (
+        <PropertyDetail property={selectedProperty} onBack={() => navigate('home')} />
+      ) : (
+        <>
+          <HeroSection onSearch={() => navigate('listings')} />
+
+          {/* Stats band */}
+          <div style={{
+            background: '#1C1C22',
+            borderTop: '1px solid rgba(242,237,228,0.06)',
+            borderBottom: '1px solid rgba(242,237,228,0.06)',
+            padding: '40px 80px',
+            display: 'flex', gap: '0', justifyContent: 'center',
+          }}>
+            {[
+              { value: '847', label: 'Active listings' },
+              { value: '$6.2M', label: 'Median sale price' },
+              { value: '14', label: 'Days on market avg.' },
+              { value: '98%', label: 'List-to-sale ratio' },
+            ].map((stat, i, arr) => (
+              <div key={stat.label} style={{
+                flex: 1, textAlign: 'center', padding: '0 40px',
+                borderRight: i < arr.length - 1 ? '1px solid rgba(242,237,228,0.06)' : 'none',
+              }}>
+                <div style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: '44px', fontWeight: 300, color: '#F2EDE4', letterSpacing: '-0.02em', lineHeight: 1 }}>{stat.value}</div>
+                <div style={{ fontFamily: 'Jost, sans-serif', fontSize: '10px', fontWeight: 400, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#6B6870', marginTop: '8px' }}>{stat.label}</div>
+              </div>
+            ))}
+          </div>
+
+          <ListingsGrid onSelectProperty={selectProperty} />
+
+          {/* Editorial section */}
+          <div style={{ background: '#0f0e0c', padding: '120px 80px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '96px', alignItems: 'center' }}>
+            <div>
+              <div style={{ fontFamily: 'Jost, sans-serif', fontSize: '10px', fontWeight: 500, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#C4963A', marginBottom: '20px' }}>Our approach</div>
+              <h2 style={{ fontFamily: 'Cormorant Garamond, Georgia, serif', fontSize: 'clamp(36px, 4vw, 60px)', fontWeight: 300, lineHeight: 1.1, letterSpacing: '-0.02em', color: '#F2EDE4', marginBottom: '28px' }}>We know these streets by heart.</h2>
+              <p style={{ fontFamily: 'Jost, sans-serif', fontSize: '16px', fontWeight: 300, lineHeight: 1.75, color: '#A8A5B0', marginBottom: '16px' }}>
+                Meridian was founded by people who grew up in San Francisco's neighborhoods — who understand why the light matters, which blocks feel right, and how a home's history shapes what it becomes.
+              </p>
+              <p style={{ fontFamily: 'Jost, sans-serif', fontSize: '16px', fontWeight: 300, lineHeight: 1.75, color: '#A8A5B0', marginBottom: '36px' }}>
+                We don't list properties. We represent them.
+              </p>
+              <button style={{ background: 'transparent', border: '1px solid rgba(242,237,228,0.2)', color: '#A8A5B0', padding: '12px 28px', borderRadius: '2px', fontFamily: 'Jost, sans-serif', fontSize: '11px', fontWeight: 500, letterSpacing: '0.14em', textTransform: 'uppercase', cursor: 'pointer' }}>
+                Meet our agents
+              </button>
+            </div>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px' }}>
+              {['linear-gradient(135deg,#2a2218,#3d3020)', 'linear-gradient(135deg,#18222a,#20303d)', 'linear-gradient(135deg,#221a20,#362230)', 'linear-gradient(135deg,#1e2218,#2a3020)'].map((g, i) => (
+                <div key={i} style={{ height: i % 2 === 0 ? '200px' : '150px', background: g, borderRadius: '2px', marginTop: i % 2 !== 0 ? '32px' : '0' }}></div>
+              ))}
+            </div>
+          </div>
+
+          <Footer onNavigate={navigate} />
+        </>
+      )}
+    </div>
+  );
+};
+
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<App />);
+</script>
+</body>
+</html>
