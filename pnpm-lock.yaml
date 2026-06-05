@@ -21,7 +21,15 @@ importers:
         specifier: ^5.3.3
         version: 5.9.3
 
-  apps/admin:
+  apps/agents: {}
+
+  apps/hermes-webui:
+    devDependencies:
+      eslint:
+        specifier: ^10.4.0
+        version: 10.4.1(jiti@2.7.0)
+
+  apps/sierra-blu-admin-portal:
     dependencies:
       '@google/generative-ai':
         specifier: ^0.24.1
@@ -79,15 +87,7 @@ importers:
         specifier: ^8.0.9
         version: 8.0.14(@types/node@24.12.4)(jiti@2.7.0)(yaml@2.9.0)
 
-  apps/agents: {}
-
-  apps/hermes-webui:
-    devDependencies:
-      eslint:
-        specifier: ^10.4.0
-        version: 10.4.1(jiti@2.7.0)
-
-  apps/web:
+  apps/sierra-blu-realty:
     dependencies:
       '@arizeai/openinference-semantic-conventions':
         specifier: ^2.2.0
@@ -7162,7 +7162,7 @@ snapshots:
   '@types/jsonwebtoken@9.0.10':
     dependencies:
       '@types/ms': 2.1.0
-      '@types/node': 20.19.41
+      '@types/node': 24.12.4
 
   '@types/leaflet@1.9.21':
     dependencies:
@@ -7185,7 +7185,7 @@ snapshots:
 
   '@types/papaparse@5.5.2':
     dependencies:
-      '@types/node': 20.19.41
+      '@types/node': 24.12.4
 
   '@types/pbf@3.0.5': {}
 
@@ -9431,7 +9431,7 @@ snapshots:
       '@jest/environment': 29.7.0
       '@jest/fake-timers': 29.7.0
       '@jest/types': 29.6.3
-      '@types/node': 20.19.41
+      '@types/node': 24.12.4
       jest-mock: 29.7.0
       jest-util: 29.7.0
 
