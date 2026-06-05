@@ -21,7 +21,10 @@ const COMPOUNDS = [
 
 export function ReportsPage() {
   const [loaded, setLoaded] = useState(false);
-  useEffect(() => { setLoaded(true); }, []);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setLoaded(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   return (
     <div className="os-page">

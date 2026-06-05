@@ -30,7 +30,10 @@ const PIPELINE_COLORS = ['#C8961A', '#E9C176', '#1E88D9', '#34D399', '#7C3AED', 
 
 export function OverviewPage() {
   const [loaded, setLoaded] = useState(false);
-  useEffect(() => { setLoaded(true); }, []);
+  useEffect(() => {
+    const id = requestAnimationFrame(() => setLoaded(true));
+    return () => cancelAnimationFrame(id);
+  }, []);
 
   return (
     <div className="os-page">
