@@ -46,8 +46,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'workflows/package-lock.json'
 
       - name: Install workflow dependencies
         run: |
@@ -90,8 +88,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'workflows/package-lock.json'
 
       - name: Install workflow dependencies
         run: |
@@ -129,8 +125,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'workflows/package-lock.json'
 
       - name: Install workflow dependencies
         run: |
@@ -168,8 +162,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: '18'
-          cache: 'npm'
-          cache-dependency-path: 'workflows/package-lock.json'
 
       - name: Install workflow dependencies
         run: |
