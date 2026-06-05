@@ -8,3 +8,5 @@ apps/*/coverage/
 functions/.turbo/
 __pycache__/
 *.pyc
+services/hermes-agent/__pycache__/
+services/hermes-agent/.venv/
