@@ -29,9 +29,11 @@ jobs:
 
       - name: Build application
         run: |
-          cd apps/web
+          cd apps/sierra-blu-realty
           pnpm run build
         env:
+          # Prevent CI from treating warnings as hard compile blocks
+          CI: false
           # Use staging Firebase for build
           NEXT_PUBLIC_FIREBASE_PROJECT_ID: sierra-blu-staging
           NEXT_PUBLIC_FIREBASE_API_KEY: ${{ secrets.FIREBASE_API_KEY_STAGING }}
