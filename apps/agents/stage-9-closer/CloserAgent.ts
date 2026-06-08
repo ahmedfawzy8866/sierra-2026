@@ -1,6 +1,7 @@
 import { Deal, DealStatus } from '../../lib/models/deals';
 import { adminDb } from '../../lib/server/firebase-admin';
 import { COLLECTIONS, InvestmentStakeholder } from '../../lib/models/schema';
+import { proposalGenerator } from './proposal-generator';
 import { getTemplate } from './messaging/templates';
 import * as admin from 'firebase-admin';
 
@@ -82,7 +83,6 @@ export class CloserAgent {
       if (!dealSnap.exists) throw new Error('Deal not found');
       
       const deal = dealSnap.data() as Deal;
-      const { proposalGenerator } = await import('./proposal-generator');
 
       // Generate Document via Proposal Engine
       const proposalUrl = await proposalGenerator.generate(

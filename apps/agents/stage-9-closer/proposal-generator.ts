@@ -1,25 +1,9 @@
 import { Deal } from '../../lib/models/deals';
 import theme from '../../documents/themes/sierra-blu-quiet-luxury.json';
-import { adminApp } from '../../lib/server/firebase-admin';
-import { getStorage } from 'firebase-admin/storage';
+import { storage } from '../../lib/firebase'; // Assuming storage service exists
+import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 
 export class ProposalGenerator {
-  private bucket: ReturnType<ReturnType<typeof getStorage>['bucket']> | null = null;
-
-  private getBucket() {
-    if (this.bucket) {
-      return this.bucket;
-    }
-
-    const bucketName = process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET || adminApp.options.storageBucket;
-    if (!bucketName) {
-      throw new Error('Firebase storage bucket is not configured.');
-    }
-
-    this.bucket = getStorage(adminApp).bucket(bucketName);
-    return this.bucket;
-  }
-
   /**
    * Generates a branded proposal PDF from a deal snapshot.
    */
@@ -45,16 +29,11 @@ export class ProposalGenerator {
     const generatedContent = Buffer.from(JSON.stringify(payload)); // Placeholder
 
     // 3. Upload to Firebase Storage
-    const bucket = this.getBucket();
-    const filePath = `proposals/${deal.id}_proposal.pdf`;
-    const file = bucket.file(filePath);
+    const storageRef = ref(storage, `proposals/${deal.id}_proposal.pdf`);
+    await uploadBytes(storageRef, generatedContent);
+    const downloadUrl = await getDownloadURL(storageRef);
 
-    await file.save(generatedContent, {
-      contentType: 'application/pdf',
-      resumable: false,
-    });
-
-    return `https://storage.googleapis.com/${bucket.name}/${filePath}`;
+    return downloadUrl;
   }
 
   /**

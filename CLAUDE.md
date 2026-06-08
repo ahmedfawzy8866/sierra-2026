@@ -1,46 +1,59 @@
-# CLAUDE.md — Sierra Blu (i-sierra-2027)
+# CLAUDE.md — Sierra Estates (ahmedfawzy8866/sierra-2026)
 
 Context for Claude Code / AI sessions. Keep this updated as the project evolves.
 
 ## What this is
-Sierra Blu / Sierra Estates — a luxury real-estate (PropTech) platform for the New Cairo market. pnpm + Turborepo monorepo.
+**Sierra Estates** — luxury real-estate (PropTech) platform for the New Cairo market.
+This is the **canonical master repository**. All development happens here.
+pnpm + Turborepo monorepo.
 
 ## Stack
 Next.js 16 (App Router, Turbopack) · React 19 · TypeScript 5 (strict) · Tailwind 4 · Firebase (client SDK 12 + Admin SDK 13: Firestore, Storage, Auth) · Leaflet maps · next-intl (en/ar) · **Docker n8n Workflow Engine** (`localhost:5678`). Deploy: Vercel (web) + Firebase (Hosting + Cloud Functions). Observability: OpenTelemetry + Arize.
 
 ## Layout
-- `apps/sierra-blu-realty` — PAGE 1: public **customer hub** (read-only luxury showcase). Main Next.js app and the real codebase (~26 pages, 38 API routes, ~78 components, ~39 services). Deploys to Vercel. (Renamed from `apps/web`.)
-- `apps/sierra-blu-admin-portal` — PAGE 2: private **master admin control panel** (full CRUD + CRM + AI workflow monitor + agents + analytics). Vite + React SPA. (Renamed from `apps/admin`.)
-- `apps/api` (Python FastAPI), `apps/agents` (whatsapp-scraper + stage-9-closer), `apps/hermes-webui` — backend/automation services.
-- `functions` — Firebase Cloud Functions (ingestion pipeline: collectData, processDataForApp, + pure transform module).
-- `packages/db` — shared Firestore data layer (substantial). `packages/agents` is small. `packages/{api,auth,batch,config,ui}` are empty stubs.
+- `apps/sierra-blu-realty` — PAGE 1: public **customer hub** (luxury showcase, property listings, maps, AI concierge, virtual tours). Next.js App Router. Deploys to Vercel.
+- `apps/sierra-blu-admin-portal` — PAGE 2: private **master admin control panel** (full CRUD + CRM + AI workflow monitor + agents + analytics). Vite + React SPA.
+- `apps/api` — Python FastAPI backend services.
+- `apps/agents` — AI agents: `stage-9-closer` (sales closer with proposal generator), `whatsapp-scraper`.
+- `apps/hermes-webui` — Hermes AI chat interface.
+- `functions/` — Firebase Cloud Functions (collectData, processDataForApp, + transform module).
+- `packages/db` — shared Firestore data layer.
+- `packages/agents` — shared agent interfaces.
+- `packages/agents-core` — core agent execution engine (merged from i-sierra-2027).
+- `packages/obedian` — Obsidian-style memory store (merged from i-sierra-2027).
+- `packages/open-memory` — OpenMemory integration.
+- `packages/ui` — shared UI components + design system (navy #0A1F44 / gold #D4AF37 tokens).
+- `packages/{api,auth,batch,config}` — shared utilities.
+- `workflows/` — n8n automation workflows (01–05).
+- `docs/obsidian-vault/` — AI agent memory and architecture notes.
 
 ## Commands (from repo root)
 - `pnpm install`
 - `pnpm dev` / `pnpm build` / `pnpm lint` / `pnpm type-check` / `pnpm test:ci`
-- Tests: 47 passing (40 web + 7 functions). `type-check` is a real CI gate (`tsc --noEmit`). `apps/web/next.config.ts` has `ignoreBuildErrors: false`.
+- Tests: 47+ passing. `type-check` is a real CI gate (`tsc --noEmit`).
+
+## Design System
+- **Brand:** "Quiet Luxury" — navy (#0A1F44) + gold (#D4AF37)
+- **Tokens:** `packages/ui/design-system/design-tokens.scss`
+- **Components:** `LuxurySkeleton`, `PremiumHero` in `packages/ui/design-system/`
+- **RTL:** Full Arabic/English bilingual support via next-intl
 
 ## Conventions
-- ESLint flat config (`apps/web/eslint.config.mjs`) with `eslint-plugin-unused-imports`; unused vars/args/caught-errors must be `_`-prefixed.
-- `apps/web/tsconfig.json` excludes `agents/**` and `public/**` from type-check.
+- ESLint flat config with `eslint-plugin-unused-imports`; unused vars/args must be `_`-prefixed.
 - Privileged server work uses the **Admin SDK** (`@/lib/server/firebase-admin`) which BYPASSES Firestore rules. Client uses `@/lib/firebase`.
 
-## Auth model (important)
-- Client role: read from Firestore `users/{uid}.role` in {admin, manager, agent} (see `lib/AuthContext.tsx`).
-- Server admin check: `verifyAdminRequest` (`lib/server/auth-guard.ts`) — Firebase Bearer token with `admin===true || role==='admin'` custom claim. `verifyRequest` also accepts the `X-SBR-SECRET-KEY` header for service/cron calls.
-- Edge middleware (`apps/web/middleware.ts`) matches ONLY `/api/orchestrate` — it is NOT broad protection.
-- Firestore/Storage security rules are staff-gated via `users/{uid}.role` (see `firestore.rules`) — pending deploy (see NEXT_STEPS.md).
+## Auth model
+- Client role: read from Firestore `users/{uid}.role` in {admin, manager, agent}.
+- Server admin check: `verifyAdminRequest` — Firebase Bearer token with `admin===true || role==='admin'` custom claim. `verifyRequest` also accepts `X-SBR-SECRET-KEY` header for service/cron calls.
+- Edge middleware matches ONLY `/api/orchestrate`.
+- Firestore/Storage rules are staff-gated via `users/{uid}.role`.
 
-## Reality check
-Pre-production. Some services are mock/scaffolded (`MockAIService`, unwired i18n). Test coverage is thin. Older `STATUS.md`/`TODO.md` are aspirational/stale.
+## Obsidian Memory Engine
+- **Vault:** `docs/obsidian-vault/` — cognitive and database architecture notes.
+- **Rule:** For every task, read the relevant vault node first (e.g. `Sourcing Pipeline & Lead Aggregator.md`, `WhatsApp CRM & Hand-off Pipeline.md`).
+- **Graph Alignment:** Maintain `[[Links]]` when editing vault files.
 
-## Obsidian Memory Engine & AI Sourcing
-- **Vault Location:** `docs/obsidian-vault/` contains the core cognitive and database architecture notes.
-- **Rules of Engagement:** For every new task, feature, or bugfix, the AI agent MUST search and read the relevant node in the Obsidian vault (e.g. `Sourcing Pipeline & Lead Aggregator.md`, `WhatsApp CRM & Hand-off Pipeline.md`).
-- **Graph Alignment:** Maintain double-bracket `[[Links]]` when editing vault files to preserve the Obsidian graph view.
-
-## Constraints & Pull Request Policy
-- **Repo Scope:** GitHub access is scoped to `ahmedfawzy8866/i-sierra-2027` only — do not touch other repos.
-- **Branch Protection Active:** The `main` branch is protected on GitHub. Direct commits are blocked. Never force-push or delete `main`.
-- **Workflow:** For all changes, checkout a new branch (e.g. `feature/name`), push it to remote, and open a Pull Request using `gh pr create`.
-- **Do Not Deploy** without explicit approval. Never place API keys or credentials in raw code or in chat.
+## Branch Policy
+- **Main branch is protected.** Never force-push or commit directly to `main`.
+- All changes: create feature branch → push → open PR.
+- Development branch: `claude/optimistic-hypatia-ymhdO`

@@ -10,3 +10,7 @@ __pycache__/
 *.pyc
 services/hermes-agent/__pycache__/
 services/hermes-agent/.venv/
+
+# Build artifacts from packages
+packages/*/dist/
+

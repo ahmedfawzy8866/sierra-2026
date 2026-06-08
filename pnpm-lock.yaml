@@ -315,6 +315,25 @@ importers:
         specifier: ^5.3
         version: 5.9.3
 
+  packages/agents-core:
+    dependencies:
+      '@google/generative-ai':
+        specifier: ^0.11.0
+        version: 0.11.5
+      '@sierra-estates/obedian':
+        specifier: workspace:*
+        version: link:../obedian
+      zod:
+        specifier: ^3.22
+        version: 3.25.76
+    devDependencies:
+      '@types/node':
+        specifier: ^20
+        version: 20.19.41
+      typescript:
+        specifier: ^5.3
+        version: 5.9.3
+
   packages/api:
     dependencies:
       axios:
@@ -387,6 +406,19 @@ importers:
       firebase-admin:
         specifier: ^13.0
         version: 13.10.0
+      zod:
+        specifier: ^3.22
+        version: 3.25.76
+    devDependencies:
+      '@types/node':
+        specifier: ^20
+        version: 20.19.41
+      typescript:
+        specifier: ^5.3
+        version: 5.9.3
+
+  packages/obedian:
+    dependencies:
       zod:
         specifier: ^3.22
         version: 3.25.76
@@ -915,6 +947,10 @@ packages:
   '@google-cloud/storage@7.19.0':
     resolution: {integrity: sha512-n2FjE7NAOYyshogdc7KQOl/VZb4sneqPjWouSyia9CMDdMhRX5+RIbqalNmC7LOLzuLAN89VlF2HvG8na9G+zQ==}
     engines: {node: '>=14'}
+
+  '@google/generative-ai@0.11.5':
+    resolution: {integrity: sha512-DviMgrnljEKh6qkDT2pVFW+NEuVhggqBUoEnyy2PNL7l4ewxXRJubk3PctC9yPl1AdRIlhqP7E076QQt+IWuTg==}
+    engines: {node: '>=18.0.0'}
 
   '@google/generative-ai@0.24.1':
     resolution: {integrity: sha512-MqO+MLfM6kjxcKoy0p1wRzG3b4ZZXtPI+z2IE26UogS2Cm/XHO+7gGRBh6gcJsOiIVoH93UwKvW4HdgiOZCy9Q==}
@@ -6012,6 +6048,8 @@ snapshots:
     transitivePeerDependencies:
       - encoding
       - supports-color
+
+  '@google/generative-ai@0.11.5': {}
 
   '@google/generative-ai@0.24.1': {}
 
