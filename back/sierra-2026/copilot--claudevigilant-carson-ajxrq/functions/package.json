@@ -1,0 +1,22 @@
+{
+  "name": "sierra-blu-functions",
+  "version": "1.0.0",
+  "description": "Firebase Cloud Functions — data collection and processing pipeline",
+  "main": "index.js",
+  "engines": {
+    "node": "20"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0",
+    "firebase-functions": "^6.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29"
+  },
+  "scripts": {
+    "test": "jest --passWithNoTests",
+    "test:ci": "jest --ci --passWithNoTests",
+    "deploy": "firebase deploy --only functions"
+  },
+  "private": true
+}

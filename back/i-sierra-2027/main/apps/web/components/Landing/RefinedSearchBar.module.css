@@ -1,0 +1,22 @@
+.filterSelect {
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 300;
+  width: 100%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  appearance: none;
+}
+
+.filterSelect:focus {
+  color: var(--gold-prime);
+}
+
+.filterOption {
+  background: var(--bg-card);
+  color: var(--text);
+}
