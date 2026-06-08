@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Score Sierra Blu leads from CSV files or Firestore collections."""
+"""Score Sierra Estates leads from CSV files or Firestore collections."""
 
 from __future__ import annotations
 
@@ -211,7 +211,7 @@ def _render_summary(total: int, kept: int, score_distribution: Counter[int]) -> 
 
 def parse_args() -> argparse.Namespace:
     """Parse CLI arguments."""
-    parser = argparse.ArgumentParser(description='Score Sierra Blu leads from CSV or Firestore.')
+    parser = argparse.ArgumentParser(description='Score Sierra Estates leads from CSV or Firestore.')
     parser.add_argument('--source', choices=('csv', 'firestore'), required=True, help='Lead source to read from.')
     parser.add_argument('--output', required=True, help='Path to the scored CSV report.')
     parser.add_argument('--min-score', type=int, default=1, help='Only include leads at or above this score.')

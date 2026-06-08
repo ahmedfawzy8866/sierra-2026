@@ -2,7 +2,7 @@ import { getAuth } from 'firebase/auth';
 
 import { parseDSL, buildFirestoreQuery } from '../../../packages/db/lib/dsl/parser';
 import { pushListingToPF } from '../../../packages/db/lib/integrations/property-finder';
-import { VIEW_CONFIGS } from '../../../packages/db/lib/sierra-blue-view-configs';
+import { VIEW_CONFIGS } from '../../../packages/db/lib/sierra-estatese-view-configs';
 
 jest.mock('firebase/auth', () => ({
   getAuth: jest.fn(),

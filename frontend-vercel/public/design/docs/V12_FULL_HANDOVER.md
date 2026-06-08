@@ -1,4 +1,4 @@
-# ✦ SIERRA BLU REALTY — V12.0 FINAL SYSTEM HANDOVER ✦
+# ✦ SIERRA ESTATES REALTY — V12.0 FINAL SYSTEM HANDOVER ✦
 **Date:** April 2026
 **Environment:** Next.js + Firebase + Google Gemini (OpenClaw)
 **Status:** Unified & Production-Ready (Merged V11.5 + V12.0 logic)
@@ -50,7 +50,7 @@ The entire application is a 10-stage orchestration pipeline. The AI agents manag
 - **Database:** Firebase Firestore (Schema defined in `lib/models/schema.ts`).
 - **Storage:** Firebase Storage (for images and media).
 - **AI Integration:** Google Generative AI (`@google/generative-ai`) is the core intelligence brain for Scribe and Profiling.
-- **Path structure:** The active workspace is `h:\Sierra Blue SaaS Program Locally V2\my-app`. (Drives C: and F: contain deprecated / legacy backups and should be ignored).
+- **Path structure:** The active workspace is `h:\Sierra Estatese SaaS Program Locally V2\my-app`. (Drives C: and F: contain deprecated / legacy backups and should be ignored).
 
 ---
 
@@ -74,7 +74,7 @@ To spin up the platform for final production deployment, the next developer must
 2. **Service Account:** Place the Firebase `serviceAccountKey.json` inside the `server/` directory for `firebase-admin` to operate the WhatsApp Scribe background tasks.
 3. **Run Commands:**
    ```bash
-   cd "h:\Sierra Blue SaaS Program Locally V2\my-app"
+   cd "h:\Sierra Estatese SaaS Program Locally V2\my-app"
    npm install
    npm run dev
    ```

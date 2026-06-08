@@ -1,6 +1,6 @@
 /**
  * packages/db — Property Finder integration types and helpers
- * These are the pure types and API helpers used by @sierra-blu/agents hooks.
+ * These are the pure types and API helpers used by @sierra-estates/agents hooks.
  * Server-side sync logic lives in apps/web/lib/services/PFIntegrationService.ts.
  */
 

@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — SERVER-SIDE AUTH GUARD  v12.4
+ * SIERRA ESTATES — SERVER-SIDE AUTH GUARD  v12.4
  * Validates Firebase Auth tokens on API routes.
  *
  * Supports three auth methods:

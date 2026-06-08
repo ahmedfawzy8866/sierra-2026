@@ -2,7 +2,7 @@ import * as functions from 'firebase-functions';
 
 // HTTP API route
 export const api = functions.https.onRequest((req, res) => {
-  res.json({ message: 'Sierra Blu API - Health check OK' });
+  res.json({ message: 'Sierra Estates API - Health check OK' });
 });
 
 // Health check function

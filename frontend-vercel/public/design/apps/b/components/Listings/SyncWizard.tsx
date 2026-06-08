@@ -528,7 +528,7 @@ export default function SyncWizard({ onClose, onSuccess }: SyncWizardProps) {
         </div>
 
         <div className="modal-footer" style={{ justifyContent: 'center', borderTop: 'none', background: 'rgba(0,0,0,0.02)', padding: '16px' }}>
-          <div style={{ opacity: 0.5, fontSize: '11px', letterSpacing: '1px', fontWeight: 600 }}>SIERRA BLU REALTY OPERATIONAL INTELLIGENCE</div>
+          <div style={{ opacity: 0.5, fontSize: '11px', letterSpacing: '1px', fontWeight: 600 }}>SIERRA ESTATES REALTY OPERATIONAL INTELLIGENCE</div>
         </div>
       </div>
 

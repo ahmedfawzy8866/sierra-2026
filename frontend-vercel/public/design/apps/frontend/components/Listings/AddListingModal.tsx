@@ -257,7 +257,7 @@ export default function AddListingModal({ onClose, onSuccess, listing }: AddList
               <select className="form-select" value={formData.ownerType} onChange={e => setFormData({...formData, ownerType: e.target.value as any})}>
                 <option value="Owner">Direct Owner</option>
                 <option value="Broker">Broker Partnership</option>
-                <option value="Internal">Sierra Blue Internal</option>
+                <option value="Internal">Sierra Estatese Internal</option>
               </select>
             </div>
           </div>

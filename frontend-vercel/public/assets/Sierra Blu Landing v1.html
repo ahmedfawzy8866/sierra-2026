@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sierra Blu Realty — Beyond Brokerage</title>
+<title>Sierra Estates Realty — Beyond Brokerage</title>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400;1,600&family=Jost:wght@200;300;400;500;600;700&family=Cairo:wght@300;400;600;700&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
 <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
@@ -80,7 +80,7 @@ const THEMES = {
    ════════════════════════════════════════ */
 const COPY = {
   en:{
-    dir:"ltr",brand:"SIERRA BLU",sub:"REALTY",
+    dir:"ltr",brand:"SIERRA ESTATES",sub:"REALTY",
     tagline:"AI‑POWERED REAL ESTATE INTELLIGENCE",
     nav:["Properties","Intelligence","About","Contact"],
     cta:"Enter Portal",
@@ -102,8 +102,8 @@ const COPY = {
     searchBtn:"Search Now",
     pfBadge:"Property Finder",
     beds:"bed",baths:"bath",
-    secWhy:"Why Sierra Blu",
-    h2Why:"The Sierra Blu Difference",
+    secWhy:"Why Sierra Estates",
+    h2Why:"The Sierra Estates Difference",
     why:[
       {icon:"◆",title:"Curated Selection",desc:"Every listing is personally vetted by our senior advisors. No overpriced inventory — only properties worth your attention."},
       {icon:"◈",title:"Smart Investment",desc:"AI-driven ROI analysis, market comparison, and growth corridor mapping. Decisions backed by data, not guesswork."},
@@ -148,7 +148,7 @@ const COPY = {
     footNav:"Navigation",footNavLinks:["Properties","Intelligence","About Us","Careers","Contact"],
     footMarkets:"Markets",footMarketLinks:["New Cairo","Fifth Settlement","Madinaty","Mostakbal City","Mountain View"],
     footContact:"Contact",
-    copyright:"© 2026 Sierra Blu Realty. All rights reserved.",
+    copyright:"© 2026 Sierra Estates Realty. All rights reserved.",
     legal:["Privacy Policy","Terms of Service","Cookies"],
   },
   ar:{
@@ -538,7 +538,7 @@ function App(){
         </div>
       </section>
 
-      {/* ══ WHY SIERRA BLU ══ */}
+      {/* ══ WHY SIERRA ESTATES ══ */}
       <section style={{background:th.bg,padding:'96px 0',position:'relative',overflow:'hidden'}}>
         <div style={{position:'absolute',top:'50%',left:'50%',transform:'translate(-50%,-50%)',opacity:mode==='dark'?.025:.02,pointerEvents:'none'}}>
           <ShieldLogo size={600}/>
@@ -624,7 +624,7 @@ function App(){
                       <text x={pin.cx} y={pin.cy-20} textAnchor="middle" fill={G} fontSize="8.5" fontFamily="'Jost',sans-serif">{pin.stat}</text>
                     </g>
                   ))}
-                  <text x="250" y="462" textAnchor="middle" fill={`rgba(233,193,118,0.2)`} fontSize="9" fontFamily="'Jost',sans-serif" letterSpacing="4">SIERRA BLU INTELLIGENCE</text>
+                  <text x="250" y="462" textAnchor="middle" fill={`rgba(233,193,118,0.2)`} fontSize="9" fontFamily="'Jost',sans-serif" letterSpacing="4">SIERRA ESTATES INTELLIGENCE</text>
                 </svg>
                 {/* Corner brackets */}
                 {[{top:12,left:12},{top:12,right:12},{bottom:12,left:12},{bottom:12,right:12}].map((pos,i)=>(

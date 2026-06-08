@@ -1,5 +1,5 @@
 {
-  "name": "📊 Sierra Blu — Daily Market Report Sync",
+  "name": "📊 Sierra Estates — Daily Market Report Sync",
   "nodes": [
     {
       "parameters": {
@@ -77,7 +77,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "https://firestore.googleapis.com/v1/projects/sierra-blu-prod/databases/(default)/documents/market_insights",
+        "url": "https://firestore.googleapis.com/v1/projects/sierra-estates-prod/databases/(default)/documents/market_insights",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
@@ -110,8 +110,8 @@
       "parameters": {
         "fromEmail": "reports@sierrablu.com",
         "toEmail": "a.fawzy8866@gmail.com",
-        "subject": "=📊 Sierra Blu Executive Daily Market Report — {{ $json.date }}",
-        "html": "=<h2>Daily Real Estate Sourcing Report</h2>\n<p><strong>Date:</strong> {{ $json.date }}</p>\n<p><strong>Total Listings Aggregated:</strong> {{ $json.total_listings_pulled }} items</p>\n<p><strong>Average Price/Sqm (New Cairo):</strong> {{ $json.average_sqm_price }} EGP</p>\n<p><strong>Top Valuation Compound:</strong> {{ $json.top_roi_compound }}</p>\n<h3>Top 5 High-Value Compounds (Sqm Index):</h3>\n<ul>\n  {{#each $json.compounds_ranking}}\n    <li><strong>{{this.compound}}:</strong> {{this.avg_price_sqm}} EGP/sqm</li>\n  {{/each}}\n</ul>\n<br/>\n<p><em>Generated automatically by Sierra Blu self-hosted n8n engine.</em></p>"
+        "subject": "=📊 Sierra Estates Executive Daily Market Report — {{ $json.date }}",
+        "html": "=<h2>Daily Real Estate Sourcing Report</h2>\n<p><strong>Date:</strong> {{ $json.date }}</p>\n<p><strong>Total Listings Aggregated:</strong> {{ $json.total_listings_pulled }} items</p>\n<p><strong>Average Price/Sqm (New Cairo):</strong> {{ $json.average_sqm_price }} EGP</p>\n<p><strong>Top Valuation Compound:</strong> {{ $json.top_roi_compound }}</p>\n<h3>Top 5 High-Value Compounds (Sqm Index):</h3>\n<ul>\n  {{#each $json.compounds_ranking}}\n    <li><strong>{{this.compound}}:</strong> {{this.avg_price_sqm}} EGP/sqm</li>\n  {{/each}}\n</ul>\n<br/>\n<p><em>Generated automatically by Sierra Estates self-hosted n8n engine.</em></p>"
       },
       "id": "519e0758-c0b8-4d57-b08e-17482811a005",
       "name": "Send Report to Admin",

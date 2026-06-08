@@ -6,7 +6,7 @@ import { collection, query, onSnapshot, doc, getDoc } from 'firebase/firestore';
 
 /**
  * useSierraBlu
- * The master hook for the Sierra Blu Frontend.
+ * The master hook for the Sierra Estates Frontend.
  * abstracts away the direct Firebase calls for Claude Code.
  */
 export function useSierraBlu() {

@@ -5,7 +5,7 @@ import { Timestamp } from 'firebase-admin/firestore';
 import { COLLECTIONS } from '@/lib/models/schema';
 
 /**
- * SIERRA BLU — CRON: PROPERTY FINDER LEAD SYNC
+ * SIERRA ESTATES — CRON: PROPERTY FINDER LEAD SYNC
  * Runs every 10 minutes via Vercel Cron to pull new leads.
  * This ensures "15-min response time" SLA compliance.
  */

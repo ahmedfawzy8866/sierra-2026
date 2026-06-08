@@ -107,7 +107,7 @@ export default function SystemDashboard() {
             <div className="flex flex-col space-y-6 relative before:absolute before:inset-0 before:ms-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
                <PipelineStage num="1" title="Scribe Intake" desc="Raw data parsed from WhatsApp Scraper." active />
                <PipelineStage num="2" title="Property Coding" desc="Assigned internal code [Location]-[Rooms]-[Price]." active />
-               <PipelineStage num="3" title="Branded Asset Generation" desc="Applied Sierra Blu Standard gradient and logo." active />
+               <PipelineStage num="3" title="Branded Asset Generation" desc="Applied Sierra Estates Standard gradient and logo." active />
                <PipelineStage num="4" title="Copywriting AI" desc="Generated dual-format narratives (Social & Portal)." active />
                <PipelineStage num="5" title="Neural Matching" desc="Awaiting client assignment." />
             </div>

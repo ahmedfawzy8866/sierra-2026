@@ -39,12 +39,12 @@ export async function POST(request: Request) {
     // 4. Dispatch Email Notification Script (simulating send to a.fawzy8866@gmail.com)
     const emailPayload = {
       to: 'a.fawzy8866@gmail.com',
-      subject: `📅 [Sierra Blu AI] viewing Scheduled - Code: ${propertyCode}`,
+      subject: `📅 [Sierra Estates AI] viewing Scheduled - Code: ${propertyCode}`,
       body: `
 Dear Ahmed Fawzy,
 
 No human agent responded to the active lead within the 6-hour timeout window. 
-Sierra Blu AI Autopilot has successfully taken over, closed the deal, and booked a physical viewing appointment!
+Sierra Estates AI Autopilot has successfully taken over, closed the deal, and booked a physical viewing appointment!
 
 ==================================================
 📅 VIEWING APPOINTMENT DETAILS (Synced to Google Calendar)
@@ -72,7 +72,7 @@ The Google Calendar invite has been successfully dispatched to all parties.
 Please review the complete chat thread inside your easyListing CRM panel.
 
 Best regards,
-Sierra Blu Intelligence OS
+Sierra Estates Intelligence OS
       `
     };
 

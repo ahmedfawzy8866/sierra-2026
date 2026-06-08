@@ -77,5 +77,5 @@ export async function POST(req: NextRequest) {
 
 // Support GET for simple health check
 export async function GET() {
-    return NextResponse.json({ status: 'active', service: 'Sierra Blu WhatsApp Webhook Gateway' });
+    return NextResponse.json({ status: 'active', service: 'Sierra Estates WhatsApp Webhook Gateway' });
 }

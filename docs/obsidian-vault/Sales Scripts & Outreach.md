@@ -1,6 +1,6 @@
 # 💬 Sales Scripts & Outreach Registry
 > **Path:** `docs/obsidian-vault/Sales Scripts & Outreach.md`  
-> **Parent Node:** `[[Sierra Blu Memory Engine]]`
+> **Parent Node:** `[[Sierra Estates Memory Engine]]`
 
 This registry contains the active communication scripts used by **Leila (Conversational Arabic Bot)** and **Sierra (AI Coordinator)** to communicate with direct owners and real estate brokers in Egypt.
 
@@ -53,7 +53,7 @@ When a deal is closed or scheduled, the system sends an automation notification 
 
 ### Email Format: viewing Appointment Booked
 ```
-Subject: 📅 [Sierra Blu AI] Viewing Scheduled - Compound: [Compound] - Unit Code: [Unit Code]
+Subject: 📅 [Sierra Estates AI] Viewing Scheduled - Compound: [Compound] - Unit Code: [Unit Code]
 
 Dear Ahmed Fawzy,
 
@@ -80,5 +80,5 @@ WhatsApp Chat Thread Log: [Link to Admin CRM Module]
 
 Please confirm this appointment has been synced to your Google Calendar.
 Best regards,
-Sierra Blu Intelligence OS
+Sierra Estates Intelligence OS
 ```

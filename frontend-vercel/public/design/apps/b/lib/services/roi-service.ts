@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — WEALTH INTELLIGENCE ENGINE
+ * SIERRA ESTATES — WEALTH INTELLIGENCE ENGINE
  * Stage 7 Core: Financial ROI & Portfolio Analysis
  */
 
@@ -36,7 +36,7 @@ export async function analyzeAssetFinancials(unit: Unit): Promise<FinancialAnaly
   const urgencyFactor = (unit.intelligence?.urgencyScore || 0) / 10; 
   const valScore = (unit.intelligence?.valuationScore || 50) / 100;
 
-  // --- SIERRA BLU UPGRADE: Use FinancialService for Valuation Context ---
+  // --- SIERRA ESTATES UPGRADE: Use FinancialService for Valuation Context ---
   const valuation = FinancialService.calcAppraisedValue(unit);
   const marketEdge = valuation.marketDifference > 0 ? valuation.marketDifference : 0;
 
@@ -74,7 +74,7 @@ export async function analyzeAssetFinancials(unit: Unit): Promise<FinancialAnaly
  * Uses Gemini to generate a clinical wealth-focused reasoning.
  */
 async function generateValuationReasoning(unit: Unit, roi: number, yieldPercent: number): Promise<string> {
-  const systemPrompt = `You are the Sierra Blu Wealth Analytics Bot (Neural ROI Core V10.0).
+  const systemPrompt = `You are the Sierra Estates Wealth Analytics Bot (Neural ROI Core V10.0).
 Task: Provide a clinical, premium financial justification for a property investment.
 
 Tone: Focus on wealth preservation, capital appreciation, and institutional-grade logic.

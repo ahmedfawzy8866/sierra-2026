@@ -2,7 +2,7 @@
 > **Path:** `docs/memory/agent_orchestrations.md`  
 > **Parent Node:** `docs/memory/index.md`
 
-This document details the operations, configurations, and state engines for the **four main AI agents** operating in the Sierra Blu system.
+This document details the operations, configurations, and state engines for the **four main AI agents** operating in the Sierra Estates system.
 
 ---
 

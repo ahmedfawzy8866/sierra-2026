@@ -1,6 +1,6 @@
 # 👩‍💼 Sierra Agent: OpenClaw Cognitive Center
 > **Path:** `docs/obsidian-vault/Sierra Agent Intelligence.md`  
-> **Parent Node:** `[[Sierra Blu Memory Engine]]`
+> **Parent Node:** `[[Sierra Estates Memory Engine]]`
 
 **Sierra Bot** is our client-facing luxury portfolio concierge. Sierra utilizes **OpenClaw** to gain advanced agentic skills, enabling dynamic brochure curation and real-time deal analysis.
 

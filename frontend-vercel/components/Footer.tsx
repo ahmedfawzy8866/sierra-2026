@@ -16,7 +16,7 @@ const FOOTER_LINKS = {
     { label: 'Concierge',            href: '/concierge' },
   ],
   Company: [
-    { label: 'About Sierra Blu', href: '/about' },
+    { label: 'About Sierra Estates', href: '/about' },
     { label: 'Our Team',         href: '/about#team' },
     { label: 'Careers',          href: '/careers' },
     { label: 'Press',            href: '/about#press' },
@@ -139,7 +139,7 @@ export default function Footer() {
                   className="font-semibold tracking-[0.2em] text-base leading-none"
                   style={{ fontFamily: 'var(--font-serif)', color: 'rgba(244,240,232,0.95)' }}
                 >
-                  SIERRA BLU
+                  SIERRA ESTATES
                 </p>
                 <p
                   className="text-[8px] tracking-[0.45em] uppercase mt-0.5 leading-none"
@@ -217,7 +217,7 @@ export default function Footer() {
             className="text-[10px] uppercase tracking-[0.18em]"
             style={{ fontFamily: 'var(--font-mono)' }}
           >
-            © {year} Sierra Blu Realty. All rights reserved.
+            © {year} Sierra Estates Realty. All rights reserved.
           </p>
           <div
             className="h-px flex-1 mx-8 opacity-20"

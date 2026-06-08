@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — LEGAL INTELLIGENCE BRAIN
+ * SIERRA ESTATES — LEGAL INTELLIGENCE BRAIN
  * "Legal safety is the ultimate luxury."
  * This service maps technical property data to legal risk frameworks.
  */

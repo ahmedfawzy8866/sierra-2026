@@ -48,7 +48,7 @@ export default function AdminLoginPage() {
             </div>
             <h1 className="text-white text-2xl font-bold tracking-tight uppercase mb-1"
               style={{ fontFamily: 'var(--font-display)' }}>
-              Sierra Blu
+              Sierra Estates
             </h1>
             <p className="text-white/30 text-[9px] tracking-widest uppercase font-mono">
               Admin Nexus · Secure Access
@@ -118,7 +118,7 @@ export default function AdminLoginPage() {
           </form>
 
           <p className="text-center text-white/20 text-[9px] tracking-widest uppercase mt-10 font-mono">
-            Sierra Blu Realty · Digital Concierge V13.0
+            Sierra Estates Realty · Digital Concierge V13.0
           </p>
         </div>
       </div>

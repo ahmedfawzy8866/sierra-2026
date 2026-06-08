@@ -6,14 +6,14 @@ export function AirCenterWidget() {
     <div className="bg-white rounded-3xl p-6 border border-sierra-navy/10 shadow-xl max-w-sm w-full">
       <div className="flex items-center justify-between mb-6">
         <h3 className="text-sierra-navy font-bold text-lg uppercase tracking-tight">AirCenter Control</h3>
-        <button className="text-sierra-navy/40 hover:text-sierra-blue transition-colors">
+        <button className="text-sierra-navy/40 hover:text-sierra-estatese transition-colors">
           <Settings className="w-5 h-5" />
         </button>
       </div>
       
       <div className="grid grid-cols-2 gap-4">
-        <div className="bg-sierra-ivory p-4 rounded-2xl flex flex-col items-start border border-sierra-navy/5 hover:border-sierra-blue/30 transition-colors">
-          <Activity className="w-6 h-6 text-sierra-blue mb-3" />
+        <div className="bg-sierra-ivory p-4 rounded-2xl flex flex-col items-start border border-sierra-navy/5 hover:border-sierra-estatese/30 transition-colors">
+          <Activity className="w-6 h-6 text-sierra-estatese mb-3" />
           <div className="text-sierra-navy font-bold text-2xl tracking-tight">24</div>
           <div className="text-sierra-navy/60 text-xs font-semibold uppercase tracking-wider mt-1">Live Units</div>
         </div>

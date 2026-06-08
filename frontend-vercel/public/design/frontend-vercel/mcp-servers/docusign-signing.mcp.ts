@@ -16,7 +16,7 @@ export const mcp_docusign_signing = {
         return {
           success: true,
           envelopeId: `env_${Date.now()}`,
-          signingUrl: `https://docusign.sierra-blu.com/sign?id=${Date.now()}`
+          signingUrl: `https://docusign.sierra-estates.com/sign?id=${Date.now()}`
         };
       }
     },

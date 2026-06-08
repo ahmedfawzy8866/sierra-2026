@@ -1,6 +1,6 @@
 /**
  * PROPERTY FINDER ENTERPRISE API GATEWAY (v2)
- * Implementation for Sierra Blu Realty Operational Intelligence
+ * Implementation for Sierra Estates Realty Operational Intelligence
  */
 
 export interface PFListing {

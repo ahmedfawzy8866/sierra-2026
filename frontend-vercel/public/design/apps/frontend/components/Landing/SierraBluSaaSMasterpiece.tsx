@@ -92,7 +92,7 @@ export default function SierraBluSaaSMasterpiece() {
       {/* 1. NAVBAR */}
       <nav className={`fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-5 md:px-12 ${theme.navBg} backdrop-blur-xl border-b ${theme.border} transition-all`}>
         <Link href="/" className={`font-serif text-2xl font-bold tracking-tight outline-none ${theme.text}`}>
-          Sierra Blu
+          Sierra Estates
         </Link>
         
         <div className="hidden lg:flex items-center gap-2.5 px-4 py-1.5 bg-white/10 border border-white/10 rounded-full shadow-sm backdrop-blur-md">
@@ -148,7 +148,7 @@ export default function SierraBluSaaSMasterpiece() {
 
           <div className="w-full lg:w-[45%] h-[500px] lg:h-[680px] perspective-[1200px]">
             <motion.div style={{ rotateX, rotateY }} className={`relative w-full h-full rounded-[2.5rem] overflow-hidden shadow-2xl border ${theme.border} transition-all duration-200 ease-out`}>
-              <Image src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Sierra Blu Live SaaS Engine Asset" fill className="object-cover scale-102 transition-transform duration-500" priority />
+              <Image src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" alt="Sierra Estates Live SaaS Engine Asset" fill className="object-cover scale-102 transition-transform duration-500" priority />
               <div className={`absolute bottom-6 left-6 right-6 p-6 ${isDarkMode ? 'bg-black/60 border-white/20' : 'bg-white/70 border-white/50'} backdrop-blur-xl rounded-2xl border shadow-xl flex items-center justify-between`}>
                 <div>
                   <span className={`text-[10px] uppercase tracking-widest font-bold ${theme.textSecondary} block mb-0.5`}>Current Focus Area</span>
@@ -307,9 +307,9 @@ export default function SierraBluSaaSMasterpiece() {
 
       {/* 5. EDITORIAL FOOTER */}
       <footer className={`${theme.cardBg} py-16 px-6 md:px-12 text-center border-t ${theme.border} z-10 relative`}>
-        <h2 className="font-serif text-3xl font-bold tracking-tight">Sierra Blu</h2>
+        <h2 className="font-serif text-3xl font-bold tracking-tight">Sierra Estates</h2>
         <p className={`${theme.textSecondary} text-xs tracking-[0.25em] uppercase mt-2 mb-8 font-semibold`}>Beyond Brokerage · PropTech OS</p>
-        <p className={`${theme.textSecondary} text-xs font-light tracking-wide`}>&copy; 2026 Sierra Blu Realty OS. All architectural data systems reserved.</p>
+        <p className={`${theme.textSecondary} text-xs font-light tracking-wide`}>&copy; 2026 Sierra Estates Realty OS. All architectural data systems reserved.</p>
       </footer>
 
     </main>

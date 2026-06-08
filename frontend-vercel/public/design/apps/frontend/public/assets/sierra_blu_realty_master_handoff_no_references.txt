@@ -1,12 +1,12 @@
-SIERRA BLU REALTY - MASTER PROJECT HANDOFF
+SIERRA ESTATES REALTY - MASTER PROJECT HANDOFF
 
 PROJECT IDENTITY
-Brand Name: Sierra Blu Realty
+Brand Name: Sierra Estates Realty
 Tagline: Beyond Brokerage
 Official Description: AI-Powered Real Estate Intelligence
 
 PROJECT DEFINITION
-Sierra Blu Realty is not intended to be only a marketing landing page or a basic brokerage website. The intended direction is a luxury real estate operating system that combines premium brand presentation, structured brokerage operations, internal content control, curated inventory management, media control, and AI-assisted explanation layers.
+Sierra Estates Realty is not intended to be only a marketing landing page or a basic brokerage website. The intended direction is a luxury real estate operating system that combines premium brand presentation, structured brokerage operations, internal content control, curated inventory management, media control, and AI-assisted explanation layers.
 
 The project should feel like a serious premium real estate platform built for trust, clarity, and long-term operational use.
 
@@ -24,9 +24,9 @@ CORE PRINCIPLES
 
 CURRENT ORGANIZATIONAL STATUS
 There are currently three project references in memory:
-- Sierra Blu = archive / reference
-- sierra-blu = under audit
-- sierra-blu-realty = under audit
+- Sierra Estates = archive / reference
+- sierra-estates = under audit
+- sierra-estates-realty = under audit
 
 The canonical project has not yet been finally selected.
 
@@ -169,7 +169,7 @@ The approved homepage sections are:
 1. Hero
 2. Featured Properties
 3. Interactive Map
-4. Why Sierra Blu
+4. Why Sierra Estates
 5. Services
 6. Investment Intelligence
 7. About Preview
@@ -477,7 +477,7 @@ The safest execution style is:
 - then refine public polish and launch readiness
 
 ONE-LINE PROJECT SUMMARY
-Sierra Blu Realty is a bilingual luxury real estate operating system that combines premium public presentation, structured admin operations, curated content, hybrid inventory management, media control, official sync logic, and AI-assisted explanation on top of deterministic code-driven decisions.
+Sierra Estates Realty is a bilingual luxury real estate operating system that combines premium public presentation, structured admin operations, curated content, hybrid inventory management, media control, official sync logic, and AI-assisted explanation on top of deterministic code-driven decisions.
 
 FINAL HANDOFF SUMMARY
 This project is not starting from zero.

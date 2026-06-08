@@ -31,7 +31,7 @@ client.on('message', async msg => {
     console.log(`From: ${msg.from} (${groupName})`);
     console.log(`Body: ${msg.body}`);
 
-    // Forward to Sierra Blu API
+    // Forward to Sierra Estates API
     try {
         await axios.post(API_URL, {
             from: msg.from,
@@ -39,13 +39,13 @@ client.on('message', async msg => {
             groupName: groupName,
             timestamp: msg.timestamp
         });
-        console.log('🚀 Forwarded to Sierra Blu Intelligence Engine');
+        console.log('🚀 Forwarded to Sierra Estates Intelligence Engine');
     } catch (error) {
         console.error('❌ Failed to forward message:', error.message);
     }
 
     if (msg.body === '!status') {
-        msg.reply('🤖 Sierra Blu Intelligence Bot: Online & Syncing.');
+        msg.reply('🤖 Sierra Estates Intelligence Bot: Online & Syncing.');
     }
 });
 

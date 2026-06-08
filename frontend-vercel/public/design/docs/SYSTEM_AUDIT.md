@@ -1,4 +1,4 @@
-# 🏛️ Sierra Blu: Complete System Audit & Roadmap
+# 🏛️ Sierra Estates: Complete System Audit & Roadmap
 
 ## Part 1: Frontend Design — Final Inventory
 

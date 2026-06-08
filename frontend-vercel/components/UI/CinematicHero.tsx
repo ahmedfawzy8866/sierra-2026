@@ -84,7 +84,7 @@ export default function CinematicHero() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#020617]/50 via-transparent to-transparent z-10" />
       </motion.div>
 
-      {/* 2. LAYER TWO: Sierra Blu Subtle Watermark (Top Right) */}
+      {/* 2. LAYER TWO: Sierra Estates Subtle Watermark (Top Right) */}
       <motion.div 
         className="absolute top-8 right-12 z-20 opacity-20 pointer-events-none"
         initial={{ opacity: 0 }}

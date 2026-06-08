@@ -1,4 +1,4 @@
-# 🎨 SIERRA BLU FRONTEND — INTEGRATION GUIDE V12.0
+# 🎨 SIERRA ESTATES FRONTEND — INTEGRATION GUIDE V12.0
 
 > **Status**: Production-Ready | **Last Updated**: April 28, 2026
 > **Aesthetic**: Quiet Luxury (Navy #0A1628, Gold #C9A84C, Ivory #F4F0E8)
@@ -7,7 +7,7 @@
 
 ## 📋 Overview
 
-The Sierra Blu frontend is a **Next.js 16 + React 19** application with **Framer Motion** animations and **Tailwind CSS** styling. It follows the "Quiet Luxury" design philosophy: minimal, elegant, high-fidelity.
+The Sierra Estates frontend is a **Next.js 16 + React 19** application with **Framer Motion** animations and **Tailwind CSS** styling. It follows the "Quiet Luxury" design philosophy: minimal, elegant, high-fidelity.
 
 ### Key Principles
 - **Cinematic**: Smooth parallax, buttery animations
@@ -384,7 +384,7 @@ Use for bilingual hiring cards on the careers experience.
   title="Senior Property Advisor"
   location="New Cairo"
   type="Full-time"
-  desc="Handle qualified Sierra Blu investor leads."
+  desc="Handle qualified Sierra Estates investor leads."
   isAr={false}
   applyText="Apply now"
 />
@@ -403,7 +403,7 @@ Hero section for the public landing experience with bilingual filters and animat
 
 ## 🎛️ Design System
 
-Reference the shared tokens in `frontend-vercel/app/styles/design.css` for all new UI work. The current Sierra Blu palette includes the primary navy, ivory, and gold tokens used by `LeadScoreBadge`, `StatsCard`, `JobCard`, and `PremiumHero`.
+Reference the shared tokens in `frontend-vercel/app/styles/design.css` for all new UI work. The current Sierra Estates palette includes the primary navy, ivory, and gold tokens used by `LeadScoreBadge`, `StatsCard`, `JobCard`, and `PremiumHero`.
 
 ---
 

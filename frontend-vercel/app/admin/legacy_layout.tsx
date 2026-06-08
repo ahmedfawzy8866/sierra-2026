@@ -65,7 +65,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
           <div>
             <div className="text-white font-bold text-base tracking-tight uppercase"
               style={{ fontFamily: 'var(--font-display)' }}>
-              Sierra Blu
+              Sierra Estates
             </div>
             <div className="text-white/30 text-[9px] tracking-widest uppercase font-mono">
               Admin Nexus
@@ -115,7 +115,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <div className="flex items-center gap-3">
                 <Shield className="text-[#C9A84C]" size={24} />
                 <span className="text-white font-bold uppercase tracking-tight"
-                  style={{ fontFamily: 'var(--font-display)' }}>Sierra Blu</span>
+                  style={{ fontFamily: 'var(--font-display)' }}>Sierra Estates</span>
               </div>
               <button onClick={() => setMobileOpen(false)} className="text-white/40 hover:text-white">
                 <X size={20} />

@@ -1,13 +1,13 @@
 /**
- * SIERRA BLU — GLOBAL CONFIGURATION
+ * SIERRA ESTATES — GLOBAL CONFIGURATION
  * Centralized source of truth for contact info, social links, and site metadata.
  * Part of the "Cleanup & Unify" initiative.
  */
 
 export const SiteConfig = {
   branding: {
-    name: "Sierra Blu Realty",
-    legalName: "Sierra Blu Real Estate Investment",
+    name: "Sierra Estates Realty",
+    legalName: "Sierra Estates Real Estate Investment",
     tagline: "Ultra-Cinematic Asset Intelligence",
     foundedIn: "2026",
   },

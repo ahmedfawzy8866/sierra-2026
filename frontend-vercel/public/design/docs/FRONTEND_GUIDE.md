@@ -1,4 +1,4 @@
-# 🎨 SIERRA BLU FRONTEND — INTEGRATION GUIDE V12.0
+# 🎨 SIERRA ESTATES FRONTEND — INTEGRATION GUIDE V12.0
 
 > **Status**: Production-Ready | **Last Updated**: April 28, 2026
 > **Aesthetic**: Quiet Luxury (Navy #0A1628, Gold #C9A84C, Ivory #F4F0E8)
@@ -7,7 +7,7 @@
 
 ## 📋 Overview
 
-The Sierra Blu frontend is a **Next.js 16 + React 19** application with **Framer Motion** animations and **Tailwind CSS** styling. It follows the "Quiet Luxury" design philosophy: minimal, elegant, high-fidelity.
+The Sierra Estates frontend is a **Next.js 16 + React 19** application with **Framer Motion** animations and **Tailwind CSS** styling. It follows the "Quiet Luxury" design philosophy: minimal, elegant, high-fidelity.
 
 ### Key Principles
 - **Cinematic**: Smooth parallax, buttery animations

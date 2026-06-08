@@ -1,6 +1,6 @@
 // @ts-nocheck
 /**
- * Sierra Blu Enterprise Gateway - Property Finder Service
+ * Sierra Estates Enterprise Gateway - Property Finder Service
  *
  * This client-side service talks to the internal Next.js Property Finder API
  * instead of using mock timeout data.
@@ -74,7 +74,7 @@ export class PropertyFinderService {
   }
 
   /**
-   * Publish a local Sierra Blu unit to Property Finder through the server API.
+   * Publish a local Sierra Estates unit to Property Finder through the server API.
    */
   public async publishToPF(listingId: string): Promise<{ success: boolean; externalId?: string }> {
     const response = await fetch(`${this.apiBase}?action=publish-unit`, {

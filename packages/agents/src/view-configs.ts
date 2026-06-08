@@ -1,1 +1,1 @@
-export * from '../../db/lib/sierra-blue-view-configs';
+export * from '../../db/lib/sierra-estatese-view-configs';

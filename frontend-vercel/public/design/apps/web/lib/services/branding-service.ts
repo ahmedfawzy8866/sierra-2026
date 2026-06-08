@@ -5,7 +5,7 @@ import path from 'path';
 import fs from 'fs';
 
 /**
- * SIERRA BLU BRANDING ENGINE
+ * SIERRA ESTATES BRANDING ENGINE
  * Level: Institutional / Quiet Luxury
  * Purpose: Automates Stage 3 Branding for property assets.
  */
@@ -13,7 +13,7 @@ export class BrandingService {
   private static LOGO_PATH = path.join(process.cwd(), 'public', 'sierra_blu_logo_light.png');
 
   /**
-   * Processes a source image URL and adds the Sierra Blu gold watermark.
+   * Processes a source image URL and adds the Sierra Estates gold watermark.
    * Returns the uploaded public URL.
    */
   static async brandPropertyImage(
@@ -43,7 +43,7 @@ export class BrandingService {
           }
         })
         .composite([{
-          input: Buffer.from(`<svg><text x="10" y="40" font-family="Arial" font-size="24" fill="white">SIERRA BLU</text></svg>`),
+          input: Buffer.from(`<svg><text x="10" y="40" font-family="Arial" font-size="24" fill="white">SIERRA ESTATES</text></svg>`),
           top: 0,
           left: 0
         }])
@@ -62,7 +62,7 @@ export class BrandingService {
             input: Buffer.from(
               `<svg width="400" height="50">
                 <text x="10" y="40" font-family="Inter, sans-serif" font-size="20" fill="white" fill-opacity="0.5">
-                  REF: ${propertyCode} | SIERRA BLU REALTY
+                  REF: ${propertyCode} | SIERRA ESTATES REALTY
                 </text>
               </svg>`
             ),

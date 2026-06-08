@@ -28,7 +28,7 @@ export const NeuralHubHeaderV4: React.FC = () => {
           
           <div className="flex items-center gap-3 ps-2 border-s border-white/10">
             <div className="text-right hidden sm:block">
-              <p className="text-sm font-bold text-white">Sierra Blu</p>
+              <p className="text-sm font-bold text-white">Sierra Estates</p>
               <p className="text-[10px] text-silver/40 uppercase tracking-tighter">Chief Architect</p>
             </div>
             <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue to-navy flex items-center justify-center border-2 border-gold/30 shadow-lg shadow-blue/20">

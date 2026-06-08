@@ -12,7 +12,7 @@ export default function HeroFilter() {
 
   const handleSearchRedirect = (e: React.FormEvent) => {
     e.preventDefault();
-    const targetUrl = new URL('https://www.sierra-blu.com/listings');
+    const targetUrl = new URL('https://www.sierra-estates.com/listings');
     targetUrl.searchParams.append('type', propertyType);
     targetUrl.searchParams.append('view', viewPreference);
     targetUrl.searchParams.append('tier', priceTier);

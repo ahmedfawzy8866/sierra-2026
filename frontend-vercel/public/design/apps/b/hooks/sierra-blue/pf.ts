@@ -1,5 +1,5 @@
 // ════════════════════════════════════════════════════════════════
-// FILE 1: sierra-blue/hooks/usePFLeads.ts
+// FILE 1: sierra-estatese/hooks/usePFLeads.ts
 // React hook — real-time Property Finder leads CRM
 // ════════════════════════════════════════════════════════════════
 
@@ -194,7 +194,7 @@ export function usePFLeads(
 
 
 // ════════════════════════════════════════════════════════════════
-// FILE 2: sierra-blue/hooks/usePFListings.ts
+// FILE 2: sierra-estatese/hooks/usePFListings.ts
 // React hook — live Property Finder synced listings
 // ════════════════════════════════════════════════════════════════
 
@@ -314,7 +314,7 @@ export function usePFListings(options: {
 // Next.js App Router — Property Finder Lead Webhook endpoint
 // ════════════════════════════════════════════════════════════════
 
-// This file must live at: sierra-blue/app/api/pf-webhook/route.ts
+// This file must live at: sierra-estatese/app/api/pf-webhook/route.ts
 
 /*
 import { NextRequest, NextResponse } from "next/server";
@@ -350,7 +350,7 @@ export async function GET(req: NextRequest) {
   if (challenge) {
     return new NextResponse(challenge, { status: 200 });
   }
-  return NextResponse.json({ status: "Sierra Blue PF Webhook Active" });
+  return NextResponse.json({ status: "Sierra Estatese PF Webhook Active" });
 }
 */
 
@@ -378,5 +378,5 @@ FIREBASE_ADMIN_CLIENT_EMAIL=...
 GOOGLE_AI_API_KEY=your_gemini_api_key_here
 
 # Vercel
-VERCEL_URL=sierra-blue.vercel.app
+VERCEL_URL=sierra-estatese.vercel.app
 */

@@ -57,7 +57,7 @@ export function useSierra() {
   useEffect(() => {
     if (messages.length === 0) {
       addSierraMessage(
-        "Welcome to Sierra Blu. I am Sierra, your Master AI Concierge. Shall we initiate a search for your next high-yield asset?",
+        "Welcome to Sierra Estates. I am Sierra, your Master AI Concierge. Shall we initiate a search for your next high-yield asset?",
         ["Initiate Search", "Just Browsing"]
       );
     }

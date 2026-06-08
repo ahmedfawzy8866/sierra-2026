@@ -56,7 +56,7 @@ function AppContent() {
     <div className="dashboard-container">
       <aside className="sidebar">
         <div className="brand-block">
-          <span className="brand-name">SIERRA BLU</span>
+          <span className="brand-name">SIERRA ESTATES</span>
           <span className="brand-role">
             <Lock size={10} />
             {userRole === 'super_admin' ? 'Intelligence OS' : 'Agent Portal'}
@@ -132,7 +132,7 @@ function AppContent() {
                 Intelligence <span style={{ color: 'var(--gold)' }}>Mastery</span>
               </h1>
               <p className="overview-sub">
-                Welcome to the Sierra Blu Strategic Dashboard. All 10 stages of the Intelligence Pipeline are operational.
+                Welcome to the Sierra Estates Strategic Dashboard. All 10 stages of the Intelligence Pipeline are operational.
               </p>
               <div className="overview-grid">
                 {[

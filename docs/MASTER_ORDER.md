@@ -1,9 +1,9 @@
-# Sierra Blu Strategic Order & Infrastructure
+# Sierra Estates Strategic Order & Infrastructure
 
 ## 1. Primary Authority Nodes
-- **Repository Location**: `H:\Sierra Blue SaaS Program Locally v2`
+- **Repository Location**: `H:\Sierra Estatese SaaS Program Locally v2`
 - **Technical Handover**: `H:\...\TECHNICAL_HANDOVER.md` (Master Blueprint)
-- **Identity Drive**: Everything regarding Sierra Blu (Source, DB Config, Assets, Specialized Skills) is now strictly indexed on **H: Drive**.
+- **Identity Drive**: Everything regarding Sierra Estates (Source, DB Config, Assets, Specialized Skills) is now strictly indexed on **H: Drive**.
 - **Development Service**: Port **3000** (Next.js Turbopack) running from `H:\...\my-app`.
 
 ## 2. Global Component Synchronization
@@ -13,7 +13,7 @@
 | Strategic Pipeline (CRM) | **ACTIVE** | `H:\...\my-app\components\CRM\CRMKanban.tsx` |
 | Telegram OS | **ACTIVE** | `H:\...\my-app\lib\services\telegram-controller.ts` |
 | Firebase Config | **ACTIVE** | `H:\...\my-app\lib\firebase\index.ts` |
-| Agent Workflows | **READY** | `H:\...\.agents\workflows\sierra-blu.md` |
+| Agent Workflows | **READY** | `H:\...\.agents\workflows\sierra-estates.md` |
 | Secondary Apps | **REGAINED** | `H:\...\whatsapp-scraper-bot`, etc. |
 | Specialized Skills | **REGAINED** | `H:\...\.agents\skills` |
 | GitHub Connectivity | **RESTORED** | `.git` metadata migrated to H: |
@@ -30,7 +30,7 @@
 ## 4. Environment State
 - **OPENCLAW_TOKEN**: Securely configured on H:.
 - **TELEGRAM_BOT**: Securely configured on H:.
-- **Firebase**: Project `sierra-blu` is the active production node.
+- **Firebase**: Project `sierra-estates` is the active production node.
 - **MCP Environment**: Successfully repointed to the H: drive infrastructure.
 
 ---

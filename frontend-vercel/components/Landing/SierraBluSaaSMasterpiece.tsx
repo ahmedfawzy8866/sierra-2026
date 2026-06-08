@@ -67,7 +67,7 @@ export default function SierraBluSaaSMasterpiece() {
       {/* 1. FIXED GLASS NAVBAR */}
       <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-5 md:px-12 bg-[#F4F0E8]/80 backdrop-blur-xl border-b border-[#0B2341]/5 transition-all">
         <Link href="/" className="font-serif text-2xl font-bold tracking-tight text-[#0B2341] outline-none">
-          Sierra Blu
+          Sierra Estates
         </Link>
         
         {/* Floating SaaS Status Bar (AirCenter Style) */}
@@ -132,7 +132,7 @@ export default function SierraBluSaaSMasterpiece() {
             >
               <Image 
                 src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" 
-                alt="Sierra Blu Live SaaS Engine Asset" 
+                alt="Sierra Estates Live SaaS Engine Asset" 
                 fill 
                 className="object-cover scale-102 transition-transform duration-500"
                 priority
@@ -259,9 +259,9 @@ export default function SierraBluSaaSMasterpiece() {
 
       {/* 5. EDITORIAL FOOTER */}
       <footer className="bg-white py-16 px-6 md:px-12 text-center border-t border-gray-100 z-10 relative">
-        <h2 className="font-serif text-3xl text-[#0B2341] font-bold tracking-tight">Sierra Blu</h2>
+        <h2 className="font-serif text-3xl text-[#0B2341] font-bold tracking-tight">Sierra Estates</h2>
         <p className="text-gray-400 text-xs tracking-[0.25em] uppercase mt-2 mb-8 font-semibold">Beyond Brokerage · PropTech OS</p>
-        <p className="text-gray-400 text-xs font-light tracking-wide">&copy; 2026 Sierra Blu Realty OS. All architectural data systems reserved.</p>
+        <p className="text-gray-400 text-xs font-light tracking-wide">&copy; 2026 Sierra Estates Realty OS. All architectural data systems reserved.</p>
       </footer>
 
     </main>

@@ -2,7 +2,7 @@ import { adminDb } from '../server/firebase-admin';
 import { Timestamp } from 'firebase-admin/firestore';
 
 /**
- * ImageLinkHub: The "Visual Glue" of Sierra Blu.
+ * ImageLinkHub: The "Visual Glue" of Sierra Estates.
  * Mandate: Correlate WhatsApp media with Portal Listings (Stage 3).
  * Function: Stores image metadata and provides lookup logic to prevent media fragmentation.
  */

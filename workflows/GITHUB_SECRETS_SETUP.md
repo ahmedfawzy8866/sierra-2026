@@ -17,15 +17,15 @@ All API credentials are stored as **GitHub Secrets** (encrypted) instead of .env
 **Type:** Entire JSON file content  
 **How to get:**
 1. Go to: https://console.cloud.google.com/apis/credentials
-2. Select your project (sierra-blu-production)
-3. Create Service Account → "sierra-blu-workflows"
+2. Select your project (sierra-estates-production)
+3. Create Service Account → "sierra-estates-workflows"
 4. Create JSON key
 5. Copy the **entire JSON content** (not the file path)
 6. Paste into GitHub secret
 
 **Should look like:**
 ```json
-{"type":"service_account","project_id":"sierra-blu-production","private_key_id":"...","private_key":"-----BEGIN PRIVATE KEY-----\n...","client_email":"sierra-blu-workflows@...","client_id":"...","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"..."}
+{"type":"service_account","project_id":"sierra-estates-production","private_key_id":"...","private_key":"-----BEGIN PRIVATE KEY-----\n...","client_email":"sierra-estates-workflows@...","client_id":"...","auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","auth_provider_x509_cert_url":"..."}
 ```
 
 ---
@@ -103,7 +103,7 @@ SG.xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 **Type:** Email address  
 **Value:**
 ```
-noreply@sierra-blu.com
+noreply@sierra-estates.com
 ```
 (Or your verified sender email in SendGrid)
 
@@ -113,13 +113,13 @@ noreply@sierra-blu.com
 **Type:** Project ID  
 **How to get:**
 1. Go to: https://console.firebase.google.com
-2. Select sierra-blu-production
+2. Select sierra-estates-production
 3. Project Settings → General
 4. Copy "Project ID"
 
 **Example:**
 ```
-sierra-blu-production
+sierra-estates-production
 ```
 
 ---
@@ -127,7 +127,7 @@ sierra-blu-production
 ### 10. FIREBASE_PRIVATE_KEY
 **Type:** Private key (with newlines)  
 **How to get:**
-1. Go to: https://console.firebase.google.com/project/sierra-blu-production/settings/serviceaccounts/adminsdk
+1. Go to: https://console.firebase.google.com/project/sierra-estates-production/settings/serviceaccounts/adminsdk
 2. Click "Generate new private key"
 3. Open the downloaded JSON file
 4. Copy the value of `"private_key"`
@@ -151,7 +151,7 @@ sierra-blu-production
 
 **Example:**
 ```
-firebase-adminsdk-xxxxx@sierra-blu-production.iam.gserviceaccount.com
+firebase-adminsdk-xxxxx@sierra-estates-production.iam.gserviceaccount.com
 ```
 
 ---

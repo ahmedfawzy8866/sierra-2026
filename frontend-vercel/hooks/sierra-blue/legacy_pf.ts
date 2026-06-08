@@ -1,5 +1,5 @@
 // ════════════════════════════════════════════════════════════════
-// FILE 1: sierra-blue/hooks/useStakeholderPipeline.ts
+// FILE 1: sierra-estatese/hooks/useStakeholderPipeline.ts
 // React hook — real-time Strategic Pipeline for Investment Stakeholders
 // ════════════════════════════════════════════════════════════════
 
@@ -192,7 +192,7 @@ export function useStakeholderPipeline(
 
 
 // ════════════════════════════════════════════════════════════════
-// FILE 2: sierra-blue/hooks/usePortfolioAssets.ts
+// FILE 2: sierra-estatese/hooks/usePortfolioAssets.ts
 // React hook — live Portfolio Asset Registry synced assets
 // ════════════════════════════════════════════════════════════════
 

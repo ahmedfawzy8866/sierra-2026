@@ -63,7 +63,7 @@ export function PropertyCardLayout({ property }: PropertyCardLayoutProps) {
           fill
           className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
         />
-        <div className="absolute top-4 left-4 bg-sierra-blue text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase shadow-sm">
+        <div className="absolute top-4 left-4 bg-sierra-estatese text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase shadow-sm">
           {property.purpose}
         </div>
         <div className="absolute top-4 right-4 bg-sierra-gold text-white px-3 py-1 rounded-full text-xs font-bold tracking-wide uppercase shadow-sm">
@@ -87,15 +87,15 @@ export function PropertyCardLayout({ property }: PropertyCardLayoutProps) {
 
         <div className="flex items-center space-x-4 my-4 py-4 border-y border-sierra-navy/10 text-sierra-navy/80 text-sm font-medium">
           <div className="flex items-center">
-            <BedDouble className="w-4 h-4 mr-1.5 text-sierra-blue" />
+            <BedDouble className="w-4 h-4 mr-1.5 text-sierra-estatese" />
             <span>{property.beds || 0}</span>
           </div>
           <div className="flex items-center">
-            <Bath className="w-4 h-4 mr-1.5 text-sierra-blue" />
+            <Bath className="w-4 h-4 mr-1.5 text-sierra-estatese" />
             <span>{property.baths || 0}</span>
           </div>
           <div className="flex items-center">
-            <Square className="w-4 h-4 mr-1.5 text-sierra-blue" />
+            <Square className="w-4 h-4 mr-1.5 text-sierra-estatese" />
             <span>{property.bua_m2 || 0} sqm</span>
           </div>
         </div>
@@ -104,7 +104,7 @@ export function PropertyCardLayout({ property }: PropertyCardLayoutProps) {
           <div className="text-2xl font-extrabold text-sierra-navy tracking-tight">
             ${property.price.toLocaleString()}
           </div>
-          <div className="text-sierra-blue text-sm font-semibold uppercase hover:text-sierra-gold transition-colors duration-300">
+          <div className="text-sierra-estatese text-sm font-semibold uppercase hover:text-sierra-gold transition-colors duration-300">
             View Details
           </div>
         </div>

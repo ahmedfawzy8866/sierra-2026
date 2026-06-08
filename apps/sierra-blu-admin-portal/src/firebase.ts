@@ -1,5 +1,5 @@
-// Sierra Blu — Firebase SDK Configuration
-// Project: sierra-blu | Region: us-central1
+// Sierra Estates — Firebase SDK Configuration
+// Project: sierra-estates | Region: us-central1
 // Base 44 V12.0 — Firestore Integration Layer
 
 import { initializeApp, getApps, getApp } from 'firebase/app';

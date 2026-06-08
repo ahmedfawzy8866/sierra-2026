@@ -31,16 +31,16 @@ cp .env.example .env.local
 ### Environment Variables
 ```env
 # Firebase (Client)
-NEXT_PUBLIC_FIREBASE_PROJECT_ID=sierra-blu-staging
+NEXT_PUBLIC_FIREBASE_PROJECT_ID=sierra-estates-staging
 NEXT_PUBLIC_FIREBASE_API_KEY=AIza...
-NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=sierra-blu-staging.firebaseapp.com
-NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=sierra-blu-staging.appspot.com
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN=sierra-estates-staging.firebaseapp.com
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET=sierra-estates-staging.appspot.com
 NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=123...
 
 # Firebase (Server-Only)
 FIREBASE_SERVICE_ACCOUNT_JSON='{"type":"service_account",...}'
 # OR individual env vars:
-FIREBASE_PROJECT_ID=sierra-blu-staging
+FIREBASE_PROJECT_ID=sierra-estates-staging
 FIREBASE_CLIENT_EMAIL=firebase-adminsdk@...iam.gserviceaccount.com
 FIREBASE_PRIVATE_KEY='-----BEGIN PRIVATE KEY-----\n...\n-----END PRIVATE KEY-----\n'
 
@@ -280,8 +280,8 @@ firebase deploy --only functions --debug
 // lib/firebase.ts - Use NEXT_PUBLIC_FIREBASE_PROJECT_ID
 const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
 
-// Staging: sierra-blu-staging
-// Production: sierra-blu-production
+// Staging: sierra-estates-staging
+// Production: sierra-estates-production
 ```
 
 ---
@@ -307,7 +307,7 @@ vercel --prod
 firebase deploy --only functions
 
 # Deploy with specific environment
-firebase deploy --project sierra-blu-staging --only functions
+firebase deploy --project sierra-estates-staging --only functions
 ```
 
 ---
@@ -325,7 +325,7 @@ firebase deploy --project sierra-blu-staging --only functions
 vercel logs
 
 # View Firestore logs
-gcloud firestore admin list-indexes --project=sierra-blu-staging
+gcloud firestore admin list-indexes --project=sierra-estates-staging
 ```
 
 ### Firebase Emulator Logs

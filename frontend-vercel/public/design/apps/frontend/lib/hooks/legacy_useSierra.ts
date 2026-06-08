@@ -33,7 +33,7 @@ export function useSierra() {
       {
         id: 'welcome',
         sender: 'sierra',
-        text: "Welcome to Sierra Blu. I am Sierra, your Master AI Concierge. Shall we initiate a search for your next high-yield Portfolio Asset?",
+        text: "Welcome to Sierra Estates. I am Sierra, your Master AI Concierge. Shall we initiate a search for your next high-yield Portfolio Asset?",
         options: ["Initiate Search", "Just Browsing"]
       }
     ]);
@@ -112,7 +112,7 @@ export function useSierra() {
     } catch (error) {
       console.error("Failed to fetch Sierra Concierge response:", error);
       setIsTyping(false);
-      addSierraMessage("I apologize, but my connection to the Sierra Blu matching engine has timed out. Rest assured, our team has been alerted.");
+      addSierraMessage("I apologize, but my connection to the Sierra Estates matching engine has timed out. Rest assured, our team has been alerted.");
     }
   };
 

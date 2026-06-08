@@ -1,8 +1,8 @@
-# TODO — Sierra Blu Feature & Fix Backlog
+# TODO — Sierra Estates Feature & Fix Backlog
 
 Aligned with STATUS.md. Sorted by deployment-readiness (pre-deploy → post-deploy).
 
-## ✅ Sierra Blu 2026 Completed
+## ✅ Sierra Estates 2026 Completed
 - [x] Split-Hero with Virtual Tour
 - [x] AI Smart Filter
 - [x] CRM Leads API

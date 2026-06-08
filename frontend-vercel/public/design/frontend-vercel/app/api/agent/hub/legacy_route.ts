@@ -82,7 +82,7 @@ async function handleCurator(message: string) {
 
 async function handleMatchmaker(message: string) {
   // Valuation Engine & Stakeholder Profiling (S6 - S7)
-  const systemPrompt = `You are the Matchmaker (Architect of Wealth) for Sierra Blu Realty.
+  const systemPrompt = `You are the Matchmaker (Architect of Wealth) for Sierra Estates Realty.
 Your job is to run the Valuation Engine on the requested property details.
 All pricing is audited by AI based on 4 axes:
 1. Core Metrics: Location, Finishing Grade, Property Age.

@@ -123,7 +123,7 @@ def _send_whatsapp_message(phone: str, message: str) -> tuple[str, str]:
 
 def parse_args() -> argparse.Namespace:
     """Parse CLI arguments."""
-    parser = argparse.ArgumentParser(description='Broadcast templated WhatsApp messages to Sierra Blu leads.')
+    parser = argparse.ArgumentParser(description='Broadcast templated WhatsApp messages to Sierra Estates leads.')
     parser.add_argument('--template', required=True, help='Message template, e.g. "Hi {name}".')
     parser.add_argument('--source', choices=('csv', 'firestore'), required=True, help='Lead source to read from.')
     parser.add_argument('--dry-run', action='store_true', help='Preview messages without sending them.')

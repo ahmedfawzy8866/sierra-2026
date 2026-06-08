@@ -1,7 +1,7 @@
 import { Variants } from "framer-motion";
 
 /**
- * Cinematic Luxury Animation Library (Sierra Blu Intel)
+ * Cinematic Luxury Animation Library (Sierra Estates Intel)
  * Derived from 'magic-animator' and 'luxury-ui' skill signatures.
  */
 

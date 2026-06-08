@@ -1,6 +1,6 @@
 // @ts-nocheck
 /**
- * SIERRA BLU — SERVER-SIDE AUTH GUARD
+ * SIERRA ESTATES — SERVER-SIDE AUTH GUARD
  * Validates Firebase Auth tokens on API routes.
  * Use: wrap any API handler with `withAuth(handler)` or call `verifyRequest(req)`.
  */

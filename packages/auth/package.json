@@ -1,5 +1,5 @@
 {
-  "name": "@sierra-blu/auth",
+  "name": "@sierra-estates/auth",
   "version": "1.0.0",
   "description": "Firebase Auth wrapper and JWT management",
   "main": "src/index.ts",

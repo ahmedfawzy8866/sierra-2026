@@ -1,5 +1,5 @@
 """
-SIERRA BLUE AI BOT - SYSTEM PROMPT & DEPLOYMENT GUIDE
+SIERRA ESTATESE AI BOT - SYSTEM PROMPT & DEPLOYMENT GUIDE
 Complete Implementation Ready for Production
 """
 
@@ -8,13 +8,13 @@ Complete Implementation Ready for Production
 # ============================================================================
 
 SIERRA_BLUE_COMPLETE_SYSTEM_PROMPT = """
-أنت مستشار عقاري ذكي في شركة سييرا بلو (Sierra Blue Real Estate).
+أنت مستشار عقاري ذكي في شركة سييرا بلو (Sierra Estatese Real Estate).
 
 ═══════════════════════════════════════════════════════════════════════════
 📋 IDENTITY & PERSONA
 ═══════════════════════════════════════════════════════════════════════════
 
-الاسم: Sierra Blue AI Advisor
+الاسم: Sierra Estatese AI Advisor
 الدور: مستشار عقاري ذكي متخصص في إدارة رحلة العميل من الاستفسار حتى المعاينة
 اللغة: اللهجة المصرية الاحترافية المهذبة
 مستوى الخبرة: خبير في سوق العقارات المصري
@@ -363,7 +363,7 @@ IMPLEMENTATION_CHECKLIST = {
 
 DEPLOYMENT_SCRIPT = """#!/bin/bash
 
-# Sierra Blue Bot - Deployment Script
+# Sierra Estatese Bot - Deployment Script
 # Usage: ./deploy.sh [staging|production]
 
 set -e
@@ -371,7 +371,7 @@ set -e
 ENVIRONMENT=${1:-staging}
 PROJECT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
-echo "🚀 Deploying Sierra Blue Bot to $ENVIRONMENT environment..."
+echo "🚀 Deploying Sierra Estatese Bot to $ENVIRONMENT environment..."
 
 # 1. Validate environment
 echo "1️⃣ Validating environment..."
@@ -402,15 +402,15 @@ python scripts/migrate_db.py
 
 # 7. Deploy bot
 echo "7️⃣ Deploying bot service..."
-docker build -t sierra-blue-bot:latest .
-docker tag sierra-blue-bot:latest sierra-blue-bot:$ENVIRONMENT
+docker build -t sierra-estatese-bot:latest .
+docker tag sierra-estatese-bot:latest sierra-estatese-bot:$ENVIRONMENT
 
 if [ "$ENVIRONMENT" = "production" ]; then
-    docker push sierra-blue-bot:latest
+    docker push sierra-estatese-bot:latest
     # Deploy to Kubernetes or your hosting solution
-    kubectl apply -f k8s/sierra-blue-bot-$ENVIRONMENT.yaml
+    kubectl apply -f k8s/sierra-estatese-bot-$ENVIRONMENT.yaml
 else
-    docker run -d --name sierra-blue-bot-$ENVIRONMENT sierra-blue-bot:$ENVIRONMENT
+    docker run -d --name sierra-estatese-bot-$ENVIRONMENT sierra-estatese-bot:$ENVIRONMENT
 fi
 
 # 8. Health check
@@ -556,7 +556,7 @@ MONITORING_CONFIG = """
 # ============================================================================
 
 TRAINING_DOCUMENT = """
-# Sierra Blue Bot - Team Training Guide
+# Sierra Estatese Bot - Team Training Guide
 
 ## For Support Team:
 1. Read System Prompt completely
@@ -587,7 +587,7 @@ TRAINING_DOCUMENT = """
 
 # Print all implementations
 if __name__ == "__main__":
-    print("Sierra Blue Bot - Complete System Implementation")
+    print("Sierra Estatese Bot - Complete System Implementation")
     print("=" * 70)
     print("\nGenerated Files:")
     print("1. sierra_blue_bot_implementation.py - Core bot logic")

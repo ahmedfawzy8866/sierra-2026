@@ -1,7 +1,7 @@
-# 🌐 SIERRA BLUE AI OPERATING SYSTEM (V4.0)
+# 🌐 SIERRA ESTATESE AI OPERATING SYSTEM (V4.0)
 ## THE CANONICAL CODEX
 
-This document serves as the **Single Source of Truth** for the architecture, orchestration, and intelligence layers of the Sierra Blue PropTech platform.
+This document serves as the **Single Source of Truth** for the architecture, orchestration, and intelligence layers of the Sierra Estatese PropTech platform.
 
 ---
 

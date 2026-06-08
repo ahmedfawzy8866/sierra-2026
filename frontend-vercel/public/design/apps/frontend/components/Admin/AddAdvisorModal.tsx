@@ -108,7 +108,7 @@ export default function AddAdvisorModal({ isOpen, onClose }: AddAdvisorModalProp
                       type="email"
                       value={formData.email}
                       onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="john@sierra-blu.com"
+                      placeholder="john@sierra-estates.com"
                       className="w-full bg-white/[0.02] border border-white/10 rounded-2xl py-4 ps-12 pe-6 text-white focus:outline-none focus:border-gold/30 focus:bg-white/[0.05] transition-all"
                     />
                   </div>

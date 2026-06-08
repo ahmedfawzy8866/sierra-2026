@@ -1,4 +1,4 @@
-# 🏛️ Sierra Blu: Complete System Audit & Roadmap
+# 🏛️ Sierra Estates: Complete System Audit & Roadmap
 
 ## Audit Entry — 2026-06-02
 - Added 5 new Python utility scripts (lead-scorer, firestore-exporter, property-sync, whatsapp-broadcast, analytics-report)

@@ -159,7 +159,7 @@ export default function SierraBluSaaSMasterpiece() {
       <nav className="fixed top-0 left-0 w-full z-50 flex items-center justify-between px-6 py-5 md:px-12 bg-[#F4F0E8]/90 backdrop-blur-xl border-b border-[#0B2341]/5 transition-all">
         <div className="flex items-center space-x-4">
           <Link href="/" className="font-serif text-2xl font-black tracking-tight text-[#0B2341] outline-none">
-            Sierra Blu
+            Sierra Estates
           </Link>
           <span className="hidden sm:inline-block text-[10px] uppercase tracking-widest text-[#C9A24D] border border-[#C9A24D]/30 px-2 py-0.5 rounded font-bold font-mono">
             Beyond Brokerage
@@ -268,7 +268,7 @@ export default function SierraBluSaaSMasterpiece() {
                 >
                   <Image 
                     src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1200&auto=format&fit=crop" 
-                    alt="Sierra Blu Analytical Core Visualization Asset" 
+                    alt="Sierra Estates Analytical Core Visualization Asset" 
                     fill 
                     className="object-cover scale-102 transition-transform duration-700 select-none pointer-events-none"
                     priority
@@ -653,9 +653,9 @@ export default function SierraBluSaaSMasterpiece() {
 
       {/* 5. EDITORIAL FOOTER */}
       <footer className="bg-white py-16 px-6 md:px-12 text-center border-t border-gray-100 z-10 relative">
-        <h2 className="font-serif text-3xl text-[#0B2341] font-bold tracking-tight">Sierra Blu</h2>
+        <h2 className="font-serif text-3xl text-[#0B2341] font-bold tracking-tight">Sierra Estates</h2>
         <p className="text-gray-400 text-xs tracking-[0.25em] uppercase mt-2 mb-8 font-semibold">Beyond Brokerage · PropTech OS</p>
-        <p className="text-gray-400 text-xs font-light tracking-wide">&copy; 2026 Sierra Blu Realty OS. All database and visual assets reserved.</p>
+        <p className="text-gray-400 text-xs font-light tracking-wide">&copy; 2026 Sierra Estates Realty OS. All database and visual assets reserved.</p>
       </footer>
 
       {/* ============================================================================

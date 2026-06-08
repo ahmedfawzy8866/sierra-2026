@@ -1,5 +1,5 @@
 import { Deal } from '../../lib/models/deals';
-import theme from '../../documents/themes/sierra-blu-quiet-luxury.json';
+import theme from '../../documents/themes/sierra-estates-quiet-luxury.json';
 import { adminApp, isAdminInitialized } from '../../lib/server/firebase-admin';
 
 export class ProposalGenerator {
@@ -66,7 +66,7 @@ export class ProposalGenerator {
    */
   async generateOfferLetter(deal: Deal, sellerName: string): Promise<string> {
     console.log(`[ProposalGenerator] Generating offer letter for Seller ${sellerName}`);
-    return "https://storage.sierra-blu.com/offers/placeholder.pdf";
+    return "https://storage.sierra-estates.com/offers/placeholder.pdf";
   }
 }
 

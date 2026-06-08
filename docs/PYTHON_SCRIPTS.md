@@ -1,8 +1,8 @@
-# 🐍 Sierra Blu Python Scripts
+# 🐍 Sierra Estates Python Scripts
 
 ## Overview
 
-Sierra Blu currently documents eight Python script entries in `scripts/python/`: five automation utilities and three implementation/reference scripts:
+Sierra Estates currently documents eight Python script entries in `scripts/python/`: five automation utilities and three implementation/reference scripts:
 
 | Script | Purpose |
 | --- | --- |
@@ -59,7 +59,7 @@ This script fetches Property Finder listings, normalizes the payload, computes t
 
 ```bash
 python whatsapp-broadcast.py --source csv --input ./reports/scored-leads.csv --template "Hi {name}, we found a {compound} option near {price}." --min-score 7
-python whatsapp-broadcast.py --source firestore --collection Leads --template "Hello {name}, new Sierra Blu inventory is live in {compound}." --dry-run
+python whatsapp-broadcast.py --source firestore --collection Leads --template "Hello {name}, new Sierra Estates inventory is live in {compound}." --dry-run
 ```
 
 Messages support placeholders for `{name}`, `{compound}`, and `{price}`. Non-dry-run execution rate-limits to one message per second.

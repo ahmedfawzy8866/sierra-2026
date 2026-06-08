@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — STAGE 9: CLOSER PROTOCOL (HANDOFF)
+ * SIERRA ESTATES — STAGE 9: CLOSER PROTOCOL (HANDOFF)
  * Generates the Executive Intelligence Summary for human closers.
  */
 
@@ -74,7 +74,7 @@ export async function generateCloserHandoff(leadId: string): Promise<HandoffSumm
 export const generateAgentBriefing = generateCloserHandoff;
 
 async function generateAIHandoffSummary(lead: Lead, assets: HandoffSummary['highInterestAssets']): Promise<string> {
-  const systemPrompt = `ROLE: You are the Sierra Blu Handoff Specialist (Intelligence Layer V10.0).
+  const systemPrompt = `ROLE: You are the Sierra Estates Handoff Specialist (Intelligence Layer V10.0).
 TASK: Generate a 2-sentence executive summary for a human closer.
 TONE: Institutional, analytical, premium.
 

@@ -13,7 +13,7 @@ import TestimonialsCarousel from '@/components/UI/TestimonialsCarousel';
 // ─── TRANSLATION DICTIONARY ───────────────────────────────────────────────────
 const DICTIONARY = {
   en: {
-    navTitle: 'SIERRA BLU',
+    navTitle: 'SIERRA ESTATES',
     navSubtitle: 'BEYOND BROKERAGE',
     ctaExplore: 'Explore Portfolio',
     ctaContact: 'Direct advisory',
@@ -296,7 +296,7 @@ export default function UnifiedHomepage() {
 
       {/* ─── FOOTER SECTION ────────────────────────────────────────────────────── */}
       <footer className="py-12 text-center text-xs text-[#071422]/40 dark:text-white/40 border-t border-[#071422]/5 dark:border-white/5 pb-24 md:pb-12">
-        <p className="font-mono">© {new Date().getFullYear()} SIERRA BLU INT. ALL RIGHTS RESERVED.</p>
+        <p className="font-mono">© {new Date().getFullYear()} SIERRA ESTATES INT. ALL RIGHTS RESERVED.</p>
         <p className="mt-2 text-[10px]">{t.navSubtitle}</p>
       </footer>
 

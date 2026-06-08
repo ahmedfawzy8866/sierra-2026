@@ -1,4 +1,4 @@
-# Project Status — Sierra Blu (as of 2026-06-02)
+# Project Status — Sierra Estates (as of 2026-06-02)
 
 **Last Updated:** 2026-06-02
 

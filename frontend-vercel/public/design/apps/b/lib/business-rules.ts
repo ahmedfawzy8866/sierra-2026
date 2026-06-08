@@ -101,7 +101,7 @@ export function getNextStage(current: CRMStage): CRMStage | null {
 
 export const BRAND = {
   name: "Sierra Estates",
-  formerName: "Sierra Blu",
+  formerName: "Sierra Estates",
   headline: "The First Exclusive Destination for New Cairo Properties. Rent & Resale.",
   tagline: "Best-in-Class Design. AI-Driven Excellence.",
   palette: {

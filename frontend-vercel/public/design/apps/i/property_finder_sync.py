@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sierra Blu Realty - Property Finder Integration Hub
+Sierra Estates Realty - Property Finder Integration Hub
 ---------------------------------------------
 Manages real-time data sync, formatting, and translation of
 Portfolio Assets for optimal exposure and alignment.

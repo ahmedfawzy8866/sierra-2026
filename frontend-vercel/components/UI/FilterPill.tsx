@@ -19,7 +19,7 @@ export function FilterPill({ active = false, label, icon, className, ...props }:
         "inline-flex items-center justify-center px-5 py-2 rounded-full text-sm font-semibold tracking-wide uppercase transition-all duration-300",
         "border shadow-sm hover:shadow-md",
         active 
-          ? "bg-sierra-blue text-white border-sierra-blue" 
+          ? "bg-sierra-estatese text-white border-sierra-estatese" 
           : "bg-white text-sierra-navy border-sierra-navy/10 hover:border-sierra-navy/30 hover:bg-sierra-ivory",
         className
       )}

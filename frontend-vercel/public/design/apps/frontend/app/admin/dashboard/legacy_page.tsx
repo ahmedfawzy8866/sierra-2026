@@ -111,7 +111,7 @@ export default function AdminDashboardPage() {
           Intelligence Dashboard
         </h1>
         <p className="text-[#3a5570] text-sm">
-          Real-time overview of the Sierra Blu operating system.
+          Real-time overview of the Sierra Estates operating system.
         </p>
       </div>
 

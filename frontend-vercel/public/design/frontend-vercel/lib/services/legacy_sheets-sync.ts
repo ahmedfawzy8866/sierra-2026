@@ -2,7 +2,7 @@ import { google } from 'googleapis';
 import { adminDb } from '../server/firebase-admin';
 
 /**
- * SIERRA BLU — GOOGLE SHEETS DUAL-INGESTION PROTOCOL
+ * SIERRA ESTATES — GOOGLE SHEETS DUAL-INGESTION PROTOCOL
  */
 export const GoogleSheetsSync = {
   /**

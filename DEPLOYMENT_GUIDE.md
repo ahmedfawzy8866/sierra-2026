@@ -1,4 +1,4 @@
-# Sierra Blu Realty - Deployment & Configuration Guide
+# Sierra Estates Realty - Deployment & Configuration Guide
 
 ## 📋 Table of Contents
 1. [Environment Setup](#environment-setup)
@@ -90,7 +90,7 @@ docker run -p 8000:8000 --env-file .env sierra-api
 railway up
 
 # Or Google Cloud Run
-gcloud run deploy sierra-blu-api \
+gcloud run deploy sierra-estates-api \
   --source apps/api \
   --region us-central1 \
   --allow-unauthenticated

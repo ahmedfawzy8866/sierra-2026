@@ -1,6 +1,6 @@
 # 📊 Real Estate Forecasting Engine & Predictive Models
 > **Path:** `docs/obsidian-vault/Forecasting Engine.md`  
-> **Parent Node:** `[[Sierra Blu Memory Engine]]`
+> **Parent Node:** `[[Sierra Estates Memory Engine]]`
 
 To identify the most profitable real estate transactions in Egypt (New Cairo), our platform uses quantitative models that analyze listing records and predict yields.
 

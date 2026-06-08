@@ -1,5 +1,5 @@
 {
-  "name": "@sierra-blu/ui",
+  "name": "@sierra-estates/ui",
   "version": "1.0.0",
   "description": "Shared React component library",
   "main": "src/index.ts",

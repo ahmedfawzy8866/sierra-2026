@@ -289,7 +289,7 @@ export async function GET(req: NextRequest) {
     return new NextResponse(challenge, { status: 200 });
   }
 
-  return NextResponse.json({ status: 'Sierra Blue PF Webhook Active' });
+  return NextResponse.json({ status: 'Sierra Estatese PF Webhook Active' });
 }
 `.trim();
 
@@ -304,5 +304,5 @@ NEXT_PUBLIC_FIREBASE_PROJECT_ID=...
 FIREBASE_ADMIN_PRIVATE_KEY=...
 FIREBASE_ADMIN_CLIENT_EMAIL=...
 GOOGLE_AI_API_KEY=your_gemini_api_key_here
-VERCEL_URL=sierra-blue.vercel.app
+VERCEL_URL=sierra-estatese.vercel.app
 `.trim();

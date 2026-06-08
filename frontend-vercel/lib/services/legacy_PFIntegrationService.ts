@@ -1,7 +1,7 @@
 // @ts-nocheck
 /**
  * PROPERTY FINDER INTEGRATION SERVICE
- * Synchronizes leads and listings between Sierra Blu and Property Finder Enterprise.
+ * Synchronizes leads and listings between Sierra Estates and Property Finder Enterprise.
  */
 
 import { pfClient, PFListing, PFStakeholderProtocol } from '../property-finder-client';
@@ -134,7 +134,7 @@ export class PFIntegrationService {
   }
 
   /**
-   * Push a Sierra Blu unit to Property Finder.
+   * Push a Sierra Estates unit to Property Finder.
    */
   static async publishListing(unitId: string) {
     const unitSnap = await adminDb.collection(COLLECTIONS.units).doc(unitId).get();

@@ -46,29 +46,29 @@ export default function SierraBluUnified() {
       <nav
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
           isScrolled
-            ? 'bg-navy-300/80 backdrop-blur-md border-b border-sierra-blue-500/20'
+            ? 'bg-navy-300/80 backdrop-blur-md border-b border-sierra-estatese-500/20'
             : 'bg-transparent'
         }`}
       >
         <div className="max-w-7xl mx-auto px-safe py-4 flex justify-between items-center">
           {/* Logo & Brand */}
           <div className="flex items-baseline gap-2">
-            <h1 className="font-serif text-2xl text-navy-300">SIERRA BLU</h1>
-            <span className="text-sm text-sierra-blue-500 font-sans tracking-widest">REALTY</span>
+            <h1 className="font-serif text-2xl text-navy-300">SIERRA ESTATES</h1>
+            <span className="text-sm text-sierra-estatese-500 font-sans tracking-widest">REALTY</span>
           </div>
 
           {/* AirCenter Infrastructure Tracker */}
-          <div className="flex items-center gap-3 bg-navy-300/20 backdrop-blur px-4 py-2 rounded-full border border-sierra-blue-500/30 font-mono text-xs text-sierra-blue-500">
+          <div className="flex items-center gap-3 bg-navy-300/20 backdrop-blur px-4 py-2 rounded-full border border-sierra-estatese-500/30 font-mono text-xs text-sierra-estatese-500">
             <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span>Node-Sync v12.4 · Firestore Engine Online</span>
           </div>
 
           {/* Navigation Links */}
           <div className="hidden md:flex gap-8">
-            <button className="text-navy-300 hover:text-sierra-blue-500 transition-colors text-sm uppercase tracking-widest">
+            <button className="text-navy-300 hover:text-sierra-estatese-500 transition-colors text-sm uppercase tracking-widest">
               Properties
             </button>
-            <button className="text-navy-300 hover:text-sierra-blue-500 transition-colors text-sm uppercase tracking-widest">
+            <button className="text-navy-300 hover:text-sierra-estatese-500 transition-colors text-sm uppercase tracking-widest">
               Intelligence
             </button>
             <button className="bg-gold-500 hover:bg-gold-600 text-navy-300 px-6 py-2 rounded text-sm uppercase tracking-widest font-medium transition-colors">
@@ -84,12 +84,12 @@ export default function SierraBluUnified() {
       <section className="relative h-screen bg-gradient-to-b from-navy-300 via-navy-200 to-ivory-100 pt-20 overflow-hidden">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-gold-500 rounded-full blur-3xl" />
-          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-sierra-blue-500 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-sierra-estatese-500 rounded-full blur-3xl" />
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-safe h-full flex flex-col justify-center">
           <div className="animate-fade-in">
-            <p className="text-sierra-blue-500 font-sans text-sm uppercase tracking-widest mb-6">
+            <p className="text-sierra-estatese-500 font-sans text-sm uppercase tracking-widest mb-6">
               Beyond Brokerage
             </p>
             <h2 className="font-serif text-display-lg text-navy-300 mb-4 leading-tight">
@@ -112,7 +112,7 @@ export default function SierraBluUnified() {
                 </div>
                 <div>
                   <p className="text-navy-200 text-sm uppercase tracking-widest mb-2">Match Rate</p>
-                  <p className="text-5xl font-serif text-sierra-blue-500">98%</p>
+                  <p className="text-5xl font-serif text-sierra-estatese-500">98%</p>
                 </div>
               </div>
             </div>
@@ -135,7 +135,7 @@ export default function SierraBluUnified() {
                 {properties.slice(0, 10).map((prop) => (
                   <div
                     key={prop.id}
-                    className="p-4 bg-ivory-100 rounded-lg border-l-4 border-sierra-blue-500 hover:bg-ivory-200 transition-colors cursor-pointer"
+                    className="p-4 bg-ivory-100 rounded-lg border-l-4 border-sierra-estatese-500 hover:bg-ivory-200 transition-colors cursor-pointer"
                   >
                     <p className="font-medium text-navy-300">{prop.sbrCode}</p>
                     <p className="text-sm text-navy-200">{prop.compound}</p>
@@ -164,8 +164,8 @@ export default function SierraBluUnified() {
                       top: `${((30.1 - prop.location.lat) / 0.15) * 100}%`,
                     }}
                   >
-                    <div className="absolute inset-0 bg-sierra-blue-500 rounded-full opacity-30 animate-pulse" />
-                    <div className="relative z-10 bg-sierra-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-sans text-xs font-bold group-hover:scale-150 transition-transform">
+                    <div className="absolute inset-0 bg-sierra-estatese-500 rounded-full opacity-30 animate-pulse" />
+                    <div className="relative z-10 bg-sierra-estatese-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-sans text-xs font-bold group-hover:scale-150 transition-transform">
                       {Math.round(prop.price / 1000000)}
                     </div>
                     <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-navy-300 text-ivory-100 text-xs px-3 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity">
@@ -185,13 +185,13 @@ export default function SierraBluUnified() {
       <footer className="bg-navy-300 text-ivory-100 py-12">
         <div className="max-w-7xl mx-auto px-safe text-center">
           <p className="text-sm text-ivory-100/70 mb-4">
-            © 2026 Sierra Blu Realty. All rights reserved.
+            © 2026 Sierra Estates Realty. All rights reserved.
           </p>
           <div className="flex justify-center gap-6 text-xs uppercase tracking-widest">
-            <a href="#" className="hover:text-sierra-blue-500 transition-colors">
+            <a href="#" className="hover:text-sierra-estatese-500 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="hover:text-sierra-blue-500 transition-colors">
+            <a href="#" className="hover:text-sierra-estatese-500 transition-colors">
               Terms of Service
             </a>
             <a href="#" className="hover:text-gold-500 transition-colors">

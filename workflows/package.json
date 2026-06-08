@@ -1,7 +1,7 @@
 {
-  "name": "sierra-blu-workflows",
+  "name": "sierra-estates-workflows",
   "version": "1.0.0",
-  "description": "External automation workflows for Sierra Blu",
+  "description": "External automation workflows for Sierra Estates",
   "private": true,
   "scripts": {
     "whatsapp-scraper": "node 01-whatsapp-scraper/index.js",

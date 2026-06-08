@@ -18,7 +18,7 @@ describe('landing consolidation', () => {
     const archiveDir = path.join(process.cwd(), 'docs/archive/frontend-experiments');
 
     expect(fs.existsSync(path.join(archiveDir, 'landing-page-final.donor.tsx'))).toBe(true);
-    expect(fs.existsSync(path.join(archiveDir, 'sierra-blu-landing.donor.jsx'))).toBe(true);
+    expect(fs.existsSync(path.join(archiveDir, 'sierra-estates-landing.donor.jsx'))).toBe(true);
   });
 
   it('guards the auth provider when Firebase client env is missing', () => {

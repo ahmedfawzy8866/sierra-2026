@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — TELEGRAM COMMAND OS
+ * SIERRA ESTATES — TELEGRAM COMMAND OS
  * Enables real-time backend interaction via Telegram.
  */
 
@@ -53,7 +53,7 @@ export async function handleTelegramCommand(command: string, args: string[], cha
     case 'maintenance':
       return await cmdMaintenance(chatId);
     case 'start':
-      return await sendTelegramMessage("Welcome to the <b>Sierra Blu Intelligence Platform</b>. Send me a Signature Asset ID to analyze.", chatId);
+      return await sendTelegramMessage("Welcome to the <b>Sierra Estates Intelligence Platform</b>. Send me a Signature Asset ID to analyze.", chatId);
     default:
       return await sendTelegramMessage("Unknown command. Supported: /score, /matches, /maintenance", chatId);
   }
@@ -84,7 +84,7 @@ async function cmdScore(unitId: string, chatId: string) {
                `ROI (Projected): ${formatPercent(unit.intelligence?.valuationScore || 0)}\n` +
                `Legal Status: ${legal.riskLevel.toUpperCase()}\n` +
                `Summary: ${legalSummary}\n\n` +
-               `<i>Analysis powered by Sierra Blu OS</i>`;
+               `<i>Analysis powered by Sierra Estates OS</i>`;
 
   await sendTelegramMessage(text, chatId);
 }

@@ -237,7 +237,7 @@ export default function LandingPage() {
           <div style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
             <ShieldLogo size={32} />
             <div>
-              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: th.accent, letterSpacing: '.15em' }}>SIERRA BLU</span>
+              <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.1rem', fontWeight: 600, color: th.accent, letterSpacing: '.15em' }}>SIERRA ESTATES</span>
               <span style={{ display: 'block', fontSize: '6px', letterSpacing: '.3em', color: th.textSub, marginTop: -2 }}>EGYPT INTEL OS</span>
             </div>
           </div>
@@ -997,7 +997,7 @@ export default function LandingPage() {
             {/* Sidebar Branding footer */}
             <div style={{ marginTop: 'auto', borderTop: `1px solid ${th.border}`, paddingTop: '1rem', display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center' }}>
               <ShieldLogo size={24} />
-              <span style={{ fontSize: '0.7rem', color: th.textMuted }}>Sierra Blu Intelligence OS © 2026</span>
+              <span style={{ fontSize: '0.7rem', color: th.textMuted }}>Sierra Estates Intelligence OS © 2026</span>
             </div>
           </div>
         </div>
@@ -1099,7 +1099,7 @@ export default function LandingPage() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '16px' }}>
                 <ShieldLogo size={36} />
                 <div>
-                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.2rem', fontWeight: 600, color: G }}>SIERRA BLU REALTY</span>
+                  <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: '1.2rem', fontWeight: 600, color: G }}>SIERRA ESTATES REALTY</span>
                   <span style={{ display: 'block', fontSize: '6px', color: 'rgba(255,255,255,0.4)', letterSpacing: '.3em' }}>BEYOND BROKERAGE</span>
                 </div>
               </div>
@@ -1129,7 +1129,7 @@ export default function LandingPage() {
           </div>
           
           <div style={{ borderTop: '1px solid rgba(239,248,247,0.07)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'rgba(239,248,247,0.28)' }}>
-            <span>© 2026 Sierra Blu Realty. All rights reserved.</span>
+            <span>© 2026 Sierra Estates Realty. All rights reserved.</span>
             <div style={{ display: 'flex', gap: '15px' }}>
               <span>Privacy Policy</span>
               <span>Terms of Service</span>

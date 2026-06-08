@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — SYNC ENGINE
+ * SIERRA ESTATES — SYNC ENGINE
  * Property Finder ↔ Firestore synchronization with:
  * 1. Editorial override protection (manual edits never overwritten)
  * 2. Deduplicate queue for ambiguous matches

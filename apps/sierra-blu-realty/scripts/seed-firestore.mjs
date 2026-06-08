@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * SIERRA BLU FIRESTORE DATA SEEDING SCRIPT
+ * SIERRA ESTATES FIRESTORE DATA SEEDING SCRIPT
  * Populates Firestore with sample properties, users, and leads for development/testing
  *
  * Usage: node scripts/seed-firestore.mjs
@@ -268,7 +268,7 @@ async function seedUsers(db) {
 }
 
 async function main() {
-  console.log('🌱 Sierra Blu Firestore Data Seeding Script\n');
+  console.log('🌱 Sierra Estates Firestore Data Seeding Script\n');
   console.log('═══════════════════════════════════════════\n');
 
   try {

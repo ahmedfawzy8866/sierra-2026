@@ -196,6 +196,6 @@ export async function POST(req: NextRequest) {
 export async function GET() {
   return NextResponse.json({
     status: 'active',
-    service: 'Sierra Blu WhatsApp Ingest Gateway',
+    service: 'Sierra Estates WhatsApp Ingest Gateway',
   });
 }

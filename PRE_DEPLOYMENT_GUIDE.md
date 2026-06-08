@@ -1,4 +1,4 @@
-# Sierra Blu — Pre-Deployment Configuration & Validation Guide
+# Sierra Estates — Pre-Deployment Configuration & Validation Guide
 
 **Status:** Ready for pre-deployment setup (Vercel deployment deferred)  
 **Last Updated:** 2026-06-01  
@@ -109,7 +109,7 @@ These must be configured before any functionality works.
 #### ✅ Step 1.1: Firebase Project Setup (2-3 minutes)
 ```bash
 # 1. Go to https://console.firebase.google.com
-# 2. Create a new Firebase project or use existing sierra-blu-prod
+# 2. Create a new Firebase project or use existing sierra-estates-prod
 # 3. Under Settings → General:
 #    - Copy NEXT_PUBLIC_FIREBASE_PROJECT_ID
 #    - Copy NEXT_PUBLIC_FIREBASE_API_KEY (Web API key)
@@ -160,7 +160,7 @@ curl -X POST http://localhost:3000/api/crm/leads \
 #### ✅ Step 1.3: Google AI (Gemini) Setup (3-5 minutes)
 ```bash
 # 1. Go to Google Cloud Console: https://console.cloud.google.com
-# 2. Create project or select sierra-blu-prod
+# 2. Create project or select sierra-estates-prod
 # 3. Enable APIs:
 #    - Google Generative AI API
 # 4. Create API key:
@@ -184,7 +184,7 @@ cd /home/user/i-sierra-2027
 cat firestore.rules
 
 # Deploy rules
-firebase deploy --only firestore:rules --project sierra-blu-prod
+firebase deploy --only firestore:rules --project sierra-estates-prod
 
 # Verify in Firebase Console:
 # - Go to Firestore → Rules
@@ -199,7 +199,7 @@ Required for property listing sync (`/api/properties/sync`).
 # 1. Login to https://dashboard.property-finder.com
 # 2. Go to Developer Settings → Applications → Create New Application
 # 3. Configure OAuth:
-#    - App Name: "Sierra Blu Platform"
+#    - App Name: "Sierra Estates Platform"
 #    - Redirect URIs: https://sierrablu.luxury/api/auth/callback
 # 4. Copy credentials:
 #    - PROPERTY_FINDER_CLIENT_ID
@@ -404,10 +404,10 @@ NODE_ENV=production pnpm start
 ### 5.2 Database Migrations (If Needed)
 ```bash
 # Deploy Firestore indexes
-firebase deploy --only firestore:indexes --project sierra-blu-prod
+firebase deploy --only firestore:indexes --project sierra-estates-prod
 
 # Deploy security rules
-firebase deploy --only firestore:rules,storage --project sierra-blu-prod
+firebase deploy --only firestore:rules,storage --project sierra-estates-prod
 ```
 
 ### 5.3 Vercel Deployment (TO BE DONE LATER)

@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Sierra Blu Official Palette V2.1 — Beyond Brokerage
+        // Sierra Estates Official Palette V2.1 — Beyond Brokerage
         gold: {
           50: '#FFFBF5',
           100: '#F5E070',

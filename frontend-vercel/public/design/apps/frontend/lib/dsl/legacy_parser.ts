@@ -1,5 +1,5 @@
-// sierra-blue/lib/dsl/parser.ts
-// Sierra Blue DSL V2.0 — Full Parser + Firestore Query Builder
+// sierra-estatese/lib/dsl/parser.ts
+// Sierra Estatese DSL V2.0 — Full Parser + Firestore Query Builder
 //
 // Usage:
 //   import { parseDSL, buildFirestoreQuery } from "@/lib/dsl/parser";

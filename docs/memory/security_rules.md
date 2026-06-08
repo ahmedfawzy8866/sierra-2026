@@ -2,7 +2,7 @@
 > **Path:** `docs/memory/security_rules.md`  
 > **Parent Node:** `docs/memory/index.md`
 
-This document details the critical Firestore security rules and authentication gating structure inside Sierra Blu to guarantee data privacy and role compliance.
+This document details the critical Firestore security rules and authentication gating structure inside Sierra Estates to guarantee data privacy and role compliance.
 
 ---
 

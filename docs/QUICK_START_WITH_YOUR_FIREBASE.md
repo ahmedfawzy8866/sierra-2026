@@ -1,15 +1,15 @@
-# 🚀 Quick Setup - Sierra Blu with Your Firebase Credentials
+# 🚀 Quick Setup - Sierra Estates with Your Firebase Credentials
 
 Your Firebase project is ready! Here's exactly what to do next.
 
 ## ✅ Your Firebase Details
 
 ```
-Project Name: sierra-blu
+Project Name: sierra-estates
 API Key: AIzaSy...your-own-key-from-firebase-console ✓
-Auth Domain: sierra-blu.firebaseapp.com ✓
-Project ID: sierra-blu ✓
-Storage Bucket: sierra-blu.firebasestorage.app ✓
+Auth Domain: sierra-estates.firebaseapp.com ✓
+Project ID: sierra-estates ✓
+Storage Bucket: sierra-estates.firebasestorage.app ✓
 Sender ID: 941030513456 ✓
 App ID: 1:941030513456:web:56209a1495d69f217086f5 ✓
 ```
@@ -22,24 +22,24 @@ App ID: 1:941030513456:web:56209a1495d69f217086f5 ✓
 
 ```bash
 # Open Command Prompt / PowerShell / Terminal on your PC
-npx create-next-app@latest sierra-blue --typescript --tailwind
+npx create-next-app@latest sierra-estatese --typescript --tailwind
 
 # Choose default options (just press Enter for most)
-cd sierra-blue
+cd sierra-estatese
 ```
 
 ### **Step 2: Copy the .env.local File**
 
 1. Copy `.env.local-UPDATED` from outputs
 2. Rename it to `.env.local` (remove the `-UPDATED` part)
-3. Paste it in your project root folder (`sierra-blue/.env.local`)
+3. Paste it in your project root folder (`sierra-estatese/.env.local`)
 
 **Your credentials are already in there!** ✅
 
 ### **Step 3: Create Folder Structure**
 
 ```
-sierra-blue/
+sierra-estatese/
 ├── lib/                    ← Create this folder
 ├── app/
 │   ├── landing/           ← Create this folder
@@ -97,7 +97,7 @@ npm install --save-dev @types/leaflet xlsx
 
 Go to [Firebase Console](https://console.firebase.google.com)
 
-1. Select "sierra-blu" project
+1. Select "sierra-estates" project
 2. Click "Firestore Database"
 3. Create these 4 collections:
 
@@ -203,7 +203,7 @@ Click "Publish"
 ### **Step 9: Import Your Data**
 
 ```bash
-# Copy your Excel file to: sierra-blue/data/properties.xlsx
+# Copy your Excel file to: sierra-estatese/data/properties.xlsx
 
 # Run import script
 npx ts-node scripts/importFromExcel.ts ./data/properties.xlsx
@@ -220,7 +220,7 @@ npm run dev
 Open: **http://localhost:3000/landing**
 
 You should see:
-✅ Header "Sierra Blue Properties"
+✅ Header "Sierra Estatese Properties"
 ✅ Search filters
 ✅ Interactive map
 ✅ Property listings
@@ -265,7 +265,7 @@ curl -X POST http://localhost:3000/api/leads \
 ## 📱 Your Project Structure (Final)
 
 ```
-sierra-blue/
+sierra-estatese/
 ├── lib/
 │   ├── firebase-config.ts       ✅ Your Firebase setup
 │   └── propertyFinder-service.ts ✅ API client
@@ -324,10 +324,10 @@ vercel --prod
 ## 📞 Your Credentials (Keep Safe!)
 
 ```
-Firebase Project: sierra-blu
+Firebase Project: sierra-estates
 API Key: AIzaSy...your-own-key-from-firebase-console
-Project ID: sierra-blu
-Auth Domain: sierra-blu.firebaseapp.com
+Project ID: sierra-estates
+Auth Domain: sierra-estates.firebaseapp.com
 
 ⚠️  NEVER share these publicly!
 ⚠️  NEVER commit .env.local to git!
@@ -347,4 +347,4 @@ Everything is configured and ready to go. Just follow the 10 steps above and you
 
 ---
 
-Good luck! 🚀 Your Sierra Blue platform awaits! 🏡
+Good luck! 🚀 Your Sierra Estatese platform awaits! 🏡

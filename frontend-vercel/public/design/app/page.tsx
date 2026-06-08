@@ -46,7 +46,7 @@ const THEMES = {
 const COPY = {
   en: {
     dir: 'ltr' as const,
-    brand: 'SIERRA BLU', sub: 'REALTY',
+    brand: 'SIERRA ESTATES', sub: 'REALTY',
     tagline: 'SIERRA-BLU REALTY | BEYOND BROKERAGE',
     nav: ['Properties', 'Intelligence', 'About', 'Contact'],
     cta: 'Enter Portal',
@@ -64,8 +64,8 @@ const COPY = {
     viewAll: 'View All →',
     searchType: 'Property Type', searchCompound: 'Compound', searchBudget: 'Budget', searchBtn: 'Search',
     beds: 'bed', baths: 'bath',
-    secWhy: 'Why Sierra Blu',
-    h2Why: 'The Sierra Blu Standard',
+    secWhy: 'Why Sierra Estates',
+    h2Why: 'The Sierra Estates Standard',
     why: [
       { icon: '◆', title: 'Curated by Hand', desc: 'Each listing personally reviewed by senior advisors. No noise, no overpricing — only properties that meet our exacting standard.' },
       { icon: '◈', title: 'Grounded in Data', desc: 'AI-driven ROI modelling, live market comparisons, and growth corridor analysis. Conviction backed by evidence.' },
@@ -110,7 +110,7 @@ const COPY = {
     footNav: 'Navigation', footNavLinks: ['Properties', 'Intelligence', 'About Us', 'Careers', 'Contact'],
     footMarkets: 'Markets', footMarketLinks: ['New Cairo', 'Fifth Settlement', 'Madinaty', 'Mostakbal City', 'Mountain View'],
     footContact: 'Contact',
-    copyright: '© 2026 Sierra Blu Realty. All rights reserved.',
+    copyright: '© 2026 Sierra Estates Realty. All rights reserved.',
     legal: ['Privacy Policy', 'Terms of Service', 'Cookies'],
   },
   ar: {
@@ -431,7 +431,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ══ WHY SIERRA BLU ══ */}
+      {/* ══ WHY SIERRA ESTATES ══ */}
       <section style={{ background: th.bg, padding: '96px 0', position: 'relative', overflow: 'hidden' }}>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none" style={{ opacity: mode === 'dark' ? 0.025 : 0.02 }}>
           <ShieldLogo size={600} />
@@ -495,7 +495,7 @@ export default function LandingPage() {
             <div className="reveal h-[480px]" style={{ order: isAr ? 1 : 2 }}>
               <div className="relative h-full rounded-2xl overflow-hidden" style={{ border: '1px solid rgba(233,193,118,0.22)', boxShadow: '0 32px 80px rgba(0,0,0,.4)' }}>
                 <LiveMap mode={mode} />
-                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-[1000] pointer-events-none" style={{ fontSize: 8, letterSpacing: '4px', color: 'rgba(233,193,118,0.35)', fontFamily: "'Jost', sans-serif", whiteSpace: 'nowrap' }}>SIERRA BLU INTELLIGENCE</div>
+                <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 z-[1000] pointer-events-none" style={{ fontSize: 8, letterSpacing: '4px', color: 'rgba(233,193,118,0.35)', fontFamily: "'Jost', sans-serif", whiteSpace: 'nowrap' }}>SIERRA ESTATES INTELLIGENCE</div>
               </div>
             </div>
           </div>

@@ -1,13 +1,13 @@
-# 🤖 Claude Code — Sierra Blu Frontend Handoff
+# 🤖 Claude Code — Sierra Estates Frontend Handoff
 
-> **For Claude Code**: This file initializes your context for Sierra Blu frontend development.
+> **For Claude Code**: This file initializes your context for Sierra Estates frontend development.
 > **Handoff Date**: April 28, 2026 | **Version**: 12.0 | **Status**: ✅ Production-Ready
 
 ---
 
 ## 🎯 Your Mission
 
-You are enhancing the **Sierra Blu Realty** frontend — a luxury property platform for high-net-worth Egyptian investors. Your job:
+You are enhancing the **Sierra Estates Realty** frontend — a luxury property platform for high-net-worth Egyptian investors. Your job:
 
 1. **Maintain Quiet Luxury aesthetic** — Navy, Gold, Ivory only
 2. **Keep animations buttery smooth** — 0.6s easing: `[0.22, 1, 0.36, 1]`

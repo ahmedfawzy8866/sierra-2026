@@ -15,7 +15,7 @@ export default function LoginScreen({ onBack }: { onBack?: () => void }) {
   const [error, setError] = useState('');
 
   const showSupportMessage = () => {
-    setError('Contact the Sierra Blu admin team to reset or provision access.');
+    setError('Contact the Sierra Estates admin team to reset or provision access.');
   };
 
   const handleEmailLogin = async () => {
@@ -186,7 +186,7 @@ export default function LoginScreen({ onBack }: { onBack?: () => void }) {
             <h1 className="serif" style={{ fontSize: '32px', fontWeight: 700, color: 'var(--text-primary)', marginBottom: '8px' }}>
               Welcome <span className="luxury-gradient-text">Home</span>
             </h1>
-            <p style={{ color: 'var(--text-secondary)', fontSize: '15px', letterSpacing: '0.3px' }}>Authentication Required for Sierra Blu Advisors</p>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '15px', letterSpacing: '0.3px' }}>Authentication Required for Sierra Estates Advisors</p>
           </div>
 
           <button 
@@ -353,7 +353,7 @@ export default function LoginScreen({ onBack }: { onBack?: () => void }) {
           }}>
             <ShieldCheck size={20} style={{ color: 'var(--gold)' }} />
             <div style={{ fontSize: '12px', color: 'var(--text-secondary)', lineHeight: '1.4' }}>
-              Systems secured by <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Sierra Blu CyberOps</span>. 
+              Systems secured by <span style={{ fontWeight: 600, color: 'var(--text-primary)' }}>Sierra Estates CyberOps</span>. 
               Unauthorized access is strictly prohibited.
             </div>
           </div>

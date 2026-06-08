@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — STAGE 9: STRATEGIC ACQUISITION ENGINE
+ * SIERRA ESTATES — STAGE 9: STRATEGIC ACQUISITION ENGINE
  * Orchestrates contract synthesis, stakeholder verification, and commission processing.
  */
 
@@ -103,7 +103,7 @@ export async function generateContractPreview(leadId: string, unitId: string): P
   const lead = leadSnap.data() as Lead;
   const unit = unitSnap.data() as Unit;
 
-  const systemPrompt = `ROLE: You are "Sierra," the Executive Closer for Sierra Blu Realty.
+  const systemPrompt = `ROLE: You are "Sierra," the Executive Closer for Sierra Estates Realty.
 TASK: Write a high-fidelity "Affirmation of Strategic Alignment" for this property acquisition.
 TONE: Congratulations, institutional precision, and Levantine professional warmth.
 CONTEXT: Stakeholder ${lead.name} is acquiring Asset ${unit.title} (${unit.compound}).

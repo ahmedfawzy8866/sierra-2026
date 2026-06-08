@@ -22,7 +22,7 @@ const fs = require('fs');
 
 const SHEET_ID = process.env.BROKER_INBOX_SHEET_ID;
 const SENDGRID_KEY = process.env.SENDGRID_API_KEY;
-const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || 'noreply@sierra-blu.com';
+const FROM_EMAIL = process.env.SENDGRID_FROM_EMAIL || 'noreply@sierra-estates.com';
 const SERVICE_ACCOUNT_KEY = JSON.parse(
   fs.readFileSync(process.env.GOOGLE_SERVICE_ACCOUNT_KEY, 'utf8')
 );
@@ -39,12 +39,12 @@ const sheets = google.sheets({
 
 const EMAIL_TEMPLATES = {
   welcome: {
-    subject: 'Welcome to Sierra Blu – Your Exclusive Real Estate Gateway',
+    subject: 'Welcome to Sierra Estates – Your Exclusive Real Estate Gateway',
     html: `
-      <h2>Welcome to Sierra Blu</h2>
+      <h2>Welcome to Sierra Estates</h2>
       <p>We're thrilled to have you on board!</p>
       <p>Our curated portfolio of luxury properties in New Cairo awaits your exploration.</p>
-      <p><a href="https://sierra-blu.vercel.app/landing">View Exclusive Listings</a></p>
+      <p><a href="https://sierra-estates.vercel.app/landing">View Exclusive Listings</a></p>
     `,
   },
   property_alert: {
@@ -54,7 +54,7 @@ const EMAIL_TEMPLATES = {
       <p><strong>{{property_title}}</strong></p>
       <p>Price: {{property_price}} EGP</p>
       <p>Location: {{property_location}}</p>
-      <p><a href="https://sierra-blu.vercel.app/listings/{{property_id}}">View Details</a></p>
+      <p><a href="https://sierra-estates.vercel.app/listings/{{property_id}}">View Details</a></p>
     `,
   },
   viewing_reminder: {
@@ -62,7 +62,7 @@ const EMAIL_TEMPLATES = {
     html: `
       <h2>Viewing Appointment Reminder</h2>
       <p>Your scheduled viewing is coming up on {{viewing_date}} at {{viewing_time}}.</p>
-      <p><a href="https://sierra-blu.vercel.app/viewing-requests">Manage Appointment</a></p>
+      <p><a href="https://sierra-estates.vercel.app/viewing-requests">Manage Appointment</a></p>
     `,
   },
 };

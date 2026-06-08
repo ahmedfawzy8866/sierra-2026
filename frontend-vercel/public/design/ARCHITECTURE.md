@@ -11,7 +11,7 @@
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
-│                    SIERRA BLU REALTY 2027                   │
+│                    SIERRA ESTATES REALTY 2027                   │
 │              Egypt's AI-Powered Real Estate OS              │
 └─────────────────────────────────────────────────────────────┘
                               ▲
@@ -347,9 +347,9 @@ https://sierra-2027-preview.vercel.app
 ```
 Merge to main
   ↓
-Vercel Auto-Deploy (firebase: sierra-blu-production)
+Vercel Auto-Deploy (firebase: sierra-estates-production)
   ↓
-https://sierra-blu.vercel.app
+https://sierra-estates.vercel.app
 ```
 
 ### Scheduled Jobs (Cloud Functions)

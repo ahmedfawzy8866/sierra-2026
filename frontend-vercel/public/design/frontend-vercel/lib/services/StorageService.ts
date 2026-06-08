@@ -3,7 +3,7 @@ import { getStorage } from 'firebase-admin/storage';
 import { v4 as uuidv4 } from 'uuid';
 
 /**
- * SIERRA BLU STORAGE SERVICE
+ * SIERRA ESTATES STORAGE SERVICE
  * Manages institutional asset storage with high-integrity pathing.
  */
 export class StorageService {

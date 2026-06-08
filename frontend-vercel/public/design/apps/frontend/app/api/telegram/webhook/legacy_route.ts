@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
     if (text === '/start') {
       await sendMessage(`
-<b>Welcome to Sierra Blu Realty Bot</b>
+<b>Welcome to Sierra Estates Realty Bot</b>
 
 Your Chat ID is: <code>${chatId}</code>
 Please add this to your <code>.env.local</code> as <code>TELEGRAM_CHAT_ID</code> to enable operational notifications.
@@ -64,7 +64,7 @@ Commands:
     } else if (text === '/stats') {
       if (isMockMode) {
         await sendMessage(`
-<b>📊 Sierra Blu - Portfolio Stats (MOCK)</b>
+<b>📊 Sierra Estates - Portfolio Stats (MOCK)</b>
 <b>Total Inventory:</b> 124 units
 <b>Total Leads:</b> 89 profiles
 <b>Operational Status:</b> OPTIMUM
@@ -79,7 +79,7 @@ Commands:
         const leadCount = leadsSnap.size;
 
         await sendMessage(`
-<b>📊 Sierra Blu - Portfolio Stats</b>
+<b>📊 Sierra Estates - Portfolio Stats</b>
 <b>Total Inventory:</b> ${activeCount} units
 <b>Total Leads:</b> ${leadCount} profiles
 <b>Operational Status:</b> OPTIMUM

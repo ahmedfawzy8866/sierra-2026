@@ -2,7 +2,7 @@
 > **Path:** `docs/memory/architecture_dependencies.md`  
 > **Parent Node:** `docs/memory/index.md`
 
-This document maps all workspace connections in the **Sierra Blu pnpm monorepo**. Modifications to any core config file listed below must be validated against this master sheet to ensure zero downstream compile errors.
+This document maps all workspace connections in the **Sierra Estates pnpm monorepo**. Modifications to any core config file listed below must be validated against this master sheet to ensure zero downstream compile errors.
 
 ---
 

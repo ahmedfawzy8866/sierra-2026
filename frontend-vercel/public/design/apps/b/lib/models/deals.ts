@@ -49,7 +49,7 @@ export interface ProposalMetadata {
   propertyName: string;
   generatedAt: Timestamp;
   expiresAt: Timestamp;
-  theme: string; // "sierra-blu-quiet-luxury"
+  theme: string; // "sierra-estates-quiet-luxury"
 }
 
 export interface SigningEnvelope {

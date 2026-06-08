@@ -1,5 +1,5 @@
 {
-  "name": "@sierra-blu/agents",
+  "name": "@sierra-estates/agents",
   "version": "1.0.0",
   "description": "Multi-agent framework and orchestration",
   "main": "src/index.ts",

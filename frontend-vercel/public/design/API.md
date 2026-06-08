@@ -1,6 +1,6 @@
 # Sierra 2027 — API Documentation
 
-**Base URL:** `https://sierra-blu.vercel.app` (Production)  
+**Base URL:** `https://sierra-estates.vercel.app` (Production)  
 **Authentication:** `Authorization: Bearer {firebase_token}` + `X-SBR-SECRET-KEY` header  
 **Response Format:** JSON
 

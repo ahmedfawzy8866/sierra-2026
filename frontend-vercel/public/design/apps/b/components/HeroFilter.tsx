@@ -16,7 +16,7 @@ export default function HeroFilter() {
     e.preventDefault();
 
     // Construct search queries cleanly for the production router redirect
-    const targetUrl = new URL('https://www.sierra-blu.com/listings');
+    const targetUrl = new URL('https://www.sierra-estates.com/listings');
     targetUrl.searchParams.append('type', propertyType);
     targetUrl.searchParams.append('view', viewPreference);
     targetUrl.searchParams.append('tier', priceTier);

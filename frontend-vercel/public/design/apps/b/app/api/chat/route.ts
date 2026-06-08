@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { OmnichannelChatService } from '@/lib/services/OmnichannelChatService';
 
 /**
- * SIERRA BLU WEB CONCIERGE CHAT API
+ * SIERRA ESTATES WEB CONCIERGE CHAT API
  * Serves as the dynamic gateway between the web-based LeilaConcierge widget and OmnichannelChatService.
  */
 export async function POST(req: NextRequest) {

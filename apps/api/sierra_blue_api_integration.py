@@ -1,5 +1,5 @@
 """
-SIERRA BLUE BOT - API INTEGRATION GUIDE
+SIERRA ESTATESE BOT - API INTEGRATION GUIDE
 Real API Endpoints & Configuration Examples
 """
 
@@ -437,7 +437,7 @@ class GoogleCalendarIntegration:
 # Google Calendar Configuration
 GOOGLE_CALENDAR_CONFIG = {
     "credentials_json": "/path/to/service-account-key.json",
-    "calendar_id": "sierra-blue-viewings@sierrablue.com",
+    "calendar_id": "sierra-estatese-viewings@sierrablue.com",
     "agent_emails": [
         "agent1@sierrablue.com",
         "agent2@sierrablue.com"
@@ -576,7 +576,7 @@ GOOGLE_CALENDAR_CREDENTIALS=/path/to/credentials.json
 MIXPANEL_TOKEN=your_mixpanel_token
 
 # Bot Configuration
-BOT_NAME=Sierra Blue AI
+BOT_NAME=Sierra Estatese AI
 BOT_TIMEZONE=Africa/Cairo
 """
 
@@ -624,7 +624,7 @@ curl -X POST https://graph.instagram.com/v18.0/{phone_number_id}/messages \
     "to": "20123456789",
     "type": "text",
     "text": {
-      "body": "Hello from Sierra Blue!"
+      "body": "Hello from Sierra Estatese!"
     }
   }'
 

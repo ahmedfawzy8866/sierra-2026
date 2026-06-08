@@ -95,13 +95,13 @@ export default function ConciergePage({ params }: { params: Promise<{ leadId: st
   };
 
   const handleShare = async (unit: ConciergeUnit) => {
-    const shareText = `Explore this curated Sierra Blu property: ${unit.title} - ${(unit.price / 1_000_000).toFixed(1)}M EGP. ROI: ${unit.estimatedROI.toFixed(1)}%`;
+    const shareText = `Explore this curated Sierra Estates property: ${unit.title} - ${(unit.price / 1_000_000).toFixed(1)}M EGP. ROI: ${unit.estimatedROI.toFixed(1)}%`;
     const shareUrl = window.location.href;
 
     if (navigator.share) {
       try {
         await navigator.share({
-          title: 'Sierra Blu Realty Selection',
+          title: 'Sierra Estates Realty Selection',
           text: shareText,
           url: shareUrl,
         });
@@ -143,11 +143,11 @@ export default function ConciergePage({ params }: { params: Promise<{ leadId: st
             {error || 'Selection Unavailable'}
           </EditorialHeading>
           <p className="text-[#0A1628]/70 font-inter text-sm leading-relaxed mb-8">
-            This personalized selection link has expired or is invalid. Please contact your Sierra Blu advisor for a fresh curation.
+            This personalized selection link has expired or is invalid. Please contact your Sierra Estates advisor for a fresh curation.
           </p>
           <div className="w-full h-[1px] bg-[#C9A84C]/20 mb-8" />
           <p className="text-[#0A1628]/50 text-[10px] uppercase tracking-widest">
-            Sierra Blu Realty • Private Office
+            Sierra Estates Realty • Private Office
           </p>
         </LuxuryCard>
       </div>

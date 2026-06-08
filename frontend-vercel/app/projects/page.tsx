@@ -31,7 +31,7 @@ const THEMES = {
 const COPY = {
   en: {
     dir: 'ltr' as const,
-    brand: 'SIERRA BLU', sub: 'REALTY',
+    brand: 'SIERRA ESTATES', sub: 'REALTY',
     pageTitle: 'Featured Projects',
     heroH: 'Premium Development Projects',
     heroSub: 'Discover Egypt\'s most coveted residential and mixed-use developments. Each project is hand-selected for investment quality and market positioning.',
@@ -157,7 +157,7 @@ export default function ProjectsPage() {
             </div>
           </div>
           <div className="flex justify-between items-center flex-wrap gap-3 pt-6" style={{ borderTop: '1px solid rgba(239,248,247,0.07)', flexDirection: isAr ? 'row-reverse' : 'row' }}>
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Blu Realty. All rights reserved.</div>
+            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Estates Realty. All rights reserved.</div>
           </div>
         </div>
       </footer>

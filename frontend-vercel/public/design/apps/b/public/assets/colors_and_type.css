@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — DESIGN TOKENS V2.0 (CSS)
+ * SIERRA ESTATES — DESIGN TOKENS V2.0 (CSS)
  * "Gold & Diamond" — Beyond Brokerage
  * Source: TOKENS object — design-tokens.ts
  */
@@ -18,7 +18,7 @@
   --gold-grad:      linear-gradient(135deg, #E9C176 0%, #C8961A 50%, #F5D78E 75%, #987734 100%);
 
   /* Navy scale */
-  --sierra-blue:    #1B6CA8;
+  --sierra-estatese:    #1B6CA8;
   --royal-blue:     #003087;
   --mid-navy:       #0D2D6B;
   --deep-navy:      #071422;
@@ -90,7 +90,7 @@
   --surface-hover:  rgba(233, 193, 118, 0.10);
   --gold-dim:       rgba(233, 193, 118, 0.14);
 
-  /* Accent — light mode uses sierra-blue */
+  /* Accent — light mode uses sierra-estatese */
   --accent:         #1B6CA8;
   --accent-dim:     rgba(27, 108, 168, 0.10);
 }

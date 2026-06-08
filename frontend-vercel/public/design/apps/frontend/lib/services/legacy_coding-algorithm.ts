@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — PROPERTY CODING ALGORITHM
+ * SIERRA ESTATES — PROPERTY CODING ALGORITHM
  * Implements the proprietary [Location]-[Rooms][Status]-[Price]+[Feature] logic.
  */
 

@@ -1,4 +1,4 @@
-// Sierra Blu Architecture — Turbopack Stub
+// Sierra Estates Architecture — Turbopack Stub
 // This file is used to resolve server-only packages to empty modules in the client/static-analysis bundle.
 
 class NoOpClass {

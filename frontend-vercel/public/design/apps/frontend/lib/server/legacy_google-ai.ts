@@ -3,7 +3,7 @@ import { GoogleGenerativeAI } from "@google/generative-ai";
 import { instrumentAgent } from "../arize";
 
 /**
- * SIERRA BLU — DIRECT GOOGLE AI STUDIO INTEGRATION
+ * SIERRA ESTATES — DIRECT GOOGLE AI STUDIO INTEGRATION
  * Updated V12.1: Resolving Model 404s by using latest aliases.
  */
 

@@ -1,13 +1,13 @@
 # 🔄 WhatsApp CRM & Hand-off Pipeline
 > **Path:** `docs/obsidian-vault/WhatsApp CRM & Hand-off Pipeline.md`  
-> **Parent Node:** `[[Sierra Blu Memory Engine]]`
+> **Parent Node:** `[[Sierra Estates Memory Engine]]`
 
 This document outlines the conversational workflow, asset matching rules, document generation logic, and automated calendar schedules for **Leila** and **Sierra** when managing incoming real estate clients.
 
 ---
 
 ## 💬 Conversational Workflow & Needs Matching
-When a client contacts Sierra Blu on WhatsApp:
+When a client contacts Sierra Estates on WhatsApp:
 
 1.  **Onboarding & Discovery:**
     *   Leila greets the client in a premium, welcoming Arabic/English tone.

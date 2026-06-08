@@ -1,5 +1,5 @@
 """
-SIERRA BLUE BOT - API INTEGRATION GUIDE
+SIERRA ESTATESE BOT - API INTEGRATION GUIDE
 Real API Endpoints & Configuration Examples
 """
 

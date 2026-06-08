@@ -4,7 +4,7 @@ import { WhatsAppParserService } from '@/lib/services/WhatsAppParserService';
 import { OmnichannelChatService } from '@/lib/services/OmnichannelChatService';
 
 /**
- * SIERRA BLU WEBHOOK ENTRY POINT
+ * SIERRA ESTATES WEBHOOK ENTRY POINT
  * This endpoint receives real-time streams from messaging gateways.
  * 
  * Supports: WhatsApp Business API, Telegram Bot Webhooks, or Automation Bridges.
@@ -65,5 +65,5 @@ export async function GET(req: NextRequest) {
     return new Response(challenge, { status: 200 });
   }
 
-  return NextResponse.json({ status: "Sierra Blu Webhook Active" });
+  return NextResponse.json({ status: "Sierra Estates Webhook Active" });
 }

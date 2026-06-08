@@ -1,12 +1,12 @@
-# 🌌 SIERRA BLU 2027: PropTech OS Master Overview & Architecture Guide
+# 🌌 SIERRA ESTATES 2027: PropTech OS Master Overview & Architecture Guide
 > **Purpose:** Copy the entire contents of this file and paste it into Gemini to receive elite architectural feedback, workflow optimizations, and strategy recommendations.
 
 ---
 
 ## 1. 🌟 Executive Summary & Vision
-**Sierra Blu 2027** is a premium, state-of-the-art Real Estate Operating System (PropTech OS) designed for high-end luxury real estate brokerages. 
+**Sierra Estates 2027** is a premium, state-of-the-art Real Estate Operating System (PropTech OS) designed for high-end luxury real estate brokerages. 
 
-Instead of a simple listing website, Sierra Blu is a **fully automated transaction and relationship engine**. It combines:
+Instead of a simple listing website, Sierra Estates is a **fully automated transaction and relationship engine**. It combines:
 1. **Premium 3D Visual Frontends:** A luxury Next.js client portal with interactive maps (Leaflet + Mapbox GL), gorgeous dark-mode aesthetics, glassmorphism, and smooth animations (Anime.js + Framer Motion).
 2. **AI Multi-Agent Brain:** Custom AI agents (Sierra, Leila, Stage-9 Closer) that handle client concierge, automated viewings, Arabic-to-English translations, and contract negotiations.
 3. **Data Ingestion Engine:** Automated scrapers and sync systems that pull properties directly from Property Finder, OLX, Google Sheets, and Airtable, feeding them into a secure, staff-gated Firebase Firestore backend.
@@ -15,7 +15,7 @@ Instead of a simple listing website, Sierra Blu is a **fully automated transacti
 ---
 
 ## 2. 🏗️ Tech Stack & Monorepo Architecture
-Sierra Blu is structured as a **pnpm Monorepo** managed by **Turborepo** for parallel execution and builds.
+Sierra Estates is structured as a **pnpm Monorepo** managed by **Turborepo** for parallel execution and builds.
 
 ```
 refine-full-stack-ecosystem/
@@ -37,7 +37,7 @@ refine-full-stack-ecosystem/
 ---
 
 ## 3. 🤖 The Multi-Agent Intelligence Layer
-Sierra Blu features **4 primary AI agents** operating in sequence or concurrently:
+Sierra Estates features **4 primary AI agents** operating in sequence or concurrently:
 
 ```mermaid
 graph TD

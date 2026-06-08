@@ -1,4 +1,4 @@
-// Sierra Blu SaaS - V13.0 Digital Concierge & Pipeline Orchestrator Simulator
+// Sierra Estates SaaS - V13.0 Digital Concierge & Pipeline Orchestrator Simulator
 // Fully self-contained client-side TypeScript simulation engine
 
 export interface WorkflowLog {
@@ -93,7 +93,7 @@ export class SbroOrchestrator {
     this.addLog("S4", "Curator", "XML Payload assembly for Property Finder Gateway...", "info");
     await this.delay(800);
     this.addLog("S4", "Curator", "External listing pushed successfully to Property Finder (Ref: SBR-9902). Status: Active", "success");
-    this.addLog("S4", "Curator", "Broadcast push completed to Telegram Channel 'Sierra Blu Private Feed'", "success");
+    this.addLog("S4", "Curator", "Broadcast push completed to Telegram Channel 'Sierra Estates Private Feed'", "success");
     await this.delay(1000);
 
     // ─── STAGE 5: DQE DUPLICATE CHECK ───

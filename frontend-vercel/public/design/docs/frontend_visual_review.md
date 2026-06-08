@@ -1,11 +1,11 @@
-# 🏗️ SIERRA BLU FRONTEND VISUAL REVIEW
+# 🏗️ SIERRA ESTATES FRONTEND VISUAL REVIEW
 ## Complete Page & Component Audit
 
 ---
 
 ## 📊 EXECUTIVE SUMMARY
 
-**Sierra Blu** is a luxury real-estate advisory platform for New Cairo with premium design and AI-powered property matching.
+**Sierra Estates** is a luxury real-estate advisory platform for New Cairo with premium design and AI-powered property matching.
 
 - **Status**: Pre-production, polished UI ready
 - **Tech**: Next.js 16 + React 19 + TypeScript + Tailwind 4
@@ -43,7 +43,7 @@
 ```
 ┌─────────────────────────────────────────┐
 │  Navigation Bar (Fixed)                 │
-│  - Sierra Blu Logo (gold/white toggle)  │
+│  - Sierra Estates Logo (gold/white toggle)  │
 │  - Search Filters (rooms, price, etc)   │
 │  - Language Toggle (EN/AR)              │
 │  - Theme Toggle (☀️/🌙)                 │
@@ -79,8 +79,8 @@
 └─────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────┐
-│  WHY SIERRA BLU SECTION                 │
-│  "The Sierra Blu Standard"              │
+│  WHY SIERRA ESTATES SECTION                 │
+│  "The Sierra Estates Standard"              │
 │  ─────────────────────────────────────  │
 │  3 Feature Cards:                       │
 │  ◆ Curated by Hand                      │
@@ -120,7 +120,7 @@
 │  - Market locations                     │
 │  - Contact info                         │
 │  - Legal links                          │
-│  © 2026 Sierra Blu Realty               │
+│  © 2026 Sierra Estates Realty               │
 └─────────────────────────────────────────┘
 ```
 

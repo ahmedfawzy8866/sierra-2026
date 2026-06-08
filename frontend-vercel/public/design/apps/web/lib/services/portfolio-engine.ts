@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — STAGE 8: PORTFOLIO ENGINE
+ * SIERRA ESTATES — STAGE 8: PORTFOLIO ENGINE
  * Curates top 3-5 matches into a VIP "Concierge Selection"
  * and generates shareable mobile-first gallery links.
  * 
@@ -115,7 +115,7 @@ export async function curateConciergePortfolio(leadId: string): Promise<Concierg
     estimatedPortfolioROI: totalROI / conciergeUnits.length,
     createdAt: serverTimestamp(),
     status: 'generated',
-    whatsappLink: `https://sierra-blu.web.app/concierge/${leadId}?gallery=true`,
+    whatsappLink: `https://sierra-estates.web.app/concierge/${leadId}?gallery=true`,
   });
 
   const portfolio: ConciergeSelection = {
@@ -125,7 +125,7 @@ export async function curateConciergePortfolio(leadId: string): Promise<Concierg
     createdAt: Timestamp.now(),
     units: conciergeUnits,
     personalNote,
-    whatsappLink: `https://sierra-blu.web.app/concierge/${leadId}?gallery=true`,
+    whatsappLink: `https://sierra-estates.web.app/concierge/${leadId}?gallery=true`,
     matchingScore: matchSum / conciergeUnits.length,
     estimatedPortfolioROI: totalROI / conciergeUnits.length,
   };
@@ -146,7 +146,7 @@ export async function curateConciergePortfolio(leadId: string): Promise<Concierg
  * Generate a luxury property description in Sierra's voice.
  */
 async function generateLuxuryDescription(lead: Lead, unit: Unit): Promise<string> {
-  const prompt = `You are Sierra, a luxury property concierge for Sierra Blu Realty. 
+  const prompt = `You are Sierra, a luxury property concierge for Sierra Estates Realty. 
 Generate a 2-3 sentence description of this property for a high-net-worth client.
 The tone should be warm, editorial, and exclusive. Emphasize lifestyle and investment potential.
 
@@ -168,7 +168,7 @@ Write ONLY the description. No extra text.`;
 async function generateSierraNoteFromTemplate(lead: Lead, units: ConciergeUnit[]): Promise<string> {
   const unitTitles = units.map(u => u.title).join(', ');
   
-  const prompt = `You are Sierra, the personal concierge at Sierra Blu Realty.
+  const prompt = `You are Sierra, the personal concierge at Sierra Estates Realty.
 Write a warm, 3-4 sentence welcome message for a VIP client about their curated portfolio selection.
 
 Client Name: ${lead.name}

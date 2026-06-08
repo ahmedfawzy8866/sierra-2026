@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — PROFILING SERVICE (STAGE 6)
+ * SIERRA ESTATES — PROFILING SERVICE (STAGE 6)
  * Extracts stakeholder intelligence using generative AI.
  */
 
@@ -45,7 +45,7 @@ export async function extractProfileFromChat(history: string): Promise<Extracted
     const data = await GoogleAIService.chatCompletions(
       'scribe', 'profiling',
       [
-        { role: 'system', content: 'You are an institutional data extractor for Sierra Blu.' },
+        { role: 'system', content: 'You are an institutional data extractor for Sierra Estates.' },
         { role: 'user', content: prompt }
       ],
       { model: 'gemini-1.5-flash', temperature: 0 }
@@ -119,7 +119,7 @@ export function calculateSierraScore(profile: Partial<ExtractedProfile>): number
 export function getNextInterviewQuestion(profile: Partial<ExtractedProfile>): string {
   // Intro for completely new interactions
   if (!profile.location && !profile.budget && !profile.moveInDate) {
-    return "<b>✦ SIERRA BLU | CONCIERGE ✦</b>\n\nWelcome. I am <b>Antigravity</b>, your Senior Intelligence Partner. To curate an institutional portfolio proposal for you, I require 4 strategic data points:\n\n1. 🏙️ Target Location?\n2. 📅 Move-in Date?\n3. 👤 Family Size?\n4. 💰 Budget Range?\n\nWhich area are you currently focusing on for your next luxury residence?";
+    return "<b>✦ SIERRA ESTATES | CONCIERGE ✦</b>\n\nWelcome. I am <b>Antigravity</b>, your Senior Intelligence Partner. To curate an institutional portfolio proposal for you, I require 4 strategic data points:\n\n1. 🏙️ Target Location?\n2. 📅 Move-in Date?\n3. 👤 Family Size?\n4. 💰 Budget Range?\n\nWhich area are you currently focusing on for your next luxury residence?";
   }
 
   if (!profile.location) return "Perfect. To accurately filter our Nexus inventory, which specific area (e.g., New Cairo, Shourouk, Matareya) are we targeting?";

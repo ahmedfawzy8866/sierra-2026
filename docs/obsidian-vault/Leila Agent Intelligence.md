@@ -1,6 +1,6 @@
 # 🐪 Leila Agent: Conversational Arabic Broker
 > **Path:** `docs/obsidian-vault/Leila Agent Intelligence.md`  
-> **Parent Node:** `[[Sierra Blu Memory Engine]]`
+> **Parent Node:** `[[Sierra Estates Memory Engine]]`
 
 **Leila Bot** is our specialized Arabic-speaking brokerage agent. Leila is tailored to navigate direct-from-owner listings in Egypt, translate local developer briefs, and handle New Cairo property negotiations.
 
@@ -27,4 +27,4 @@ When an owner lists a property at an overpriced bracket (determined by the `[[Ma
 بما إن عميلنا المباشر جاهز للشراء الفوري كاش، هل في إمكانية لتفاوض بسيط في السعر عشان نقرب المسافات ونخلص المعاينة في أسرع وقت؟"
 ```
 
-This structural prompt allows Leila to negotiate prices down, securing exclusive under-market assets for Sierra Blu's buyers.
+This structural prompt allows Leila to negotiate prices down, securing exclusive under-market assets for Sierra Estates's buyers.

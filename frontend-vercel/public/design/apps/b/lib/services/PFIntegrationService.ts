@@ -1,6 +1,6 @@
 /**
  * Property Finder Integration Service
- * Syncs leads and listings between Sierra Blu CRM and PF Enterprise API (atlas.propertyfinder.com/v1)
+ * Syncs leads and listings between Sierra Estates CRM and PF Enterprise API (atlas.propertyfinder.com/v1)
  */
 
 import { pfClient, PFListingRequest } from '../property-finder-client';

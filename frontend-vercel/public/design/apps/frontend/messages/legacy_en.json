@@ -1,6 +1,6 @@
 {
   "common": {
-    "appName": "Sierra Blue Realty",
+    "appName": "Sierra Estatese Realty",
     "tagline": "Luxury Real Estate Excellence",
     "loading": "Loading...",
     "save": "Save",
@@ -153,7 +153,7 @@
     "scripts": {
       "intake": {
         "title": "Icebreaker & Intake",
-        "text": "Good evening, {name}! This is Sierra Blu Realty... I'm calling about your rental inquiry in New Cairo. Our approach is a bit different; our AI monitors the market in real-time to find your perfect match quickly, without wasting your time on properties that don't exist...",
+        "text": "Good evening, {name}! This is Sierra Estates Realty... I'm calling about your rental inquiry in New Cairo. Our approach is a bit different; our AI monitors the market in real-time to find your perfect match quickly, without wasting your time on properties that don't exist...",
         "tasks": [
           "Verify correct name",
           "Explain AI advantage",
@@ -190,7 +190,7 @@
       },
       "closed": {
         "title": "Deal Finalization",
-        "text": "Congratulations on your new home! Sierra Blu is always here if you need anything during your stay.",
+        "text": "Congratulations on your new home! Sierra Estates is always here if you need anything during your stay.",
         "tasks": [
           "Sign contract",
           "Collect commission",
@@ -344,7 +344,7 @@
     "editorialProtected": "Manually edited — sync will not overwrite"
   },
   "landing": {
-    "brand": "SIERRA BLU",
+    "brand": "SIERRA ESTATES",
     "sub": "REALTY",
     "tagline": "INTELLIGENCE-LED PROPERTY ADVISORY",
     "heroH1": [
@@ -360,8 +360,8 @@
     "featuredTitle": "Featured Properties",
     "ctaButton": "Explore Properties",
     "contactUs": "Contact Us",
-    "about": "About Sierra Blu",
-    "aboutText": "Sierra Blu Realty is your gateway to luxury real estate in Egypt. We curate the finest properties across Cairo, the North Coast, and Ain Sokhna.",
+    "about": "About Sierra Estates",
+    "aboutText": "Sierra Estates Realty is your gateway to luxury real estate in Egypt. We curate the finest properties across Cairo, the North Coast, and Ain Sokhna.",
     "privacyPolicy": "Privacy Policy",
     "termsOfService": "Terms of Service"
   },
@@ -377,7 +377,7 @@
     "enlistExecutive": "Enlist Executive",
     "authorizeCredentials": "Authorize professional credentials",
     "enlistmentModalTitle": "Executive Enlistment",
-    "enlistmentModalSub": "Onboard a strategic partner to the Sierra Blu ecosystem",
+    "enlistmentModalSub": "Onboard a strategic partner to the Sierra Estates ecosystem",
     "legalName": "Legal Name",
     "strategicRole": "Strategic Role",
     "colorTheme": "Color Theme",
@@ -401,7 +401,7 @@
     "compound": "Compound / Area",
     "price": "Extracted Price",
     "statusPassed": "Audit Passed (DQE Passed) - No Duplicates",
-    "previewLabel": "Sierra Blu Ad Preview",
+    "previewLabel": "Sierra Estates Ad Preview",
     "btnDownload": "Download Advertisement Image",
     "waiting": "Waiting for data entry...",
     "unknown": "Not Specified",
@@ -469,7 +469,7 @@
     "controls": "Navigation Controls"
   },
   "os": {
-    "version": "Sierra Blue OS V4.0",
+    "version": "Sierra Estatese OS V4.0",
     "status": "Neural Core Synchronized",
     "orchestration": "Operational Orchestration Ledger",
     "analyzer": "Market Signal Reconstructor"
@@ -482,7 +482,7 @@
     "nexus": "Integration Nexus",
     "intelligence": "Market Intelligence",
     "media": "Media Hub",
-    "greeting": "Welcome to the Sierra Blu Command Center. Total system oversight and tactical intelligence at your fingertips.",
+    "greeting": "Welcome to the Sierra Estates Command Center. Total system oversight and tactical intelligence at your fingertips.",
     "systemStatus": "System Status",
     "operational": "All Systems Operational",
     "deployPatch": "Deploy Patch",
@@ -513,7 +513,7 @@
     "securityAudit": "Security Audit Trail",
     "login": {
       "title": "Intelligence Command",
-      "subtitle": "Sierra Blue Administrative Oversight",
+      "subtitle": "Sierra Estatese Administrative Oversight",
       "identifier": "Admin Identifier",
       "securityKey": "Security Key",
       "initialize": "Initialize Override",

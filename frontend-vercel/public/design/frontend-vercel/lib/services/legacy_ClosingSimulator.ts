@@ -4,7 +4,7 @@ import { assessLegalRisk } from './legal-brain';
 import { Unit } from '../models/schema';
 
 /**
- * SIERRA BLU — STAGE 10: CLOSING SIMULATOR
+ * SIERRA ESTATES — STAGE 10: CLOSING SIMULATOR
  * "Predicting the finish line with deterministic precision."
  * This service runs financial and legal simulations to project the outcome of a real estate transaction.
  * Mandate: Provide investment stakeholders with a transparent view of the 'Final Settlement' before signature.

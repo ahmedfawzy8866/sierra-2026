@@ -16,8 +16,8 @@ logging.basicConfig(level=os.getenv("LOG_LEVEL", "INFO"))
 logger = logging.getLogger(__name__)
 
 app = FastAPI(
-    title="Sierra Blu API",
-    description="Consolidated Python backend for Sierra Blu integrations.",
+    title="Sierra Estates API",
+    description="Consolidated Python backend for Sierra Estates integrations.",
     version="1.0.0",
 )
 
@@ -33,7 +33,7 @@ sync_hub = PropertyFinderSyncHub()
 
 
 class PortfolioAsset(BaseModel):
-    id: str = Field(..., description="Internal Sierra Blu asset identifier")
+    id: str = Field(..., description="Internal Sierra Estates asset identifier")
     title_en: str | None = None
     title_ar: str | None = None
     price: int | float | None = None

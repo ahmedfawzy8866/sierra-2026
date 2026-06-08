@@ -8,10 +8,10 @@ import JobCard from '@/components/UI/JobCard';
 const COPY = {
   en: {
     dir: 'ltr' as const,
-    pageTitle: 'Join Our Team | Sierra Blu',
+    pageTitle: 'Join Our Team | Sierra Estates',
     tagline: 'Now Hiring',
     heroH: 'Build the Future of Real Estate',
-    heroSub: 'Sierra Blu is looking for talented individuals passionate about excellence, intelligence, and transforming the property market.',
+    heroSub: 'Sierra Estates is looking for talented individuals passionate about excellence, intelligence, and transforming the property market.',
     openingsH: 'Open Positions',
     openings: [
       { title: 'Senior Property Advisor', location: 'Cairo', type: 'Full-time', desc: 'Lead client relationships and deliver premium advisory services across our portfolio.' },
@@ -19,7 +19,7 @@ const COPY = {
       { title: 'Content & Marketing Manager', location: 'Cairo', type: 'Full-time', desc: 'Shape our brand voice and create compelling market narratives.' },
       { title: 'Operations Specialist', location: 'Cairo', type: 'Full-time', desc: 'Optimize our internal workflows and client experience processes.' },
     ],
-    culturH: 'Why Join Sierra Blu?',
+    culturH: 'Why Join Sierra Estates?',
     culture: [
       'Work at the intersection of technology and luxury real estate',
       'Collaborate with a small, elite team pushing boundaries',

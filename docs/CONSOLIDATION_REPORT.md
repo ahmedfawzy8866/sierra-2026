@@ -12,7 +12,7 @@
 
 | Property | Details |
 |----------|---------|
-| **Name** | `sierra-blu-platform` |
+| **Name** | `sierra-estates-platform` |
 | **Tech Stack** | Next.js 16.2.4, React 19, TypeScript, Tailwind CSS v4 |
 | **Database** | Firebase Firestore + Firebase Auth |
 | **AI** | Google Gemini 1.5 Flash / Gemini 2.5 Flash-Lite via OpenClaw |
@@ -26,7 +26,7 @@
 | **Build & Deploy** | `npm run build` / `npm run dev` (Turbopack), `vercel.json` already present |
 | **Tests** | No automated test suite found (none configured) |
 
-This is a fully-featured, production-grade **PropTech internal platform** for Sierra Blu Realty.
+This is a fully-featured, production-grade **PropTech internal platform** for Sierra Estates Realty.
 
 ---
 
@@ -67,7 +67,7 @@ This is a fully-featured, production-grade **PropTech internal platform** for Si
 
 ---
 
-### Source Repository 2 — `ahmedfawzy8866/sierra-blu-realty`
+### Source Repository 2 — `ahmedfawzy8866/sierra-estates-realty`
 
 | Property | Details |
 |----------|---------|
@@ -112,7 +112,7 @@ imports/
   New-folder/
     README.md         ← Analysis of my-app vs target
     docs/
-      CODEX.md              ← Sierra Blu AI OS architecture doc
+      CODEX.md              ← Sierra Estates AI OS architecture doc
       NEXUS_REGISTRY.md     ← API/schema contracts
       implementation_plan.md ← Engineering phases blueprint
 
@@ -226,7 +226,7 @@ The target repo already has a `vercel.json` with:
 ### Short-term
 - [ ] **Add test suite**: Consider adding Vitest or Jest for unit testing services like `WhatsAppParserService.ts`, AI prompt logic, and financial engine
 - [ ] **Review `imports/New-folder/docs/implementation_plan.md`**: Several phases are marked `⏳ IN PROGRESS` — pick up from Phase 2 (MaintenanceMonitor, ImageLinkHub)
-- [ ] **Make `sierra-blu-realty` and `microsoft-vs-code` accessible** if there is code to import from them
+- [ ] **Make `sierra-estates-realty` and `microsoft-vs-code` accessible** if there is code to import from them
 
 ### Future
 - [ ] If `OpenClaw` is intended as a standalone service, scaffold it under `apps/openclaw/`
@@ -242,7 +242,7 @@ The target repo already has a `vercel.json` with:
 | `ahmedfawzy8866/New-folder` (my-app) | ✅ Analyzed — not imported (superseded by target) | See `imports/New-folder/README.md` |
 | `ahmedfawzy8866/New-folder` (whatsapp-scraper-bot) | ✅ Imported | `apps/whatsapp-scraper-bot/` |
 | `ahmedfawzy8866/New-folder` (docs) | ✅ Imported | `imports/New-folder/docs/` |
-| `ahmedfawzy8866/sierra-blu-realty` | ❌ Inaccessible (404) | — |
+| `ahmedfawzy8866/sierra-estates-realty` | ❌ Inaccessible (404) | — |
 | `ahmedfawzy8866/microsoft-vs-code` | ❌ Inaccessible (404) | — |
 | `ahmedfawzy8866/OpenClaw` | ⚠️ Empty | — |
 

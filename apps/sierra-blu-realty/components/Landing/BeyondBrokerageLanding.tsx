@@ -268,7 +268,7 @@ export default function BeyondBrokerageLanding() {
             <span className="font-['Playfair_Display'] text-[16px] font-bold text-[#050B14] tracking-[-0.5px]">S</span>
           </div>
           <div className="flex flex-col">
-            <span className="font-['Poppins'] text-[14px] font-semibold tracking-[0.12em] text-white">SIERRA BLU</span>
+            <span className="font-['Poppins'] text-[14px] font-semibold tracking-[0.12em] text-white">SIERRA ESTATES</span>
             <span className="font-['Inter'] text-[9px] tracking-[0.2em] text-[#D4AF37] uppercase">Realty · Beyond Brokerage</span>
           </div>
         </Link>
@@ -301,7 +301,7 @@ export default function BeyondBrokerageLanding() {
 
         <div className="absolute top-[110px] right-[52px] flex items-center gap-[10px] bg-[#0A1628]/70 backdrop-blur-[12px] border border-[#D4AF37]/30 rounded-[4px] px-[16px] py-[10px] text-[11px] tracking-[0.08em] text-[#D4AF37] uppercase animate-fade-slide-down" style={{ animationDelay: '1.5s' }}>
           <div className="w-[8px] h-[8px] rounded-full bg-[#D4AF37] animate-pulse-dot"></div>
-          Verified by Sierra Blu · April 2026
+          Verified by Sierra Estates · April 2026
         </div>
 
         <div className="relative z-10 max-w-[780px]">
@@ -313,7 +313,7 @@ export default function BeyondBrokerageLanding() {
             Human Expertise.<br/><em className="not-italic italic text-[#D4AF37]">AI Precision.</em><br/>Better Decisions.
           </h1>
           <p className="text-[16px] leading-[1.7] text-white/85 max-w-[480px] mb-[48px] animate-fade-up" style={{ animationDelay: '0.7s' }}>
-            Sierra Blu Realty combines professional advisory with advanced AI-powered market analysis to identify the most suitable opportunities across New Cairo & Fifth Settlement.
+            Sierra Estates Realty combines professional advisory with advanced AI-powered market analysis to identify the most suitable opportunities across New Cairo & Fifth Settlement.
           </p>
           <div className="flex items-center gap-[20px] animate-fade-up" style={{ animationDelay: '0.9s' }}>
             <Link href="#properties" className="bg-[#D4AF37] text-[#050B14] px-[36px] py-[16px] rounded-[3px] font-['Poppins'] text-[13px] font-semibold tracking-[0.08em] hover:-translate-y-[2px] hover:shadow-[0_8px_32px_rgba(212,175,55,0.35)] transition-all duration-200 uppercase inline-block">
@@ -582,7 +582,7 @@ export default function BeyondBrokerageLanding() {
                 We Engineer<br/><em className="not-italic italic text-[#D4AF37]">Better Decisions</em>
               </h2>
               <p className="text-[15px] leading-[1.75] text-white/85 mb-[24px]">
-                Sierra Blu Realty is built on expertise, intelligence, and transparency. Our approach combines professional advisors with advanced AI-powered analysis to identify the most relevant opportunities for each client.
+                Sierra Estates Realty is built on expertise, intelligence, and transparency. Our approach combines professional advisors with advanced AI-powered analysis to identify the most relevant opportunities for each client.
               </p>
               <p className="text-[15px] leading-[1.75] text-white/60 mb-[40px]">
                 Instead of overwhelming clients with listings, we focus on understanding priorities, analyzing options, and guiding smarter decisions. We guide decisions, not just transactions.
@@ -617,9 +617,9 @@ export default function BeyondBrokerageLanding() {
           </h2>
           <div className="grid grid-cols-3 gap-[20px] mt-[56px]">
             {[
-              { text: "\"Sierra Blu found us a penthouse in CFC that matched every criterion — within 72 hours. The AI matching system is genuinely impressive.\"", initials: 'JM', name: 'James Mitchell', role: 'International Executive · Expat' },
+              { text: "\"Sierra Estates found us a penthouse in CFC that matched every criterion — within 72 hours. The AI matching system is genuinely impressive.\"", initials: 'JM', name: 'James Mitchell', role: 'International Executive · Expat' },
               { text: "\"As an investor, the ROI analysis was exceptional. They didn't just show properties — they showed me why each one was the right financial decision.\"", initials: 'SR', name: 'Sarah Rahman', role: 'Real Estate Investor · Dubai' },
-              { text: "\"Relocated from London to New Cairo — Sierra Blu made the entire process feel effortless. True advisors, not salespeople.\"", initials: 'AK', name: 'Ahmed Khalil', role: 'Corporate Relocation · Mivida' }
+              { text: "\"Relocated from London to New Cairo — Sierra Estates made the entire process feel effortless. True advisors, not salespeople.\"", initials: 'AK', name: 'Ahmed Khalil', role: 'Corporate Relocation · Mivida' }
             ].map((t, i) => (
               <div key={i} className={`bg-[#1A3D6B]/20 border border-[#D4AF37]/10 rounded-[6px] p-[36px] transition-colors duration-300 hover:border-[#D4AF37]/30 reveal reveal-delay-\${i}`}>
                 <div className="flex gap-[4px] mb-[20px]">
@@ -671,7 +671,7 @@ export default function BeyondBrokerageLanding() {
                   <span className="font-['Playfair_Display'] text-[16px] font-bold text-[#050B14] tracking-[-0.5px]">S</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-['Poppins'] text-[14px] font-semibold tracking-[0.12em] text-white">SIERRA BLU</span>
+                  <span className="font-['Poppins'] text-[14px] font-semibold tracking-[0.12em] text-white">SIERRA ESTATES</span>
                   <span className="font-['Inter'] text-[9px] tracking-[0.2em] text-[#D4AF37] uppercase">Realty · Beyond Brokerage</span>
                 </div>
               </Link>
@@ -690,7 +690,7 @@ export default function BeyondBrokerageLanding() {
             {[
               { title: 'Properties', links: ['For Sale', 'For Rent', 'New Developments', 'Investment Picks', 'Executive Rentals'] },
               { title: 'Compounds', links: ['Mivida', 'Hyde Park', 'Cairo Festival City', 'Mountain View', 'Palm Hills'] },
-              { title: 'Company', links: ['About Sierra Blu', 'Our Services', 'Intelligence Layer', 'Careers', 'Contact'] }
+              { title: 'Company', links: ['About Sierra Estates', 'Our Services', 'Intelligence Layer', 'Careers', 'Contact'] }
             ].map((col, i) => (
               <div key={i}>
                 <h4 className="font-['Poppins'] text-[11px] font-bold tracking-[0.2em] uppercase text-[#D4AF37] mb-[24px]">{col.title}</h4>
@@ -707,7 +707,7 @@ export default function BeyondBrokerageLanding() {
             ))}
           </div>
           <div className="border-t border-white/5 pt-[32px] flex items-center justify-between text-[12px] text-white/60">
-            <span>© 2026 <span className="text-[#D4AF37]">Sierra Blu Realty</span>. All Rights Reserved. New Cairo, Egypt.</span>
+            <span>© 2026 <span className="text-[#D4AF37]">Sierra Estates Realty</span>. All Rights Reserved. New Cairo, Egypt.</span>
             <span>Built with AI Intelligence · <span className="text-[#D4AF37]">Beyond Brokerage</span></span>
           </div>
         </div>

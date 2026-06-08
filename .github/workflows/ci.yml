@@ -176,9 +176,9 @@ jobs:
       - name: Check build size
         run: |
           echo "Web app size:"
-          du -sh apps/sierra-blu-realty/.next
+          du -sh apps/sierra-estates-realty/.next
           echo "Admin app size:"
-          du -sh apps/sierra-blu-admin-portal/dist || true
+          du -sh apps/sierra-estates-admin-portal/dist || true
           echo "Functions size:"
           du -sh functions/dist || true
 
@@ -187,6 +187,6 @@ jobs:
         with:
           name: builds-node-${{ matrix.node-version }}
           path: |
-            apps/sierra-blu-realty/.next
-            apps/sierra-blu-admin-portal/dist
+            apps/sierra-estates-realty/.next
+            apps/sierra-estates-admin-portal/dist
             functions/dist

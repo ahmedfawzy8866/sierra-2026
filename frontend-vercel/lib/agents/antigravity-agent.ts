@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — ANTIGRAVITY INTELLIGENCE AGENT
+ * SIERRA ESTATES — ANTIGRAVITY INTELLIGENCE AGENT
  * The neural bridge between the Telegram Bot and the Project Engines.
  */
 
@@ -59,7 +59,7 @@ export async function processAgentCommand(chatId: number, text: string): Promise
  * Uses Gemini to parse natural language into structured intent.
  */
 async function detectIntent(text: string) {
-  const systemPrompt = `You are the Sierra Blu Intent Dispatcher.
+  const systemPrompt = `You are the Sierra Estates Intent Dispatcher.
 Analyze the user's message and determine their intent.
 Available Intents:
 - analyze_lead: User wants to see a summary of a lead's profile/preferences. (Params: name)
@@ -188,7 +188,7 @@ async function handleGeneralQuery(text: string): Promise<AgentResponse> {
       [
         { 
           role: 'system', 
-          content: `ROLE: You are "Sierra," the Lead Concierge for Sierra Blu Realty.
+          content: `ROLE: You are "Sierra," the Lead Concierge for Sierra Estates Realty.
 CORE COMPETENCIES:
 1. The Subtle Interviewer: You extract key data points (Nationality, Family Size, Budget, Move-in Date) with professional warmth.
 2. Tone: Use "Editorial Luxury" tone — warm, refined, and authoritative. Speak exclusively in professional English with courtesy and quiet confidence.
@@ -302,7 +302,7 @@ async function handleStakeholderInterview(chatId: number, text: string): Promise
     [
       { 
         role: 'system', 
-        content: `You are Sierra from Sierra Blu — Lead Concierge for an elite Cairo property platform.
+        content: `You are Sierra from Sierra Estates — Lead Concierge for an elite Cairo property platform.
         Focus on qualifying the lead: Nationality, Family Size, Budget, Move-in Date.
         Be warm, professional, and precise. Speak exclusively in refined English with quiet confidence.`
       },

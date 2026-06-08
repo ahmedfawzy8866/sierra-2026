@@ -1,6 +1,6 @@
 version: '3.8'
 
-# 🌌 Sierra Blu 2027 — Self-Hosted n8n Workflow Automation Engine
+# 🌌 Sierra Estates 2027 — Self-Hosted n8n Workflow Automation Engine
 # Usage:
 #   docker-compose -f docker-compose.n8n.yml up -d
 #
@@ -9,7 +9,7 @@ version: '3.8'
 services:
   n8n:
     image: n8nio/n8n:latest
-    container_name: sierra-blu-n8n
+    container_name: sierra-estates-n8n
     restart: always
     ports:
       - "5678:5678"

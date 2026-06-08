@@ -1,4 +1,4 @@
-# Sierra Blu External Workflows
+# Sierra Estates External Workflows
 
 External automation scripts that sync data between Google Sheets, WhatsApp, Property Finder, and Firestore.
 

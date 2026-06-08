@@ -9,7 +9,7 @@ import { OrchestratorService } from '@/lib/services/orchestrator';
 import { GoogleSheetsSync } from '@/lib/services/sheets-sync';
 
 /**
- * SIERRA BLU — CRON: INGEST FROM GOOGLE SHEETS BUFFER
+ * SIERRA ESTATES — CRON: INGEST FROM GOOGLE SHEETS BUFFER
  *
  * Architecture: WhatsApp Scraper → Google Sheets (raw_messages tab) → this cron → Pipeline
  *

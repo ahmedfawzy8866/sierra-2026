@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sierra Blu — Beyond Brokerage</title>
+<title>Sierra Estates — Beyond Brokerage</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Inter:wght@300;400;500;600;700&family=Cairo:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -24,7 +24,7 @@
     --gold-deep: #987734;
     --red: #E63946;
     --red-deep: #B71C2C;
-    --sierra-blue: #1E88D9;
+    --sierra-estatese: #1E88D9;
   }
   * { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
   html, body { background: var(--navy-deep); }
@@ -224,7 +224,7 @@ const I = {
 // ─── DICTIONARY ────────────────────────────────────────────────────────
 const DICT = {
   en: {
-    dir:'ltr', brand:'SIERRA BLU', sub:'REALTY',
+    dir:'ltr', brand:'SIERRA ESTATES', sub:'REALTY',
     nav:['Properties','Smart Map','AI Features','Quick Request'],
     cta:'Enter Portal',
     heroBadge:'First & only platform in Egypt for New Cairo & Uptown',
@@ -275,14 +275,14 @@ const DICT = {
     formCompound:'Preferred compound',
     formSubmit:'Send Quick Request',
     formSuccess:'Thank you. A Sierra advisor will be in touch within four seconds.',
-    secWhy:'Why Sierra Blu',
-    whyH:'The Sierra Blu Standard',
+    secWhy:'Why Sierra Estates',
+    whyH:'The Sierra Estates Standard',
     why:[
       {icon:'◆',title:'Curated by Hand',desc:'Each listing personally reviewed by senior advisors. No noise, no overpricing. Only properties that meet our exacting standard.'},
       {icon:'◈',title:'Grounded in Data',desc:'AI-driven ROI modelling, live market comparisons, and growth corridor analysis. Conviction backed by evidence.'},
       {icon:'◉',title:'Dedicated Advisory',desc:'From first inquiry to final signature, one advisor who knows your criteria and responds in four seconds.'},
     ],
-    copyright:'© 2026 Sierra Blu Realty. All rights reserved.',
+    copyright:'© 2026 Sierra Estates Realty. All rights reserved.',
     sysTag:'Node-Sync v12.4 · Online',
     beds:'Beds', baths:'Baths', tagline:'PropTech Intelligence OS · 2026',
   },
@@ -366,7 +366,7 @@ function HeroLogo({size=140}) {
   return (
     <img
       src="assets/logo-red.png"
-      alt="Sierra Blu Shield"
+      alt="Sierra Estates Shield"
       style={{width:size, height:'auto'}}
       className="red-glow select-none pointer-events-none"
       draggable="false"
@@ -379,7 +379,7 @@ function FooterLogo({size=120}) {
   return (
     <img
       src="assets/logo-gold.png"
-      alt="Sierra Blu Heritage"
+      alt="Sierra Estates Heritage"
       style={{width:size, height:'auto'}}
       className="select-none pointer-events-none drop-shadow-[0_0_30px_rgba(200,150,26,0.3)]"
       draggable="false"
@@ -399,7 +399,7 @@ function Nav({lang, setLang, t}) {
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-silk ${scrolled?'bg-[#050B14]/95 backdrop-blur-xl border-b border-white/8 py-3':'bg-[#050B14]/60 backdrop-blur-md py-4'}`}>
       <div className="max-w-[1500px] mx-auto px-6 md:px-12 flex items-center justify-between gap-6">
         <div className="flex items-center gap-3">
-          <img src="assets/logo-red.png" alt="Sierra Blu" className="w-10 h-10 object-contain" draggable="false"/>
+          <img src="assets/logo-red.png" alt="Sierra Estates" className="w-10 h-10 object-contain" draggable="false"/>
           <div className="flex flex-col leading-none">
             <span className="font-serif text-xl font-semibold tracking-[0.12em] text-[#F4F0E8]">{t.brand}</span>
             <span className="text-[8px] uppercase tracking-[0.36em] font-sans font-medium text-[#E63946]/80 mt-1">{t.sub}</span>

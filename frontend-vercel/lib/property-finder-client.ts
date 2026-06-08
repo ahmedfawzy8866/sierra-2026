@@ -138,7 +138,7 @@ class PropertyFinderClient {
   }
 
   /**
-   * Alias for fetchLeads used by the Sierra Blu Wealth Registry protocol.
+   * Alias for fetchLeads used by the Sierra Estates Wealth Registry protocol.
    */
   public async fetchInvestmentStakeholderRegistry(params: Record<string, string> = {}): Promise<{ data: PFLead[]; pagination: any }> {
     return this.fetchLeads(params);

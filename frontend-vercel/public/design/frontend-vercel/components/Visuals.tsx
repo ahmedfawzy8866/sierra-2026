@@ -3,7 +3,7 @@
 import React, { useEffect, useRef } from 'react';
 
 /**
- * SIERRA BLU — GRAVITY WARP VISUAL SYSTEM V12.1
+ * SIERRA ESTATES — GRAVITY WARP VISUAL SYSTEM V12.1
  * A high-performance canvas animation simulating gravitational lensing
  * using Burnished Gold (#D4AF37) and Electric Cyan (#4299E1).
  */

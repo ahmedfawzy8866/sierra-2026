@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate Sierra Blu business analytics reports from Firestore."""
+"""Generate Sierra Estates business analytics reports from Firestore."""
 
 from __future__ import annotations
 
@@ -157,7 +157,7 @@ def _send_telegram_summary(report_title: str, totals: dict[str, Any]) -> None:
 
 def main() -> int:
     """CLI entry point."""
-    parser = argparse.ArgumentParser(description='Generate Sierra Blu business analytics reports.')
+    parser = argparse.ArgumentParser(description='Generate Sierra Estates business analytics reports.')
     parser.add_argument('--date-range', default=None, help='Optional YYYY-MM-DD:YYYY-MM-DD date range filter.')
     parser.add_argument('--output-dir', default='reports', help='Directory for markdown output.')
     parser.add_argument('--send-telegram', action='store_true', help='Send the summary to Telegram after generation.')
@@ -193,7 +193,7 @@ def main() -> int:
         )
 
         report_date = date.today().isoformat()
-        report_title = f'# Sierra Blu Analytics Report — {report_date}'
+        report_title = f'# Sierra Estates Analytics Report — {report_date}'
         report_body = dedent(f'''\
         {report_title}
 

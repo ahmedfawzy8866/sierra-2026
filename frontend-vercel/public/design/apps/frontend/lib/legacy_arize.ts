@@ -19,7 +19,7 @@ const arizeExporter = new GrpcOTLPTraceExporter({
 
 const sdk = new NodeSDK({
   resource: resourceFromAttributes({
-    [SEMRESATTRS_PROJECT_NAME]: process.env.ARIZE_PROJECT_NAME || "sierra-blu-platform",
+    [SEMRESATTRS_PROJECT_NAME]: process.env.ARIZE_PROJECT_NAME || "sierra-estates-platform",
   }),
   spanProcessors: [
     new BatchSpanProcessor(arizeExporter)
@@ -38,7 +38,7 @@ export const initArize = () => {
 };
 
 export const getTracer = (): Tracer => {
-  return trace.getTracer("sierra-blu-orchestrator");
+  return trace.getTracer("sierra-estates-orchestrator");
 };
 
 /**

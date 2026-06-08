@@ -3,7 +3,7 @@
 import React, { useEffect } from 'react';
 
 /**
- * Global Error Boundary for Sierra Blu Realty
+ * Global Error Boundary for Sierra Estates Realty
  * Optimized for Codex v4.0 Cinematic Aesthetics.
  * Provides a high-fidelity recovery node for systemic failures.
  */
@@ -21,7 +21,7 @@ export default function GlobalError({
   return (
     <html lang="en">
       <head>
-        <title>Strategic Anomaly | Sierra Blu Realty</title>
+        <title>Strategic Anomaly | Sierra Estates Realty</title>
         <style dangerouslySetInnerHTML={{ __html: `
           body {
             margin: 0;

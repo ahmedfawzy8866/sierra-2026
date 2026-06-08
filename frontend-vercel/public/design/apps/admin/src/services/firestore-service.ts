@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — ADMIN PORTAL FIRESTORE INTEGRATION
+ * SIERRA ESTATES — ADMIN PORTAL FIRESTORE INTEGRATION
  * Shared service to connect admin portal to the main Firestore database
  * and sync real-time data from the main app.
  */
@@ -98,7 +98,7 @@ export const firestoreService: FirestoreService = {
 };
 
 /**
- * Typed collection fetchers for common Sierra Blu collections
+ * Typed collection fetchers for common Sierra Estates collections
  */
 export const collections = {
   /**

@@ -1,4 +1,4 @@
-# 🔗 The Nexus Registry (Sierra Blu AI OS)
+# 🔗 The Nexus Registry (Sierra Estates AI OS)
 
 This registry defines the technical contracts between the **Frontend Orchestrator (Antigravity)** and the **Backend Agent (Google AI Studio)**. All changes to APIs, Firestore schemas, or AI response formats must be documented here to prevent integration failures.
 

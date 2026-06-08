@@ -1,7 +1,7 @@
 import * as admin from 'firebase-admin';
 
 /**
- * SIERRA BLU — FIREBASE ADMIN SERVICE (V12.1 Hardened)
+ * SIERRA ESTATES — FIREBASE ADMIN SERVICE (V12.1 Hardened)
  */
 
 // Proxy returned when Admin SDK is unavailable — prevents hard crashes
@@ -75,7 +75,7 @@ try {
       console.log('🔐 [Firebase] Attempting Application Default Credentials');
       admin.initializeApp({
         credential: admin.credential.applicationDefault(),
-        projectId: projectId || 'sierra-blu',
+        projectId: projectId || 'sierra-estates',
         storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
       });
     }

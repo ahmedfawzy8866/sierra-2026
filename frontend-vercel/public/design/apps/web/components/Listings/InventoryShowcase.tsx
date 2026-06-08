@@ -1,7 +1,7 @@
 'use client';
 
 /**
- * SIERRA BLU — INVENTORY SHOWCASE
+ * SIERRA ESTATES — INVENTORY SHOWCASE
  * Demonstrates how to use the useSierraBlu hook for data fetching
  * Component: High-fidelity grid of available properties with live data
  */

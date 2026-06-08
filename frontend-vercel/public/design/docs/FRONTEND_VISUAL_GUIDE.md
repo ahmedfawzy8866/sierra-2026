@@ -1,4 +1,4 @@
-# 🎨 SIERRA BLU FRONTEND — VISUAL TOUR
+# 🎨 SIERRA ESTATES FRONTEND — VISUAL TOUR
 
 ## Screenshot Guide
 
@@ -9,7 +9,7 @@
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  NAVIGATION BAR (Fixed at top)                                  │
-│  [Logo] SIERRA BLU         [Search Filters]  [AR] [☀️]  [CTA]   │
+│  [Logo] SIERRA ESTATES         [Search Filters]  [AR] [☀️]  [CTA]   │
 ├─────────────────────────────────────────────────────────────────┤
 │                                                                 │
 │                      HERO SECTION                              │
@@ -99,12 +99,12 @@
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  ADMIN HEADER                                                   │
-│  [Logo] SIERRA BLU                          [User Menu] [⚙️]    │
+│  [Logo] SIERRA ESTATES                          [User Menu] [⚙️]    │
 ├────────────────┬─────────────────────────────────────────────────┤
 │                │                                                 │
 │  SIDEBAR       │            LOGIN FORM                          │
 │  ────────────  │                                                 │
-│  SIERRA BLU    │      ┌─────────────────────────────────┐       │
+│  SIERRA ESTATES    │      ┌─────────────────────────────────┐       │
 │  Intelligence  │      │  ADMIN PORTAL LOGIN            │       │
 │  OS            │      │                                │       │
 │                │      │  📧 Email                      │       │
@@ -128,7 +128,7 @@
 - **Color**: Slate gray (#1E293B) with amber accents (#FCD34D)
 - **Form**: Clean, minimal login form
 - **Sidebar**: Fixed navigation with icons
-- **Branding**: "Sierra Blu Intelligence OS" tagline
+- **Branding**: "Sierra Estates Intelligence OS" tagline
 - **Typography**: Professional sans-serif
 
 **Key Features**:
@@ -198,7 +198,7 @@ Scroll Indicator:  Pulse animation (continuous)
 2. **Hero** (full viewport height, background image + gradients)
 3. **Smart Filters** (searchable property catalog)
 4. **Featured Listings** (3-column grid of property cards)
-5. **Why Sierra Blu** (3-column feature cards)
+5. **Why Sierra Estates** (3-column feature cards)
 6. **Market Intelligence** (Leaflet map with zones)
 7. **Meet Sierra** (AI chatbot showcase)
 8. **Testimonials** (Client stories with quotes)

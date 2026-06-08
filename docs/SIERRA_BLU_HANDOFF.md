@@ -1,4 +1,4 @@
-# ✦ SIERRA BLU REALTY — COMPLETE PROJECT HANDOFF ✦
+# ✦ SIERRA ESTATES REALTY — COMPLETE PROJECT HANDOFF ✦
 
 > **Date**: April 15, 2026  
 > **Platform Version**: V10.2.0 (Cinematic Reality)  
@@ -29,7 +29,7 @@
 
 ## 1. Executive Summary
 
-Sierra Blu is a **real estate intelligence platform** for the Egyptian luxury market. It is NOT a simple listings website — it is an **AI-powered operating system** that automates the entire lifecycle of a property transaction, from raw broker WhatsApp messages all the way to deal closure and feedback.
+Sierra Estates is a **real estate intelligence platform** for the Egyptian luxury market. It is NOT a simple listings website — it is an **AI-powered operating system** that automates the entire lifecycle of a property transaction, from raw broker WhatsApp messages all the way to deal closure and feedback.
 
 **What the system does in one sentence:**  
 > A broker sends a WhatsApp message → AI parses it into a structured listing → AI brands it → AI distributes it to portals → AI matches it with leads → AI generates a proposal → Agent closes the deal → System learns from outcome.
@@ -299,7 +299,7 @@ orchestrationState: {
 
 ## 6. The 10-Stage Orchestration Pipeline
 
-The heart of Sierra Blu. Controlled by [orchestrator.ts](file:///c:/OpenClaw/my-app/lib/services/orchestrator.ts).
+The heart of Sierra Estates. Controlled by [orchestrator.ts](file:///c:/OpenClaw/my-app/lib/services/orchestrator.ts).
 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
@@ -597,7 +597,7 @@ role: 'admin' | 'manager' | 'agent'
 #### Layout
 ```
 ┌─────────────────────────────────────────────────────────┐
-│  Header: SIERRA BLU — INTELLIGENCE PIPELINE [BASE 44]  │
+│  Header: SIERRA ESTATES — INTELLIGENCE PIPELINE [BASE 44]  │
 ├──────────┬──────────────────────┬───────────────────────┤
 │ Sidebar  │  Chat Interface     │  Tactical Monitor     │
 │ (4 agent │  (message log +     │  (pipeline visual +   │

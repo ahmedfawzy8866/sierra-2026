@@ -1,5 +1,5 @@
 # TASTESKILL V2 — QUALITY ASSURANCE REPORT
-## Sierra Blu Real Estate Application
+## Sierra Estates Real Estate Application
 
 **Date:** May 26, 2026  
 **Status:** 🟢 PRODUCTION READY  
@@ -131,7 +131,7 @@
 ## STEP 3D: HERO DISCIPLINE AUDIT
 
 ### Onboarding Intent Hero (Section 1)
-- **Headline:** "Sierra Blu" — 1 line, 6rem Playfair italic
+- **Headline:** "Sierra Estates" — 1 line, 6rem Playfair italic
 - **Subheadline:** "Find your next property. Invest with intelligence." — 1 line, 18px Inter
 - **CTA Visibility:** ✅ Three equal-weight buttons (no visual ambiguity)
 - **Contrast:** Navy background + ivory text + gold accents = WCAG AAA

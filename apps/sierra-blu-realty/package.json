@@ -1,5 +1,5 @@
 {
-  "name": "sierra-blu-realty",
+  "name": "sierra-estates-realty",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,8 +14,8 @@
     "test:ci": "jest --ci --coverage --testPathPattern=__tests__"
   },
   "dependencies": {
-    "@sierra-blu/agents": "workspace:*",
-    "@sierra-blu/db": "workspace:*",
+    "@sierra-estates/agents": "workspace:*",
+    "@sierra-estates/db": "workspace:*",
     "@arizeai/openinference-semantic-conventions": "^2.2.0",
     "@google-cloud/storage": "^7.19.0",
     "@google/generative-ai": "^0.24.1",

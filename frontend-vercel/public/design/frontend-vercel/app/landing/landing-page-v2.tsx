@@ -1,6 +1,6 @@
 "use client";
 /**
- * SIERRA BLU REALTY — PUBLIC LANDING PAGE V2
+ * SIERRA ESTATES REALTY — PUBLIC LANDING PAGE V2
  * ─────────────────────────────────────────────────────────────────
  * Route:  /landing   (customer-facing, no login required)
  * Portal: /          (advisor dashboard, login required)
@@ -459,7 +459,7 @@ function LandingContent() {
         <a href="#" className="sb-logo">
           <ShieldLogo size={36} dark={dark} />
           <div className="sb-logo-text">
-            <span className="sb-logo-name">Sierra Blu</span>
+            <span className="sb-logo-name">Sierra Estates</span>
             <span className="sb-logo-sub">Beyond Brokerage</span>
           </div>
         </a>
@@ -496,7 +496,7 @@ function LandingContent() {
           <p className="sb-hero-sub reveal">
             {ar
               ? "سييرا بلو — أبعد من مجرد وساطة. نجمع بين أفضل العقارات في التجمع الخامس مع ذكاء اصطناعي يجد لك ما يناسبك بدقة."
-              : "Sierra Blu Realty — curating the finest properties across New Cairo's top compounds, powered by AI that understands exactly what you're looking for."}
+              : "Sierra Estates Realty — curating the finest properties across New Cairo's top compounds, powered by AI that understands exactly what you're looking for."}
           </p>
           <div className="sb-hero-btns reveal">
             <button className="sb-btn-primary" onClick={() => document.getElementById("listings")?.scrollIntoView({ behavior: "smooth" })}>
@@ -661,7 +661,7 @@ function LandingContent() {
               <div>
                 <div className="sb-chat-name">Sierra · سييرا 🤖</div>
                 <div className="sb-chat-bubble sb-chat-bot">
-                  {ar ? "أهلاً! أنا سييرا 👋\nمساعدتك الذكية في سييرا بلو. حضرتك عايز/ة إيه؟" : "Hello! I'm Sierra 👋\nYour AI real estate advisor at Sierra Blu. What are you looking for?"}
+                  {ar ? "أهلاً! أنا سييرا 👋\nمساعدتك الذكية في سييرا بلو. حضرتك عايز/ة إيه؟" : "Hello! I'm Sierra 👋\nYour AI real estate advisor at Sierra Estates. What are you looking for?"}
                 </div>
               </div>
               <div className="sb-chat-bubble sb-chat-user">{ar ? "عايز فيلا في ميفيدا، ٣ غرف، حوالي ١٥ مليون" : "Looking for a 3BR villa in Mivida, around 15M EGP"}</div>
@@ -717,7 +717,7 @@ function LandingContent() {
             <div className="sb-footer-logo-row">
               <ShieldLogo size={32} dark={dark} />
               <div>
-                <div className="sb-footer-brand-name">Sierra Blu</div>
+                <div className="sb-footer-brand-name">Sierra Estates</div>
                 <div className="sb-footer-brand-sub">Beyond Brokerage</div>
               </div>
             </div>
@@ -741,7 +741,7 @@ function LandingContent() {
         </div>
 
         <div className="sb-footer-bottom">
-          <span className="sb-footer-copy">© 2026 Sierra Blu Realty. All Rights Reserved.</span>
+          <span className="sb-footer-copy">© 2026 Sierra Estates Realty. All Rights Reserved.</span>
           <div className="sb-footer-bottom-row">
             <div className="sb-pf-badge"><span className="sb-pf-dot" />PF Synced</div>
             <a href="#" className="sb-footer-link">Privacy</a>

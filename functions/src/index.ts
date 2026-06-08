@@ -10,7 +10,7 @@ const db = admin.firestore();
 
 // ── Health check (HTTP) ────────────────────────────────────
 export const api = functions.https.onRequest((req, res) => {
-  res.json({ message: 'Sierra Blu API - Health check OK' });
+  res.json({ message: 'Sierra Estates API - Health check OK' });
 });
 
 // ── Scheduled health ping ──────────────────────────────────

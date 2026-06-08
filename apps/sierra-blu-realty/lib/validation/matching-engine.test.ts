@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — MATCHING ENGINE VALIDATION SUITE
+ * SIERRA ESTATES — MATCHING ENGINE VALIDATION SUITE
  * Tests the neural matching accuracy against real/synthetic data.
  * 
  * Run: npm run test:matching
@@ -161,7 +161,7 @@ const TEST_UNITS: Partial<Unit>[] = [
  * Validation Suite Runner
  */
 export async function runMatchingValidationSuite() {
-  console.log('🧪 SIERRA BLU MATCHING ENGINE VALIDATION\n');
+  console.log('🧪 SIERRA ESTATES MATCHING ENGINE VALIDATION\n');
 
   const testLeadIds: string[] = [];
   const testUnitIds: string[] = [];

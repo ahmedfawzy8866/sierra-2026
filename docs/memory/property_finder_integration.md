@@ -2,7 +2,7 @@
 > **Path:** `docs/memory/property_finder_integration.md`  
 > **Parent Node:** `docs/memory/index.md`
 
-This document details the active credentials, API routes, and webhook synchronization mechanisms for the **Property Finder (PF) Enterprise API** integration in Sierra Blu.
+This document details the active credentials, API routes, and webhook synchronization mechanisms for the **Property Finder (PF) Enterprise API** integration in Sierra Estates.
 
 ---
 

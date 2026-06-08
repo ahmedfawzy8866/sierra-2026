@@ -1,6 +1,6 @@
 {
   "mcpServers": {
-    "sierra-blu": {
+    "sierra-estates": {
       "command": "openclaw",
       "args": [
         "mcp",

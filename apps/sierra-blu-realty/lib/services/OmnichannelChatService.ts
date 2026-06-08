@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — OMNICHANNEL CHAT SERVICE
+ * SIERRA ESTATES — OMNICHANNEL CHAT SERVICE
  * The master unified orchestrator coordinating all chat channels (WhatsApp, Telegram, Web).
  * Strictly manages Investment Stakeholders, the Strategic Pipeline, and Portfolio Assets.
  */

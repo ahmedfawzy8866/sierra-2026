@@ -11,7 +11,7 @@ import {
 import { COLLECTIONS } from '../models/schema';
 
 /**
- * SIERRA BLU NEURAL MEMORY HUB
+ * SIERRA ESTATES NEURAL MEMORY HUB
  * Purpose: Global learning across all deals and lead rejections.
  */
 export class MemoryService {

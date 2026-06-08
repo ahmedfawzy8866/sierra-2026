@@ -16,13 +16,13 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Sierra Blu Realty | سييرا بلو العقارية',
+  title: 'Sierra Estates Realty | سييرا بلو العقارية',
   description:
     "Cinematic Luxury Real Estate — Premium properties across Egypt's most exclusive communities | عقارات فاخرة في أرقى المجتمعات المصرية",
-  keywords: ['real estate', 'luxury', 'Egypt', 'New Cairo', 'عقارات', 'فاخرة', 'مصر', 'Sierra Blu'],
+  keywords: ['real estate', 'luxury', 'Egypt', 'New Cairo', 'عقارات', 'فاخرة', 'مصر', 'Sierra Estates'],
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'),
   openGraph: {
-    title: 'Sierra Blu Realty',
+    title: 'Sierra Estates Realty',
     description: "Egypt's Premier Property Intelligence Platform",
     type: 'website',
     locale: 'en_US',

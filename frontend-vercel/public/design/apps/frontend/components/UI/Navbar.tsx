@@ -14,13 +14,13 @@ export function Navbar() {
       </div>
       
       <div className="hidden md:flex items-center space-x-12">
-        <Link href="/properties" className="text-sierra-navy font-medium text-sm tracking-wide uppercase hover:text-sierra-blue transition-colors duration-300">
+        <Link href="/properties" className="text-sierra-navy font-medium text-sm tracking-wide uppercase hover:text-sierra-estatese transition-colors duration-300">
           Portfolio
         </Link>
-        <Link href="/concierge" className="text-sierra-navy font-medium text-sm tracking-wide uppercase hover:text-sierra-blue transition-colors duration-300">
+        <Link href="/concierge" className="text-sierra-navy font-medium text-sm tracking-wide uppercase hover:text-sierra-estatese transition-colors duration-300">
           Concierge
         </Link>
-        <Link href="/journal" className="text-sierra-navy font-medium text-sm tracking-wide uppercase hover:text-sierra-blue transition-colors duration-300">
+        <Link href="/journal" className="text-sierra-navy font-medium text-sm tracking-wide uppercase hover:text-sierra-estatese transition-colors duration-300">
           Journal
         </Link>
       </div>

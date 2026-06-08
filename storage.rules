@@ -1,7 +1,7 @@
 rules_version = '2';
 
 // ============================================================================
-// Sierra Blu — Cloud Storage Security Rules
+// Sierra Estates — Cloud Storage Security Rules
 //
 // Uploads run server-side via the Admin SDK (see app/api/admin/media/upload),
 // which BYPASSES these rules. These govern direct client access only.

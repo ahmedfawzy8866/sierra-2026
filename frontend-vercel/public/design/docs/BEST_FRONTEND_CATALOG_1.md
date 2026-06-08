@@ -1,13 +1,13 @@
-# BEST FRONTEND CODE — SIERRA BLU REALTY CATALOG
+# BEST FRONTEND CODE — SIERRA ESTATES REALTY CATALOG
 Complete audit of all frontend deliverables across chats
 
 ---
 
 ## 🏆 TIER 1: PRODUCTION-READY LANDING PAGES
 
-### 1. **sierra-blu-realty.html** (54KB) ⭐ MOST COMPLETE
+### 1. **sierra-estates-realty.html** (54KB) ⭐ MOST COMPLETE
 **Status:** FULL LUXURY WEBSITE — Dark/Light theme toggle, Arabic RTL ready  
-**Location:** `/mnt/user-data/outputs/sierra-blu-realty.html`
+**Location:** `/mnt/user-data/outputs/sierra-estates-realty.html`
 
 **What's Inside:**
 - ✅ Fixed navigation with logo + menu (responsive)
@@ -57,9 +57,9 @@ Complete audit of all frontend deliverables across chats
 
 ---
 
-### 2. **sierra-blu-realty-v2.html** (25KB) ⭐ LEAN & FAST
+### 2. **sierra-estates-realty-v2.html** (25KB) ⭐ LEAN & FAST
 **Status:** LIGHT MODE FOCUSED — Optimized for speed, minimal but complete  
-**Location:** `/mnt/user-data/outputs/sierra-blu-realty-v2.html`
+**Location:** `/mnt/user-data/outputs/sierra-estates-realty-v2.html`
 
 **What's Inside:**
 - ✅ Light mode hero (blue gradient background)
@@ -159,7 +159,7 @@ Complete audit of all frontend deliverables across chats
 ## 🎯 DEPLOYMENT STRATEGY
 
 ### **Client-Facing (Public Website)**
-**Use:** `sierra-blu-realty.html`
+**Use:** `sierra-estates-realty.html`
 - All sections included (hero, map, properties, CTA, footer)
 - Dark/light toggle for modern UX (if frontend detects dark mode preference)
 - Mobile optimized
@@ -188,7 +188,7 @@ Complete audit of all frontend deliverables across chats
 ```bash
 # Structure
 app/
-├── page.tsx                    # Use sierra-blu-realty.html
+├── page.tsx                    # Use sierra-estates-realty.html
 ├── layout.tsx                  # Nav + footer (extract from HTML)
 ├── inventory/
 │   ├── page.tsx               # Inventory grid page
@@ -246,7 +246,7 @@ app/
 
 ## 📝 PRODUCTION CHECKLIST
 
-Before deploying sierra-blu-realty.html → Next.js:
+Before deploying sierra-estates-realty.html → Next.js:
 
 - [ ] Replace emoji property images with real real estate photos
 - [ ] Update compound list with live data from Firestore
@@ -266,10 +266,10 @@ Before deploying sierra-blu-realty.html → Next.js:
 
 ```
 ┌─────────────────────────────────────────────────────┐
-│         SIERRA BLU REALTY FRONTEND STACK            │
+│         SIERRA ESTATES REALTY FRONTEND STACK            │
 ├─────────────────────────────────────────────────────┤
 │                                                      │
-│  PUBLIC SITE (sierra-blu-realty.html)              │
+│  PUBLIC SITE (sierra-estates-realty.html)              │
 │  ├─ Hero + Search Filter                           │
 │  ├─ Interactive Map (7 compounds)                  │
 │  ├─ Featured Properties (top 3 AI scores)          │
@@ -300,5 +300,5 @@ All three tiers use:
 ---
 
 **TIMESTAMP:** May 20, 2026  
-**MAINTAINED BY:** Claude (Sierra Blu Frontend Architect)  
+**MAINTAINED BY:** Claude (Sierra Estates Frontend Architect)  
 **NEXT REVIEW:** Post-integration to Next.js + Firebase

@@ -20,7 +20,7 @@ export function HubtownMap({ lat = 34.0522, lng = -118.2437 }: HubtownMapProps) 
       
       {/* Decorative center pin */}
       <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 mt-12">
-        <div className="w-4 h-4 bg-sierra-blue rounded-full shadow-[0_0_0_4px_rgba(30,136,217,0.2)] animate-pulse" />
+        <div className="w-4 h-4 bg-sierra-estatese rounded-full shadow-[0_0_0_4px_rgba(30,136,217,0.2)] animate-pulse" />
       </div>
     </div>
   );

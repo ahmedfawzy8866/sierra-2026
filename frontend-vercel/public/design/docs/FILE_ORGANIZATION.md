@@ -31,12 +31,12 @@ outputs/
 
 ### **1. Create Project Root**
 ```
-C:\Users\YourName\Desktop\sierra-blue\
+C:\Users\YourName\Desktop\sierra-estatese\
 ```
 
 ### **2. Create Subdirectories**
 ```
-sierra-blue/
+sierra-estatese/
 ├── lib/                           ← Create this
 ├── app/
 │   ├── landing/                   ← Create this
@@ -54,41 +54,41 @@ sierra-blue/
 
 #### **Root Level**
 ```
-sierra-blue/.env.local              ← FROM .env.local-UPDATED (rename!)
-sierra-blue/package.json            ← FROM package.json (overwrite existing)
+sierra-estatese/.env.local              ← FROM .env.local-UPDATED (rename!)
+sierra-estatese/package.json            ← FROM package.json (overwrite existing)
 ```
 
 #### **lib/ Folder**
 ```
-sierra-blue/lib/firebase-config.ts              ← FROM firebase-config-UPDATED.ts (rename!)
-sierra-blue/lib/propertyFinder-service.ts      ← FROM propertyFinder-service.ts
+sierra-estatese/lib/firebase-config.ts              ← FROM firebase-config-UPDATED.ts (rename!)
+sierra-estatese/lib/propertyFinder-service.ts      ← FROM propertyFinder-service.ts
 ```
 
 #### **app/landing/ Folder**
 ```
-sierra-blue/app/landing/page.tsx                ← FROM page.tsx
+sierra-estatese/app/landing/page.tsx                ← FROM page.tsx
 ```
 
 #### **components/ Folder**
 ```
-sierra-blue/components/PropertyMap.tsx          ← FROM PropertyMap.tsx
+sierra-estatese/components/PropertyMap.tsx          ← FROM PropertyMap.tsx
 ```
 
 #### **scripts/ Folder**
 ```
-sierra-blue/scripts/importFromExcel.ts          ← FROM importFromExcel.ts
+sierra-estatese/scripts/importFromExcel.ts          ← FROM importFromExcel.ts
 ```
 
 #### **API Routes** (From API_ROUTES_SPLIT.txt)
 ```
-sierra-blue/app/api/leads/route.ts              ← Copy FIRST section from API_ROUTES_SPLIT.txt
-sierra-blue/app/api/viewing-requests/route.ts  ← Copy SECOND section from API_ROUTES_SPLIT.txt
-sierra-blue/app/api/properties/sync/route.ts   ← Copy THIRD section from API_ROUTES_SPLIT.txt
+sierra-estatese/app/api/leads/route.ts              ← Copy FIRST section from API_ROUTES_SPLIT.txt
+sierra-estatese/app/api/viewing-requests/route.ts  ← Copy SECOND section from API_ROUTES_SPLIT.txt
+sierra-estatese/app/api/properties/sync/route.ts   ← Copy THIRD section from API_ROUTES_SPLIT.txt
 ```
 
 #### **data/ Folder** (Your Excel File)
 ```
-sierra-blue/data/properties.xlsx                ← Download your Excel file separately
+sierra-estatese/data/properties.xlsx                ← Download your Excel file separately
                                                    and place it here
 ```
 
@@ -107,7 +107,7 @@ sierra-blue/data/properties.xlsx                ← Download your Excel file sep
 ## Complete File Tree After Setup
 
 ```
-sierra-blue/
+sierra-estatese/
 │
 ├── .env.local                              ✓ Your Firebase credentials
 ├── package.json                            ✓ Dependencies
@@ -165,24 +165,24 @@ sierra-blue/
 ## How to Copy Files on Windows
 
 ### **Method 1: Using File Explorer**
-1. Open Downloads folder (where sierra-blue-saas.zip was extracted)
+1. Open Downloads folder (where sierra-estatese-saas.zip was extracted)
 2. Right-click on file → Copy
-3. Navigate to sierra-blue folder
+3. Navigate to sierra-estatese folder
 4. Navigate to destination folder
 5. Right-click → Paste
 
 ### **Method 2: Using Command Prompt**
 ```batch
 REM Example: Copy firebase-config-UPDATED.ts to lib folder
-copy C:\Users\YourName\Downloads\firebase-config-UPDATED.ts C:\Users\YourName\Desktop\sierra-blue\lib\firebase-config.ts
+copy C:\Users\YourName\Downloads\firebase-config-UPDATED.ts C:\Users\YourName\Desktop\sierra-estatese\lib\firebase-config.ts
 
 REM Example: Copy PropertyMap.tsx to components folder
-copy C:\Users\YourName\Downloads\PropertyMap.tsx C:\Users\YourName\Desktop\sierra-blue\components\
+copy C:\Users\YourName\Downloads\PropertyMap.tsx C:\Users\YourName\Desktop\sierra-estatese\components\
 ```
 
 ### **Method 3: Using VS Code**
 1. Open VS Code
-2. File → Open Folder → Select sierra-blue
+2. File → Open Folder → Select sierra-estatese
 3. Use Explorer panel to create folders
 4. Copy/paste files using right-click menu
 
@@ -260,7 +260,7 @@ After copying all files, verify:
 On Windows PowerShell:
 ```powershell
 # Navigate to your project
-cd C:\Users\YourName\Desktop\sierra-blue
+cd C:\Users\YourName\Desktop\sierra-estatese
 
 # Create all folders at once
 mkdir lib, "app\landing", "app\api\leads", "app\api\viewing-requests", "app\api\properties\sync", components, scripts, data

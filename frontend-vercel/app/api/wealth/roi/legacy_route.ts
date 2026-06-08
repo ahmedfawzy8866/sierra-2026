@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — WEALTH INTELLIGENCE ENDPOINT
+ * SIERRA ESTATES — WEALTH INTELLIGENCE ENDPOINT
  * Triggers re-analysis of financial metrics for a specific proposal.
  */
 

@@ -4,7 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { ChevronDown, MapPin, Bed, Bath, Square, Heart, Share2, Phone, Mail, AlertCircle, Check } from 'lucide-react';
 
 /**
- * SIERRA BLU — PRODUCTION APPLICATION
+ * SIERRA ESTATES — PRODUCTION APPLICATION
  * Tasteskill v2 + Quiet Luxury Design System
  * 
  * 8 Sections:
@@ -93,7 +93,7 @@ function OnboardingIntent({ onSelect }: { onSelect: (intent: UserIntent) => void
   return (
     <section className="min-h-screen bg-gradient-to-br from-[#0A1628] to-[#0F1B2E] flex items-center justify-center px-6">
       <div className="max-w-2xl w-full text-center">
-        <h1 className="font-display text-6xl italic text-[#F4F0E8] mb-4">Sierra Blu</h1>
+        <h1 className="font-display text-6xl italic text-[#F4F0E8] mb-4">Sierra Estates</h1>
         <p className="text-[#F4F0E8]/70 text-lg mb-16">Find your next property. Invest with intelligence.</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -611,7 +611,7 @@ export default function SierraBluApp() {
           </div>
 
           <div className="border-t border-[#C9A84C]/20 pt-8 text-center text-[#F4F0E8]/50 text-xs">
-            <p>© 2026 Sierra Blu Realty. Beyond Brokerage.</p>
+            <p>© 2026 Sierra Estates Realty. Beyond Brokerage.</p>
           </div>
         </div>
       </footer>

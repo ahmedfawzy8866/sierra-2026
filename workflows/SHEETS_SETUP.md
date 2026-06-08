@@ -1,9 +1,9 @@
-# Google Sheets Setup for Sierra Blu Workflows
+# Google Sheets Setup for Sierra Estates Workflows
 
 ## 1. Create the Master Sheet
 
 1. Go to https://sheets.google.com
-2. Create new spreadsheet: **"Sierra Blu - Broker Inbox"**
+2. Create new spreadsheet: **"Sierra Estates - Broker Inbox"**
 3. Share with your Google Cloud Service Account email (ends with `@iam.gserviceaccount.com`)
 4. Copy the Sheet ID from URL: `https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit`
 5. Paste into `.env` → `BROKER_INBOX_SHEET_ID`
@@ -155,7 +155,7 @@ Mountain View Desert | 3 | 2 | 180 | 850000 | finished | furnished | apartment |
 1. Open your Google Sheet
 2. Click "Share" (top right)
 3. In "Who has access" dialog, find the Service Account email:
-   - Format: `sierra-blu-workflows@PROJECT_ID.iam.gserviceaccount.com`
+   - Format: `sierra-estates-workflows@PROJECT_ID.iam.gserviceaccount.com`
 4. Copy from your `service-account-key.json` → `"client_email"`
 5. Paste into Share dialog → Give **Editor** access
 6. Confirm sharing

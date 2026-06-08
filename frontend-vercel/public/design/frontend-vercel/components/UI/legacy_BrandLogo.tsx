@@ -9,15 +9,15 @@ interface BrandLogoProps {
 }
 
 /**
- * BRAND LOGO — Sierra Blu Realty
+ * BRAND LOGO — Sierra Estates Realty
  *
  * variant="wordmark" (default):
- *   Strategic Double-Panel Crop. Source image (/sierra-blu-logo.jpg) contains two
+ *   Strategic Double-Panel Crop. Source image (/sierra-estates-logo.jpg) contains two
  *   logo variants side-by-side. Left 50% = dark variant, Right 50% = light variant.
  *   We clip via overflow-hidden and slide the image to reveal the correct half.
  *
  * variant="emblem":
- *   Gold shield crest (/sierra-blu-emblem.svg). Scales uniformly.
+ *   Gold shield crest (/sierra-estates-emblem.svg). Scales uniformly.
  *   Ideal for: favicons, chat widget headers, loading screens, app icons.
  */
 export default function BrandLogo({
@@ -68,8 +68,8 @@ export default function BrandLogo({
     const { width, height } = emblemSizes[size];
     return (
       <img
-        src="/sierra-blu-logo.png"
-        alt="Sierra Blu Realty"
+        src="/sierra-estates-logo.png"
+        alt="Sierra Estates Realty"
         draggable={false}
         width={width}
         height={height}
@@ -92,8 +92,8 @@ export default function BrandLogo({
     const { width, height } = emblemSizes[size];
     return (
       <img
-        src="/sierra-blu-emblem.svg"
-        alt="Sierra Blu Realty Shield"
+        src="/sierra-estates-emblem.svg"
+        alt="Sierra Estates Realty Shield"
         draggable={false}
         width={width}
         height={height}
@@ -125,8 +125,8 @@ export default function BrandLogo({
       }}
     >
       <img
-        src="/sierra-blu-logo.jpg"
-        alt="Sierra Blu Realty"
+        src="/sierra-estates-logo.jpg"
+        alt="Sierra Estates Realty"
         draggable={false}
         style={{
           position: 'absolute',

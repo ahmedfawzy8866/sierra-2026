@@ -67,7 +67,7 @@ function AppContent() {
     <div className="dashboard-container">
       <aside className="sidebar">
         <div className="brand-block">
-          <span className="brand-name">SIERRA BLU</span>
+          <span className="brand-name">SIERRA ESTATES</span>
           <span className="brand-role">
             <Lock size={10} />
             {userRole === 'super_admin' ? 'Intelligence OS' : 'Agent Portal'}

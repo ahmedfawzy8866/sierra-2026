@@ -87,13 +87,13 @@ export default function ProposalView({ proposal }: ProposalViewProps) {
         <motion.footer variants={itemVariants} className="mt-24 pt-16 border-t border-white/5 text-center">
           <div className="flex items-center justify-center mb-8 text-silver/40">
             <ShieldCheck size={20} className="me-2" />
-            <span className="uppercase text-xs tracking-widest">Secured by Sierra Blu Intelligence</span>
+            <span className="uppercase text-xs tracking-widest">Secured by Sierra Estates Intelligence</span>
           </div>
           <div className="serif text-xl mb-4 italic text-silver/60">
             "We do not just find properties; we secure your architectural legacy."
           </div>
           <div className="text-xs text-silver/30 mt-12 pb-8">
-            &copy; {new Date().getFullYear()} Sierra Blu Realty. All rights reserved. Selective Private Disclosure.
+            &copy; {new Date().getFullYear()} Sierra Estates Realty. All rights reserved. Selective Private Disclosure.
           </div>
         </motion.footer>
       </motion.div>

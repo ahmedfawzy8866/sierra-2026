@@ -64,7 +64,7 @@ export default function LuxuryVirtualViewport({
 
       {/* Telemetry Overlay */}
       {showTelemetry && isLoaded && (
-        <div className="absolute bottom-6 right-6 z-20 bg-navy-300/90 backdrop-blur-md rounded-lg p-4 font-mono text-sm text-sierra-blue-500 border border-sierra-blue-500/30 max-w-xs">
+        <div className="absolute bottom-6 right-6 z-20 bg-navy-300/90 backdrop-blur-md rounded-lg p-4 font-mono text-sm text-sierra-estatese-500 border border-sierra-estatese-500/30 max-w-xs">
           <div className="mb-2 flex items-center gap-2">
             <span className="inline-block w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span>Tour Engine Online</span>
@@ -80,7 +80,7 @@ export default function LuxuryVirtualViewport({
       {/* Telemetry Toggle */}
       <button
         onClick={() => setShowTelemetry(!showTelemetry)}
-        className="absolute bottom-6 left-6 z-20 text-ivory-100/50 hover:text-sierra-blue-500 transition-colors text-xs uppercase tracking-wider font-sans"
+        className="absolute bottom-6 left-6 z-20 text-ivory-100/50 hover:text-sierra-estatese-500 transition-colors text-xs uppercase tracking-wider font-sans"
       >
         {showTelemetry ? 'Hide' : 'Show'} Telemetry
       </button>

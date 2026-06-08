@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — FINANCIAL INTELLIGENCE SERVICE (V12.0)
+ * SIERRA ESTATES — FINANCIAL INTELLIGENCE SERVICE (V12.0)
  * Handles detailed valuation, downpayment calculation, and historical trends.
  */
 

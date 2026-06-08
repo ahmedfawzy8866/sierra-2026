@@ -3,7 +3,7 @@ import { OrchestratorService } from '@/lib/services/orchestrator';
 import { COLLECTIONS } from '@/lib/models/schema';
 
 /**
- * Trigger Sierra Blu Orchestration Pipeline
+ * Trigger Sierra Estates Orchestration Pipeline
  * POST /api/orchestrate
  * Body: { docId: string, collection: keyof typeof COLLECTIONS }
  */

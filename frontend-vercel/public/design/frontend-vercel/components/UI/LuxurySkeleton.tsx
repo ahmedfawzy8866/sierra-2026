@@ -1,7 +1,7 @@
 "use client";
 
 /**
- * SIERRA BLU — LUXURY UI SKELETON (V12.0)
+ * SIERRA ESTATES — LUXURY UI SKELETON (V12.0)
  * Quiet Luxury design system with full theme + direction support.
  *
  * Variant order:

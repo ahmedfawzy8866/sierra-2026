@@ -2,7 +2,7 @@
 
 ## 1. Overview & Creative North Star: "The Digital Concierge"
 
-The design system for Sierra Blu Realty is anchored by the Creative North Star of **"The Digital Concierge."** Unlike standard, utilitarian admin panels that feel like rigid spreadsheets, this system is designed to feel like a high-end, bespoke editorial experience. It balances the "Operational Confidence" of an AI-driven platform with the "Elegance" of luxury real estate.
+The design system for Sierra Estates Realty is anchored by the Creative North Star of **"The Digital Concierge."** Unlike standard, utilitarian admin panels that feel like rigid spreadsheets, this system is designed to feel like a high-end, bespoke editorial experience. It balances the "Operational Confidence" of an AI-driven platform with the "Elegance" of luxury real estate.
 
 The UI rejects the "boxed-in" look. By utilizing intentional asymmetry, sophisticated tonal layering, and generous whitespace, we create a sense of breathing room that reflects the brand’s tagline: *Beyond Brokerage*. The interface doesn’t just show data; it presents intelligence.
 

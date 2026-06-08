@@ -1,7 +1,7 @@
 import { Property } from '@/lib/services/InventoryService.client';
 
 export const G = 'var(--gold-prime)';
-export const G2 = 'var(--sierra-blue)';
+export const G2 = 'var(--sierra-estatese)';
 
 export const THEMES = {
   dark: {
@@ -43,7 +43,7 @@ export const THEMES = {
 export const COPY = {
   en: {
     dir: 'ltr' as const,
-    brand: 'SIERRA BLU', sub: 'REALTY',
+    brand: 'SIERRA ESTATES', sub: 'REALTY',
     tagline: 'AI‑POWERED REAL ESTATE INTELLIGENCE',
     nav: ['Portfolio', 'Intelligence', 'About', 'Contact'],
     cta: 'Explore Portfolio',
@@ -61,7 +61,7 @@ export const COPY = {
     viewAll: 'Explore All →',
     searchType: 'Asset Type', searchCompound: 'Zone', searchBudget: 'Capital', searchBtn: 'Search Now',
     beds: 'beds', baths: 'baths',
-    secWhy: 'The Sierra Blu Distinction',
+    secWhy: 'The Sierra Estates Distinction',
     h2Why: 'Why stakeholders choose us.',
     whyDesc: 'We don\'t just search the market — we analyze it. Powered by AI and 1,500+ trusted brokers, we scan every corner of New Cairo to bring you only the highest-value portfolio assets that meet your exact needs.',
     why: [
@@ -97,9 +97,9 @@ export const COPY = {
     secTesti: 'Investment Success Stories',
     h2Testi: 'What our stakeholders say',
     testimonials: [
-      { q: 'I used to spend weeks searching the New Cairo market. Sierra Blu changed everything. Their AI matched me with the exact villa I wanted at the best price available. One platform, zero wasted time.', name: 'Omar T.', role: 'Investment Stakeholder', i: 'OT' },
-      { q: 'Finding the right home in New Cairo seemed impossible until Sierra Blu. Their system understood our exact needs and filtered out the noise to deliver the perfect portfolio asset. Smartest decision we made.', name: 'Sarah & Michael V.', role: 'Strategic Partners', i: 'SMV' },
-      { q: 'Sierra Blu found me a portfolio asset that wasn\'t even on my radar. The AI scans the entire market and delivers the best value. Exact match, zero guesswork.', name: 'Karim H.', role: 'CEO, Apex Holdings', i: 'KH' },
+      { q: 'I used to spend weeks searching the New Cairo market. Sierra Estates changed everything. Their AI matched me with the exact villa I wanted at the best price available. One platform, zero wasted time.', name: 'Omar T.', role: 'Investment Stakeholder', i: 'OT' },
+      { q: 'Finding the right home in New Cairo seemed impossible until Sierra Estates. Their system understood our exact needs and filtered out the noise to deliver the perfect portfolio asset. Smartest decision we made.', name: 'Sarah & Michael V.', role: 'Strategic Partners', i: 'SMV' },
+      { q: 'Sierra Estates found me a portfolio asset that wasn\'t even on my radar. The AI scans the entire market and delivers the best value. Exact match, zero guesswork.', name: 'Karim H.', role: 'CEO, Apex Holdings', i: 'KH' },
     ],
     ctaTag: 'Secure Your Asset',
     ctaH: 'Secure Your Position in New Cairo',
@@ -110,7 +110,7 @@ export const COPY = {
     footNav: 'Strategic Navigation', footNavLinks: ['Portfolio Assets', 'Intelligence', 'About Us', 'Careers', 'Contact'],
     footMarkets: 'Strategic Zones', footMarketLinks: ['New Cairo', 'Fifth Settlement', 'Madinaty', 'Mostakbal City', 'Mountain View'],
     footContact: 'Contact',
-    copyright: '© 2026 Sierra Blu Realty. All rights reserved.',
+    copyright: '© 2026 Sierra Estates Realty. All rights reserved.',
     legal: ['Privacy Policy', 'Terms of Service', 'Cookies'],
   },
   ar: {

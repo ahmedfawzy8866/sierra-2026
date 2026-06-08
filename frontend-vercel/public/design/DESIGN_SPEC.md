@@ -1,4 +1,4 @@
-# Sierra Blu 2027 — Frontend Design Specification
+# Sierra Estates 2027 — Frontend Design Specification
 ## Current Implementation for Designer Review
 
 ---
@@ -118,7 +118,7 @@ All pages follow identical design system:
 
 ## 🌐 NAVIGATION
 **Header:**
-- Logo + "SIERRA BLU REALTY"
+- Logo + "SIERRA ESTATES REALTY"
 - Language toggle (EN/AR)
 - Theme toggle (☀/🌙)
 - Sticky on scroll

@@ -37,7 +37,7 @@ export default function SystemKitPage() {
               <small className="text-xs text-on-surface-variant">This is small print, usually used for legal disclaimers.</small>
             </p>
             <p>
-              An abbreviation: <abbr title="Sierra Blu Realty" className="underline decoration-dotted cursor-help">SBR</abbr>. 
+              An abbreviation: <abbr title="Sierra Estates Realty" className="underline decoration-dotted cursor-help">SBR</abbr>. 
               A citation: <cite>The Architecture of Light</cite>. 
               A short quote: <q>Beyond Brokerage.</q>
             </p>
@@ -64,7 +64,7 @@ export default function SystemKitPage() {
           <div className="bg-surface-container-low p-8 rounded-xl shadow-ambient space-y-8">
             <blockquote className="border-l-2 border-secondary pl-6 italic text-lg text-on-surface-variant">
               "True luxury is not about excess. It is about the complete absence of friction."
-              <footer className="text-sm mt-2 text-primary font-bold">— Sierra Blu Intelligence</footer>
+              <footer className="text-sm mt-2 text-primary font-bold">— Sierra Estates Intelligence</footer>
             </blockquote>
 
             <div className="grid md:grid-cols-2 gap-8">
@@ -124,7 +124,7 @@ export default function SystemKitPage() {
                 <span className="text-secondary group-open:rotate-180 transition-transform">▼</span>
               </summary>
               <div className="pt-4 mt-4 border-t border-outline-variant text-on-surface-variant text-sm">
-                By proceeding, you agree to the Sierra Blu bespoke intelligence terms of service.
+                By proceeding, you agree to the Sierra Estates bespoke intelligence terms of service.
               </div>
             </details>
 

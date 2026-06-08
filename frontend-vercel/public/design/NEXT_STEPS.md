@@ -1,4 +1,4 @@
-# NEXT_STEPS — Sierra Blu (pre-deploy)
+# NEXT_STEPS — Sierra Estates (pre-deploy)
 
 Snapshot as of 2026-05-29. Trim items as they are completed.
 

@@ -1,5 +1,5 @@
 /**
- * SIERRA BLU — SKILL REGISTRY & LOADER (V2)
+ * SIERRA ESTATES — SKILL REGISTRY & LOADER (V2)
  * Real implementations for all Nexus Agent tools.
  */
 
@@ -115,7 +115,7 @@ class SkillRegistry {
             adminDb.collection(COLLECTIONS.sales).count().get()
           ]);
           return [
-            `📊 Sierra Blu Live Stats:`,
+            `📊 Sierra Estates Live Stats:`,
             `🏢 Total Units: ${units.data().count}`,
             `👤 Total Leads: ${leads.data().count}`,
             `✅ Closed Sales: ${sales.data().count}`
@@ -192,95 +192,4 @@ class SkillRegistry {
         description: 'Calculates ROI, rental yield, and legal risk for a Signature Asset.',
         parameters: {
           type: 'object',
-          properties: {
-            unitId: { type: 'string', description: 'Firestore document ID of the unit' }
-          },
-          required: ['unitId']
-        }
-      },
-      execute: async (args) => {
-        try {
-          const snap = await adminDb.collection(COLLECTIONS.units).doc(args.unitId).get();
-          if (!snap.exists) return `Unit ${args.unitId} not found.`;
-          const u = snap.data()!;
-          const price = u.price || 0;
-          const area = u.area || 0;
-          const pricePerSqm = area > 0 ? Math.round(price / area) : 0;
-          const estRentalYield = ((price * 0.07) / 12).toFixed(0);
-          const estAppreciation = (price * 0.12).toFixed(0);
-          return [
-            `📈 ROI Analysis: ${u.title || args.unitId}`,
-            `💰 Price: EGP ${price.toLocaleString()}`,
-            `📐 Area: ${area} m² | EGP ${pricePerSqm.toLocaleString()}/m²`,
-            `📊 Est. Rental Yield: 7% → EGP ${Number(estRentalYield).toLocaleString()}/month`,
-            `🚀 Est. Capital Appreciation (1yr): EGP ${Number(estAppreciation).toLocaleString()}`,
-            `⚖️ Legal Status: ${u.legal?.status || 'Under Review'}`,
-            `🏆 Strategic Rating: ${u.intelligence?.valuationScore ? 'AAA' : 'Pending'}`
-          ].join('\n');
-        } catch (err: any) {
-          return `Error analyzing unit: ${err.message}`;
-        }
-      }
-    });
-
-    // ── 7. Send WhatsApp Message (via Meta Cloud API) ────────────────────────
-    this.register({
-      definition: {
-        name: 'send_whatsapp_message',
-        description: 'Sends a WhatsApp message to a stakeholder via the Meta Cloud API.',
-        parameters: {
-          type: 'object',
-          properties: {
-            phone: { type: 'string', description: 'Phone number in international format, e.g. +201xxxxxxxxx' },
-            message: { type: 'string', description: 'The message to send' }
-          },
-          required: ['phone', 'message']
-        }
-      },
-      execute: async (args) => {
-        try {
-          const token = process.env.WHATSAPP_API_TOKEN;
-          const phoneId = process.env.WHATSAPP_PHONE_NUMBER_ID;
-          if (!token || !phoneId) {
-            return `⚠️ WhatsApp API not configured. Set WHATSAPP_API_TOKEN and WHATSAPP_PHONE_NUMBER_ID in .env.local`;
-          }
-          const res = await fetch(`https://graph.facebook.com/v19.0/${phoneId}/messages`, {
-            method: 'POST',
-            headers: {
-              'Authorization': `Bearer ${token}`,
-              'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-              messaging_product: 'whatsapp',
-              to: args.phone.replace(/\D/g, ''),
-              type: 'text',
-              text: { body: args.message }
-            })
-          });
-          const data = await res.json() as any;
-          return data.messages?.[0]?.id
-            ? `✅ WhatsApp sent to ${args.phone} (ID: ${data.messages[0].id})`
-            : `❌ WhatsApp error: ${JSON.stringify(data.error || data)}`;
-        } catch (err: any) {
-          return `Error sending WhatsApp: ${err.message}`;
-        }
-      }
-    });
-  }
-
-  register(skill: Skill) {
-    this.skills.set(skill.definition.name, skill);
-  }
-
-  getToolDefinitions(): SkillDefinition[] {
-    return Array.from(this.skills.values()).map(s => s.definition);
-  }
-
-  async executeSkill(name: string, args: any): Promise<string> {
-    const skill = this.skills.get(name);
-    if (!skill) throw new Error(`Skill "${name}" not found in Nexus Registry.`);
-    return await skill.execute(args);
-  }
-}
-
-export const SkillLoader = new SkillRegistry();
+       

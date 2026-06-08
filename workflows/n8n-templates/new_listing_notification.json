@@ -1,5 +1,5 @@
 {
-  "name": "🏠 Sierra Blu — New Listing Auto-Notify",
+  "name": "🏠 Sierra Estates — New Listing Auto-Notify",
   "nodes": [
     {
       "parameters": {
@@ -19,7 +19,7 @@
     {
       "parameters": {
         "method": "POST",
-        "url": "=https://firestore.googleapis.com/v1/projects/sierra-blu-prod/databases/(default)/documents:runQuery",
+        "url": "=https://firestore.googleapis.com/v1/projects/sierra-estates-prod/databases/(default)/documents:runQuery",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
@@ -50,7 +50,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Filter and rank matching scores\nconst listing = $('Webhook Trigger').item.json.body;\nconst buyers = items.map(i => i.json);\n\nconst matches = buyers.map(buyer => {\n  let score = 70; // Base score for compound match\n  const budgetDiff = buyer.max_budget - listing.price;\n  if (budgetDiff > 0) {\n    score += Math.min(20, Math.floor(budgetDiff / 100000));\n  }\n  return {\n    json: {\n      buyer_name: buyer.name,\n      buyer_phone: buyer.phone,\n      buyer_email: buyer.email,\n      match_score: score,\n      listing_title: listing.title,\n      listing_price: listing.price,\n      listing_url: `https://sierra-blu.vercel.app/listings/${listing.id}`\n    }\n  };\n}).filter(m => m.json.match_score >= 80);\n\nreturn matches;"
+        "jsCode": "// Filter and rank matching scores\nconst listing = $('Webhook Trigger').item.json.body;\nconst buyers = items.map(i => i.json);\n\nconst matches = buyers.map(buyer => {\n  let score = 70; // Base score for compound match\n  const budgetDiff = buyer.max_budget - listing.price;\n  if (budgetDiff > 0) {\n    score += Math.min(20, Math.floor(budgetDiff / 100000));\n  }\n  return {\n    json: {\n      buyer_name: buyer.name,\n      buyer_phone: buyer.phone,\n      buyer_email: buyer.email,\n      match_score: score,\n      listing_title: listing.title,\n      listing_price: listing.price,\n      listing_url: `https://sierra-estates.vercel.app/listings/${listing.id}`\n    }\n  };\n}).filter(m => m.json.match_score >= 80);\n\nreturn matches;"
       },
       "id": "cf6d425b-fb75-47e2-895c-3c811211a003",
       "name": "Match Ranking Logic",

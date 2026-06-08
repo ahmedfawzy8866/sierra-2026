@@ -1,5 +1,5 @@
 {
-  "name": "sierra-blu-functions",
+  "name": "sierra-estates-functions",
   "version": "1.0.0",
   "description": "Firebase Cloud Functions — data collection and processing pipeline",
   "main": "index.js",

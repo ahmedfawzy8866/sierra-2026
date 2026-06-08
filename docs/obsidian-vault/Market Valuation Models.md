@@ -1,6 +1,6 @@
 # 📐 Market Valuation Models & Pricing per Square Meter
 > **Path:** `docs/obsidian-vault/Market Valuation Models.md`  
-> **Parent Node:** `[[Sierra Blu Memory Engine]]`
+> **Parent Node:** `[[Sierra Estates Memory Engine]]`
 
 This document details our base valuation matrices to evaluate whether a property listing in New Cairo (Egypt) is priced correctly.
 
