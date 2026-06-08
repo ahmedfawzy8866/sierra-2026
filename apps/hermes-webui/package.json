@@ -2,9 +2,14 @@
   "name": "hermes-webui-devtools",
   "version": "1.0.0",
   "private": true,
-  "description": "Dev-only tooling for hermes-webui. NOT a build step — the app remains pure Python + vanilla JS with no bundler. The only dependency is ESLint, used solely as a runtime-error guard over static/*.js (catches brick-class bugs like #3162 const-reassignment that node --check and source-presence tests miss). See TESTING.md > 'Static JS runtime lint'.",
+  "description": "Hermes Web UI — Python Flask backend + vanilla JS frontend. MCP server for LLM integrations. See ARCHITECTURE.md for full details.",
   "scripts": {
-    "lint:runtime": "eslint --no-config-lookup -c eslint.runtime-guard.config.mjs \"static/**/*.js\""
+    "dev": "python3 bootstrap.py",
+    "start": "python3 server.py",
+    "build": "python3 -m py_compile server.py mcp_server.py && npm run lint:runtime",
+    "lint:runtime": "eslint --no-config-lookup -c eslint.runtime-guard.config.mjs \"static/**/*.js\"",
+    "test": "pytest -v",
+    "type-check": "echo 'Python app — use mypy if needed'"
   },
   "devDependencies": {
     "eslint": "^10.4.0"
