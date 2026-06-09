@@ -9,7 +9,7 @@ interface BrandLogoProps {
 }
 
 /**
- * BRAND LOGO — Sierra Blu Realty
+ * BRAND LOGO — Sierra Estates Realty
  *
  * variant="wordmark" (default):
  *   Strategic Double-Panel Crop. Source image (/sierra-blu-logo.jpg) contains two
@@ -69,7 +69,7 @@ export default function BrandLogo({
     return (
       <img
         src="/sierra-blu-logo.png"
-        alt="Sierra Blu Realty"
+        alt="Sierra Estates Realty"
         draggable={false}
         width={width}
         height={height}
@@ -93,7 +93,7 @@ export default function BrandLogo({
     return (
       <img
         src="/sierra-blu-emblem.svg"
-        alt="Sierra Blu Realty Shield"
+        alt="Sierra Estates Realty Shield"
         draggable={false}
         width={width}
         height={height}
@@ -126,7 +126,7 @@ export default function BrandLogo({
     >
       <img
         src="/sierra-blu-logo.jpg"
-        alt="Sierra Blu Realty"
+        alt="Sierra Estates Realty"
         draggable={false}
         style={{
           position: 'absolute',

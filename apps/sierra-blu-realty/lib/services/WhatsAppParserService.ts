@@ -26,7 +26,7 @@ export class WhatsAppParserService {
     const modelName = media ? "gemini-1.5-pro" : "gemini-1.5-flash";
     const model = genAI.getGenerativeModel({ model: modelName });
 
-    const systemInstruction = `ROLE: You are the Sierra Blu Strategic Intelligence Parser (The Scribe).
+    const systemInstruction = `ROLE: You are the Sierra Estates Strategic Intelligence Parser (The Scribe).
     Your mission is to transform raw real estate text (Arabic/English/Fringlish) into cinematic data.
 
     OPERATIONAL PROTOCOL:

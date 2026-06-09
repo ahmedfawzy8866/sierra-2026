@@ -1,10 +1,10 @@
-# Sierra Blu Design System
+# Sierra Estates Design System
 
 **Status:** Unified (merged from sierra-estates)  
 **Date:** 2026-06-08
 
 ## Overview
-Luxury real-estate design language for Sierra Blu — "Quiet Luxury" aesthetic with navy (#0A1F44) and gold (#D4AF37) accents.
+Luxury real-estate design language for Sierra Estates — "Quiet Luxury" aesthetic with navy (#0A1F44) and gold (#D4AF37) accents.
 
 ## Components
 - **LuxurySkeleton** — Loading state with gradient pulse

@@ -98,7 +98,7 @@ export const firestoreService: FirestoreService = {
 };
 
 /**
- * Typed collection fetchers for common Sierra Blu collections
+ * Typed collection fetchers for common Sierra Estates collections
  */
 export const collections = {
   /**

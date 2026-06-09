@@ -43,7 +43,7 @@
 .unitCode {
   color: var(--gold);
   font-size: 12px;
-  font-family: 'JetBrains Mono', monospace;
+  font-family: var(--font-mono), 'DM Mono', ui-monospace, monospace;
   margin-top: 4px;
   letter-spacing: 0.1em;
 }

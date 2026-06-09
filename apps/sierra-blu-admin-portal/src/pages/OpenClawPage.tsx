@@ -77,7 +77,7 @@ export function OpenClawPage() {
       <div style={{ display: 'flex', gap: 8, marginBottom: 16 }}>
         <button className="os-btn os-btn-ghost" onClick={() => setLogs(BOOT_LOGS)}>↻ Reset</button>
         <button className="os-btn os-btn-gold" onClick={() => setLogs(l => [...l,
-          { t: 'blue', l: '[~] Connecting to Sierra Blu Cloud API...' },
+          { t: 'blue', l: '[~] Connecting to Sierra Estates Cloud API...' },
           { t: 'green', l: '[✓] Connection established · API v2.4 ready' }
         ])}>⚡ Test API</button>
       </div>

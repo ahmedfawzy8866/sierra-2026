@@ -289,7 +289,7 @@ export async function GET(req: NextRequest) {
     return new NextResponse(challenge, { status: 200 });
   }
 
-  return NextResponse.json({ status: 'Sierra Blue PF Webhook Active' });
+  return NextResponse.json({ status: 'Sierra Estatese PF Webhook Active' });
 }
 `.trim();
 

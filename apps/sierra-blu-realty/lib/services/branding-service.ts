@@ -13,7 +13,7 @@ export class BrandingService {
   private static LOGO_PATH = path.join(process.cwd(), 'public', 'sierra_blu_logo_light.png');
 
   /**
-   * Processes a source image URL and adds the Sierra Blu gold watermark.
+   * Processes a source image URL and adds the Sierra Estates gold watermark.
    * Returns the uploaded public URL.
    */
   static async brandPropertyImage(

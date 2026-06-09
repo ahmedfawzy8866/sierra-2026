@@ -146,7 +146,7 @@ export async function curateConciergePortfolio(leadId: string): Promise<Concierg
  * Generate a luxury property description in Sierra's voice.
  */
 async function generateLuxuryDescription(lead: Lead, unit: Unit): Promise<string> {
-  const prompt = `You are Sierra, a luxury property concierge for Sierra Blu Realty. 
+  const prompt = `You are Sierra, a luxury property concierge for Sierra Estates Realty. 
 Generate a 2-3 sentence description of this property for a high-net-worth client.
 The tone should be warm, editorial, and exclusive. Emphasize lifestyle and investment potential.
 
@@ -168,7 +168,7 @@ Write ONLY the description. No extra text.`;
 async function generateSierraNoteFromTemplate(lead: Lead, units: ConciergeUnit[]): Promise<string> {
   const unitTitles = units.map(u => u.title).join(', ');
   
-  const prompt = `You are Sierra, the personal concierge at Sierra Blu Realty.
+  const prompt = `You are Sierra, the personal concierge at Sierra Estates Realty.
 Write a warm, 3-4 sentence welcome message for a VIP client about their curated portfolio selection.
 
 Client Name: ${lead.name}

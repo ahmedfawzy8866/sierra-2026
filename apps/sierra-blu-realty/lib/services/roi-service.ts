@@ -74,7 +74,7 @@ export async function analyzeAssetFinancials(unit: Unit): Promise<FinancialAnaly
  * Uses Gemini to generate a clinical wealth-focused reasoning.
  */
 async function generateValuationReasoning(unit: Unit, roi: number, yieldPercent: number): Promise<string> {
-  const systemPrompt = `You are the Sierra Blu Wealth Analytics Bot (Neural ROI Core V10.0).
+  const systemPrompt = `You are the Sierra Estates Wealth Analytics Bot (Neural ROI Core V10.0).
 Task: Provide a clinical, premium financial justification for a property investment.
 
 Tone: Focus on wealth preservation, capital appreciation, and institutional-grade logic.

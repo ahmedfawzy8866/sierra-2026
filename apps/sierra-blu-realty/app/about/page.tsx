@@ -33,9 +33,9 @@ const COPY = {
     dir: 'ltr' as const,
     brand: 'SIERRA BLU', sub: 'REALTY',
     tagline: 'INTELLIGENCE-LED PROPERTY ADVISORY',
-    pageTitle: 'About Sierra Blu',
+    pageTitle: 'About Sierra Estates',
     heroH: 'Building Tomorrow\'s Real Estate Intelligence',
-    heroSub: 'Sierra Blu is redefining how investors discover, understand, and acquire premium properties across Egypt\'s most coveted addresses.',
+    heroSub: 'Sierra Estates is redefining how investors discover, understand, and acquire premium properties across Egypt\'s most coveted addresses.',
     missionH: 'Our Mission',
     missionT: 'Precision meets Purpose',
     missionD: 'We believe exceptional properties deserve exceptional advisory. Every client receives research-backed guidance, curated selections, and dedicated support from first inquiry to final signature.',
@@ -52,11 +52,11 @@ const COPY = {
   },
   ar: {
     dir: 'rtl' as const,
-    brand: 'سييرا بلو', sub: 'للعقارات',
+    brand: 'سييرا إستيتس', sub: 'للعقارات',
     tagline: 'استشارات عقارية مدعومة بالذكاء الاصطناعي',
-    pageTitle: 'عن سييرا بلو',
+    pageTitle: 'عن سييرا إستيتس',
     heroH: 'بناء ذكاء العقارات في الغد',
-    heroSub: 'سييرا بلو تعيد تعريف كيفية اكتشاف المستثمرين للعقارات المميزة وفهمها والحصول عليها عبر أفضل العناوين المختارة في مصر.',
+    heroSub: 'سييرا إستيتس تعيد تعريف كيفية اكتشاف المستثمرين للعقارات المميزة وفهمها والحصول عليها عبر أفضل العناوين المختارة في مصر.',
     missionH: 'رسالتنا',
     missionT: 'الدقة تلتقي بالغاية',
     missionD: 'نؤمن بأن العقارات الاستثنائية تستحق استشارات استثنائية. كل عميل يتلقى إرشادات مدعومة بالبحث، وتوصيات منتقاة، ودعماً متخصصاً من أول استفسار لآخر توقيع.',
@@ -172,7 +172,7 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="flex justify-between items-center flex-wrap gap-3 pt-6" style={{ borderTop: '1px solid rgba(239,248,247,0.07)', flexDirection: isAr ? 'row-reverse' : 'row' }}>
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Blu Realty. All rights reserved.</div>
+            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Estates Realty. All rights reserved.</div>
           </div>
         </div>
       </footer>

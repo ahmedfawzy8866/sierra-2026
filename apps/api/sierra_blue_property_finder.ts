@@ -123,7 +123,7 @@ export async function pushListingToPF(listing: SBRListing): Promise<PFSyncResult
         is_main: i === 0,
       })),
       amenities:        listing.amenities,
-      // Sierra Blue custom fields (PF supports extra metadata)
+      // Sierra Estatese custom fields (PF supports extra metadata)
       custom_fields: {
         sbr_code:      listing.sbrCode,
         ai_score:      listing.aiScore,
@@ -329,7 +329,7 @@ export async function getPFListingAnalytics(pfListingId: string) {
 
   const data = await res.json();
 
-  // Normalize PF analytics into Sierra Blue format
+  // Normalize PF analytics into Sierra Estatese format
   return {
     pfListingId,
     views:          data.total_views          ?? 0,

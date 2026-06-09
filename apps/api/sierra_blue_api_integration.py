@@ -356,7 +356,7 @@ class GoogleCalendarIntegration:
                 {'email': customer_email},
                 {'email': 'agent@sierrablue.com'}  # Your agent email
             ],
-            'location': 'سييرا بلو - مكتب التجمع الخامس',
+            'location': 'سييرا إستيتس - مكتب التجمع الخامس',
             'reminders': {
                 'useDefault': False,
                 'overrides': [
@@ -538,7 +538,7 @@ class IntegratedSierraBlueBot:
         property_data = self.property_api.check_property_availability(reference_code)
         
         # 4. Send WhatsApp greeting
-        greeting_msg = f"أهلاً بحضرتك في سييرا بلو"
+        greeting_msg = f"أهلاً بحضرتك في سييرا إستيتس"
         self.whatsapp.send_text_message(phone, greeting_msg)
         
         # 5. Track discovery and schedule
@@ -576,7 +576,7 @@ GOOGLE_CALENDAR_CREDENTIALS=/path/to/credentials.json
 MIXPANEL_TOKEN=your_mixpanel_token
 
 # Bot Configuration
-BOT_NAME=Sierra Blue AI
+BOT_NAME=Sierra Estatese AI
 BOT_TIMEZONE=Africa/Cairo
 """
 
@@ -624,7 +624,7 @@ curl -X POST https://graph.instagram.com/v18.0/{phone_number_id}/messages \
     "to": "20123456789",
     "type": "text",
     "text": {
-      "body": "Hello from Sierra Blue!"
+      "body": "Hello from Sierra Estatese!"
     }
   }'
 

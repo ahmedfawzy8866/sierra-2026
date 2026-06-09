@@ -48,7 +48,7 @@ const COPY = {
   },
   ar: {
     dir: 'rtl' as const,
-    brand: 'سييرا بلو', sub: 'للعقارات',
+    brand: 'سييرا إستيتس', sub: 'للعقارات',
     pageTitle: 'خدماتنا',
     heroH: 'خدمات استشارة مميزة',
     heroSub: 'من اكتشاف العقار إلى الإغلاق، نتولى كل جوانب رحلة استثمارك بدقة واهتمام.',
@@ -145,7 +145,7 @@ export default function ServicesPage() {
             </div>
           </div>
           <div className="flex justify-between items-center flex-wrap gap-3 pt-6" style={{ borderTop: '1px solid rgba(239,248,247,0.07)', flexDirection: isAr ? 'row-reverse' : 'row' }}>
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Blu Realty. All rights reserved.</div>
+            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Estates Realty. All rights reserved.</div>
           </div>
         </div>
       </footer>

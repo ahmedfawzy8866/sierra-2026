@@ -34,7 +34,7 @@ const COPY = {
     brand: 'SIERRA BLU', sub: 'REALTY',
     pageTitle: 'Join Our Team',
     heroH: 'Build the Future of Real Estate',
-    heroSub: 'Sierra Blu is looking for talented individuals passionate about excellence, intelligence, and transforming the property market.',
+    heroSub: 'Sierra Estates is looking for talented individuals passionate about excellence, intelligence, and transforming the property market.',
     openingsH: 'Open Positions',
     openings: [
       { title: 'Senior Property Advisor', location: 'Cairo', type: 'Full-time', desc: 'Lead client relationships and deliver premium advisory services across our portfolio.' },
@@ -42,7 +42,7 @@ const COPY = {
       { title: 'Content & Marketing Manager', location: 'Cairo', type: 'Full-time', desc: 'Shape our brand voice and create compelling market narratives.' },
       { title: 'Operations Specialist', location: 'Cairo', type: 'Full-time', desc: 'Optimize our internal workflows and client experience processes.' },
     ],
-    culturH: 'Why Join Sierra Blu?',
+    culturH: 'Why Join Sierra Estates?',
     culture: [
       'Work at the intersection of technology and luxury real estate',
       'Collaborate with a small, elite team pushing boundaries',
@@ -54,10 +54,10 @@ const COPY = {
   },
   ar: {
     dir: 'rtl' as const,
-    brand: 'سييرا بلو', sub: 'للعقارات',
+    brand: 'سييرا إستيتس', sub: 'للعقارات',
     pageTitle: 'انضم إلى فريقنا',
     heroH: 'ابنِ مستقبل العقارات',
-    heroSub: 'تبحث سييرا بلو عن أفراد موهوبين متحمسين للتفوق والذكاء وتحويل سوق العقارات.',
+    heroSub: 'تبحث سييرا إستيتس عن أفراد موهوبين متحمسين للتفوق والذكاء وتحويل سوق العقارات.',
     openingsH: 'الوظائف الشاغرة',
     openings: [
       { title: 'مستشار عقاري أول', location: 'القاهرة', type: 'دوام كامل', desc: 'قيادة علاقات العملاء وتقديم خدمات استشارية مميزة عبر محفظتنا.' },
@@ -65,7 +65,7 @@ const COPY = {
       { title: 'مدير المحتوى والتسويق', location: 'القاهرة', type: 'دوام كامل', desc: 'صياغة صوت علامتنا التجارية وإنشاء سرديات سوق جذابة.' },
       { title: 'متخصص العمليات', location: 'القاهرة', type: 'دوام كامل', desc: 'تحسين سير عملنا الداخلي وعمليات تجربة العميل.' },
     ],
-    culturH: 'لماذا تنضم إلى سييرا بلو؟',
+    culturH: 'لماذا تنضم إلى سييرا إستيتس؟',
     culture: [
       'العمل في تقاطع التكنولوجيا والعقارات الفاخرة',
       'التعاون مع فريق صغير نخبوي يدفع الحدود',
@@ -172,7 +172,7 @@ export default function CareersPage() {
             </div>
           </div>
           <div className="flex justify-between items-center flex-wrap gap-3 pt-6" style={{ borderTop: '1px solid rgba(239,248,247,0.07)', flexDirection: isAr ? 'row-reverse' : 'row' }}>
-            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Blu Realty. All rights reserved.</div>
+            <div style={{ fontSize: 11, fontWeight: 300, color: 'rgba(239,248,247,0.28)', fontFamily: isAr ? "'Cairo', sans-serif" : "'Jost', sans-serif" }}>© 2026 Sierra Estates Realty. All rights reserved.</div>
           </div>
         </div>
       </footer>

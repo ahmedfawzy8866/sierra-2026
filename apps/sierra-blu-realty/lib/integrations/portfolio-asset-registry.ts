@@ -125,7 +125,7 @@ export async function pushAssetToRegistry(asset: SBRAsset): Promise<RegistrySync
         is_main: i === 0,
       })),
       amenities:        asset.amenities,
-      // Sierra Blue custom fields (Registry supports extra metadata)
+      // Sierra Estatese custom fields (Registry supports extra metadata)
       custom_fields: {
         sbr_code:        asset.sbrCode,
         neural_score:    asset.neuralMatchScore,
@@ -324,7 +324,7 @@ export async function getAssetRegistryAnalytics(registryAssetId: string) {
 
   const data = await res.json();
 
-  // Normalize Registry analytics into Sierra Blue format
+  // Normalize Registry analytics into Sierra Estatese format
   return {
     registryAssetId,
     views:            data.total_views          ?? 0,

@@ -1,5 +1,5 @@
 """
-Sierra Blue AI Real Estate Bot - Complete Implementation
+Sierra Estatese AI Real Estate Bot - Complete Implementation
 Version: 2026
 Purpose: Automate customer journey from inquiry to human handover
 """
@@ -114,10 +114,10 @@ class LeadProfile:
 # STEP 2: SYSTEM PROMPT (Bot Persona)
 # ============================================================================
 
-SIERRA_BLUE_SYSTEM_PROMPT = """أنت مستشار عقاري ذكي في شركة سييرا بلو. 
+SIERRA_BLUE_SYSTEM_PROMPT = """أنت مستشار عقاري ذكي في شركة سييرا إستيتس. 
 
 **هويتك:**
-- الاسم: Sierra Blue AI Advisor
+- الاسم: Sierra Estatese AI Advisor
 - اللغة: اللهجة المصرية الاحترافية المهذبة
 - الفلسفة: ما وراء الوساطة - نحن لا نبيع، نحن نساعدك على اتخاذ القرار الأفضل
 
@@ -314,7 +314,7 @@ class SierraBlueBot:
         self.current_lead = lead
         
         # Bot greeting message
-        greeting = f"""أهلاً بحضرتك في سييرا بلو، مستشارك العقاري الذكي. 
+        greeting = f"""أهلاً بحضرتك في سييرا إستيتس، مستشارك العقاري الذكي. 
 ثواني هراجع السيستم حالاً عشان أتأكدلك إذا كانت الوحدة دي (كود: {reference_code}) لسه متاحة ولا لأ.
 
 وبستأذنك عقبال ما أراجع، أعرف من حضرتك: 
@@ -360,7 +360,7 @@ class SierraBlueBot:
 🛋️ الفرش: {property_data.furnishing_level.value}
 💰 السعر: {property_data.price:,} جنيه
 
-وعموماً، إحنا في سييرا بلو بنعمل مسح شامل للماركت كله بالذكاء الاصطناعي، 
+وعموماً، إحنا في سييرا إستيتس بنعمل مسح شامل للماركت كله بالذكاء الاصطناعي، 
 وكل الوحدات اللي بنرشحها حقيقية 100% ونزلنا عاينّاها بنفسنا."""
         
         print("🤖 BOT:", report)
@@ -508,7 +508,7 @@ class SierraBlueBot:
             "title": f"معاينة عقارات - {self.current_lead.phone_number}",
             "date": selected_slot["date"],
             "time": selected_slot["time"],
-            "location": "سييرا بلو - مكتب التجمع"
+            "location": "سييرا إستيتس - مكتب التجمع"
         })
         
         self.current_lead.scheduled_viewing = {
@@ -529,7 +529,7 @@ class SierraBlueBot:
 الوقت: {selected_slot['time']}
 
 📍 **الموقع:**
-سييرا بلو - مكتب التجمع الخامس
+سييرا إستيتس - مكتب التجمع الخامس
 
 📱 في أي سؤال، تواصل معنا على الواتس!"""
         
@@ -561,7 +561,7 @@ class SierraBlueBot:
 المستشار العقاري المتخصص بتاعنا هيراجع الاختيارات دي شخصياً 
 وهيكلم حضرتك خلال ساعة بالكتير عشان يأكد معاك كل التفاصيل وخطة المعاينة.
 
-يومك سعيد ونتمنى لك رحلة بحث مريحة مع سييرا بلو! 🎉"""
+يومك سعيد ونتمنى لك رحلة بحث مريحة مع سييرا إستيتس! 🎉"""
         
         print("🤖 BOT:", final_message)
         

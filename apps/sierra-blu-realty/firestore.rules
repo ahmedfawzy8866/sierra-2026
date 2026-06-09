@@ -1,7 +1,7 @@
 rules_version = '2';
 
 // ============================================================================
-// Sierra Blu — Firestore Security Rules
+// Sierra Estates — Firestore Security Rules
 //
 // Model: "staff" = a signed-in user whose users/{uid} document has
 //   role ∈ {admin, manager, agent}. This mirrors how the app itself resolves

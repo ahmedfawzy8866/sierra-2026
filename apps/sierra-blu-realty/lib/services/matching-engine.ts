@@ -115,7 +115,7 @@ export async function runMatchingForUnit(unitId: string): Promise<void> {
  * Uses the OpenClaw / Gemini gateway to rank units against a lead's profile.
  */
 async function scoreMatchesWithAI(lead: Lead, units: Unit[]): Promise<MatchResult[]> {
-  const systemPrompt = `You are the Sierra Blu Strategic Intelligence Core (Neural Matching Unit V10.0).
+  const systemPrompt = `You are the Sierra Estates Strategic Intelligence Core (Neural Matching Unit V10.0).
 Task: Rank high-value property assets against specific investment stakeholders using the "Neural Memory Layer" and "Neural Wealth Mode."
 
 Terminology Protocol:

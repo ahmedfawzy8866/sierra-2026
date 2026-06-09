@@ -1,6 +1,6 @@
 /**
  * DONOR FILE - ARCHIVE ONLY
- * Original Sierra Blu landing page implementation
+ * Original Sierra Estates landing page implementation
  *
  * Status: Superseded by /apps/web/app/page.tsx
  * Reason: Consolidated to unified root landing page

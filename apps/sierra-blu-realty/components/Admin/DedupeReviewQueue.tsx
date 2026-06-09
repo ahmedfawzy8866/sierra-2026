@@ -312,7 +312,7 @@ export default function DedupeReviewQueue() {
           display: flex;
           align-items: center;
           gap: 0.5rem;
-          font-family: var(--heading-font, 'Playfair Display', serif);
+          font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
           font-size: 1.5rem;
           color: var(--text-primary);
           margin: 0;
@@ -365,7 +365,7 @@ export default function DedupeReviewQueue() {
           backdrop-filter: blur(8px);
         }
         .dedup-result h3 {
-          font-family: var(--heading-font, 'Playfair Display', serif);
+          font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
           margin: 0 0 1rem;
           color: var(--text-primary);
         }
@@ -408,7 +408,7 @@ export default function DedupeReviewQueue() {
         }
         .dedup-queue-header h3 {
           margin: 0;
-          font-family: var(--heading-font, 'Playfair Display', serif);
+          font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
           color: var(--text-primary);
         }
         .dedup-loading, .dedup-empty {

@@ -20,7 +20,7 @@ export const LolaAssistantModule = () => {
     {
       id: 1,
       sender: 'lola',
-      text: 'Good day. I am Lola, your AI executive assistant for Sierra Blu. I am connected to the Obsidian Vault Truth Engine and the active New Cairo inventory. How can I help you secure owner properties or coordinate viewings today?',
+      text: 'Good day. I am Lola, your AI executive assistant for Sierra Estates. I am connected to the Obsidian Vault Truth Engine and the active New Cairo inventory. How can I help you secure owner properties or coordinate viewings today?',
       time: '11:14 PM'
     }
   ]);
@@ -29,7 +29,7 @@ export const LolaAssistantModule = () => {
   const chatEndRef = useRef<HTMLDivElement | null>(null);
 
   const obsidianNodes = [
-    { name: 'Sierra Blu Memory Engine', size: '3.0 KB', type: 'System Core' },
+    { name: 'Sierra Estates Memory Engine', size: '3.0 KB', type: 'System Core' },
     { name: 'Sourcing Pipeline & Lead Aggregator', size: '2.5 KB', type: 'Scrapers' },
     { name: 'Sales Scripts & Outreach', size: '2.8 KB', type: 'Outreach' },
     { name: 'WhatsApp CRM & Hand-off Pipeline', size: '3.2 KB', type: 'Automation' },

@@ -220,7 +220,7 @@ export default function EasyListing() {
       // Social Templates
       const whatsapp = `✦ SIERRA BLU REALTY ✦\n\nUnit Code: ${code}\nLocation: ${compound || 'Custom'}\nDetails: ${bedrooms} BR | ${furnished === 'F' ? 'Fully Furnished' : 'Luxury Finish'}\nPrice: ${price.toLocaleString()} ${currency}\n\nContact: ${phone || 'Available Upon Request'}\n#SierraBlu #BeyondBrokerage`;
       
-      const facebook = `✨ LUXURY PORTFOLIO UPDATE ✨\n\nWe are pleased to present this exclusive listing in ${compound || 'New Cairo'}.\n\n💎 Code: ${code}\n🛏️ Bedrooms: ${bedrooms}\n💰 Price: ${price.toLocaleString()} ${currency}\n\nOur AI-driven platform ensures this is the highest value available today. Experience the Sierra Blu standard.\n\n📞 Call us: ${phone}\n\n#RealEstateEgypt #SierraBlu #Investment`;
+      const facebook = `✨ LUXURY PORTFOLIO UPDATE ✨\n\nWe are pleased to present this exclusive listing in ${compound || 'New Cairo'}.\n\n💎 Code: ${code}\n🛏️ Bedrooms: ${bedrooms}\n💰 Price: ${price.toLocaleString()} ${currency}\n\nOur AI-driven platform ensures this is the highest value available today. Experience the Sierra Estates standard.\n\n📞 Call us: ${phone}\n\n#RealEstateEgypt #SierraBlu #Investment`;
 
       setExtractedData({
         compound,
@@ -453,7 +453,7 @@ export default function EasyListing() {
             {t('easyListing.title')}
           </h1>
           <p className="text-slate-400 font-medium tracking-tight max-w-xl">
-             Luxury portfolio management powered by Sierra Blu Artificial Intelligence. 
+             Luxury portfolio management powered by Sierra Estates Artificial Intelligence. 
              Forge specific listings or tap into the global broker nexus.
           </p>
         </div>
@@ -784,7 +784,7 @@ export default function EasyListing() {
         {activeTour && (
           <VirtualTourViewer 
             sceneUrl={activeTour} 
-            title="Sierra Blu Neural Tour" 
+            title="Sierra Estates Neural Tour" 
             onClose={() => setActiveTour(null)} 
           />
         )}

@@ -88,7 +88,7 @@ export default function PropertyDetailPage() {
             <div className="w-12 h-px bg-secondary mb-8" />
             <p className="text-on-surface-variant font-light leading-relaxed text-lg mb-8">
               A rare {property.propertyType} positioned within the high-velocity {property.compound} corridor. 
-              Built to capture the optimum market yield while maintaining the privacy and prestige expected of a Sierra Blu listing.
+              Built to capture the optimum market yield while maintaining the privacy and prestige expected of a Sierra Estates listing.
             </p>
             <p className="text-on-surface-variant font-light leading-relaxed text-lg italic">
               "This unit has been manually vetted by our Senior Intelligence Analysts and meets all DQE standards for resale liquidity."

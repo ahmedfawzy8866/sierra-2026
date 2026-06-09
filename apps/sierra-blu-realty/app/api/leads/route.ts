@@ -40,7 +40,7 @@ export async function POST(req: Request) {
 
     // 2. Send Telegram Notification
     const text = `
-<b>🚀 New Lead - Sierra Blu Realty</b>
+<b>🚀 New Lead - Sierra Estates Realty</b>
 <b>Name:</b> ${name}
 <b>Email:</b> ${email}
 <b>Phone:</b> ${phone}

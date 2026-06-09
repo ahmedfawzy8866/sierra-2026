@@ -43,7 +43,7 @@ export async function extractProfileFromChat(history: string): Promise<Extracted
     const data = await GoogleAIService.chatCompletions(
       'scribe', 'profiling',
       [
-        { role: 'system', content: 'You are an institutional data extractor for Sierra Blu.' },
+        { role: 'system', content: 'You are an institutional data extractor for Sierra Estates.' },
         { role: 'user', content: prompt }
       ],
       { model: 'gemini-1.5-flash', temperature: 0 }

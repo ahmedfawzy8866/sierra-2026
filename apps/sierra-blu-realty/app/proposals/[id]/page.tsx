@@ -36,7 +36,7 @@ export default function PublicProposalPage() {
         }
       } catch (err) {
         console.error("Proposal access failure:", err);
-        setError("Unable to secure a connection to the Sierra Blu intelligence vault.");
+        setError("Unable to secure a connection to the Sierra Estates intelligence vault.");
       } finally {
         setLoading(false);
       }

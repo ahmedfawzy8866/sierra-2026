@@ -10,7 +10,7 @@ const genAI = new GoogleGenerativeAI(API_KEY);
 
 /**
  * Generates a 768-dimensional vector embedding for the provided text.
- * Optimized for Sierra Blu's real estate and stakeholder datasets.
+ * Optimized for Sierra Estates's real estate and stakeholder datasets.
  */
 export async function generateEmbedding(text: string): Promise<number[]> {
   if (!API_KEY) {
@@ -32,7 +32,7 @@ export async function generateEmbedding(text: string): Promise<number[]> {
  * Combines multiple attributes into a single semantic string for embedding.
  */
 export function createSemanticString(data: Record<string, any>): string {
-  // Sierra Blu PropTech Contextualization
+  // Sierra Estates PropTech Contextualization
   return Object.entries(data)
     .filter(([, value]) => value !== undefined && value !== null && value !== "")
     .map(([key, value]) => `${key}: ${value}`)

@@ -268,7 +268,7 @@ async function seedUsers(db) {
 }
 
 async function main() {
-  console.log('🌱 Sierra Blu Firestore Data Seeding Script\n');
+  console.log('🌱 Sierra Estates Firestore Data Seeding Script\n');
   console.log('═══════════════════════════════════════════\n');
 
   try {

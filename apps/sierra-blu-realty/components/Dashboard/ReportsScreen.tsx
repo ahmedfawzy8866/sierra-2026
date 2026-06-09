@@ -245,7 +245,7 @@ export default function ReportsScreen() {
           <div className="card-body" style={{ padding: '40px 30px', position: 'relative', zIndex: 1 }}>
             <h2 className="serif" style={{ color: 'var(--gold)', fontSize: '24px', marginBottom: '16px' }}>Cross-Platform Readiness</h2>
             <p style={{ opacity: 0.8, fontSize: '14px', lineHeight: '1.6', marginBottom: '24px' }}>
-              Property Finder performance is now tied directly to live Sierra Blu inventory and CRM records, so the report reflects what is really active in the system.
+              Property Finder performance is now tied directly to live Sierra Estates inventory and CRM records, so the report reflects what is really active in the system.
             </p>
             <div style={{ display: 'grid', gap: '12px', marginBottom: '30px' }}>
               {(reportState.topAreas.length ? reportState.topAreas : [{ label: 'No inventory yet', count: 0 }]).map((item) => (

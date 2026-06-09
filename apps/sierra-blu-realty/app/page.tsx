@@ -997,7 +997,7 @@ export default function LandingPage() {
             {/* Sidebar Branding footer */}
             <div style={{ marginTop: 'auto', borderTop: `1px solid ${th.border}`, paddingTop: '1rem', display: 'flex', gap: '8px', alignItems: 'center', justifyContent: 'center' }}>
               <ShieldLogo size={24} />
-              <span style={{ fontSize: '0.7rem', color: th.textMuted }}>Sierra Blu Intelligence OS © 2026</span>
+              <span style={{ fontSize: '0.7rem', color: th.textMuted }}>Sierra Estates Intelligence OS © 2026</span>
             </div>
           </div>
         </div>
@@ -1129,7 +1129,7 @@ export default function LandingPage() {
           </div>
           
           <div style={{ borderTop: '1px solid rgba(239,248,247,0.07)', paddingTop: '20px', display: 'flex', justifyContent: 'space-between', fontSize: '0.75rem', color: 'rgba(239,248,247,0.28)' }}>
-            <span>© 2026 Sierra Blu Realty. All rights reserved.</span>
+            <span>© 2026 Sierra Estates Realty. All rights reserved.</span>
             <div style={{ display: 'flex', gap: '15px' }}>
               <span>Privacy Policy</span>
               <span>Terms of Service</span>

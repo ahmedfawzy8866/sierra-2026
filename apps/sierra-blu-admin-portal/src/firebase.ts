@@ -1,4 +1,4 @@
-// Sierra Blu — Firebase SDK Configuration
+// Sierra Estates — Firebase SDK Configuration
 // Project: sierra-blu | Region: us-central1
 // Base 44 V12.0 — Firestore Integration Layer
 

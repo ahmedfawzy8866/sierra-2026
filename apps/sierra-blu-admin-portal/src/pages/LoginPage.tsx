@@ -31,7 +31,7 @@ export function LoginPage() {
         {/* Logo/Branding */}
         <div className="text-center mb-8">
           <div className="text-amber-400 text-4xl mb-4">🏘️</div>
-          <h1 className="text-3xl font-playfair text-white mb-2">Sierra Blu Admin</h1>
+          <h1 className="text-3xl font-playfair text-white mb-2">Sierra Estates Admin</h1>
           <p className="text-slate-400">Intelligence OS v12.0</p>
         </div>
 
@@ -108,7 +108,7 @@ export function LoginPage() {
 
         {/* Footer */}
         <p className="text-center text-slate-500 text-xs mt-8">
-          © 2026 Sierra Blu Realty. All rights reserved.
+          © 2026 Sierra Estates Realty. All rights reserved.
         </p>
       </div>
     </div>

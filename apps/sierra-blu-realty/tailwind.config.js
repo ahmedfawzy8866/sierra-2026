@@ -8,7 +8,7 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Sierra Blu Official Palette V2.1 — Beyond Brokerage
+        // Sierra Estates Official Palette V2.1 — Beyond Brokerage
         gold: {
           50: '#FFFBF5',
           100: '#F5E070',
@@ -42,10 +42,15 @@ module.exports = {
           400: '#C084FC',
         },
       },
+      // Brand families — authoritative source is the Tailwind v4 @theme
+      // block in app/globals.css; kept in sync here. Faces self-hosted via
+      // next/font (app/layout.tsx).
       fontFamily: {
-        serif: ['Playfair Display', 'Georgia', 'serif'],
-        sans: ['Inter', 'system-ui', 'sans-serif'],
-        mono: ['Courier New', 'monospace'],
+        serif: ['var(--font-cormorant)', 'Cormorant Garamond', 'Georgia', 'serif'],
+        display: ['var(--font-manrope)', 'Manrope', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-jost)', 'var(--font-inter)', 'Inter', 'system-ui', 'sans-serif'],
+        mono: ['var(--font-dm-mono)', 'DM Mono', 'ui-monospace', 'monospace'],
+        arabic: ['var(--font-cairo)', 'Cairo', 'system-ui', 'sans-serif'],
       },
       fontSize: {
         'display-lg': ['4rem', { lineHeight: '1.1', fontWeight: '300' }],

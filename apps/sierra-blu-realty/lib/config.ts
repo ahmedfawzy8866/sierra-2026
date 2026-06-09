@@ -6,8 +6,8 @@
 
 export const SiteConfig = {
   branding: {
-    name: "Sierra Blu Realty",
-    legalName: "Sierra Blu Real Estate Investment",
+    name: "Sierra Estates Realty",
+    legalName: "Sierra Estates Real Estate Investment",
     tagline: "Ultra-Cinematic Asset Intelligence",
     foundedIn: "2026",
   },
