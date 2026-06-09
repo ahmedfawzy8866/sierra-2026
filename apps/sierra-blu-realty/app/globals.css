@@ -3,6 +3,12 @@
    next/font faces, each with a graceful web-safe fallback. */
 @import "tailwindcss";
 
+/* Load the legacy JS config so Tailwind v4 generates the brand color scales
+   (navy/gold/teal), font families, fontSize scale, spacing, and shadows that
+   ~78 components rely on. Tailwind v4 does NOT auto-load tailwind.config.js;
+   this directive is what makes bg-navy / text-gold / etc. exist. */
+@config "../tailwind.config.js";
+
 /* ══════════════════════════════════════════════════════════
    TAILWIND V4 — @theme (registers all custom tokens as
    utility classes: bg-primary, text-secondary, etc.)
